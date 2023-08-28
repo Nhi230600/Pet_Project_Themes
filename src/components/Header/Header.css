@@ -1,0 +1,113 @@
+:root {
+    
+}
+.header {
+    display: block ;
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+}
+.header-logo-search {
+    display: flex;
+    width: 100%;
+    height: auto;
+    position: relative;
+    align-items: center;
+}
+.header-logo {
+    display: flex;
+    width: 20%;
+    height: auto;
+    align-items: center;
+}
+.header-logo-image {
+    width: 100%;
+    height: auto;
+}
+.header-logo-name {
+    text-Shadow: 0.1rem 0.1rem 0.1rem white;
+}
+.header-search {
+    display: flex;
+    width: 40%;
+    height: auto;
+    position: absolute;
+    left: 40%;
+}
+.header-search-input {
+    width: 70%;
+    margin-right: 2%;
+}
+.header-search-search {
+    width: 30%;
+}
+.header-button {
+    position: absolute;
+    display: flex;
+    left: 85%;
+}
+.header-button-login {
+    margin-right: 0.5vw;
+}
+.header-button-login-action {
+    
+}
+.header-button-login-action:hover {
+    cursor: pointer;
+    
+}
+.header-button-register {
+
+}
+
+.header-nav {
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content:center;
+    align-items: center;
+}
+
+.header-nav-list {
+    display: flex;
+    list-style: none;
+    padding: 1vw;
+  }
+  .header-nav-list li {
+    position: relative;
+  }
+  .header-nav-list-name {
+    margin: 0 6vw 0 6vw;
+  }
+  .header-nav-list li a {
+    text-decoration: none;
+    padding: 0.9vw 0.4vw;
+    display: block;
+    color: black;
+  }
+  .header-nav-list ul.header-nav-list-sub {
+    list-style: none;
+    margin: 0;
+    padding: 0.5vw 0vw;
+    position: absolute;
+    background-color: white;
+    border: 3px dashed rgb(237, 182, 31);
+    color: #eeeeee;
+    width: 19vw;
+    display: none;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  .header-nav-list li:focus>ul.header-nav-list-sub,
+  .header-nav-list li:hover>ul.header-nav-list-sub {
+    display: block;
+  
+  }
+  .header-nav-list ul.header-nav-list-sub a {
+    padding: 0.3vw 0.9vw;
+    border-bottom: 1px solid rgb(245, 214, 129);
+    font-size: 1.3vw;
+    color: black;
+  }
+  .header-nav-list-sub li:last-child a {
+    border: none;
+  }

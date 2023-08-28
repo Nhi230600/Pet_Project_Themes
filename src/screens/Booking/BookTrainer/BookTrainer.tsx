@@ -10,6 +10,7 @@ const BookTrainer = (props : BookTrainerProps) => {
   return (
     <div>
       <Header />
+      
     </div>
   )
 }
