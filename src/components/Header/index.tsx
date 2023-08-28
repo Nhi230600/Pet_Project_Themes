@@ -23,19 +23,19 @@ const Header = (props : HeaderProps) => {
                 <input placeholder='Tìm kiếm tại đây...' style={{width:'100%', height:'3vw', borderRadius:'0.3rem', border:'none'}} type="text" name="" id="" />
             </div>
             <div className='header-search-search'>
-                <button style={{backgroundColor:COLORS.button,width:'30%',height:'3vw', borderRadius:'0.3rem', border:'none', cursor:'pointer'}}>
+                <button className='header-search-search-action' style={{width:'30%',height:'3vw', borderRadius:'0.3rem', border:'none', cursor:'pointer'}}>
                     <SearchOutlined />
                 </button>
             </div>
         </div>
         <div className='header-button' style={{fontSize:FONTSIZE.textButton}}>
             <div className='header-button-login'>
-                <button className='header-button-login-action styled' style={{height:'3vw',width:'6vw',backgroundColor:COLORS.button, borderRadius:'0.3vw', border:'none'}}>
+                <button className='header-button-login-action' >
                     Đăng nhập
                 </button>
             </div>
             <div className='header-button-register'>
-                <button className='header-button-register-action styled' style={{height:'3vw',width:'6vw',backgroundColor:COLORS.button, borderRadius:'0.3vw', border:'none'}}>
+                <button className='header-button-register-action' >
                     Đăng ký
                 </button>
             </div>
