@@ -1,0 +1,11 @@
+.formContent-content {
+    display: block;
+    width: 100%;
+    padding: 2rem;
+    justify-content: center;
+}
+.formContent-content-infomation {
+    display: block;
+    width: 100%;
+    justify-content: space-between;
+}
