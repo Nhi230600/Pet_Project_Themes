@@ -1,0 +1,15 @@
+.register {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.register-form {
+    display: flex;
+    width: 100%;
+    padding: 3rem;
+}
+.register-form-content {
+    width: 100%;
+    border: 0.2rem dashed white;
+    border-radius: 1rem;
+}
