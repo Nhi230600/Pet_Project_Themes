@@ -44,7 +44,7 @@
 .header-button {
     position: absolute;
     display: flex;
-    left: 85%;
+    left: 78%;
 }
 .header-button-login {
     margin-right: 0.5vw;
@@ -52,9 +52,9 @@
 .header-button-login-action {
     
 }
+
 .header-button-login-action:hover {
     cursor: pointer;
-    
 }
 .header-button-register {
 
@@ -69,9 +69,11 @@
 }
 
 .header-nav-list {
+    width: 100%;
     display: flex;
     list-style: none;
-    padding: 1vw;
+    padding: 0;
+    margin-top: 2vw;
   }
   .header-nav-list li {
     position: relative;

@@ -1,8 +1,8 @@
 export const FONTSIZE = {
     logoLarge: "2.5vw",
-    logoSmall:"1.9rem",
-    heading:"2rem",
-    text: '1.5rem',
+    logoSmall:"1.9vw",
+    heading:"2vw",
+    text: '1.5vw',
     textButton : "1vw",
     textNav : "1.3vw"
 }
