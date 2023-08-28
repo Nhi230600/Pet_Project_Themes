@@ -2,7 +2,7 @@ import React from 'react'
 import './BookSpa.css'
 import { Header } from '../../../components'
 import { FONTSIZE } from '../../../constants'
-
+import Footer from '../../../components/Footer'
 type BookSpaProps ={
 
 }
@@ -38,6 +38,7 @@ const BookSpa = (props : BookSpaProps) => {
                 </form>
             </div>
         </div>
+        <Footer />
     </div>
   )
 }

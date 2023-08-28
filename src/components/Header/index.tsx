@@ -23,7 +23,7 @@ const Header = (props : HeaderProps) => {
                 <input placeholder='Tìm kiếm tại đây...' style={{width:'100%', height:'3vw', borderRadius:'0.3rem', border:'none'}} type="text" name="" id="" />
             </div>
             <div className='header-search-search'>
-                <button className='header-search-search-action' style={{width:'30%',height:'3vw', borderRadius:'0.3rem', border:'none', cursor:'pointer'}}>
+                <button className='header-search-search-action'>
                     <SearchOutlined />
                 </button>
             </div>

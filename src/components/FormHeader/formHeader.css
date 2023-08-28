@@ -3,7 +3,7 @@
     width: 100%;
     padding: 1rem;
     align-items: center;
-    text-Shadow: 0.1rem 0.1rem 0.1rem #5DADE2;
+    text-Shadow: 0.1rem 0.1rem 0.1rem rgb(245, 214, 129);
 
 }
 .formContent-header-logo {
@@ -19,7 +19,7 @@
 }
 .formContent-header-logo-name {
     text-align: center;
-    text-Shadow: 0.1rem 0.1rem 0.1rem #5DADE2;
+    text-Shadow: 0.1rem 0.1rem 0.1rem rgb(245, 214, 129);
 }
 .formContent-header-heading {
     width: 70%;

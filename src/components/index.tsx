@@ -3,3 +3,4 @@ export {default as FormFooter} from './FormFooter';
 export {default as FormContentRegister} from './FormContentRegister';
 export {default as FormContentLogin} from './FormContentLogin';
 export {default as Header} from './Header'
+export {default as Footer} from './Footer'
