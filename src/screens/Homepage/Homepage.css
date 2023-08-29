@@ -1,0 +1,19 @@
+.slider-img{
+    height: 160px;
+    max-width: 100%;
+    position: relative;
+}
+.slider-content{
+    position: absolute;
+    text-align: left;
+    /* color: #fff; */
+    text-shadow: #000;
+    font-weight: 400;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.service-img-background{
+    position: relative;
+    margin-top: auto;
+    
+}
