@@ -29,9 +29,11 @@
     margin: 5rem;
     padding: 3rem;
     width: 60%;
-    background-color: rgb(245, 214, 129);
+    background: linear-gradient(#f5d681, #8dd9ec);
     border-radius: 20px;
 }
+
+/*background-color: rgb(245, 214, 129);*/
 .booking-spa-form-title{
     text-align: center;
     font-weight: bold;
