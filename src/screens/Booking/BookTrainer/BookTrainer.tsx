@@ -37,7 +37,7 @@ const BookTrainer = (props : BookTrainerProps) => {
             <h3>THỜI GIAN: <strong className='important'>*</strong></h3>
             <input type="datetime-local" id="form-training-time" name="training-time"></input>
             <h3>GHI CHÚ:</h3>
-            <textarea name="note" id="form-training-note" rows={300} placeholder='Nhập một vài mô tả tình trạng của các bé để chuyên viên của chúng tôt có thể hỗ trợ bạn tốt nhất ...'></textarea>
+            <textarea name="note" id="form-training-note" rows={300} placeholder='Bạn có thắc mắc hay lưu ý nào sao ? Hãy nhập vào đây chúng tôi sẽ hỗ trợ bạn !'></textarea>
             <button className='form-button-send styled' type='button'>Gửi yêu cầu</button>
           </form>
         </div>

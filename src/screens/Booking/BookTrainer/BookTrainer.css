@@ -1,9 +1,10 @@
 .container-booktrainer {
     display: block;
-    width: 100%;
-    background-image: url('../../../images/beautiful-pet-portrait-dog.jpg');
+    height: 100%;
+    background-image: url('../../../images/booking-image.avif');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position:right;
     margin-bottom: 0;
     padding:6rem 0;
 }
@@ -11,7 +12,7 @@
     width: 100%;
     height: auto;
     text-align: center;
-    text-Shadow: 0.1rem 0.1rem 0.1rem rgb(245, 214, 129);
+    text-Shadow:0.2rem 0.2rem 0.2rem white;
     font-weight: 600;
 }
 .container-booktrainer-content {
