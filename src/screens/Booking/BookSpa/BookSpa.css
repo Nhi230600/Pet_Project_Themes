@@ -1,5 +1,10 @@
 .booking-spa{
-    
+    background-image: url('../../../images/beautiful-pet-portrait-dog.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+  
 }
 
 .booking-spa-title{
@@ -8,12 +13,12 @@
     font-size: 30pt;
 }
 
-.booking-spa-form{
-    background-image: url('../../../images/booking_background-removebg.png');
+/*.booking-spa-form{
+    background-image: url('../../../images/beautiful-pet-portrait-dog.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     
-}
+}*/
 
 .form-content > p{
     font-size: medium;
@@ -28,7 +33,7 @@
 .booking-spa-form-content{
     margin: 5rem;
     padding: 3rem;
-    width: 60%;
+    width: 50%;
     background: linear-gradient(#f5d681, #8dd9ec);
     border-radius: 20px;
 }
