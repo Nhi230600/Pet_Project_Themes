@@ -33,7 +33,7 @@ const Login = (props : Props) => {
                     <div>
                         <a href="">Đăng ký ngay !</a>
                     </div>
-        </div>
+                    </div>
                 </form>
             </div>
         </div>

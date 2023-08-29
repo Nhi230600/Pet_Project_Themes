@@ -2,7 +2,7 @@ import { type } from 'os'
 import React from 'react'
 import { FONTSIZE } from '../../constants'
 import './formHeader.css'
-import logoPage from '../../images/logo_page.jpg'
+import Logo from '../../images/logo.png'
 
 type FormHeaderProps = {
     heading ?: String;
@@ -14,7 +14,7 @@ const FormHeader = (props : FormHeaderProps) => {
     <div className='formContent-header'>
         <div className='formContent-header-logo'>
             <div className='formContent-header-logo-img'>
-                <img className='formContent-header-logo-image' src={logoPage} alt="LOGO" />
+                <img className='formContent-header-logo-image' src={Logo} alt="LOGO" />
             </div>
             <div className='formContent-header-logo-name' style={{fontSize:FONTSIZE.logoSmall}}>
                 <span>NgáoService</span>
