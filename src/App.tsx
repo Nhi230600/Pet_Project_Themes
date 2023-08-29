@@ -6,7 +6,7 @@ import BookSpa from "./screens/Booking/BookSpa/BookSpa";
 const App = () => {
   return (
     <div className="App">
-      <BookSpa />
+      <BookTrainer />
     </div>
   );
 };
