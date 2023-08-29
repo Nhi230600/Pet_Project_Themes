@@ -1,0 +1,55 @@
+.footer {
+    width: 100%;
+    display: flex;
+    height: auto;
+    padding: 3rem 1rem;
+}
+.footer-logo {
+    display: block;
+    width: 25%;
+    text-align: center;
+}
+.footer-logo-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+.footer-logo-name {
+    width: 100%;
+    height: auto;
+}
+.footer-information {
+    display: block;
+    width: 25%;
+    height: auto;
+}
+.footer-information-name {
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+.footer-information-content {
+    display: block;
+    line-height: 2.5rem;
+}
+.footer-service {
+    width: 25%;
+}
+.footer-service-name {
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+.footer-service-content {
+    display: block;
+    line-height: 2.5rem;
+}
+.footer-network {
+    width: 25%;
+}
+.footer-network-name {
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+.footer-network-content {
+    display: block;
+    line-height: 2.5rem;
+}
