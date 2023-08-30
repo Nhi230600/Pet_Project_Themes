@@ -1,17 +1,11 @@
-import React from 'react'
-import './MyPet.css'
+import React from "react";
+import "./MyPet.css";
 
-type MyPetProps = {
+type MyPetProps = {};
 
-}
+const MyPet = (props: MyPetProps) => {
+  const {} = props;
+  return <div className="container-mypet"></div>;
+};
 
-const MyPet = (props : MyPetProps) => {
-    const {} = props ;
-    return (
-    <div className='container-mypet'>
-      
-    </div>
-  )
-}
-
-export default MyPet
+export default MyPet;

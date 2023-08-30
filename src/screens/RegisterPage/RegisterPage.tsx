@@ -1,5 +1,5 @@
 import { Checkbox, Form, Input } from "antd";
-import "./Register.css";
+import "./RegisterPage.css";
 import Logo from "../../images/logo.png";
 import { FONTSIZE } from "../../constants";
 
