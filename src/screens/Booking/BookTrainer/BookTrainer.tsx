@@ -1,7 +1,11 @@
-import Footer from "../../../components/Footer";
-import Header from "../../../components/Header";
-import { FONTSIZE } from "../../../constants";
-import "./BookTrainer.css";
+import React from 'react'
+import './BookTrainer.css'
+import { Header, Footer} from '../../../components'
+import { FONTSIZE } from '../../../constants'
+
+
+const BookTrainer = () => {
+  
 type BookTrainerProps = {};
 
 const BookTrainer = (props: BookTrainerProps) => {
@@ -54,6 +58,7 @@ const BookTrainer = (props: BookTrainerProps) => {
               name="training-time"
             ></input>
             <h3>GHI CHÚ:</h3>
+
             <textarea
               name="note"
               id="form-training-note"
