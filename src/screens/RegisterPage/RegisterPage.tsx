@@ -99,7 +99,7 @@ const RegisterPage = () => {
           rules={[
             {
               required: true,
-              message: "Please input your phone number!",
+              message: "Please input your username!",
             },
           ]}
         >

@@ -1,12 +1,8 @@
-import Footer from "../../../components/Footer";
-import Header from "../../../components/Header";
+import { Footer, Header } from "../../../components";
 import { FONTSIZE } from "../../../constants";
 import "./BookTrainer.css";
-type BookTrainerProps = {};
 
-const BookTrainer = (props: BookTrainerProps) => {
-  const {} = props;
-
+const BookTrainer = () => {
   return (
     <div>
       <Header />
@@ -54,6 +50,7 @@ const BookTrainer = (props: BookTrainerProps) => {
               name="training-time"
             ></input>
             <h3>GHI CHÚ:</h3>
+
             <textarea
               name="note"
               id="form-training-note"
