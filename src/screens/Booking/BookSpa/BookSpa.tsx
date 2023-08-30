@@ -1,13 +1,11 @@
 import React from 'react'
 import './BookSpa.css'
-import { Header } from '../../../components'
+import { Header, Footer } from '../../../components'
 import { FONTSIZE } from '../../../constants'
-import Footer from '../../../components/Footer'
-type BookSpaProps ={
 
-}
 
-const BookSpa = (props : BookSpaProps) => {
+
+const BookSpa = () => {
   return (
     <>
         <Header />

@@ -1,50 +1,51 @@
-.container-booktrainer {
+.container-bookcare {
     display: block;
     height: 100%;
-    background-image: url('../../../images/cute-little-dog-with-hat.jpg');
+    background-image: url('../../../images/background-percare.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: 30%;
+    background-position: 50% 75%;
     margin-bottom: 0;
-    padding:6rem 0;
+    padding: 6rem 0;
 }
-.container-booktrainer-heading {
+.container-bookcare-heading {
     width: 100%;
     height: auto;
     text-align: center;
     text-Shadow:0.2rem 0.2rem 0.2rem white;
     font-weight: 600;
 }
-.container-booktrainer-content {
+.container-bookcare-content {
     width: 100%;
     height: auto;
     display: flex;
 }
-.container-booktrainer-content-form {
-    margin: 2rem 5rem;
-    padding: 3rem;
-    width: 50%;
+.container-bookcare-content-form {
+    margin: 3rem 5rem 3rem 40%;
+    padding: 3rem ;
+    width: 100%;
     height: auto;
     border: 0.1rem solid rgb(245, 214, 129);
     background: linear-gradient(#f5d681, #8dd9ec);
+    
     border-radius: 20px;
 }
-.container-booktrainer-content-form > p{
+.container-bookcare-content-form > p{
     font-size: medium;
     font-weight: 500;
 }
-.container-booktrainer-content-form > h3{
+.container-bookcare-content-form > h3{
     font-size: x-large;
     font-weight: bold;
 }
-.container-booktrainer-content-form-heading {
+.container-bookcare-content-form-heading {
     text-Shadow: 0.1rem 0.1rem 0.1rem rgb(245, 214, 129);
     text-align: center;
 }
 .important{
     color: red;
 }
-#form-trainer, #form-training-time{
+#form-care, #form-care-time{
     width: 100%;
     height: 3rem;
     border-radius: 10px;
@@ -53,9 +54,16 @@
 
 }
 
-#form-training-note {
+#form-care-detail {
     width: 100%;
-    height: 10rem;
+    height: 5rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+}
+
+#form-care-note {
+    width: 100%;
+    height: 8rem;
     padding: 0.5rem;
     border-radius: 10px;
 }
