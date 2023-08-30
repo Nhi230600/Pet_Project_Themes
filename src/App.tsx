@@ -1,11 +1,10 @@
-import Register from "./screens/Register/Register";
-import Login from "./screens/Login/Login"
-import Homepage from "./screens/Homepage/Homepage";
+
+import Routes from "../src/routes/Routes";
 
 const App = () => {
   return (
     <div className="App">
-      <Homepage/>
+      <Routes />
     </div>
   );
 };
