@@ -1,10 +1,3 @@
-import React from 'react'
-import './BookSpa.css'
-import { Header, Footer } from '../../../components'
-import { FONTSIZE } from '../../../constants'
-
-
-
 import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
 import "./BookSpa.css";
