@@ -78,6 +78,7 @@ const Header = () => {
               width={800}
               open={isModalLoginOpen}
               onCancel={handleCancelLogin}
+              footer={[]}
             >
               <LoginPage />
             </Modal>
@@ -93,6 +94,7 @@ const Header = () => {
               width={800}
               open={isModalRegisterOpen}
               onCancel={handleCancelRegister}
+              footer={[]}
             >
               <RegisterPage />
             </Modal>

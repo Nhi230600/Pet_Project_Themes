@@ -1,11 +1,11 @@
-import { Footer, Header } from "../../../components";
+import { Footer, HeaderUser } from "../../../components";
 import { FONTSIZE } from "../../../constants";
 import "./BookTrainer.css";
 
 const BookTrainer = () => {
   return (
     <div>
-      <Header />
+      <HeaderUser />
       <div className="container-booktrainer">
         <div
           className="container-booktrainer-heading"

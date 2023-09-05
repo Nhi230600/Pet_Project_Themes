@@ -1,7 +1,7 @@
-import { Checkbox, Form, Input } from "antd";
-import "./RegisterPage.css";
-import Logo from "../../images/logo.png";
+import { Form, Input } from "antd";
 import { FONTSIZE } from "../../constants";
+import Logo from "../../images/logo.png";
+import "./RegisterPage.css";
 
 const RegisterPage = () => {
   const onFinish = (values: any) => {
