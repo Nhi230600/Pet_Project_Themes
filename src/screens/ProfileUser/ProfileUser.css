@@ -1,0 +1,33 @@
+.container-profile {
+    width: 100%;
+    height: auto;
+    display: flex;
+    padding: 4vw;
+}
+.container-profile-avatar {
+    width: 40%;
+    height: auto;
+}
+.container-profile-avatar-img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.container-profile-avatar-upload {
+     display: block;
+     text-align: center;
+     padding: 2vw;
+     line-height: 3vw;
+}
+.container-profile-form {
+    width: 60%;
+    height: auto;
+    border-radius: 0.5vw;
+    display: block;
+    background-color: rgb(255, 236, 183);
+}
+.container-profile-form-infor {
+    display: block;
+    width: 100%;
+    height: auto;
+}

@@ -1,9 +1,9 @@
 import { faCakeCandles } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Footer, Header } from "../../../components";
+import { Footer, HeaderUser } from "../../../components";
 import { FONTSIZE } from "../../../constants";
-import Avatar_Golden from "../../../images/avatar_golden.jpg";
 import Avatar_Cat from "../../../images/avatar_cat.jpeg";
+import Avatar_Golden from "../../../images/avatar_golden.jpg";
 import Avatar_Poodle from "../../../images/avatar_poodle.jpg";
 import ImagePet from "../../../images/image-pagemypet.png";
 
@@ -12,7 +12,7 @@ import "./MyPet.css";
 const MyPet = () => {
   return (
     <div className="mypet">
-      <Header />
+      <HeaderUser />
       <div className="container-mypet">
         <div className="container-mypet-infor">
           <div className="container-mypet-infor-heading">
