@@ -1,19 +1,56 @@
+
+.header{
+    position: relative;
+    z-index: +1;
+}
 .slider-img{
-    height: 160px;
+    padding-top: 50%;
     max-width: 100%;
     position: relative;
-}
-.slider-content{
-    position: absolute;
-    text-align: left;
-    /* color: #fff; */
-    text-shadow: #000;
-    font-weight: 400;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background: url('../../images/slider-img/carousel1.jpg') center / cover no-repeat;
+
 }
 
+.slider-content{
+    position: absolute;
+    font-weight: 600;
+    font-size: 4rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #fff;
+    margin: auto;
+    float: left;
+    max-width: 100%;
+    width: fit-content;
+    margin-top: -46rem;
+}
+
+.service{
+    background: linear-gradient(
+        rgb(238, 223, 164),
+        rgb(235, 178, 213)
+    )
+}
 .service-img-background{
     position: relative;
-    margin-top: auto;
-    
+    background: url('../../images/service-img-background.png') top center / cover no-repeat;
+    height: 14rem;
+    width: 15rem;
+    margin: auto;
+    z-index: +1;
+
+}
+.service-content > p{
+    position: relative;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.5rem;
+    width: max-content;
+    background-color:  rgb(253, 205, 235);
+    padding: 2rem;
+    margin: auto;
+    margin-top: -5.6rem;
+}
+
+.service-content{
+    background-color: rgb(253, 205, 235) ;
 }
