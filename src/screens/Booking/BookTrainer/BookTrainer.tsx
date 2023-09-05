@@ -1,10 +1,9 @@
 import React from 'react'
 import './BookTrainer.css'
-import { Header, Footer} from '../../../components'
+import Header from '../../../components/Header'
+import Footer from '../../../components/Footer'
 import { FONTSIZE } from '../../../constants'
 
-
-const BookTrainer = () => {
   
 type BookTrainerProps = {};
 
@@ -76,4 +75,4 @@ const BookTrainer = (props: BookTrainerProps) => {
   );
 };
 
-export default BookTrainer;
+export default BookTrainer

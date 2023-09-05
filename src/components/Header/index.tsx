@@ -7,6 +7,8 @@ import { Modal } from "antd";
 import LoginPage from "../../screens/LoginPage/LoginPage";
 import RegisterPage from "../../screens/RegisterPage/RegisterPage";
 
+
+
 const Header = () => {
   const [isModalLoginOpen, setIsModalLoginOpen] = useState(false);
   const [isModalRegisterOpen, setIsModalRegisterOpen] = useState(false);
@@ -155,13 +157,13 @@ const Header = () => {
             </a>
             <ul className="header-nav-list-sub">
               <li>
-                <a href="#">Đặt lịch Spa</a>
+                <a href="/bookspa">Đặt lịch Spa</a>
               </li>
               <li>
-                <a href="#">Đặt lịch khám bệnh</a>
+                <a href="/bookcare">Đặt lịch khám bệnh</a>
               </li>
               <li>
-                <a href="#">Đặt lịch huấn luyện</a>
+                <a href="/booktrainer">Đặt lịch huấn luyện</a>
               </li>
             </ul>
           </li>
