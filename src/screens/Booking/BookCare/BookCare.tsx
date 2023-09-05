@@ -1,4 +1,9 @@
-import { DatePicker, Space } from "antd";
+import React from 'react'
+import './BookCare.css'
+import Header from '../../../components/Header'
+import Footer from '../../../components/Footer'
+import { FONTSIZE } from '../../../constants'
+import { DatePicker, Space } from 'antd';
 import { Footer, HeaderUser } from "../../../components";
 import { FONTSIZE } from "../../../constants";
 import "./BookCare.css";
