@@ -1,7 +1,7 @@
 import { Checkbox, Form, Input } from "antd";
-import "./LoginPage.css";
-import Logo from "../../images/logo.png";
 import { FONTSIZE } from "../../constants";
+import Logo from "../../images/logo.png";
+import "./LoginPage.css";
 
 const LoginPage = () => {
   const onFinish = (values: any) => {
@@ -23,7 +23,7 @@ const LoginPage = () => {
               textShadow: "0.1rem 0.2rem 0.1rem rgb(245, 214, 129)",
             }}
           >
-            ĐĂNG KÝ
+            ĐĂNG NHẬP
           </span>
         </div>
       </div>

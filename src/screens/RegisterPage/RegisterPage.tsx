@@ -1,7 +1,7 @@
-import { Checkbox, Form, Input } from "antd";
-import "./Register.css";
-import Logo from "../../images/logo.png";
+import { Form, Input } from "antd";
 import { FONTSIZE } from "../../constants";
+import Logo from "../../images/logo.png";
+import "./RegisterPage.css";
 
 const RegisterPage = () => {
   const onFinish = (values: any) => {
@@ -99,7 +99,7 @@ const RegisterPage = () => {
           rules={[
             {
               required: true,
-              message: "Please input your phone number!",
+              message: "Please input your username!",
             },
           ]}
         >

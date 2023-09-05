@@ -1,11 +1,11 @@
 import { SearchOutlined } from "@ant-design/icons";
+import { Modal } from "antd";
 import { useState } from "react";
 import { COLORS, FONTCOLOR, FONTSIZE } from "../../constants";
 import Logo from "../../images/logo.png";
-import "./Header.css";
-import { Modal } from "antd";
 import LoginPage from "../../screens/LoginPage/LoginPage";
 import RegisterPage from "../../screens/RegisterPage/RegisterPage";
+import "./Header.css";
 
 
 
@@ -80,6 +80,7 @@ const Header = () => {
               width={800}
               open={isModalLoginOpen}
               onCancel={handleCancelLogin}
+              footer={[]}
             >
               <LoginPage />
             </Modal>
@@ -95,6 +96,7 @@ const Header = () => {
               width={800}
               open={isModalRegisterOpen}
               onCancel={handleCancelRegister}
+              footer={[]}
             >
               <RegisterPage />
             </Modal>
