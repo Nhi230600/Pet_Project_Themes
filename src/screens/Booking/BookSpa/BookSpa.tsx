@@ -63,7 +63,7 @@ const BookSpa = () => {
         </div>
       </div>
 
-      <Footer />
+
     </>
   );
 };

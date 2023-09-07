@@ -68,7 +68,7 @@ const ProfileUser = () => {
           <div className="container-profile-form-infor"></div>
         </form>
       </div>
-      <Footer />
+
     </div>
   );
 };
