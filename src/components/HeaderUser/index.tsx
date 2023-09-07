@@ -6,12 +6,12 @@ import {
   SearchOutlined,
   UserOutlined,
 } from "@ant-design/icons";
-import { Menu, Drawer } from "antd";
+import { Drawer } from "antd";
 import { useState } from "react";
 import { COLORS, FONTCOLOR, FONTSIZE } from "../../constants";
 import Logo from "../../images/logo.png";
-import "./headerUser.css";
 import DrawerContent from "../DrawerContent";
+import "./headerUser.css";
 const items = [
   {
     label: "Thông tin cá nhân",

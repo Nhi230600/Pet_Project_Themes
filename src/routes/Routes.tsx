@@ -1,20 +1,19 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import BookSpa from "../screens/Booking/BookSpa/BookSpa";
-import BookTrainer from "../screens/Booking/BookTrainer/BookTrainer";
-import { BookCare } from "../screens";
+import { Header } from "../components";
+import { BookCare, BookSpa, BookTrainer } from "../screens";
+import Contact from "../screens/Contact/Contact";
 import MyPet from "../screens/Pet/MyPet/MyPet";
-import Homepage from "../screens/Homepage/Homepage";
 import ProfileUser from "../screens/ProfileUser/ProfileUser";
-import { Header, HeaderUser } from "../components";
+import SideBar from "../components/SideBar";
 
 const Router = createBrowserRouter([
   {
-    path: "/",
-    element: <Header />,
-  },
-  {
     path: "/bookspa",
     element: <BookSpa />,
+  },
+  {
+    path: "/sider",
+    element: <SideBar />,
   },
   {
     path: "/booktrainer",
@@ -29,8 +28,8 @@ const Router = createBrowserRouter([
     element: <MyPet />,
   },
   {
-    path: "/homepage",
-    element: <Homepage />,
+    path: "/contact",
+    element: <Contact />,
   },
   {
     path: "/profile",

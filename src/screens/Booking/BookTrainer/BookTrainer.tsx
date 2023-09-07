@@ -2,7 +2,9 @@ import { Footer, HeaderUser } from "../../../components";
 import { FONTSIZE } from "../../../constants";
 import "./BookTrainer.css";
 
-const BookTrainer = () => {
+type BookTrainerProps = {};
+
+const BookTrainer = (props: BookTrainerProps) => {
   return (
     <div>
       <HeaderUser />

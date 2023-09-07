@@ -1,0 +1,13 @@
+.container-sidebar {
+    display: flex;
+}
+.container-sidebar-sider {
+    padding: 1rem;
+}
+.container-sidebar-content {
+    display: flex;
+}
+.container-sidebar-content-header {
+    padding: 2rem;
+}
+
