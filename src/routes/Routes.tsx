@@ -4,9 +4,7 @@ import { BookCare, BookTrainer } from "../screens";
 import MyPet from "../screens/Pet/MyPet/MyPet";
 import Homepage from "../screens/Homepage/Homepage";
 import Contact from "../screens/Contact/Contact";
-import BookTrainer from "../screens/Booking/BookTrainer/BookTrainer";
-import MyPet from "../screens/Pet/MyPet/MyPet";
-import Homepage from "../screens/Homepage/Homepage";
+
 import ProfileUser from "../screens/ProfileUser/ProfileUser";
 
 const Router = createBrowserRouter([

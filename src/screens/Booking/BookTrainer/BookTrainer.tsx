@@ -6,10 +6,10 @@ import "./BookTrainer.css";
 type BookTrainerProps = {};
 
 const BookTrainer = (props: BookTrainerProps) => {
-  const {} = props;
+  const { } = props;
 
 
-const BookTrainer = () => {
+
   return (
     <div>
       <HeaderUser />
@@ -70,9 +70,9 @@ const BookTrainer = () => {
           </form>
         </div>
       </div>
-      <Footer />
+
     </div>
   );
 };
 
-export default BookTrainer
+export default BookTrainer;
