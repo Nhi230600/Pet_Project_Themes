@@ -10,7 +10,6 @@ import { useState } from "react";
 import { FONTSIZE } from "../../constants";
 import Logo from "../../images/logo.png";
 import "./SideBar.css";
-import { ManageEmp } from "../../screens";
 
 const SideBar = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -63,7 +62,7 @@ const SideBar = () => {
               backgroundColor: "white",
             }}
           >
-            <ManageEmp />
+            Content
           </div>
         </Content>
         <Footer
