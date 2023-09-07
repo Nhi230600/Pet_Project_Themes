@@ -5,8 +5,13 @@ import { BookCare } from "../screens";
 import MyPet from "../screens/Pet/MyPet/MyPet";
 import Homepage from "../screens/Homepage/Homepage";
 import ProfileUser from "../screens/ProfileUser/ProfileUser";
+import { Header, HeaderUser } from "../components";
 
 const Router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Header />,
+  },
   {
     path: "/bookspa",
     element: <BookSpa />,

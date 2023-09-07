@@ -1,7 +1,5 @@
 import { Carousel } from "antd";
 import "./Homepage.css";
-// import { Carousel } from 'antd'
-// import SliderAnimation from '../../components/SliderAnimation/SliderAnimation'
 
 const Homepage = () => {
   const Slider = document.querySelector("SliderAnimation");
