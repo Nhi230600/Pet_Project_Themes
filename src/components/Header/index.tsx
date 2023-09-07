@@ -1,18 +1,53 @@
-import { SearchOutlined } from "@ant-design/icons";
+import {
+  LogoutOutlined,
+  MenuFoldOutlined,
+  MenuUnfoldOutlined,
+  QqOutlined,
+  SearchOutlined,
+  UserOutlined,
+} from "@ant-design/icons";
 import { Modal } from "antd";
+
 import { useState } from "react";
 import { COLORS, FONTCOLOR, FONTSIZE } from "../../constants";
+import { Menu, Drawer } from "antd";
 import Logo from "../../images/logo.png";
 import LoginPage from "../../screens/LoginPage/LoginPage";
 import RegisterPage from "../../screens/RegisterPage/RegisterPage";
+import DrawerContent from "../DrawerContent";
 import "./Header.css";
+import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
+
 
 
 
 const Header = () => {
   const [isModalLoginOpen, setIsModalLoginOpen] = useState(false);
   const [isModalRegisterOpen, setIsModalRegisterOpen] = useState(false);
+  const [collapsed, setCollapsed] = useState(false);
+  const toggleCollapsed = () => {
+    setCollapsed(!collapsed);
+  };
+  const [placement, setPlacement] = useState("left");
+  const [open, setOpen] = useState(false);
+  const accountJson = sessionStorage.getItem('account');
 
+
+  let account;
+
+
+  if (accountJson !== null) {
+    account = JSON.parse(accountJson);
+  } else {
+    account = null; // or provide a default value
+  }
+  const onClose = () => {
+    setOpen(false);
+  };
+  const showDrawer = () => {
+    setOpen(true);
+  };
   const showModalLogin = () => {
     setIsModalLoginOpen(true);
   };
@@ -65,71 +100,93 @@ const Header = () => {
             </button>
           </div>
         </div>
-        <div
-          className="header-button"
-          style={{ fontSize: FONTSIZE.textButton }}
-        >
-          <div className="header-button-login">
-            <button
-              className="header-button-login-action"
-              onClick={showModalLogin}
-            >
-              Đăng nhập
-            </button>
-            <Modal
-              width={800}
-              open={isModalLoginOpen}
-              onCancel={handleCancelLogin}
-              footer={[]}
-            >
-              <LoginPage />
-            </Modal>
+        {!account ? (
+          <div
+            className="header-button"
+            style={{ fontSize: FONTSIZE.textButton }}
+          >
+            <div className="header-button-login">
+              <button
+                className="header-button-login-action"
+                onClick={showModalLogin}
+              >
+                Đăng nhập
+              </button>
+              <Modal
+                width={800}
+                open={isModalLoginOpen}
+                onCancel={handleCancelLogin}
+                footer={[]}
+              >
+                <LoginPage />
+              </Modal>
+            </div>
+            <div className="header-button-register">
+              <button
+                className="header-button-register-action"
+                onClick={showModalRegister}
+              >
+                Đăng ký
+              </button>
+              <Modal
+                width={800}
+                open={isModalRegisterOpen}
+                onCancel={handleCancelRegister}
+                footer={[]}
+              >
+                <RegisterPage />
+              </Modal>
+            </div>
           </div>
-          <div className="header-button-register">
+        ) : (
+          <div className="header-user" style={{ fontSize: FONTSIZE.textButton }}>
             <button
-              className="header-button-register-action"
-              onClick={showModalRegister}
+              style={{ fontSize: FONTSIZE.text }}
+              className="header-user-button"
+              onClick={showDrawer}
             >
-              Đăng ký
+              {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
             </button>
-            <Modal
-              width={800}
-              open={isModalRegisterOpen}
-              onCancel={handleCancelRegister}
-              footer={[]}
+            <Drawer
+              closable={false}
+              onClose={onClose}
+              open={open}
+              key={placement}
             >
-              <RegisterPage />
-            </Modal>
+              <DrawerContent />
+            </Drawer>
           </div>
-        </div>
+        )
+
+        }
       </div>
       <div className="header-nav" style={{ fontSize: FONTSIZE.textNav }}>
         <ul className="header-nav-list">
           <li className="header-nav-list-name">
-            <a className="header-nav-list-homepage" href="">
-              TRANG CHỦ
-            </a>
+
+            <Link to="/">TRANG CHỦ</Link>
+
           </li>
           <li className="header-nav-list-name">
-            <a className="header-nav-list-service" href="">
-              DỊCH VỤ
-            </a>
+
+            <Link to="/service">Dịch vụ</Link>
+
             <ul className="header-nav-list-sub">
               <li data-url="#">
-                <a>Cắt tỉa lông tại nhà</a>
+                <Link to="/service">Spa</Link>
               </li>
               <li>
-                <a href="#">Tắm - Vệ sinh tại nhà</a>
+                <Link to="/service">Huấn luyện</Link>
+
               </li>
               <li>
-                <a href="#">Combo tốt nhất</a>
+                <Link to="/service">Chăm sóc sức khỏe</Link>
+
               </li>
             </ul>
           </li>
           <li className="header-nav-list-name">
-            <a className="header-nav-list-blog" href="">
-              BLOG
-            </a>
+            <Link to="/blog">Blog</Link>
             <ul className="header-nav-list-sub">
               <li>
                 <a href="https://mypet.vn/chia-se-kinh-nghiem-cham-soc-thu-cung/">
@@ -153,22 +210,7 @@ const Header = () => {
               LIÊN HỆ
             </a>
           </li>
-          <li className="header-nav-list-name">
-            <a className="header-nav-list-booking">
-              ONLINE BOOKING <i className="fas fa-paper-plane"></i>
-            </a>
-            <ul className="header-nav-list-sub">
-              <li>
-                <a href="/bookspa">Đặt lịch Spa</a>
-              </li>
-              <li>
-                <a href="/bookcare">Đặt lịch khám bệnh</a>
-              </li>
-              <li>
-                <a href="/booktrainer">Đặt lịch huấn luyện</a>
-              </li>
-            </ul>
-          </li>
+          
         </ul>
       </div>
     </header>

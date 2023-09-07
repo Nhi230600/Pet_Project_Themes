@@ -1,18 +1,18 @@
 import React from 'react'
-import { Footer, HeaderUser } from "../../../components";
+import { Footer, Header } from "../../../components";
 import { FONTSIZE } from "../../../constants";
 import "./BookTrainer.css";
 
 type BookTrainerProps = {};
 
 const BookTrainer = (props: BookTrainerProps) => {
-  const {} = props;
+  const { } = props;
 
 
-const BookTrainer = () => {
+
   return (
     <div>
-      <HeaderUser />
+      <Header />
       <div className="container-booktrainer">
         <div
           className="container-booktrainer-heading"
@@ -70,9 +70,9 @@ const BookTrainer = () => {
           </form>
         </div>
       </div>
-      <Footer />
+
     </div>
   );
 };
 
-export default BookTrainer
+export default BookTrainer;

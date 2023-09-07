@@ -1,17 +1,16 @@
 import React from 'react'
 import './BookCare.css'
-import Header from '../../../components/Header'
-import Footer from '../../../components/Footer'
-import { FONTSIZE } from '../../../constants'
+
+
 import { DatePicker, Space } from 'antd';
-import { Footer, HeaderUser } from "../../../components";
+import { Footer, Header } from "../../../components";
 import { FONTSIZE } from "../../../constants";
 import "./BookCare.css";
 
 const BookCare = () => {
   return (
     <div>
-      <HeaderUser />
+      <Header />
       <div className="container-bookcare">
         <div
           className="container-bookcare-heading"
@@ -70,7 +69,6 @@ const BookCare = () => {
           </form>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };
