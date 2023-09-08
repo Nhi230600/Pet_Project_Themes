@@ -85,6 +85,7 @@ const Homepage = () => {
 
         {/* Contact-END */}
 
+
         {/* Training-START */}
 
         <div className="trainer" style={{font: FONTFAMILY.primary}}>

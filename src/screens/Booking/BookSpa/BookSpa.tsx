@@ -1,18 +1,11 @@
-import React from 'react'
-import './BookSpa.css'
-import { Header, Footer } from '../../../components'
-import { FONTSIZE } from '../../../constants'
-
-
-
+import { HeaderUser } from "../../../components";
 import Footer from "../../../components/Footer";
-import Header from "../../../components/Header";
 import "./BookSpa.css";
 
 const BookSpa = () => {
   return (
     <>
-      <Header />
+      <HeaderUser />
       <div className="booking-spa">
         <h1 className="booking-spa-title">Booking Online 24/7</h1>
         <div className="booking-spa-form">
@@ -70,7 +63,7 @@ const BookSpa = () => {
         </div>
       </div>
 
-      <Footer />
+
     </>
   );
 };

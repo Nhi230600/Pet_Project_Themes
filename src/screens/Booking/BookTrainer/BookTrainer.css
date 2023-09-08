@@ -1,11 +1,10 @@
 .container-booktrainer {
     display: block;
     height: 100%;
-    background-image: url('../../../images/cute-little-dog-with-hat.jpg');
+    background-image: url('../../../images/booking-image.avif');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 30%;
-    background-position:right;
     margin-bottom: 0;
     padding:6rem 0;
 }

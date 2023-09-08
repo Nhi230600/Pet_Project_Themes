@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Checkbox, Form, Input } from "antd";
 import "./Register.css";
 import Logo from "../../images/logo.png";
@@ -10,6 +11,41 @@ const RegisterPage = () => {
   const onFinishFailed = (errorInfo: any) => {
     console.log("Failed:", errorInfo);
   };
+=======
+import { Form, Input } from "antd";
+import { FONTSIZE } from "../../constants";
+import Logo from "../../images/logo.png";
+import "./RegisterPage.css";
+import { useState } from "react";
+
+const RegisterPage = () => {
+  const [values, setValues] = useState({
+    name: "",
+    phonenumber: "",
+    email: "",
+    username: "",
+    password: "",
+    repeatpassword: "",
+  });
+
+  function handleInput(event: any) {
+    const newObj = { ...values, [event.target.name]: event.target.value };
+    setValues(newObj);
+  }
+
+  function handleValidation(event: any) {
+    event.preventDefault();
+  }
+
+  const onFinish = (values: any) => {
+    console.log("Success:", values);
+  };
+
+  const onFinishFailed = (errorInfo: any) => {
+    console.log("Failed:", errorInfo);
+  };
+
+>>>>>>> master
   return (
     <div className="container-register">
       <div className="container-register-header">
@@ -99,7 +135,11 @@ const RegisterPage = () => {
           rules={[
             {
               required: true,
+<<<<<<< HEAD
               message: "Please input your phone number!",
+=======
+              message: "Please input your username!",
+>>>>>>> master
             },
           ]}
         >
@@ -129,7 +169,11 @@ const RegisterPage = () => {
         </Form.Item>
         <Form.Item
           label="Nhập lại mật khẩu: "
+<<<<<<< HEAD
           name="password"
+=======
+          name="repeatpassword"
+>>>>>>> master
           rules={[
             {
               required: true,
@@ -151,7 +195,15 @@ const RegisterPage = () => {
             span: 16,
           }}
         >
+<<<<<<< HEAD
           <button type="submit" className="container-register-submit">
+=======
+          <button
+            onSubmit={handleValidation}
+            type="submit"
+            className="container-register-submit"
+          >
+>>>>>>> master
             Đăng ký
           </button>
         </Form.Item>
