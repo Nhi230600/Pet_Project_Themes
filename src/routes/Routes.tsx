@@ -9,6 +9,11 @@ import AddEmployeePage from "../screens/Employee/Add";
 import EmployeeDetailPage from "../screens/Employee/Detail";
 import ProfileUser from "../screens/ProfileUser/ProfileUser";
 import EmployeeEditPage from "../screens/Employee/Edit";
+import DashboardPage from "../screens/DashBoard";
+import ViewServicePage from "../screens/Service/View";
+import AddServicePage from "../screens/Service/Add";
+import EditServicePage from "../screens/Service/Edit";
+import AddShiftPage from "../screens/Employee/Add-Shift";
 
 const Router = createBrowserRouter([
   {
@@ -55,6 +60,27 @@ const Router = createBrowserRouter([
     path: "/employee/edit",
     element: <EmployeeEditPage />,
   },
+  {
+    path: "/dashboard",
+    element: <DashboardPage />,
+  },
+  {
+    path: "/admin/service",
+    element: <ViewServicePage />,
+  },
+  {
+    path: "/admin/service/add",
+    element: <AddServicePage />,
+  },
+  {
+    path: "/admin/service/edit",
+    element: <EditServicePage />,
+  },
+  {
+    path: "/employee/add-shift",
+    element: <AddShiftPage />,
+  },
+
 
 ]);
 

@@ -116,6 +116,27 @@
 }
 .edit-button {
     position: absolute; /* Thiết lập vị trí tuyệt đối */
-    bottom: 20px; /* Khoảng cách từ dưới cùng là 20px */
+    bottom: 200px; /* Khoảng cách từ dưới cùng là 20px */
     right: 20px; /* Khoảng cách từ bên phải cùng là 20px */
   }
+  /* Trong tệp EmployeeDetailPage.css */
+.add-shift-button {
+  position: absolute;
+  bottom: 100px; /* Điều chỉnh khoảng cách từ dưới */
+  right: 20px; /* Điều chỉnh khoảng cách từ phải */
+  z-index: 1; /* Đảm bảo nút này hiển thị phía trên các phần tử khác có z-index mặc định */
+}
+.green-status {
+  background-color: green; /* Hoặc màu xanh khác mà bạn muốn sử dụng */
+  color: white; /* Màu chữ */
+  cursor: pointer; /* Biểu tượng con trỏ khi di chuột vào */
+}
+
+.gray-status {
+  background-color: gray; /* Hoặc màu xám khác mà bạn muốn sử dụng */
+  color: white; /* Màu chữ */
+  cursor: not-allowed; /* Biểu tượng con trỏ tắt khi di chuột vào */
+  pointer-events: none; /* Tắt sự kiện click */
+}
+
+

@@ -1,0 +1,40 @@
+.edit-service-page {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .edit-service-page h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .edit-service-page form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .edit-service-page .ant-form-item-label {
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .edit-service-page .ant-select {
+    width: 100%;
+  }
+  
+  .edit-service-page .ant-input,
+  .edit-service-page .ant-input-number,
+  .edit-service-page .ant-select-selector,
+  .edit-service-page .ant-btn {
+    margin-bottom: 16px;
+  }
+  
+  .edit-service-page .ant-btn {
+    align-self: flex-end;
+  }
+  

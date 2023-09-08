@@ -1,0 +1,26 @@
+/* AddShiftPage.css */
+.add-shift-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.shift-card {
+  width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+/* AddShiftPage.css */
+
+
+/* Đảm bảo rằng các trường Form.Item chiếm đủ chiều dài */
+.form-item {
+    width: 600px;
+}
+.button {
+  width: 300px;
+}
+/* Add more CSS styles as needed */
