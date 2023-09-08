@@ -6,6 +6,7 @@ import ContentDashboard from "../../../../components/ContentDashboard";
 import SideBar from "../../../../components/SideBar";
 import { FONTSIZE } from "../../../../constants";
 import "./Dashboard.css";
+import FooterDashboard from "../../../../components/FooterDashboard";
 
 const Dashboard = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -38,6 +39,7 @@ const Dashboard = () => {
             </button>
           </div>
           <ContentDashboard />
+          <FooterDashboard />
         </Layout>
       </div>
     </div>

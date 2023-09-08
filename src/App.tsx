@@ -12,8 +12,6 @@ const App = () => {
       <Header />
       <HeaderDashboard />
       <ToastContainer />
-      <Router />
-      <FooterDashboard />
       <Routes />
       <Footer />
     </div>
