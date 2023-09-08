@@ -1,4 +1,8 @@
-import { DeleteOutlined, InfoCircleOutlined } from "@ant-design/icons";
+import {
+  DeleteOutlined,
+  InfoCircleOutlined,
+  EditOutlined,
+} from "@ant-design/icons";
 import { Button, Form, Table, Tooltip } from "antd";
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -136,9 +140,6 @@ const ViewList = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(5);
   const navigate = useNavigate();
-  const showModal = () => {
-    navigate("/employee/add");
-  };
 
   const handleCancel = () => {
     setIsModalVisible(false);
@@ -166,7 +167,10 @@ const ViewList = () => {
     // Chuyển hướng đến trang employeedetail và truyền thông tin chi tiết nhân viên
     navigate(`/employee/detail`, { state: { employee: record } });
   };
-
+  const handleEditEmployee = (record: Employee) => {
+    // Chuyển hướng đến trang employeeedit và cho phép chỉnh sửa nhân viên
+    navigate(`/employee/edit`, { state: { employee: record } });
+  };
   const handleDeleteEmployee = (record: Employee) => {
     const updatedEmployees = employees.filter(
       (employee) => employee !== record
@@ -222,7 +226,15 @@ const ViewList = () => {
             <Button
               type="primary"
               icon={<DeleteOutlined />}
+              style={{ marginRight: 8 }}
               onClick={() => handleDeleteEmployee(record)}
+            />
+          </Tooltip>
+          <Tooltip title="Chỉnh sửa thông tin">
+            <Button
+              type="primary"
+              icon={<EditOutlined />}
+              onClick={() => handleEditEmployee(record)}
             />
           </Tooltip>
         </span>

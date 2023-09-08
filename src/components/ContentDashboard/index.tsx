@@ -1,7 +1,7 @@
 import React from "react";
 import "./ContentDashboard.css";
 import { Content } from "antd/lib/layout/layout";
-import { ViewList } from "../../screens";
+import { EditEmp, ViewList } from "../../screens";
 
 const ContentDashboard = () => {
   return (
