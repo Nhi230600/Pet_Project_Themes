@@ -1,10 +1,10 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Header } from "../components";
-import { BookCare, BookSpa, BookTrainer } from "../screens";
+import { AddEmp, BookCare, BookSpa, BookTrainer, Dashboard } from "../screens";
 import Contact from "../screens/Contact/Contact";
 import MyPet from "../screens/Pet/MyPet/MyPet";
 import ProfileUser from "../screens/ProfileUser/ProfileUser";
-import SideBar from "../components/SideBar";
+import ViewList from "../screens/ListEmployee/ViewList";
+// import ViewList from "../screens/Admin/EmployeeManage/ListEmployee/ViewList";
 
 const Router = createBrowserRouter([
   {
@@ -12,8 +12,8 @@ const Router = createBrowserRouter([
     element: <BookSpa />,
   },
   {
-    path: "/sider",
-    element: <SideBar />,
+    path: "/dashboard",
+    element: <Dashboard />,
   },
   {
     path: "/booktrainer",
@@ -34,6 +34,14 @@ const Router = createBrowserRouter([
   {
     path: "/profile",
     element: <ProfileUser />,
+  },
+  {
+    path: "/employee/list",
+    element: <ViewList />,
+  },
+  {
+    path: "/employee/add",
+    element: <AddEmp />,
   },
 ]);
 

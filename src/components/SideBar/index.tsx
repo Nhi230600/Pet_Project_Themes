@@ -1,87 +1,48 @@
 import {
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
+  AppstoreOutlined,
+  ShopOutlined,
+  ShoppingCartOutlined,
   UserOutlined,
 } from "@ant-design/icons";
-import { Layout, Menu } from "antd";
-import Sider from "antd/lib/layout/Sider";
-import { Content, Footer } from "antd/lib/layout/layout";
-import { useState } from "react";
-import { FONTSIZE } from "../../constants";
-import Logo from "../../images/logo.png";
+import { Menu } from "antd";
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./SideBar.css";
 
 const SideBar = () => {
-  const [collapsed, setCollapsed] = useState(false);
+  const location = useLocation();
+  const [selectedKeys, setSelectedKeys] = useState("/dashboard");
 
+  useEffect(() => {
+    const pathName = location.pathname;
+    setSelectedKeys(pathName);
+  }, [location.pathname]);
+
+  const navigate = useNavigate();
   return (
-    <div className="container-sidebar">
-      <Sider
-        className="container-sidebar-sider"
-        trigger={null}
-        collapsible
-        collapsed={collapsed}
-        width={300}
-      >
-        <Menu
-          theme="dark"
-          mode="inline"
-          defaultSelectedKeys={["1"]}
-          items={[
-            {
-              key: "1",
-              icon: <UserOutlined />,
-              label: "Danh sách nhân viên",
-            },
-          ]}
-        />
-      </Sider>
-      <Layout className="container-sidebar-content">
-        <div className="container-sidebar-content-header">
-          <button
-            style={{
-              fontSize: FONTSIZE.text,
-              cursor: "pointer",
-              borderRadius: "0.2vw",
-              border: "0.1vw solid black",
-            }}
-            onClick={() => setCollapsed(!collapsed)}
-          >
-            {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-          </button>
-        </div>
-        <Content
-          style={{
-            margin: "24px 16px 0",
-          }}
-        >
-          <div
-            style={{
-              padding: 24,
-              minHeight: 360,
-              backgroundColor: "white",
-            }}
-          >
-            Content
-          </div>
-        </Content>
-        <Footer
-          style={{
-            textAlign: "center",
-            width: "100%",
-            fontSize: FONTSIZE.text,
-          }}
-        >
-          <img
-            src={Logo}
-            alt="logo"
-            style={{ width: "20vw", height: "auto" }}
-          />
-          NgáoService ©2023 Created by NgáoService
-        </Footer>
-      </Layout>
+    <div className="sidebar">
+      <Menu
+        className="SideMenuVertical"
+        mode="vertical"
+        onClick={(item) => {
+          //item.key
+          navigate(item.key);
+        }}
+        selectedKeys={[selectedKeys]}
+        items={[
+          {
+            label: "Dashboard",
+            icon: <AppstoreOutlined />,
+            key: "/dashboard",
+          },
+          {
+            label: "Danh sách nhân viên",
+            key: "/employee/list",
+            icon: <UserOutlined />,
+          },
+        ]}
+      ></Menu>
     </div>
   );
 };
-
 export default SideBar;
