@@ -76,10 +76,7 @@
     "test": "craco test",
     "analyze": "cross-env REACT_INTERACTIVE_ANALYZE=1 yarn build",
     "eject": "react-scripts eject",
-    "commit": "git add . && npx git-cz",
-    "clean-files": "rm -rf ./template/public ./template/src && rm -f ./template/README.md ./template/tsconfig.json ./template/craco.config.js ./template/tailwind.config.js",
-    "copy-files": "cp -a ./src/. template/src && cp -a ./public/. template/public && cp tsconfig.json README.md craco.config.js tailwind.config.js template/",
-    "prepublish": "yarn clean-files && yarn copy-files"
+    "commit": "git add . && npx git-cz"
   },
   "eslintConfig": {
     "extends": [
