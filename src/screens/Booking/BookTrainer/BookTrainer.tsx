@@ -65,7 +65,7 @@ const BookTrainer = (props: BookTrainerProps) => {
           </form>
         </div>
       </div>
-      <Footer />
+
     </div>
   );
 };

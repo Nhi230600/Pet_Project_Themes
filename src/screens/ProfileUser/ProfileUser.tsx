@@ -147,7 +147,7 @@ const ProfileUser = () => {
           </div>
         </form>
       </div>
-      <Footer />
+
     </div>
   );
 };

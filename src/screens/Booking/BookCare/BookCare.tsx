@@ -1,12 +1,12 @@
 import { DatePicker, Space } from "antd";
-import { Footer, HeaderUser } from "../../../components";
-import { FONTSIZE } from "../../../constants";
 import "./BookCare.css";
+import { FONTSIZE } from "../../../constants";
+import { Header } from "../../../components";
 
 const BookCare = () => {
   return (
     <div>
-      <HeaderUser />
+      <Header />
       <div className="container-bookcare">
         <div
           className="container-bookcare-heading"
@@ -65,7 +65,6 @@ const BookCare = () => {
           </form>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

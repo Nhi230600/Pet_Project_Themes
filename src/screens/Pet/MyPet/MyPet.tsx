@@ -151,7 +151,7 @@ const MyPet = () => {
           <img src={ImagePet} alt="Image" style={{ width: "100%" }} />
         </div>
       </div>
-      <Footer />
+
     </div>
   );
 };
