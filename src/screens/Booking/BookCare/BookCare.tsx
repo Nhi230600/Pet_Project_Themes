@@ -1,17 +1,12 @@
-import React from 'react'
-import './BookCare.css'
-import Header from '../../../components/Header'
-
-
-import { DatePicker, Space } from 'antd';
-import { Footer, HeaderUser } from "../../../components";
-import { FONTSIZE } from "../../../constants";
+import { DatePicker, Space } from "antd";
 import "./BookCare.css";
+import { FONTSIZE } from "../../../constants";
+import { Header } from "../../../components";
 
 const BookCare = () => {
   return (
     <div>
-      <HeaderUser />
+      <Header />
       <div className="container-bookcare">
         <div
           className="container-bookcare-heading"

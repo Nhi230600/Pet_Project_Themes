@@ -1,0 +1,13 @@
+.logoheader {
+    display: block;
+    width: 20%;
+    height: auto;
+    text-align: center;
+}
+.logoheader-image {
+    width: 100%;
+    height: auto;
+}
+.logoheader-name {
+    text-Shadow: 0.1rem 0.1rem 0.1rem white;
+}

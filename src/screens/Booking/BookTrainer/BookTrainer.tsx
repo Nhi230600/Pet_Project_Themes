@@ -1,4 +1,3 @@
-import React from 'react'
 import { Footer, HeaderUser } from "../../../components";
 import { FONTSIZE } from "../../../constants";
 import "./BookTrainer.css";
@@ -6,10 +5,6 @@ import "./BookTrainer.css";
 type BookTrainerProps = {};
 
 const BookTrainer = (props: BookTrainerProps) => {
-  const { } = props;
-
-
-
   return (
     <div>
       <HeaderUser />

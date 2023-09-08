@@ -2,14 +2,35 @@ import { Form, Input } from "antd";
 import { FONTSIZE } from "../../constants";
 import Logo from "../../images/logo.png";
 import "./RegisterPage.css";
+import { useState } from "react";
 
 const RegisterPage = () => {
+  const [values, setValues] = useState({
+    name: "",
+    phonenumber: "",
+    email: "",
+    username: "",
+    password: "",
+    repeatpassword: "",
+  });
+
+  function handleInput(event: any) {
+    const newObj = { ...values, [event.target.name]: event.target.value };
+    setValues(newObj);
+  }
+
+  function handleValidation(event: any) {
+    event.preventDefault();
+  }
+
   const onFinish = (values: any) => {
     console.log("Success:", values);
   };
+
   const onFinishFailed = (errorInfo: any) => {
     console.log("Failed:", errorInfo);
   };
+
   return (
     <div className="container-register">
       <div className="container-register-header">
@@ -129,7 +150,7 @@ const RegisterPage = () => {
         </Form.Item>
         <Form.Item
           label="Nhập lại mật khẩu: "
-          name="password"
+          name="repeatpassword"
           rules={[
             {
               required: true,
@@ -151,7 +172,11 @@ const RegisterPage = () => {
             span: 16,
           }}
         >
-          <button type="submit" className="container-register-submit">
+          <button
+            onSubmit={handleValidation}
+            type="submit"
+            className="container-register-submit"
+          >
             Đăng ký
           </button>
         </Form.Item>
