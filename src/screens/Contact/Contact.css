@@ -3,19 +3,24 @@
     display: flex;
     padding: 5rem;
     box-sizing: border-box;
-    gap: 4rem;
+    gap: 5rem;
+    
+    
 }
 
 .container-contact-info{
+    width: 50%;
+    text-align: justify;
     
 }
 
 .container-contact-form{
     
-
+    
 }
 
 .form-contact{
+    
     padding: 2rem;
     height: auto;
     border: 0.1rem solid rgb(245, 214, 129);
@@ -23,11 +28,75 @@
     border-radius: 20px;
 }
 
-.form-contact-2{
-    display: block;
+.form-contact > div{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
 
+.form-contact-1-input{
+    width: 30rem;
+}
+.form-contact-2{
+    display: flex;
+    gap: 2rem
+}
+
+.form-contact-2-phone{
+    display: block;
+}
+
+.form-contact-2-phone-input{
+    width: 11rem;
+}
+
+.form-contact-2-email-input{
+    width: 17rem;
+}
+
+.form-contact-3-text{
+    width: 30rem;
+    text-align: justify;
+}
+
+.form-button-send
+{
+    margin-top: 1rem;
+}
+.styled {
+    cursor: pointer;
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: rgba(220, 0, 0, 1);
+    background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
+    box-shadow:
+      inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+      inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+}
+  
+.styled:hover {
+    background-color: rgba(255, 0, 0, 1);
+}
+  
+.styled:active {
+    box-shadow:
+      inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+      inset 2px 2px 3px rgba(0, 0, 0, 0.6);
 }
 
 strong{
     color: red;
 }
+
+.container-contact-info-1-title {
+    text-shadow: 0.1rem 0.1rem 0.1rem yellow;
+    font-weight: bold;
+    font-size: x-large;
+    
+}
+

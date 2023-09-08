@@ -3,11 +3,6 @@ import { Footer, HeaderUser } from "../../../components";
 import { FONTSIZE } from "../../../constants";
 import "./BookTrainer.css";
 
-type BookTrainerProps = {};
-
-const BookTrainer = (props: BookTrainerProps) => {
-  const {} = props;
-
 
 const BookTrainer = () => {
   return (
@@ -75,4 +70,4 @@ const BookTrainer = () => {
   );
 };
 
-export default BookTrainer
+export default BookTrainer;

@@ -11,7 +11,7 @@ const Contact = () => {
         <div className="container-contact">
             <div className="container-contact-info">
                 <div className="container-contact-info-1">
-                    <span>Liên hệ</span>
+                    <span className='container-contact-info-1-title'>Liên hệ</span>
                     <h1>Hãy ghé thăm NgáoService nhé!</h1>        
                 </div>
                 <div className="container-contact-info-2">
@@ -32,18 +32,34 @@ const Contact = () => {
                     <span>Các trường đánh dấu <strong>*</strong> là bắt buộc</span><br />
                     <div className="form-contact-1">
                         <h3>Họ và tên <strong>*</strong></h3>
-                        <input type="text" id='name-contact' name='name-contact' placeholder='...'/>
+                        <input className='form-contact-1-input' type="text" id='name-contact' name='name-contact' placeholder='...' required onInvalid={e => (e.target as HTMLInputElement).setCustomValidity('Vui lòng nhập họ và tên.')} onInput={e => (e.target as HTMLInputElement).setCustomValidity('')}/>
                     </div>
                     <div className="form-contact-2">
-                        <div><p>Đóng góp ý kiến hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</p> </div>
-                        <div><p>Các trường đánh dấu <strong>*</strong> là bắt buộc</p></div>
+                        <div className="form-contact-2-phone">
+                            <h3>Số điện thoại <strong>*</strong> </h3>
+                            <input className='form-contact-2-phone-input' type="text" id='phone-contact' name='phone-contact' placeholder='...'/>
+                        </div>
+                        <div className="form-contact-2-email">
+                            <h3>Email <strong>*</strong></h3>
+                            <input className='form-contact-2-email-input' type="text" id='email-contact' name='email-contact' placeholder='...'/>
+                        </div>
                     </div>
+                    <div className="form-contact-3">
+                        <h3>Lời nhắn <strong>*</strong></h3>
+                        <textarea name="text" className="form-contact-3-text" rows={8} placeholder='NgáoService luôn lắng nghe mọi đóng góp quý báu và không ngừng nâng cấp cải thiện chất lượng dịch vụ nhằm phục vụ quý khách hàng một cách tốt nhất.'></textarea>
+                    </div>
+                    <div>
+                        <button className="form-button-send styled" type="submit">Gửi yêu cầu</button>    
+                    </div>
+                    
                 </form>
             </div>
         </div>
         <Footer />
     </div>
+   
   )
 }
 
 export default Contact
+

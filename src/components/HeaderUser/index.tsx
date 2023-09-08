@@ -152,7 +152,7 @@ const HeaderUser = () => {
             </ul>
           </li>
           <li className="header-nav-list-name">
-            <a href="contact.html" className="navContact">
+            <a href="/contact" className="navContact">
               LIÊN HỆ
             </a>
           </li>
