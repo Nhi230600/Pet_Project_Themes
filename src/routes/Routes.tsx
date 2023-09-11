@@ -14,6 +14,7 @@ import ViewServicePage from "../screens/Service/View";
 import AddServicePage from "../screens/Service/Add";
 import EditServicePage from "../screens/Service/Edit";
 import AddShiftPage from "../screens/Employee/Add-Shift";
+import ViewAppointmentAdmin from "../screens/Admin-menu/appointment/View";
 
 const Router = createBrowserRouter([
   {
@@ -79,6 +80,10 @@ const Router = createBrowserRouter([
   {
     path: "/employee/add-shift",
     element: <AddShiftPage />,
+  },
+  {
+    path: "/admin/appointment",
+    element: <ViewAppointmentAdmin />,
   },
 
 
