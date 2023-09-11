@@ -1,0 +1,25 @@
+:root {
+    
+}
+.header {
+    display: block ;
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+}
+.header-logo-search {
+    display: flex;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+.header-nav {
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content:center;
+    align-items: center;
+}

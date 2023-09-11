@@ -1,0 +1,91 @@
+.container-booktrainer {
+    display: block;
+    height: 100%;
+    background-image: url('../../../images/booking-image.avif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 30%;
+    margin-bottom: 0;
+    padding:6rem 0;
+}
+.container-booktrainer-heading {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    text-Shadow:0.2rem 0.2rem 0.2rem white;
+    font-weight: 600;
+}
+.container-booktrainer-content {
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+.container-booktrainer-content-form {
+    margin: 2rem 5rem;
+    padding: 3rem;
+    width: 50%;
+    height: auto;
+    border: 0.1rem solid rgb(245, 214, 129);
+    background: linear-gradient(#f5d681, #8dd9ec);
+    border-radius: 20px;
+}
+.container-booktrainer-content-form > p{
+    font-size: medium;
+    font-weight: 500;
+}
+.container-booktrainer-content-form > h3{
+    font-size: x-large;
+    font-weight: bold;
+}
+.container-booktrainer-content-form-heading {
+    text-Shadow: 0.1rem 0.1rem 0.1rem rgb(245, 214, 129);
+    text-align: center;
+}
+.important{
+    color: red;
+}
+#form-trainer, #form-training-time{
+    width: 100%;
+    height: 3rem;
+    border-radius: 10px;
+    padding: 0rem 1rem 0rem 1rem;
+    margin: 0.5rem 0rem 1rem 0rem;
+
+}
+
+#form-training-note {
+    width: 100%;
+    height: 10rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+}
+.form-button-send
+{
+    margin-top: 1rem;
+}
+.styled {
+    cursor: pointer;
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: rgba(220, 0, 0, 1);
+    background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
+    box-shadow:
+      inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+      inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+}
+  
+.styled:hover {
+    background-color: rgba(255, 0, 0, 1);
+}
+  
+.styled:active {
+    box-shadow:
+      inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+      inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}

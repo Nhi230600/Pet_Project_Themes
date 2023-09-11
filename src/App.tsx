@@ -1,13 +1,19 @@
-import { Button } from 'antd';
-import { Demo } from './components/Comments';
+import Router from "../src/routes/Routes";
+import FooterDashboard from "./components/FooterDashboard";
+import HeaderDashboard from "./components/HeaderDashboard";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Routes from "../src/routes/Routes";
+import { Footer, Header } from "./components";
 
 const App = () => {
   return (
-    <div className="p-36">
-      <Button className=" bg-red-200">Theme1</Button>
-      <Button className=" bg-yellow-200">Theme2</Button>
-      <Button className=" bg-green-300">Theme2</Button>
-      <Demo />
+    <div className="App">
+      <Header />
+      <HeaderDashboard />
+      <ToastContainer />
+      <Routes />
+      <Footer />
     </div>
   );
 };

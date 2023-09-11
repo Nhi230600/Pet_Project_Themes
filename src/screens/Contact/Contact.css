@@ -1,0 +1,33 @@
+.container-contact{
+    width: 100%;
+    display: flex;
+    padding: 5rem;
+    box-sizing: border-box;
+    gap: 4rem;
+}
+
+.container-contact-info{
+    
+}
+
+.container-contact-form{
+    
+
+}
+
+.form-contact{
+    padding: 2rem;
+    height: auto;
+    border: 0.1rem solid rgb(245, 214, 129);
+    background: linear-gradient(#f5d681, #8dd9ec);
+    border-radius: 20px;
+}
+
+.form-contact-2{
+    display: block;
+
+}
+
+strong{
+    color: red;
+}
