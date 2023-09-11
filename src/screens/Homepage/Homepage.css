@@ -8,11 +8,11 @@
 
 /* Slider */
 
-.slider-img{
+.slider-background{
     padding-top: 50%;
     max-width: 100%;
     position: relative;
-    background: url('../../images/slider-img/carousel1.jpg') center / cover no-repeat;
+    background: center / cover no-repeat;
 
 }
 
