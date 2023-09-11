@@ -1,0 +1,17 @@
+/* Định dạng cho Card bao quanh Form */
+.add-employee-card {
+  width: 400px; /* Độ rộng của Card */
+  margin: 0 auto; /* Để căn giữa theo chiều ngang */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Hiệu ứng bóng đổ */
+}
+
+/* Định dạng cho các phần tử trong Form */
+.add-employee-form {
+  /* Đặt định dạng cho các phần tử của Form tại đây */
+}
+
+/* Định dạng cho nút Submit trong Form */
+.add-employee-button {
+  margin-top: 10px; /* Khoảng cách từ nút Submit đến các trường trước đó */
+}

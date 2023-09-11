@@ -85,8 +85,6 @@ const Router = createBrowserRouter([
     path: "/admin/appointment",
     element: <ViewAppointmentAdmin />,
   },
-
-
 ]);
 
 export default function AppRouter() {
