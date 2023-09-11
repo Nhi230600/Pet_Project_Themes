@@ -1,13 +1,14 @@
 import React from 'react'
 import { Carousel } from 'antd'
 import { FONTFAMILY } from '../../../constants'
+import { url } from 'inspector'
 
 function Hommepagecarousel () { 
   const Sliders = [
     {
       id: 1,
       content: "DỊCH VỤ THÚ CƯNG TẠI NHÀ",
-      imageUrl: "../../../images/slider-img/carousel1.jpg",
+      // imageUrl: url"../../../images/slider-img/carousel1.jpg",
     },
     // {
     //   id: 2,
@@ -26,7 +27,7 @@ function Hommepagecarousel () {
         {Sliders.map((Slider, index) =>
         <div className="slider-container" key={index}>
           <div className="slider-content"> {Slider.content} </div>
-          <img className="slider-background" src={Slider.imageUrl}> </img>
+          {/* <img className="slider-background" src={Slider.imageUrl}> </img> */}
         </div>
         )}  
       </div>  
