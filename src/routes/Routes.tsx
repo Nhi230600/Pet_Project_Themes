@@ -7,7 +7,6 @@ import {
   Dashboard,
   DashboardEmp,
   DetailEmp,
-  PetProfilePage,
 } from "../screens";
 import Contact from "../screens/Contact/Contact";
 
@@ -15,20 +14,15 @@ import EmployeeListPage from "../screens/Employee/ListEmployee";
 import AddEmployeePage from "../screens/Employee/Add";
 import EmployeeDetailPage from "../screens/Employee/Detail";
 import ProfileUser from "../screens/ProfileUser/ProfileUser";
-import ViewList from "../screens/Employee/ListEmployee/ViewList";
-import EditEmployee from "../screens/Employee/EditEmployee/EditEmp";
-// import ViewList from "../screens/Admin/EmployeeManage/ListEmployee/ViewList";
+import EmployeeEditPage from "../screens/Employee/Edit";
+import DashboardPage from "../screens/DashBoard";
+import ViewServicePage from "../screens/Service/View";
+import AddServicePage from "../screens/Service/Add";
+import EditServicePage from "../screens/Service/Edit";
+import AddShiftPage from "../screens/Employee/Add-Shift";
+import ViewAppointmentAdmin from "../screens/Admin-menu/appointment/View";
 
 const Router = createBrowserRouter([
-  {
-    path: "/homepage",
-    element: <Homepage />,
-  },
-
-  {
-    path: "/petprofile",
-    element: <PetProfilePage />,
-  },
   {
     path: "/bookspa",
     element: <BookSpa />,
