@@ -2,6 +2,9 @@ import { faCakeCandles } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Footer, HeaderUser } from "../../../components";
 import { FONTSIZE } from "../../../constants";
+import { Modal } from "antd";
+import { useState } from "react";
+import PetProfilePage from "../../PetProfilePage/PetProfilePage";
 import Avatar_Cat from "../../../images/avatar_cat.jpeg";
 import Avatar_Golden from "../../../images/avatar_golden.jpg";
 import Avatar_Poodle from "../../../images/avatar_poodle.jpg";
@@ -10,6 +13,14 @@ import ImagePet from "../../../images/image-pagemypet.png";
 import "./MyPet.css";
 
 const MyPet = () => {
+  const [isModalPetProfileOpen, setIsModalPetProfileOpen] = useState(false);
+
+  const showModalPetProfile = () => {
+    setIsModalPetProfileOpen(true);
+  };
+  const handleCancelPetProfile = () => {
+    setIsModalPetProfileOpen(false);
+  };
   return (
     <div className="mypet">
       <HeaderUser />
@@ -60,9 +71,18 @@ const MyPet = () => {
               <button
                 className="container-mypet-infor-content-viewdetail-button"
                 style={{ fontSize: FONTSIZE.textButton }}
+                onClick={showModalPetProfile}
               >
                 Xem chi tiết
               </button>
+              <Modal
+                width={1100}
+                open={isModalPetProfileOpen}
+                onCancel={handleCancelPetProfile}
+                footer={[]}
+              >
+                <PetProfilePage />
+              </Modal>
             </div>
           </div>
           <div className="container-mypet-infor-content">
@@ -98,9 +118,18 @@ const MyPet = () => {
               <button
                 className="container-mypet-infor-content-viewdetail-button"
                 style={{ fontSize: FONTSIZE.textButton }}
+                onClick={showModalPetProfile}
               >
                 Xem chi tiết
               </button>
+              <Modal
+                width={1100}
+                open={isModalPetProfileOpen}
+                onCancel={handleCancelPetProfile}
+                footer={[]}
+              >
+                <PetProfilePage />
+              </Modal>
             </div>
           </div>
           <div className="container-mypet-infor-content">
@@ -136,9 +165,18 @@ const MyPet = () => {
               <button
                 className="container-mypet-infor-content-viewdetail-button"
                 style={{ fontSize: FONTSIZE.textButton }}
+                onClick={showModalPetProfile}
               >
                 Xem chi tiết
               </button>
+              <Modal
+                width={1100}
+                open={isModalPetProfileOpen}
+                onCancel={handleCancelPetProfile}
+                footer={[]}
+              >
+                <PetProfilePage />
+              </Modal>
             </div>
           </div>
           <div className="container-mypet-infor-add">
@@ -151,7 +189,6 @@ const MyPet = () => {
           <img src={ImagePet} alt="Image" style={{ width: "100%" }} />
         </div>
       </div>
-
     </div>
   );
 };

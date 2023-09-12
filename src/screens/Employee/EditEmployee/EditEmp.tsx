@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { Form, Input, Button, Select, InputNumber, Upload, Card } from "antd";
 import { useNavigate } from "react-router-dom";
 import "antd/dist/antd.css";
