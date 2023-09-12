@@ -2,6 +2,7 @@ import React from "react";
 import "./ContentDashboard.css";
 import { Content } from "antd/lib/layout/layout";
 import { EditEmp, ViewList } from "../../screens";
+import DashboardPage from "../../screens/DashboardPage/DashboardPage";
 
 const ContentDashboard = () => {
   return (
@@ -18,7 +19,7 @@ const ContentDashboard = () => {
             backgroundColor: "white",
           }}
         >
-          <ViewList />
+          <DashboardPage />
         </div>
       </Content>
     </div>

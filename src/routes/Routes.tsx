@@ -13,6 +13,7 @@ import MyPet from "../screens/Pet/MyPet/MyPet";
 import ProfileUser from "../screens/ProfileUser/ProfileUser";
 import ViewList from "../screens/Employee/ListEmployee/ViewList";
 import EditEmployee from "../screens/Employee/EditEmployee/EditEmp";
+import DashboardPage from "../screens/DashboardPage/DashboardPage";
 // import ViewList from "../screens/Admin/EmployeeManage/ListEmployee/ViewList";
 
 const Router = createBrowserRouter([
@@ -63,6 +64,10 @@ const Router = createBrowserRouter([
   {
     path: "/employee/detail",
     element: <DetailEmp />,
+  },
+  {
+    path: "/dashboardpage",
+    element: <DashboardPage />,
   },
 ]);
 
