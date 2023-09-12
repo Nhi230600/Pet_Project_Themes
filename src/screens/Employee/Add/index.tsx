@@ -1,26 +1,24 @@
 import React, { useState } from "react";
-import {
-  Card,
-  Form,
-  Input,
-  Select,
-  InputNumber,
-  Button,
-  Upload,
-  message,
-} from "antd";
+import { Card, Form, Button, Upload, message } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
 import "antd/dist/antd.css";
 import "./AddEmployeePage.css";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import InputField from "../../../components/InputField";
+import SelectField from "../../../components/SelectField";
+import NumberField from "../../../components/NumberField";
+import { ERROR_MESSAGES } from "../../../components/formConstants";
 
-const { Option } = Select;
+const options = [
+  { value: "Spa", label: "Spa" },
+  { value: "Huấn luyện viên", label: "Huấn luyện viên" },
+  { value: "Bác sĩ", label: "Bác sĩ" },
+];
 
 const AddEmployeePage = () => {
   const [fileList, setFileList] = useState<any[]>([]);
   const [form] = Form.useForm();
-  const [imageUrl, setImageUrl] = useState<string | null>(null);
   const navigate = useNavigate();
   const onFinish = (values: any) => {
     toast.success("Thêm nhân viên thành công");
@@ -36,7 +34,6 @@ const AddEmployeePage = () => {
 
   const checkFile = (file: any) => {
     if (fileList.length >= 1) {
-      // Đã có tệp được tải lên, không cho phép tải lên thêm
       return false;
     }
     return true;
@@ -45,6 +42,7 @@ const AddEmployeePage = () => {
   return (
     <Card title="Thêm nhân viên" className="add-employee-card">
       <Form name="addEmployeeForm" onFinish={onFinish} form={form}>
+        {/* Upload Field */}
         <Form.Item
           label="Upload"
           valuePropName="fileList"
@@ -66,7 +64,7 @@ const AddEmployeePage = () => {
             listType="picture-card"
             fileList={fileList}
             beforeUpload={checkFile}
-            onRemove={() => setFileList([])} // Xóa tệp khi bấm nút xóa
+            onRemove={() => setFileList([])}
           >
             {fileList.length >= 1 ? null : (
               <div>
@@ -76,45 +74,43 @@ const AddEmployeePage = () => {
             )}
           </Upload>
         </Form.Item>
-        <Form.Item
+
+
+        <InputField
           name="name"
           label="Họ và tên"
-          rules={[{ required: true, message: "Vui lòng nhập họ tên!" }]}
-        >
-          <Input />
-        </Form.Item>
-        <Form.Item
+          rules={[{ required: true, message: ERROR_MESSAGES.nameRequired }]}
+        />
+
+
+        <SelectField
           name="position"
           label="Chức vụ"
-          rules={[{ required: true, message: "Vui lòng chọn chức vụ!" }]}
-        >
-          <Select>
-            <Option value="Spa">Spa</Option>
-            <Option value="Huấn luyện viên">Huấn luyện viên</Option>
-            <Option value="Bác sĩ">Bác sĩ</Option>
-          </Select>
-        </Form.Item>
-        <Form.Item
+          options={options}
+          rules={[{ required: true, message: ERROR_MESSAGES.positionRequired }]}
+        />
+
+
+        <InputField
           name="qualification"
           label="Bằng cấp"
-          rules={[{ required: true, message: "Vui lòng nhập bằng cấp!" }]}
-        >
-          <Input />
-        </Form.Item>
-        <Form.Item
+          rules={[{ required: true, message: ERROR_MESSAGES.qualificationRequired }]}
+        />
+
+
+        <NumberField
           name="experience"
           label="Kinh nghiệm (năm)"
           rules={[
-            { required: true, message: "Vui lòng nhập kinh nghiệm!" },
+            { required: true, message: ERROR_MESSAGES.experienceRequired },
             {
               type: "number",
               min: 0,
-              message: "Kinh nghiệm phải là số không âm!",
+              message: ERROR_MESSAGES.experienceNonNegative,
             },
           ]}
-        >
-          <InputNumber style={{ width: "100%" }} />
-        </Form.Item>
+        />
+
         <Form.Item>
           <Button type="primary" htmlType="submit">
             Thêm nhân viên

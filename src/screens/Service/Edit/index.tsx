@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { Form, Input, Button, Spin } from "antd";
+import { Form, Button, Spin } from "antd";
 import { toast, ToastContainer } from "react-toastify";
-
 import "antd/dist/antd.css";
 import "./EditServicePage.css";
+import InputField from "../../../components/InputField";
+import TextAreaField from "../../../components/TextAreaField";
+import NumberField from "../../../components/NumberField";
+import { ERROR_MESSAGES } from "../../../components/formConstants"; // Import ERROR_MESSAGES từ formConstants
 
 const EditServicePage = () => {
   const { serviceId } = useParams();
@@ -48,34 +51,33 @@ const EditServicePage = () => {
           labelCol={{ span: 6 }}
           wrapperCol={{ span: 12 }}
         >
-          <Form.Item
-            label="Tên dịch vụ"
+          <InputField
             name="name"
+            label="Tên dịch vụ"
             rules={[
-              { required: true, message: "Vui lòng nhập tên dịch vụ" },
+              { required: true, message: ERROR_MESSAGES.nameRequired },
             ]}
-          >
-            <Input />
-          </Form.Item>
-          <Form.Item
-            label="Miêu tả"
+          />
+          <TextAreaField
             name="description"
+            label="Miêu tả"
             rules={[
-              { required: true, message: "Vui lòng nhập miêu tả" },
+              { required: true, message: ERROR_MESSAGES.descriptionRequired },
             ]}
-          >
-            <Input.TextArea rows={4} />
-          </Form.Item>
-          <Form.Item
-            label="Giá"
+            rows={4}
+          />
+          <NumberField
             name="price"
+            label="Giá"
             rules={[
-              { required: true, message: "Vui lòng nhập giá" },
-              { type: "number", min: 0, message: "Giá phải là số không âm" },
+              { required: true, message: ERROR_MESSAGES.priceRequired },
+              {
+                type: "number",
+                min: 0,
+                message: ERROR_MESSAGES.priceNonNegative,
+              },
             ]}
-          >
-            <Input type="number" />
-          </Form.Item>
+          />
           <Form.Item>
             <Button type="primary" htmlType="submit" loading={loading}>
               Cập nhật

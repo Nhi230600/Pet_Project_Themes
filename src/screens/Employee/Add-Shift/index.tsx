@@ -1,29 +1,32 @@
-// AddShiftPage.js
 import React, { useState } from "react";
-import { Card, Typography, Form, Input, Button, DatePicker, Radio } from "antd";
+import { Card, Typography, Form, Button, DatePicker, Radio } from "antd";
 import "antd/dist/antd.css";
-import "./AddShiftPage.css"; // Đảm bảo bạn đã kết nối CSS tại đây
+import "./AddShiftPage.css";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-const { Text } = Typography;
-const { RangePicker } = DatePicker;
+import InputField from "../../../components/InputField"; 
+import SelectField from "../../../components/SelectField";
+import InputFieldDatePicker  from "../../../components/InputFieldDatePicker";
+import { ERROR_MESSAGES } from "../../../components/formConstants"; 
+
+
 
 const AddShiftPage = () => {
   const [form] = Form.useForm();
-  const [shiftTime, setShiftTime] = useState("morning");
   const navigate = useNavigate();
 
   const onFinish = (values: any) => {
     toast.success("Thêm ca làm thành công");
     navigate("/employee/detail");
   };
+
   const handleAddShift = () => {
-    
+    // Your logic here
   };
+
   return (
     <div className="add-shift-page">
-      <h1>Thêm Ca làm</h1>
-      <Card className="shift-card">
+      <Card className="shift-card" title="Thêm Ca làm">
         <Form
           form={form}
           onFinish={onFinish}
@@ -31,51 +34,55 @@ const AddShiftPage = () => {
           labelCol={{ span: 6 }}
           wrapperCol={{ span: 12 }}
         >
-          <Form.Item
-            label="Nhân viên"
+          {/* Employee Field */}
+          <InputField
             name="employee"
+            label="Nhân viên"
             initialValue="Nguyễn Văn A"
-            className="form-item"
-          >
-            <Input disabled />
-          </Form.Item>
-          <Form.Item
-            label="Chức vụ"
+            disabled={true}
+            rules={[]} // 
+          />
+
+          <InputField
             name="type"
+            label="Chức vụ"
             initialValue="Bác sĩ"
-            className="form-item"
-          >
-            <Input disabled />
-          </Form.Item>
-          <Form.Item
-            label="Thời gian"
+            disabled={true}
+            rules={[]}
+          />
+
+
+          {/* TimeRange Field */}
+          <InputFieldDatePicker
             name="timeRange"
-            className="form-item"
+            label="Thời gian"
             rules={[
-              { required: true, message: "Vui lòng chọn thời gian" },
+              { required: true, message: ERROR_MESSAGES.timeRangeRequired },
             ]}
-          >
-            <RangePicker />
-          </Form.Item>
-          <Form.Item
-            label="Ca làm"
+           // Specify that you want to use RangePicker
+          />
+
+
+          <SelectField
             name="shift"
-            className="form-item"
-            rules={[
-              { required: true, message: "Vui lòng chọn ca làm" },
+            label="Ca làm"
+            options={[
+              { value: "morning", label: "Sáng" },
+              { value: "afternoon", label: "Chiều" },
             ]}
-          >
-            <Radio.Group onChange={(e) => setShiftTime(e.target.value)} value={shiftTime}>
-              <Radio value="morning">Sáng</Radio>
-              <Radio value="afternoon">Chiều</Radio>
-            </Radio.Group>
-          </Form.Item>
+            rules={[
+              { required: true, message: "Please select a shift" },
+            ]}
+            useRadio={true} // Enable radio buttons
+          />
+
+
           <Form.Item>
             <Button
               type="primary"
               htmlType="submit"
               className="button"
-              onClick={handleAddShift} // Thêm sự kiện onClick và gọi hàm handleAddShift khi nút được nhấn
+              onClick={handleAddShift}
             >
               Thêm ca làm
             </Button>

@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import { Form, Input, Button, Select, InputNumber, Upload, Card } from "antd";
 import { useNavigate } from "react-router-dom";
 import "antd/dist/antd.css";
-import { UploadOutlined } from "@ant-design/icons"; // Import biểu tượng UploadOutlined
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { PlusOutlined } from "@ant-design/icons";
 import "./EditEmployeePage.css";
-const { Option } = Select;
+import InputField from "../../../components/InputField"; // Import InputField component
+import SelectField from "../../../components/SelectField"; // Import SelectField component
+import NumberField from "../../../components/NumberField"; // Import NumberField component
 
 const EditEmployeePage = () => {
   const [fileList, setFileList] = useState<any[]>([]);
@@ -33,6 +34,7 @@ const EditEmployeePage = () => {
     });
     navigate("/employee/detail");
   };
+
   const normFile = (e: any) => {
     if (Array.isArray(e)) {
       return e;
@@ -93,46 +95,48 @@ const EditEmployeePage = () => {
             </Upload>
           </Form.Item>
 
-          <Form.Item
+          {/* Sử dụng InputField */}
+          <InputField
             name="name"
             label="Họ và tên"
             rules={[{ required: true, message: "Vui lòng nhập họ tên!" }]}
-          >
-            <Input />
-          </Form.Item>
-          <Form.Item
+          />
+
+          {/* Sử dụng SelectField */}
+          <SelectField
             name="type"
             label="Chức vụ"
+            options={[
+              { value: "Spa", label: "Spa" },
+              { value: "Huấn luyện viên", label: "Huấn luyện viên" },
+              { value: "Bác sĩ", label: "Bác sĩ" },
+            ]}
             rules={[{ required: true, message: "Vui lòng chọn chức vụ!" }]}
-          >
-            <Select>
-              <Option value="Spa">Spa</Option>
-              <Option value="Huấn luyện viên">Huấn luyện viên</Option>
-              <Option value="Bác sĩ">Bác sĩ</Option>
-            </Select>
-          </Form.Item>
-          <Form.Item
+          />
+
+          {/* Sử dụng InputField */}
+          <InputField
             name="account"
             label="Tài khoản"
             rules={[{ required: true, message: "Vui lòng nhập tài khoản!" }]}
-          >
-            <Input />
-          </Form.Item>
-          <Form.Item
+          />
+
+          {/* Sử dụng InputField với kiểu Password */}
+          <InputField
             name="password"
             label="Mật khẩu"
             rules={[{ required: true, message: "Vui lòng nhập mật khẩu!" }]}
-          >
-            <Input.Password />
-          </Form.Item>
-          <Form.Item
+          />
+
+          {/* Sử dụng InputField */}
+          <InputField
             name="qualification"
             label="Bằng cấp"
             rules={[{ required: true, message: "Vui lòng nhập bằng cấp!" }]}
-          >
-            <Input />
-          </Form.Item>
-          <Form.Item
+          />
+
+          {/* Sử dụng NumberField */}
+          <NumberField
             name="experience"
             label="Kinh nghiệm (năm)"
             rules={[
@@ -143,9 +147,8 @@ const EditEmployeePage = () => {
                 message: "Kinh nghiệm phải là số không âm!",
               },
             ]}
-          >
-            <InputNumber style={{ width: "100%" }} />
-          </Form.Item>
+          />
+
           <Form.Item>
             <Button block type="primary" htmlType="submit">
               Lưu
