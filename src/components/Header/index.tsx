@@ -15,17 +15,13 @@ import Logo from "../../images/logo.png";
 import LoginPage from "../../screens/LoginPage/LoginPage";
 import RegisterPage from "../../screens/RegisterPage/RegisterPage";
 import DrawerContent from "../DrawerContent";
-
-import { COLORS, FONTSIZE } from "../../constants";
 import LoginRegister from "../LoginRegister";
 import LogoHeader from "../LogoHeader";
 import Nav from "../Nav";
 import Search from "../Search";
 
 import "./Header.css";
-import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
-
 
 const Header = () => {
   const [isModalLoginOpen, setIsModalLoginOpen] = useState(false);
@@ -36,11 +32,9 @@ const Header = () => {
   };
   const [placement, setPlacement] = useState("left");
   const [open, setOpen] = useState(false);
-  const accountJson = sessionStorage.getItem('account');
-
+  const accountJson = sessionStorage.getItem("account");
 
   let account;
-
 
   if (accountJson !== null) {
     account = JSON.parse(accountJson);
@@ -71,7 +65,6 @@ const Header = () => {
   return (
     <header className="header" style={{ backgroundColor }}>
       <div className="header-logo-search">
-
         <div className="header-logo">
           <img className="header-logo-image" src={Logo} alt="Logo" />
           <a
@@ -145,7 +138,10 @@ const Header = () => {
             </div>
           </div>
         ) : (
-          <div className="header-user" style={{ fontSize: FONTSIZE.textButton }}>
+          <div
+            className="header-user"
+            style={{ fontSize: FONTSIZE.textButton }}
+          >
             <button
               style={{ fontSize: FONTSIZE.text }}
               className="header-user-button"
@@ -162,19 +158,14 @@ const Header = () => {
               <DrawerContent />
             </Drawer>
           </div>
-        )
-
-        }
+        )}
       </div>
       <div className="header-nav" style={{ fontSize: FONTSIZE.textNav }}>
         <ul className="header-nav-list">
           <li className="header-nav-list-name">
-
             <Link to="/">TRANG CHỦ</Link>
-
           </li>
           <li className="header-nav-list-name">
-
             <Link to="/service">Dịch vụ</Link>
 
             <ul className="header-nav-list-sub">
@@ -183,11 +174,9 @@ const Header = () => {
               </li>
               <li>
                 <Link to="/service">Huấn luyện</Link>
-
               </li>
               <li>
                 <Link to="/service">Chăm sóc sức khỏe</Link>
-
               </li>
             </ul>
           </li>
@@ -216,7 +205,6 @@ const Header = () => {
               LIÊN HỆ
             </a>
           </li>
-          
         </ul>
         <LogoHeader />
         <Search />
@@ -224,7 +212,6 @@ const Header = () => {
       </div>
       <div className="header-nav" style={{ fontSize: FONTSIZE.textNav }}>
         <Nav />
-
       </div>
     </header>
   );

@@ -1,7 +1,5 @@
-
-import { UploadOutlined } from "@ant-design/icons";
-import { Button, Upload, message } from "antd";
-import { Footer, Header } from "../../components";
+import { Upload, message } from "antd";
+import { Header } from "../../components";
 
 import {
   faEdit,
@@ -9,7 +7,6 @@ import {
   faUserEdit,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Upload, message } from "antd";
 import { FONTSIZE } from "../../constants";
 import AvatarUser from "../../images/avatar-user.jpeg";
 import "./ProfileUser.css";
@@ -151,7 +148,6 @@ const ProfileUser = () => {
           </div>
         </form>
       </div>
-
     </div>
   );
 };

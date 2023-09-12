@@ -1,17 +1,9 @@
-
-import React from 'react'
-import './BookCare.css'
-
-
-import { DatePicker, Space } from 'antd';
-import { Footer, Header } from "../../../components";
-import { FONTSIZE } from "../../../constants";
-
+import "./BookCare.css";
 import { DatePicker, Space } from "antd";
+import { Header } from "../../../components";
 
 import "./BookCare.css";
 import { FONTSIZE } from "../../../constants";
-import { Header } from "../../../components";
 
 const BookCare = () => {
   return (

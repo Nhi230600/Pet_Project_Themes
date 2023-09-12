@@ -4,10 +4,6 @@ import { useState } from "react";
 import { FONTSIZE } from "../../constants";
 import AvatarUser from "../../images/avatar-user.jpeg";
 
-import { COLORS, FONTSIZE } from "../../constants";
-import SubMenu from "antd/lib/menu/SubMenu";
-
-
 import "./DrawerContent.css";
 const items = [
   {
@@ -105,7 +101,12 @@ const DrawerContent = () => {
               Thú cưng của tôi
             </a>
           </Menu.Item>
-          <Menu.Item key="logout" icon={<LogoutOutlined />} onClick={handleLogout} title="Đăng xuất">
+          <Menu.Item
+            key="logout"
+            icon={<LogoutOutlined />}
+            onClick={handleLogout}
+            title="Đăng xuất"
+          >
             <a href="">Đăng xuất</a>
           </Menu.Item>
         </Menu>

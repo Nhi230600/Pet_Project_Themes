@@ -19,7 +19,7 @@ const Dashboard = () => {
           trigger={null}
           collapsible
           collapsed={collapsed}
-          width={300}
+          width={200}
         >
           <SideBar />
         </Sider>
