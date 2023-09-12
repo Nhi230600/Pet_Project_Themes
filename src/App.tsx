@@ -6,12 +6,11 @@ import "react-toastify/dist/ReactToastify.css";
 import Routes from "../src/routes/Routes";
 import { Footer, Header } from "./components";
 import Homepage from "./screens/Homepage/Homepage";
-import Hommepagecarousel from "./screens/Homepage/Homepage-components/Homepagecarousel";
 
 const App = () => {
   return (
     <div className="App">
-      <Hommepagecarousel/>
+      <Homepage/>
     </div>
   );
 };

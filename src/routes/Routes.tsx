@@ -5,7 +5,7 @@ import {
   BookSpa,
   BookTrainer,
   Dashboard,
-  DashboardEmp,
+  // DashboardEmp,
   DetailEmp,
 } from "../screens";
 import Contact from "../screens/Contact/Contact";
@@ -26,7 +26,7 @@ const Router = createBrowserRouter([
   },
   {
     path: "/dashboardemp",
-    element: <DashboardEmp />,
+    // element: <DashboardEmp />,
   },
   {
     path: "/booktrainer",

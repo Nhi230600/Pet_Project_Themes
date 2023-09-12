@@ -2,31 +2,28 @@ import { type } from 'os'
 import React from 'react'
 import { FONTFAMILY } from '../../constants'
 import './Homepage.css'
-import { getQueriesForElement } from '@testing-library/react'
 import { Carousel, Slider } from 'antd';
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import { faPhone, faUser } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Item from 'antd/lib/list/Item'
-import { url } from 'inspector'
 
 const Homepage = () => {
-  const Slider = [
+  const Sliders = [
     {
       id: 1,
       content: "DỊCH VỤ THÚ CƯNG TẠI NHÀ",
-      image: '../../images/slider-img/carousel1.jpg',
+      imageUrl: "https://wallpaperaccess.com/full/390954.jpg",
     },
     {
       id: 2,
       content: "UY TÍN HÀNG ĐẦU VIỆT NAM",
-      image: '../../images/slider-img/carousel1.jpg',
+      imageUrl: "https://wallpaperaccess.com/full/390954.jpg",
     },
     {
       id: 3,
       content: "BLLALALALALLALAL",
-      imageUrl: '../../images/slider-img/carousel1.jpg',
+      imageUrl: "https://wallpaperaccess.com/full/390954.jpg",
     }
   ]
   return (
@@ -36,14 +33,14 @@ const Homepage = () => {
       </div>
       <div id="content">
         <div style={{ font: FONTFAMILY.primary}} className="slider">  
-          <div className='testing'>
-            {Slider.map((Slider, index) =>
-            <div className="slider-container" key={Slider.id + index}>
+          <Carousel>
+          {Sliders.map((Slider, index) =>
+            <div key={index}>
+              <img className="slider-background" src={Slider.imageUrl} ></img>
               <div className="slider-content"> {Slider.content} </div>
-              <img className="slider-background" src={Slider.imageUrl}> </img>
             </div>
-            )}  
-           </div>  
+          )}
+          </Carousel> 
         </div>
 
         {/* Service-Start */}

@@ -9,9 +9,7 @@
 /* Slider */
 
 .slider-background{
-    padding-top: 50%;
-    max-width: 100%;
-    position: relative;
+    width: 100%;
     background: center / cover no-repeat;
 
 }
@@ -26,6 +24,7 @@
     max-width: 100%;
     width: fit-content;
     margin-top: -46rem;
+
 }
 
 /* End slider */
