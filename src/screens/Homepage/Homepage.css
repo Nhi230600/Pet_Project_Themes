@@ -8,11 +8,11 @@
 
 /* Slider */
 
-.slider-img{
-    padding-top: 50%;
-    max-width: 100%;
-    position: relative;
-    background: url('../../images/slider-img/carousel1.jpg') center / cover no-repeat;
+
+.slider-background{
+    width: 100%;
+    height: 50%;
+    background: center / cover no-repeat;
 
 }
 
@@ -25,7 +25,9 @@
     float: left;
     max-width: 100%;
     width: fit-content;
-    margin-top: -46rem;
+    margin-top: -55rem;
+    margin-left: 5rem;
+
 }
 
 /* End slider */
@@ -246,20 +248,18 @@
     width: 60%;
 }
 .trainer-container{
-
+    max-width: 60%;
 }
 .trainer-body{
+    
+}
+.trainer-avatar{
+}
+
+.trainer-name{
 
 }
-.trainer-avatar1{
 
-}
-.trainer-avatar2{
-
-}
-.trainer-avatar3{
-
-}
 .trainer-describtion{
 
 }
