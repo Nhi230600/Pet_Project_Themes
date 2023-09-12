@@ -20,7 +20,7 @@ const DetailEmployee = () => {
 
   return (
     <div className="EmployeeDetailPage">
-      <h1>Chi tiết nhân viên</h1>
+      <h1>CHI TIẾT NHÂN VIÊN</h1>
       <Card
         title={employee.name}
         className="employee-card"

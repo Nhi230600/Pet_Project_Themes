@@ -1,3 +1,8 @@
+
+import { UploadOutlined } from "@ant-design/icons";
+import { Button, Upload, message } from "antd";
+import { Footer, Header } from "../../components";
+
 import {
   faEdit,
   faUpload,
@@ -5,7 +10,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Upload, message } from "antd";
-import { Footer, HeaderUser } from "../../components";
 import { FONTSIZE } from "../../constants";
 import AvatarUser from "../../images/avatar-user.jpeg";
 import "./ProfileUser.css";
@@ -31,7 +35,7 @@ const props = {
 const ProfileUser = () => {
   return (
     <div>
-      <HeaderUser />
+      <Header />
       <div className="container-profile">
         <div className="container-profile-avatar">
           <div className="container-profile-avatar-img">

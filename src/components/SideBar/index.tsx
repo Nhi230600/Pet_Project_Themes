@@ -8,6 +8,7 @@ import { Menu } from "antd";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./SideBar.css";
+import { FONTSIZE } from "../../constants";
 
 const SideBar = () => {
   const location = useLocation();
@@ -32,13 +33,13 @@ const SideBar = () => {
         items={[
           {
             label: "Dashboard",
-            icon: <AppstoreOutlined />,
+            icon: <AppstoreOutlined style={{ fontSize: FONTSIZE.logoSmall }} />,
             key: "/dashboard",
           },
           {
             label: "Danh sách nhân viên",
             key: "/employee/list",
-            icon: <UserOutlined />,
+            icon: <UserOutlined style={{ fontSize: FONTSIZE.logoSmall }} />,
           },
         ]}
       ></Menu>

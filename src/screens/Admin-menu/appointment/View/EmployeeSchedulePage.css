@@ -1,0 +1,20 @@
+/* Trong tệp CSS của bạn */
+
+.slot-card {
+  padding: 10px; /* Khoảng cách bên trong thẻ Card */
+  margin: 10px; /* Khoảng cách xung quanh thẻ Card */
+  border: 1px solid #ccc; /* Đường viền của thẻ Card */
+  border-radius: 5px; /* Góc bo tròn của thẻ Card */
+}
+
+/* Tùy chỉnh CSS cho thẻ Tag bên trong */
+.slot-card .ant-tag {
+  margin-right: 5px; /* Khoảng cách giữa các thẻ Tag */
+}
+
+/* Tùy chỉnh CSS cho trạng thái Trống */
+.slot-card .ant-tag-gray {
+  background-color: #f0f0f0; /* Màu nền cho trạng thái Trống */
+  color: black; /* Màu chữ cho trạng thái Trống */
+}
+  
