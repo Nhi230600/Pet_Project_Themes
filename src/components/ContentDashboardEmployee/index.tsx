@@ -1,6 +1,5 @@
-import React from "react";
 import { Content } from "antd/lib/layout/layout";
-import { DetailEmp, EditEmp, ViewList } from "../../screens";
+import { DetailEmp } from "../../screens";
 import "./ContentDashboardEmp.css";
 
 const ContentDashboardEmployee = () => {

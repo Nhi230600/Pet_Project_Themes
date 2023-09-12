@@ -1,39 +1,27 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import {
-  AddEmp,
-  BookCare,
-  BookSpa,
-  BookTrainer,
-  Dashboard,
-  DashboardEmp,
-  DetailEmp,
-} from "../screens";
+import { AddEmp, BookCare, BookSpa, BookTrainer, DetailEmp } from "../screens";
 import Contact from "../screens/Contact/Contact";
-
 import EmployeeListPage from "../screens/Employee/ListEmployee";
 import AddEmployeePage from "../screens/Employee/Add";
 import EmployeeDetailPage from "../screens/Employee/Detail";
 import ProfileUser from "../screens/ProfileUser/ProfileUser";
 import EmployeeEditPage from "../screens/Employee/Edit";
-import DashboardPage from "../screens/DashBoard";
+import DashboardPage from "../screens/DashboardPage/DashboardPage";
 import ViewServicePage from "../screens/Service/View";
 import AddServicePage from "../screens/Service/Add";
 import EditServicePage from "../screens/Service/Edit";
 import AddShiftPage from "../screens/Employee/Add-Shift";
 import ViewAppointmentAdmin from "../screens/Admin-menu/appointment/View";
+import Homepage from "../screens/Homepage/Homepage";
 
 const Router = createBrowserRouter([
   {
+    path: "/homepage",
+    element: <Homepage />,
+  },
+  {
     path: "/bookspa",
     element: <BookSpa />,
-  },
-  {
-    path: "/dashboard",
-    element: <Dashboard />,
-  },
-  {
-    path: "/dashboardemp",
-    element: <DashboardEmp />,
   },
   {
     path: "/booktrainer",
@@ -66,10 +54,6 @@ const Router = createBrowserRouter([
   {
     path: "/employee/edit",
     element: <EmployeeEditPage />,
-  },
-  {
-    path: "/dashboard",
-    element: <DashboardPage />,
   },
   {
     path: "/admin/service",
