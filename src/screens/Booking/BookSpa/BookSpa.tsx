@@ -47,6 +47,7 @@ const BookSpa = () => {
                 type="datetime-local"
                 id="spa-time"
                 name="spa-time"
+                required
               ></input>
               <h3>GHI CHÚ:</h3>
               <textarea
@@ -55,7 +56,7 @@ const BookSpa = () => {
                 rows={300}
                 placeholder="Nhập một vài mô tả tình trạng của các bé để chuyên viên của chúng tôt có thể hỗ trợ bạn tốt nhất ..."
               ></textarea>
-              <button className="form-btn styled" type="button">
+              <button className="form-btn styled" type="submit">
                 Gửi yêu cầu
               </button>
             </form>

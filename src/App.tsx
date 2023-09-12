@@ -9,8 +9,8 @@ import { Footer, Header } from "./components";
 const App = () => {
   return (
     <div className="App">
-      <Header />
-      <HeaderDashboard />
+      
+      
       <ToastContainer />
       <Routes />
       <Footer />

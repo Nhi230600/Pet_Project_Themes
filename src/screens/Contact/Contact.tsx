@@ -4,39 +4,12 @@ import {
     faStore,
   } from "@fortawesome/free-solid-svg-icons";
   import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-  import { Footer, Header } from "../../components";
+  import { Footer, Header, HeaderUser } from "../../components";
   import "./Contact.css";
   const Contact = () => {
     return (
       <div>
-        <Header />
-        <div className="container-contact">
-          <div className="container-contact-info">
-            <div className="container-contact-info-1">
-              <span>Liên hệ</span>
-              <h1>Hãy ghé thăm NgáoService nhé!</h1>
-            </div>
-            <div className="container-contact-info-2">
-              <p>
-                NgáoService ra đời với mong muốn mang lại cho khách hàng sự chuyên
-                nghiệp, uy tín mang nét đẹp hoa mỹ mà chúng tôi đem lại sự trải
-                nghiệm tốt nhất cho thú cưng của mọi nhà với hơn nhiều năm kinh
-                nghiệm trong ngành dịch vụ thú cưng bao gồm: Spa thú cưng, Thú y,
-                Huấn luyện thú cưng, Dịch vụ dắt chó đi dạo, Cung cấp các dòng thú
-                cưng chuyên nghiệp…
-              </p>
-            </div>
-            <div className="container-contact-info-3">
-              <FontAwesomeIcon icon={faStore} />{" "}
-              <span>397-5 Hapjeong-dong, Mapo-gu, Seoul, Hàn Quốc</span>
-              <br />
-              <FontAwesomeIcon icon={faPhone} /> <span>+82234421104</span> <br />
-              <FontAwesomeIcon icon={faEnvelope} />{" "}
-              <span>ngaoservice@gmail.com</span>
-            </div>
-          </div>
-          <div>
-            <Header />
+        <HeaderUser/>
             <div className="container-contact">
               <div className="container-contact-info">
                 <div className="container-contact-info-1">
@@ -80,29 +53,54 @@ import {
                       id="name-contact"
                       name="name-contact"
                       placeholder="..."
+                      required
                     />
                   </div>
                   <div className="form-contact-2">
-                    <div>
-                      <p>
-                        Đóng góp ý kiến
-                        hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
-                      </p>{" "}
-                    </div>
-                    <div>
-                      <p>
-                        Các trường đánh dấu <strong>*</strong> là bắt buộc
-                      </p>
-                    </div>
+                    <div className="form-contact-2-phone">
+                      <h3>Số điện thoại <strong>*</strong></h3>
+                      <input 
+                        type="text"
+                        id="phone-contact" 
+                        className="form-contact-2-phone-input"
+                        name="phone-contact"
+                        pattern="[0-9]{10}"
+                        placeholder="..."
+                        required
+                      />
+                    </div> 
+                    <div className="form-contact-2-email">
+                      <h3>Email <strong>*</strong></h3>
+                      <input 
+                        type="email"
+                        id="email-contact"
+                        className="form-contact-2-email-input"
+                        name="email-contact"
+                        placeholder="..." 
+                        required
+                      />
+                    </div>         
                   </div>
+                  <div className="form-contact-3">
+                    <h3>Lời nhắn</h3>
+                    <textarea 
+                      name="text-contact" 
+                      id="text-contact" 
+                      className="form-contact-3-text" rows={8}
+                      placeholder="...">
+                    </textarea> 
+                  </div>
+                  <button className="form-button-send styled" type="submit" >
+                    Gửi yêu cầu
+                  </button>
                 </form>
               </div>
             </div>
-          </div>
-          )
-        </div>
-        <Footer />
       </div>
+          
+        
+        
+    
     );
   };
   

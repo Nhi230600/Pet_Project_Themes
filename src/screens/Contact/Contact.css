@@ -36,6 +36,14 @@
 .form-contact-1-input{
     width: 30rem;
 }
+
+#name-contact{
+    width: 30rem;
+    border-radius: 5px;
+    border-style: groove;
+
+}
+
 .form-contact-2{
     display: flex;
     gap: 2rem
@@ -47,15 +55,21 @@
 
 .form-contact-2-phone-input{
     width: 11rem;
+    border-radius: 5px;
+    border-style: groove;
 }
 
 .form-contact-2-email-input{
     width: 17rem;
+    border-radius: 5px;
+    border-style: groove;
 }
 
 .form-contact-3-text{
     width: 30rem;
     text-align: justify;
+    border-radius: 5px;
+    border-style: groove;
 }
 
 .form-button-send

@@ -1,12 +1,12 @@
 import { DatePicker, Space } from "antd";
 import "./BookCare.css";
 import { FONTSIZE } from "../../../constants";
-import { Header } from "../../../components";
+import { Header, HeaderUser } from "../../../components";
 
 const BookCare = () => {
   return (
     <div>
-      <Header />
+      <HeaderUser />
       <div className="container-bookcare">
         <div
           className="container-bookcare-heading"
@@ -39,6 +39,7 @@ const BookCare = () => {
               id="form-care-detail"
               rows={300}
               placeholder="Nhập tình trạng bệnh của thú cưng bạn tại đây ..."
+              required
             ></textarea>
             <br />
             <h3>
@@ -48,6 +49,7 @@ const BookCare = () => {
               type="datetime-local"
               id="form-care-time"
               name="care-time"
+              required
             ></input>
             <Space direction="vertical" style={{ width: "100%" }}>
               <DatePicker status="error" style={{ width: "100%" }} />
@@ -59,13 +61,14 @@ const BookCare = () => {
               rows={300}
               placeholder="Bạn có thắc mắc hay lưu ý nào sao ? Hãy nhập vào đây chúng tôi sẽ hỗ trợ bạn !"
             ></textarea>
-            <button className="form-button-send styled" type="button">
+            <button className="form-button-send styled" type="submit">
               Gửi yêu cầu
             </button>
           </form>
         </div>
       </div>
     </div>
+    
   );
 };
 

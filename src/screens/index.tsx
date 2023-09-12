@@ -8,3 +8,4 @@ export { default as Dashboard } from "./Admin/EmployeeManage/Dashboard/Dashboard
 export { default as ViewList } from "./Employee/ListEmployee/ViewList";
 export { default as EditEmp } from "./Employee/EditEmployee/EditEmp";
 export { default as DetailEmp } from "./Employee/DetailEmployee/DetailEmp";
+export { default as Book} from "./Book/Book";

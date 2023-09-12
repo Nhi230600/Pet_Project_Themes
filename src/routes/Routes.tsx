@@ -6,6 +6,7 @@ import {
   BookTrainer,
   Dashboard,
   DetailEmp,
+
 } from "../screens";
 import Contact from "../screens/Contact/Contact";
 import MyPet from "../screens/Pet/MyPet/MyPet";
@@ -13,24 +14,29 @@ import ProfileUser from "../screens/ProfileUser/ProfileUser";
 import ViewList from "../screens/Employee/ListEmployee/ViewList";
 import EditEmployee from "../screens/Employee/EditEmployee/EditEmp";
 // import ViewList from "../screens/Admin/EmployeeManage/ListEmployee/ViewList";
-
+import Book from "../screens/Book/Book";
+import FormCare from "../screens/Book/components/FormCare";
 const Router = createBrowserRouter([
   {
-    path: "/bookspa",
-    element: <BookSpa />,
+    path: "/bookcare",
+    element: <Book background='background_bookcare.jpg' typeof_form='FormCare'/>,
   },
+  
+  {
+    path: "/bookspa",
+    element: <Book background="background_bookspa.avif" typeof_form="FormSpa"/>,
+  },
+  
+  {
+    path: "/booktrainer",
+    element: <Book background="background_booktrainer.jpg" typeof_form="FormTrainer"/>,
+  },
+  
   {
     path: "/dashboard",
     element: <Dashboard />,
   },
-  {
-    path: "/booktrainer",
-    element: <BookTrainer />,
-  },
-  {
-    path: "/bookcare",
-    element: <BookCare />,
-  },
+  
   {
     path: "/mypet",
     element: <MyPet />,

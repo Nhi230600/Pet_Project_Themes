@@ -50,6 +50,7 @@ const BookTrainer = (props: BookTrainerProps) => {
               type="datetime-local"
               id="form-training-time"
               name="training-time"
+              required
             ></input>
             <h3>GHI CHÚ:</h3>
 
@@ -59,7 +60,7 @@ const BookTrainer = (props: BookTrainerProps) => {
               rows={300}
               placeholder="Bạn có thắc mắc hay lưu ý nào sao ? Hãy nhập vào đây chúng tôi sẽ hỗ trợ bạn !"
             ></textarea>
-            <button className="form-button-send styled" type="button">
+            <button className="form-button-send styled" type="submit">
               Gửi yêu cầu
             </button>
           </form>
