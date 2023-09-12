@@ -26,6 +26,24 @@ const Homepage = () => {
       imageUrl: "https://wallpaperaccess.com/full/390954.jpg",
     }
   ]
+  const Employees = [
+    {
+      Number: 1,
+      Name: "Nguyễn Văn A",
+      Avatar: "",
+      Props: "Bác sĩ",
+      Experience: "3 năm",
+      Description: "Adalkdhliwdlkasdlijaliawjlidjlcnskdjaoiwhdslkjdoaiwhdkjloaiwjdoiahd",
+    },
+    {
+      Number: 2,
+      Name: "Nguyễn Văn A",
+      Avatar: "",
+      Props: "Bác sĩ",
+      Experience: "3 năm",
+      Description: "Adalkdhliwdlkasdlijaliawjlidjlcnskdjaoiwhdslkjdoaiwhdkjloaiwjdoiahd",
+    }
+  ]
   return (
     <div id="homepage">
       <div id='header'>
@@ -33,13 +51,13 @@ const Homepage = () => {
       </div>
       <div id="content">
         <div style={{ font: FONTFAMILY.primary}} className="slider">  
-          <Carousel>
-          {Sliders.map((Slider, index) =>
-            <div key={index}>
-              <img className="slider-background" src={Slider.imageUrl} ></img>
-              <div className="slider-content"> {Slider.content} </div>
-            </div>
-          )}
+          <Carousel autoplay>
+            {Sliders.map((Slider, index) =>
+              <div key={index}>
+                <img className="slider-background" src={Slider.imageUrl} ></img>
+                <div className="slider-content"> {Slider.content} </div>
+              </div>
+            )}
           </Carousel> 
         </div>
 
@@ -49,8 +67,6 @@ const Homepage = () => {
           <div className='service-title' style={{fontStyle: FONTFAMILY.primary}}>
             <div className="service-title-img"></div>
             <h1>CÁC DỊCH VỤ HÀNG ĐẦU</h1>
-
-            
           </div>
           <div className="service-content">
             <div className="service-container">
@@ -58,8 +74,8 @@ const Homepage = () => {
                 <img className='service-petcare-icon'></img>
                 <span className='service-name'>PET CARE</span>
                 <div className='service-description'>Cùng với sự tin tưởng của khách hàng, 
-                   Ngáo Service  cung cấp các sản phẩm và phụ kiện đa dạng, chất lượng, 
-                   uy tín hàng đầu Việt Nam </div>
+                  Ngáo Service  cung cấp các sản phẩm và phụ kiện đa dạng, chất lượng, 
+                  uy tín hàng đầu Việt Nam </div>
                 <a href='' className='service-button'>Xem thêm</a>
               </div>
             </div>
@@ -112,23 +128,23 @@ const Homepage = () => {
             <div className="trainer-preview">
               <span></span>
             </div>
-            <div className="trainer-container1">
-              <div className="trainer-avatar"></div>
-              <div className="trainer-body">
-                <div className="trainer-descriptionn">
-
-                </div>
-              </div>
-            </div>
-            <div className="trainer-container2">
-              <div className="trainer-avatar">
-                <i><FontAwesomeIcon icon={faUser} /></i>
-              </div>
-              <div className="trainer-body">
-                <div className="trainer-descriptionn">
-                  
-                </div>
-              </div>
+            <div className="trainer-container">
+              <Carousel>
+                {Employees.map((Employee, index) => 
+                  <div className="trainer-body" key={index}>
+                    <div className="trainer-avatar"> 
+                      <i><FontAwesomeIcon icon={faUser}/></i>
+                    </div>
+                    <div className="trainer-name"> {Employee.Name} </div>
+                    <div className="trainer-description"> {Employee.Description}
+                      <ul> 
+                        <li>Chuyên ngành: {Employee.Props}</li>
+                        <li>Kinh nghiệm: {Employee.Experience}</li>
+                      </ul>
+                    </div>
+                  </div>         
+                )}
+              </Carousel>
             </div>
           </div>
         </div>
