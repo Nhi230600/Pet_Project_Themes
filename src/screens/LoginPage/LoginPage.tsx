@@ -1,17 +1,48 @@
 import { Checkbox, Form, Input } from "antd";
 import { FONTSIZE } from "../../constants";
 import Logo from "../../images/logo.png";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import "./LoginPage.css";
+import axios from 'axios'; 
 
 const LoginPage = () => {
-  const onFinish = (values: any) => {
-    console.log("Success:", values);
+  const onFinish = async (values : any) => {
+    try {
+      const response = await axios.post('http://localhost:3000/api/auth/login', {
+        account: values.account,
+        password: values.password,
+      });
+
+      // Handle a successful login response here (e.g., set user token, redirect, etc.)
+      if (response.data.success){
+        const accountJson = JSON.stringify(response.data.user);
+        sessionStorage.setItem('account', accountJson);
+        window.location.href = '/';
+      }
+      else{
+        toast.error(response.data.message, {
+          position: toast.POSITION.TOP_CENTER,
+          autoClose: 2000,
+          hideProgressBar: true,
+        });
+      }
+      
+
+    } catch (error) {
+      // Handle login failure (e.g., show an error message)
+      console.error('Login failed:', error);
+    }
   };
-  const onFinishFailed = (errorInfo: any) => {
+
+  const onFinishFailed = (errorInfo : any) => {
+    // Handle form validation failure here
     console.log("Failed:", errorInfo);
   };
+
   return (
     <div className="container-login">
+      <ToastContainer />
       <div className="container-login-header">
         <div className="container-login-header-logo">
           <img style={{ width: "180%" }} src={Logo} alt="logo" />
@@ -38,17 +69,17 @@ const LoginPage = () => {
         initialValues={{
           remember: true,
         }}
-        onFinish={onFinish}
-        onFinishFailed={onFinishFailed}
+        onFinish={onFinish} // Call onFinish when the form is submitted
+        onFinishFailed={onFinishFailed} // Call onFinishFailed on form validation failure
         autoComplete="off"
       >
         <Form.Item
           label="Tên tài khoản: "
-          name="username"
+          name="account"
           rules={[
             {
               required: true,
-              message: "Please input your username!",
+              message: "Please input your account!",
             },
           ]}
         >

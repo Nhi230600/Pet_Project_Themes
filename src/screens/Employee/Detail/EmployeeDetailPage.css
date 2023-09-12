@@ -1,0 +1,142 @@
+/* EmployeeDetailPage.css */
+
+/* Phần tử gốc của trang */
+.EmployeeDetailPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  /* Card chứa thông tin nhân viên */
+  .employee-card {
+    width: 80%;
+    margin: 20px auto; /* Đặt margin tự động cho phần còn lại của hai bên để căn giữa */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  
+  /* Tiêu đề của trang */
+  .EmployeeDetailPage h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Hình ảnh đại diện */
+  .EmployeeDetailPage__Avatar {
+    width: 100px;
+    height: 100px;
+
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    margin: 20px auto;
+  }
+  
+  /* Các mục thông tin chi tiết */
+  .EmployeeDetailPage__Item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .EmployeeDetailPage__Label {
+    font-weight: bold;
+  }
+  
+  .EmployeeDetailPage__Value {
+    color: #333;
+  }
+  
+  /* Mô tả chi tiết */
+  .EmployeeDetailPage__Description {
+    margin: 20px 0;
+    font-size: 16px;
+  }
+  
+  /* EmployeeDetailPage.css */
+
+/* Phần tử gốc của trang */
+.EmployeeDetailPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Card chứa thông tin nhân viên */
+.employee-card {
+    width: 80%;
+    margin: 20px auto; /* Đặt margin tự động cho phần còn lại của hai bên để căn giữa */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Căn giữa nội dung bên trong Card */
+    text-align: center; /* Căn giữa tiêu đề Card và mô tả */
+}
+
+/* Tiêu đề của trang */
+.EmployeeDetailPage h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Hình ảnh đại diện */
+.EmployeeDetailPage__Avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+/* Các mục thông tin chi tiết */
+.EmployeeDetailPage__Item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.EmployeeDetailPage__Label {
+    font-weight: bold;
+}
+
+.EmployeeDetailPage__Value {
+    color: #333;
+}
+
+/* Mô tả chi tiết */
+.EmployeeDetailPage__Description {
+    margin: 20px 0;
+    font-size: 16px;
+}
+.edit-button {
+    position: absolute; /* Thiết lập vị trí tuyệt đối */
+    bottom: 200px; /* Khoảng cách từ dưới cùng là 20px */
+    right: 20px; /* Khoảng cách từ bên phải cùng là 20px */
+  }
+  /* Trong tệp EmployeeDetailPage.css */
+.add-shift-button {
+  position: absolute;
+  bottom: 100px; /* Điều chỉnh khoảng cách từ dưới */
+  right: 20px; /* Điều chỉnh khoảng cách từ phải */
+  z-index: 1; /* Đảm bảo nút này hiển thị phía trên các phần tử khác có z-index mặc định */
+}
+.green-status {
+  background-color: green; /* Hoặc màu xanh khác mà bạn muốn sử dụng */
+  color: white; /* Màu chữ */
+  cursor: pointer; /* Biểu tượng con trỏ khi di chuột vào */
+}
+
+.gray-status {
+  background-color: gray; /* Hoặc màu xám khác mà bạn muốn sử dụng */
+  color: white; /* Màu chữ */
+  cursor: not-allowed; /* Biểu tượng con trỏ tắt khi di chuột vào */
+  pointer-events: none; /* Tắt sự kiện click */
+}
+
+

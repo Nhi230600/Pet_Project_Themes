@@ -1,13 +1,19 @@
-import { Footer, HeaderUser } from "../../../components";
+
+import React from 'react'
+import { Footer, Header } from "../../../components";
+
 import { FONTSIZE } from "../../../constants";
 import "./BookTrainer.css";
 
 type BookTrainerProps = {};
 
 const BookTrainer = (props: BookTrainerProps) => {
+
+  const { } = props;
+
   return (
     <div>
-      <HeaderUser />
+      <Header />
       <div className="container-booktrainer">
         <div
           className="container-booktrainer-heading"
