@@ -11,6 +11,7 @@ import { useState } from "react";
 import { COLORS, FONTCOLOR, FONTSIZE } from "../../constants";
 import Logo from "../../images/logo.png";
 import DrawerContent from "../DrawerContent";
+
 import "./headerUser.css";
 const items = [
   {
@@ -29,6 +30,7 @@ const items = [
     icon: <LogoutOutlined />,
   },
 ];
+
 
 const HeaderUser = () => {
   const backgroundColor = COLORS.primary;

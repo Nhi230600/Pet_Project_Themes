@@ -1,7 +1,9 @@
+import "./BookCare.css";
 import { DatePicker, Space } from "antd";
+import { Header } from "../../../components";
+
 import "./BookCare.css";
 import { FONTSIZE } from "../../../constants";
-import { Header } from "../../../components";
 
 const BookCare = () => {
   return (

@@ -1,14 +1,9 @@
-import {
-  AppstoreOutlined,
-  ShopOutlined,
-  ShoppingCartOutlined,
-  UserOutlined,
-} from "@ant-design/icons";
+import { AppstoreOutlined, UserOutlined } from "@ant-design/icons";
 import { Menu } from "antd";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import "./SideBar.css";
 import { FONTSIZE } from "../../constants";
+import "./SideBar.css";
 
 const SideBar = () => {
   const location = useLocation();
@@ -34,7 +29,7 @@ const SideBar = () => {
           {
             label: "Dashboard",
             icon: <AppstoreOutlined style={{ fontSize: FONTSIZE.logoSmall }} />,
-            key: "/dashboard",
+            key: "/dashboardpage",
           },
           {
             label: "Danh sách nhân viên",
