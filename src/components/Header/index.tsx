@@ -15,11 +15,16 @@ import Logo from "../../images/logo.png";
 import LoginPage from "../../screens/LoginPage/LoginPage";
 import RegisterPage from "../../screens/RegisterPage/RegisterPage";
 import DrawerContent from "../DrawerContent";
+
+import { COLORS, FONTSIZE } from "../../constants";
+import LoginRegister from "../LoginRegister";
+import LogoHeader from "../LogoHeader";
+import Nav from "../Nav";
+import Search from "../Search";
+
 import "./Header.css";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
-
-
 
 
 const Header = () => {
@@ -66,6 +71,7 @@ const Header = () => {
   return (
     <header className="header" style={{ backgroundColor }}>
       <div className="header-logo-search">
+
         <div className="header-logo">
           <img className="header-logo-image" src={Logo} alt="Logo" />
           <a
@@ -212,6 +218,13 @@ const Header = () => {
           </li>
           
         </ul>
+        <LogoHeader />
+        <Search />
+        <LoginRegister />
+      </div>
+      <div className="header-nav" style={{ fontSize: FONTSIZE.textNav }}>
+        <Nav />
+
       </div>
     </header>
   );

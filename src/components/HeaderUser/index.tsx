@@ -6,12 +6,30 @@ import {
   SearchOutlined,
   UserOutlined,
 } from "@ant-design/icons";
-import { Menu, Drawer } from "antd";
+import { Drawer } from "antd";
 import { useState } from "react";
 import { COLORS, FONTCOLOR, FONTSIZE } from "../../constants";
 import Logo from "../../images/logo.png";
-import "./headerUser.css";
 import DrawerContent from "../DrawerContent";
+
+import "./headerUser.css";
+const items = [
+  {
+    label: "Thông tin cá nhân",
+    key: "1",
+    icon: <UserOutlined />,
+  },
+  {
+    label: "Thú cưng của tôi",
+    key: "2",
+    icon: <QqOutlined />,
+  },
+  {
+    label: "Đăng xuất",
+    key: "3",
+    icon: <LogoutOutlined />,
+  },
+];
 
 
 const HeaderUser = () => {

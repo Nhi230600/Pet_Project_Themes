@@ -2,14 +2,35 @@ import { Form, Input } from "antd";
 import { FONTSIZE } from "../../constants";
 import Logo from "../../images/logo.png";
 import "./RegisterPage.css";
+import { useState } from "react";
 
 const RegisterPage = () => {
+  const [values, setValues] = useState({
+    name: "",
+    phonenumber: "",
+    email: "",
+    username: "",
+    password: "",
+    repeatpassword: "",
+  });
+
+  function handleInput(event: any) {
+    const newObj = { ...values, [event.target.name]: event.target.value };
+    setValues(newObj);
+  }
+
+  function handleValidation(event: any) {
+    event.preventDefault();
+  }
+
   const onFinish = (values: any) => {
     console.log("Success:", values);
   };
+
   const onFinishFailed = (errorInfo: any) => {
     console.log("Failed:", errorInfo);
   };
+
   return (
     <div className="container-register">
       <div className="container-register-header">
@@ -100,6 +121,7 @@ const RegisterPage = () => {
           />
         </Form.Item>
         <Form.Item
+
   label="Mật khẩu: "
   name="password"
   rules={[
@@ -144,13 +166,50 @@ const RegisterPage = () => {
 </Form.Item>
 
 
+          label="Mật khẩu: "
+          name="password"
+          rules={[
+            {
+              required: true,
+              message: "Please input your password!",
+            },
+          ]}
+        >
+          <Input.Password
+            style={{
+              height: "2.5vw",
+              boxShadow: "0.1rem 0.2rem 0.1rem rgb(245, 214, 129)",
+            }}
+          />
+        </Form.Item>
+        <Form.Item
+          label="Nhập lại mật khẩu: "
+          name="repeatpassword"
+          rules={[
+            {
+              required: true,
+              message: "Please input your password repeat!",
+            },
+          ]}
+        >
+          <Input.Password
+            style={{
+              height: "2.5vw",
+              boxShadow: "0.1rem 0.2rem 0.1rem rgb(245, 214, 129)",
+            }}
+          />
+        </Form.Item>
         <Form.Item
           wrapperCol={{
             offset: 2,
             span: 16,
           }}
         >
-          <button type="submit" className="container-register-submit">
+          <button
+            onSubmit={handleValidation}
+            type="submit"
+            className="container-register-submit"
+          >
             Đăng ký
           </button>
         </Form.Item>
