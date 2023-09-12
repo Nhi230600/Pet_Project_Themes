@@ -1,10 +1,10 @@
-import React from 'react'
 import { Footer, HeaderUser } from "../../../components";
 import { FONTSIZE } from "../../../constants";
 import "./BookTrainer.css";
 
+type BookTrainerProps = {};
 
-const BookTrainer = () => {
+const BookTrainer = (props: BookTrainerProps) => {
   return (
     <div>
       <HeaderUser />
@@ -65,7 +65,7 @@ const BookTrainer = () => {
           </form>
         </div>
       </div>
-      <Footer />
+
     </div>
   );
 };

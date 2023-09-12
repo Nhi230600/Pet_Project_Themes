@@ -1,10 +1,9 @@
 import { LogoutOutlined, QqOutlined, UserOutlined } from "@ant-design/icons";
-import { Menu, Avatar, Space } from "antd";
+import { Avatar, Menu, Space } from "antd";
 import { useState } from "react";
-import "./DrawerContent.css";
+import { FONTSIZE } from "../../constants";
 import AvatarUser from "../../images/avatar-user.jpeg";
-import { COLORS, FONTSIZE } from "../../constants";
-import SubMenu from "antd/lib/menu/SubMenu";
+import "./DrawerContent.css";
 const items = [
   {
     label: <a href="">Thông tin cá nhân</a>,
