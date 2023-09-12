@@ -1,6 +1,6 @@
 import { faCakeCandles } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Footer, HeaderUser } from "../../../components";
+import { Footer, Header } from "../../../components";
 import { FONTSIZE } from "../../../constants";
 import { Modal } from "antd";
 import { useState } from "react";
@@ -23,7 +23,7 @@ const MyPet = () => {
   };
   return (
     <div className="mypet">
-      <HeaderUser />
+      <Header />
       <div className="container-mypet">
         <div className="container-mypet-infor">
           <div className="container-mypet-infor-heading">

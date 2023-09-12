@@ -3,6 +3,7 @@ import { Avatar, Menu, Space } from "antd";
 import { useState } from "react";
 import { FONTSIZE } from "../../constants";
 import AvatarUser from "../../images/avatar-user.jpeg";
+
 import "./DrawerContent.css";
 const items = [
   {
@@ -21,6 +22,7 @@ const items = [
     icon: <LogoutOutlined />,
   },
 ];
+
 const rootSubmenuKeys = ["user", "pet"];
 const DrawerContent = () => {
   const [openKeys, setOpenKeys] = useState(["sub1"]);
@@ -31,6 +33,15 @@ const DrawerContent = () => {
     } else {
       setOpenKeys(latestOpenKey ? [latestOpenKey] : []);
     }
+  };
+  const handleLogout = () => {
+    // Clear the user's session data or authentication token here
+    // For example, to clear sessionStorage:
+    sessionStorage.clear();
+
+    // Redirect to the logout URL or perform any other necessary actions
+    // For example, to redirect to a logout page:
+    window.location.href = "/";
   };
   return (
     <div className="drawer">
@@ -90,7 +101,12 @@ const DrawerContent = () => {
               Thú cưng của tôi
             </a>
           </Menu.Item>
-          <Menu.Item key="logout" icon={<LogoutOutlined />} title="Đăng xuất">
+          <Menu.Item
+            key="logout"
+            icon={<LogoutOutlined />}
+            onClick={handleLogout}
+            title="Đăng xuất"
+          >
             <a href="">Đăng xuất</a>
           </Menu.Item>
         </Menu>

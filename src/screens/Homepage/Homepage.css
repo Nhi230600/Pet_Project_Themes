@@ -1,0 +1,270 @@
+.clear{
+    clear: both;
+}
+#header{
+    position: relative;
+    z-index: +1;
+}
+
+/* Slider */
+
+
+.slider-background{
+    width: 100%;
+    height: 50%;
+    background: center / cover no-repeat;
+
+}
+
+.slider-content{
+    position: absolute;
+    font-weight: 600;
+    font-size: 4rem;
+    color: #fff;
+    margin: auto;
+    float: left;
+    max-width: 100%;
+    width: fit-content;
+    margin-top: -55rem;
+    margin-left: 5rem;
+
+}
+
+/* End slider */
+
+/* Service */
+
+.service{
+    /* background: linear-gradient(
+      rgb(238, 223, 164),
+      rgb(235, 178, 213)
+) */
+    padding-top: 4rem;
+}
+
+
+
+.service-title > h1{
+    position: relative;
+    text-align: center;
+    font-weight: 650;
+    font-size: 3.5rem;
+    max-width: 100%;
+    margin-top: -9.5rem;
+    text-shadow: 4px 2px 0px rgba(110,193,228,0.3);
+
+}
+
+.service-title-img{
+    position: relative;
+    background: url('../../images/service-img-background.png') center / cover no-repeat;
+    height: 18rem;
+    width: 29%;
+    z-index: +1;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;  
+}
+
+.service-content{
+    /* background-color: rgb(253, 205, 235) ; */
+    padding-top: 4rem;
+}
+.service-container{
+    float: left;
+    width: calc(100% / 3);
+    padding: 5rem;
+}   
+
+.service-body{
+    background-color: #fff;
+    border: #0e0e0e61 solid;
+    border-radius: 10%;
+    padding: 1.5rem;
+    box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.25);
+}
+
+
+.service-pettrain-icon{
+    background: url('../../icons/pettrain-icon.png') top center / cover no-repeat;
+}
+.service-petspa-icon{
+    background: url('../../icons/petspa-icon.png') top center / cover no-repeat;
+}
+.service-petcare-icon{
+    background: url('../../icons/petcare-icon.png') top center / cover no-repeat;
+}
+
+.service-pettrain-icon, .service-petspa-icon, .service-petcare-icon{
+    width: 6rem;
+    height: 6rem;
+    margin-left: 1rem;
+    border: none;
+}
+.service-name{
+    font-size: 3rem;
+    font-weight: bold;
+    padding-left: 1.5rem;
+    text-align: center;
+}
+.service-description{
+    font-size: 1.5rem;
+    text-align: justify;
+    font-style: italic;
+    padding-right: 2rem;
+    padding-left: 1rem;
+    padding-top: 2rem;
+    height: 22rem;
+    line-height: 4rem;
+}
+
+
+.service-button{
+    background-color: #efefef;
+    border-radius: 90px 90px 90px 90px;
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.25);
+    color: #000000;
+    cursor: pointer;
+    padding: 10px 25px 10px 25px;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    display: block;
+    width: fit-content;
+    border: none;
+    font-size: 1.5rem;
+}
+.service-button:hover{
+    background-color: #0350d2;
+    color: #fff;
+    
+}
+
+/* End service */
+
+
+/* Start contact */
+
+.contact{
+    background: linear-gradient(rgb(244, 217, 164), white);
+    padding-top: 4rem;
+}
+
+.contact-address{
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 500;
+    color: rgba(0,0,0,0.5);
+    padding: 2rem;
+}
+.contact-content{
+    width: 100%;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 800;
+    padding-bottom: 2rem;
+}
+
+
+.contact-content > span{
+    display: inline-block;
+    font-weight: 900;
+    color: #0350d2;
+}
+
+.contact-button-area{
+    padding-bottom: 3rem;
+    display: flex;
+}
+.contact-button{
+    padding: 1rem;
+    font-size: 1rem;
+    width: 33,3333%;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #2475fb;
+    background-color: rgb(255, 255, 255);
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    border-color: #4481fe;
+    border-radius: 50px 50px 50px 50px;
+    box-shadow: 19px 19px 40px 0px rgba(0,0,0,0.1);
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    cursor: pointer;
+}
+.contact-button > span{
+    padding-left: 0.5rem;
+}
+.contact-button, .contact-button > i, .contact-button > span {
+    transition-duration: 0.6s;
+}
+.contact-button:hover{
+    background-color: #0350d2;
+}
+.contact-button:hover > span, .contact-button:hover > i{
+    color: white;
+}
+
+
+/* End contact */
+
+/* Start trainer */
+
+.trainer{
+    padding-top: 4rem;
+    display: flex;
+}
+.trainer-title{
+    position: relative;
+    width: 40%;
+    height: 26rem;
+}
+.trainer-title-background{
+    position: absolute;
+    background: url('../../images/Training-background-removed.png') top center / cover no-repeat;
+    width: 60%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+}   
+.trainer-title-description{
+    position: absolute;
+    padding-top: 0rem;
+    padding-left: 8rem;
+    text-align: center;
+    font-weight: 700;
+    font-size: 3rem;
+    text-transform: uppercase;
+    text-shadow: 4px 2px 0px rgba(110,193,228,0.3);
+}
+.trainer-title-description > span{
+    color: #0350d2;
+}
+.trainer-content{
+    width: 60%;
+}
+.trainer-container{
+    max-width: 60%;
+}
+.trainer-body{
+    
+}
+.trainer-avatar{
+}
+
+.trainer-name{
+
+}
+
+.trainer-describtion{
+
+}
+
+
+
+
+/* End trainer */
