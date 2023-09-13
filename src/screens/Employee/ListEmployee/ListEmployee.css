@@ -11,37 +11,30 @@
   }
   
   .addButton {
-    background-color: #1890ff;
     border-color: #1890ff;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    float: right;
   }
   
-  .addButton:hover {
-    background-color: #40a9ff;
-    border-color: #40a9ff;
-  }
-  
-  .employee-table {
-    margin-top: 20px;
-  }
-  
-  .ant-table {
-    text-align: center;
-  }
   
   .ant-table-thead > tr > th {
-    background-color: #f0f0f0;
+    background-color: #e1dbdb;
     text-align: center;
+    border-radius: 5px;
   }
   
-  .ant-table-tbody > tr:hover {
-    background-color: #f5f5f5;
-  }
   
-  .ant-tooltip-inner {
-    background-color: #1890ff;
-    color: white;
-    border: 1px solid #1890ff;
+  .action-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px; /* Khoảng cách giữa các nút nếu cần */
   }
+
+.avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
   
   

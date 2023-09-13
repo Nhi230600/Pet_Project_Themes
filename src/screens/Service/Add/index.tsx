@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Button } from "antd";
+import { Form, Button, Card } from "antd";
 import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -14,7 +14,6 @@ const AddServicePage = () => {
   const navigate = useNavigate();
   const [form] = Form.useForm();
 
-
   const onFinish = (values: any) => {
     console.log("Received values:", values);
     navigate("/admin/service");
@@ -26,54 +25,60 @@ const AddServicePage = () => {
   };
 
   return (
-    <div className="add-service-page">
-      <Form form={form} name="addServiceForm" onFinish={onFinish}>
-        <SelectField
-          name="serviceType"
-          label="Chọn loại dịch vụ"
-          options={[
-            { value: "Spa", label: "Spa" },
-            { value: "Huấn luyện", label: "Huấn luyện" },
-            {
-              value: "Chăm sóc sức khỏe thú cưng",
-              label: "Chăm sóc sức khỏe thú cưng",
-            }
-          ]}
-          rules={[{ required: true, message: ERROR_MESSAGES.positionRequired }]} // Sử dụng thông báo lỗi từ ERROR_MESSAGES
-          initialValue="Spa"
-          onChange={(value) => {
-            // Xử lý sự kiện onChange ở đây (nếu cần)
-          }}
-        />
-        <InputField
-          name="serviceName"
-          label="Tên dịch vụ"
-          rules={[{ required: true, message: ERROR_MESSAGES.nameRequired }]} // Sử dụng thông báo lỗi từ ERROR_MESSAGES
-        />
-        <TextAreaField
-          name="description"
-          label="Miêu tả"
-          rules={[{ required: true, message: ERROR_MESSAGES.descriptionRequired }]} // Sử dụng thông báo lỗi từ ERROR_MESSAGES
-        />
-        <NumberField
-          name="price"
-          label="Giá"
-          rules={[
-            { required: true, message: ERROR_MESSAGES.priceRequired }, // Sử dụng thông báo lỗi từ ERROR_MESSAGES
-            {
-              type: "number",
-              min: 0,
-              message: ERROR_MESSAGES.priceNonNegative, // Sử dụng thông báo lỗi từ ERROR_MESSAGES
-            },
-          ]}
-        />
-        <Form.Item>
-          <Button type="primary" htmlType="submit">
-            Thêm dịch vụ
-          </Button>
-        </Form.Item>
-      </Form>
-      <ToastContainer />
+    <div>
+      <Card title="Thêm dịch vụ" className="add-service-page">
+        <Form form={form} name="addServiceForm" onFinish={onFinish}>
+          <SelectField
+            name="serviceType"
+            label="Chọn loại dịch vụ"
+            options={[
+              { value: "Spa", label: "Spa" },
+              { value: "Huấn luyện", label: "Huấn luyện" },
+              {
+                value: "Chăm sóc sức khỏe thú cưng",
+                label: "Chăm sóc sức khỏe thú cưng",
+              },
+            ]}
+            rules={[
+              { required: true, message: ERROR_MESSAGES.positionRequired },
+            ]} // Sử dụng thông báo lỗi từ ERROR_MESSAGES
+            initialValue="Spa"
+            onChange={(value) => {
+              // Xử lý sự kiện onChange ở đây (nếu cần)
+            }}
+          />
+          <InputField
+            name="serviceName"
+            label="Tên dịch vụ"
+            rules={[{ required: true, message: ERROR_MESSAGES.nameRequired }]} // Sử dụng thông báo lỗi từ ERROR_MESSAGES
+          />
+          <TextAreaField
+            name="description"
+            label="Miêu tả"
+            rules={[
+              { required: true, message: ERROR_MESSAGES.descriptionRequired },
+            ]} // Sử dụng thông báo lỗi từ ERROR_MESSAGES
+          />
+          <NumberField
+            name="price"
+            label="Giá"
+            rules={[
+              { required: true, message: ERROR_MESSAGES.priceRequired }, // Sử dụng thông báo lỗi từ ERROR_MESSAGES
+              {
+                type: "number",
+                min: 0,
+                message: ERROR_MESSAGES.priceNonNegative, // Sử dụng thông báo lỗi từ ERROR_MESSAGES
+              },
+            ]}
+          />
+          <Form.Item>
+            <Button block type="primary" htmlType="submit">
+              Thêm dịch vụ
+            </Button>
+          </Form.Item>
+        </Form>
+        <ToastContainer />
+      </Card>
     </div>
   );
 };

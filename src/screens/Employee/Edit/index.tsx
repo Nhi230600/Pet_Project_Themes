@@ -64,7 +64,7 @@ const EditEmployeePage = () => {
           initialValues={exampleEmployee}
         >
           <Form.Item
-            label="Upload"
+            label="Tải ảnh"
             valuePropName="fileList"
             getValueFromEvent={normFile}
             name="upload"

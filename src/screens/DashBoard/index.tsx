@@ -47,8 +47,16 @@ const DashboardPage = () => {
         { name: "Spa Employee 2", appointments: 12, category: "Spa" },
         { name: "Doctor Employee 1", appointments: 18, category: "Bác sĩ" },
         { name: "Doctor Employee 2", appointments: 14, category: "Bác sĩ" },
-        { name: "Trainer Employee 1", appointments: 20, category: "Huấn luyện viên" },
-        { name: "Trainer Employee 2", appointments: 16, category: "Huấn luyện viên" },
+        {
+          name: "Trainer Employee 1",
+          appointments: 20,
+          category: "Huấn luyện viên",
+        },
+        {
+          name: "Trainer Employee 2",
+          appointments: 16,
+          category: "Huấn luyện viên",
+        },
       ];
 
       const customers: Customer[] = [
@@ -63,9 +71,15 @@ const DashboardPage = () => {
         revenueToday: 1000,
         totalCustomers: 50,
         totalEmployees: 20,
-        topEmployeesSpa: employees.filter((employee) => employee.category === "Spa"),
-        topEmployeesDoctor: employees.filter((employee) => employee.category === "Bác sĩ"),
-        topEmployeesTrainer: employees.filter((employee) => employee.category === "Huấn luyện viên"),
+        topEmployeesSpa: employees.filter(
+          (employee) => employee.category === "Spa"
+        ),
+        topEmployeesDoctor: employees.filter(
+          (employee) => employee.category === "Bác sĩ"
+        ),
+        topEmployeesTrainer: employees.filter(
+          (employee) => employee.category === "Huấn luyện viên"
+        ),
         topCustomers: customers,
       });
     }, 1000);
@@ -76,7 +90,10 @@ const DashboardPage = () => {
       <Row gutter={16}>
         <Col span={6}>
           <Card className="dashboard-card">
-            <Statistic title="Đơn đặt lịch hôm nay" value={data.appointmentsToday} />
+            <Statistic
+              title="Đơn đặt lịch hôm nay"
+              value={data.appointmentsToday}
+            />
             <ArrowUpOutlined className="green-icon" />
           </Card>
         </Col>
@@ -88,13 +105,19 @@ const DashboardPage = () => {
         </Col>
         <Col span={6}>
           <Card className="dashboard-card">
-            <Statistic title="Tổng số tài khoản khách hàng" value={data.totalCustomers} />
+            <Statistic
+              title="Tổng số tài khoản khách hàng"
+              value={data.totalCustomers}
+            />
             <UserOutlined className="blue-icon" />
           </Card>
         </Col>
         <Col span={6}>
           <Card className="dashboard-card">
-            <Statistic title="Tổng số tài khoản nhân viên" value={data.totalEmployees} />
+            <Statistic
+              title="Tổng số tài khoản nhân viên"
+              value={data.totalEmployees}
+            />
             <UserOutlined className="blue-icon" />
           </Card>
         </Col>
