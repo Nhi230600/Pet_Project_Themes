@@ -65,7 +65,7 @@ const PetProfilePage = () => {
               style={{ marginRight: "25px", fontSize: "35px" }}
             />
             <p>Tháng tuổi:</p>
-            <p>2 tháng tuổi</p>
+            <p>2 tháng tuổi rưỡi</p>
           </div>
         </div>
       </div>
