@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { Form, Button, Spin } from "antd";
+import { Form, Button, Spin, Card } from "antd";
 import { toast, ToastContainer } from "react-toastify";
 import "antd/dist/antd.css";
 import "./EditServicePage.css";
@@ -41,51 +41,50 @@ const EditServicePage = () => {
   };
 
   return (
-    <div className="edit-service-page">
-      <h2>Chỉnh sửa thông tin dịch vụ</h2>
-      <Spin spinning={loading}>
-        <Form
-          form={form}
-          name="edit-service-form"
-          onFinish={onFinish}
-          labelCol={{ span: 6 }}
-          wrapperCol={{ span: 12 }}
-        >
-          <InputField
-            name="name"
-            label="Tên dịch vụ"
-            rules={[
-              { required: true, message: ERROR_MESSAGES.nameRequired },
-            ]}
-          />
-          <TextAreaField
-            name="description"
-            label="Miêu tả"
-            rules={[
-              { required: true, message: ERROR_MESSAGES.descriptionRequired },
-            ]}
-            rows={4}
-          />
-          <NumberField
-            name="price"
-            label="Giá"
-            rules={[
-              { required: true, message: ERROR_MESSAGES.priceRequired },
-              {
-                type: "number",
-                min: 0,
-                message: ERROR_MESSAGES.priceNonNegative,
-              },
-            ]}
-          />
-          <Form.Item>
-            <Button type="primary" htmlType="submit" loading={loading}>
-              Cập nhật
-            </Button>
-          </Form.Item>
-        </Form>
-      </Spin>
-      <ToastContainer />
+    <div>
+      <Card title="Chỉnh sửa thông tin dịch vụ" className="edit-service-page">
+        <Spin spinning={loading}>
+          <Form
+            form={form}
+            name="edit-service-form"
+            onFinish={onFinish}
+            labelCol={{ span: 6 }}
+            wrapperCol={{ span: 12 }}
+          >
+            <InputField
+              name="name"
+              label="Tên dịch vụ"
+              rules={[{ required: true, message: ERROR_MESSAGES.nameRequired }]}
+            />
+            <TextAreaField
+              name="description"
+              label="Miêu tả"
+              rules={[
+                { required: true, message: ERROR_MESSAGES.descriptionRequired },
+              ]}
+              rows={4}
+            />
+            <NumberField
+              name="price"
+              label="Giá"
+              rules={[
+                { required: true, message: ERROR_MESSAGES.priceRequired },
+                {
+                  type: "number",
+                  min: 0,
+                  message: ERROR_MESSAGES.priceNonNegative,
+                },
+              ]}
+            />
+            <Form.Item>
+              <Button block type="primary" htmlType="submit" loading={loading}>
+                Cập nhật
+              </Button>
+            </Form.Item>
+          </Form>
+        </Spin>
+        <ToastContainer />
+      </Card>
     </div>
   );
 };

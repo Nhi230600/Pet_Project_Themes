@@ -1,32 +1,26 @@
 import React, { useState } from "react";
-import { Card, Typography, Form, Button, DatePicker, Radio } from "antd";
+import { Card, Form, Button } from "antd";
 import "antd/dist/antd.css";
 import "./AddShiftPage.css";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import InputField from "../../../components/InputField"; 
+import InputField from "../../../components/InputField";
 import SelectField from "../../../components/SelectField";
-import InputFieldDatePicker  from "../../../components/InputFieldDatePicker";
-import { ERROR_MESSAGES } from "../../../components/formConstants"; 
-
-
+import InputFieldDatePicker from "../../../components/InputFieldDatePicker";
+import { ERROR_MESSAGES } from "../../../components/formConstants";
 
 const AddShiftPage = () => {
   const [form] = Form.useForm();
   const navigate = useNavigate();
 
   const onFinish = (values: any) => {
-    toast.success("Thêm ca làm thành công");
+    toast.success("Lưu Ca làm thành công");
     navigate("/employee/detail");
-  };
-
-  const handleAddShift = () => {
-    // Your logic here
   };
 
   return (
     <div className="add-shift-page">
-      <Card className="shift-card" title="Thêm Ca làm">
+      <Card className="shift-card" title="Tạo Ca làm Mới">
         <Form
           form={form}
           onFinish={onFinish}
@@ -34,13 +28,13 @@ const AddShiftPage = () => {
           labelCol={{ span: 6 }}
           wrapperCol={{ span: 12 }}
         >
-          {/* Employee Field */}
+          {/* Thêm các trường dữ liệu phù hợp cho doanh nghiệp của bạn */}
           <InputField
             name="employee"
             label="Nhân viên"
             initialValue="Nguyễn Văn A"
             disabled={true}
-            rules={[]} // 
+            rules={[]} //
           />
 
           <InputField
@@ -51,17 +45,14 @@ const AddShiftPage = () => {
             rules={[]}
           />
 
-
-          {/* TimeRange Field */}
           <InputFieldDatePicker
             name="timeRange"
             label="Thời gian"
             rules={[
               { required: true, message: ERROR_MESSAGES.timeRangeRequired },
             ]}
-           // Specify that you want to use RangePicker
+            // Specify that you want to use RangePicker
           />
-
 
           <SelectField
             name="shift"
@@ -70,21 +61,13 @@ const AddShiftPage = () => {
               { value: "morning", label: "Sáng" },
               { value: "afternoon", label: "Chiều" },
             ]}
-            rules={[
-              { required: true, message: "Please select a shift" },
-            ]}
+            rules={[{ required: true, message: "Vui lòng chọn ca làm" }]}
             useRadio={true} // Enable radio buttons
           />
 
-
           <Form.Item>
-            <Button
-              type="primary"
-              htmlType="submit"
-              className="button"
-              onClick={handleAddShift}
-            >
-              Thêm ca làm
+            <Button type="primary" htmlType="submit" className="button">
+              Lưu Ca làm
             </Button>
           </Form.Item>
         </Form>

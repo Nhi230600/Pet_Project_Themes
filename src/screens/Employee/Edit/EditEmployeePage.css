@@ -1,6 +1,13 @@
 .edit-employee-card {
-    width: 400px; /* Độ rộng của Card */
-    margin: 0 auto; /* Để căn giữa theo chiều ngang */
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Hiệu ứng bóng đổ */
+  width: 500px; /* Độ rộng của Card */
+  margin: 0 auto; /* Để căn giữa theo chiều ngang */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Hiệu ứng bóng đổ */
+  background-color: #fff; /* Màu nền thẻ Card */  
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hiển thị đường viền */
+  border-radius: 8px; /* Bo tròn góc thẻ Card */
+  color: #333; /* Màu chữ trên thẻ Card */
+  }
+  .edit-employee-card .ant-card-head-title {
+    font-size: 24px; /* Kích thước chữ tiêu đề */
   }

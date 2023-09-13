@@ -42,9 +42,8 @@ const AddEmployeePage = () => {
   return (
     <Card title="Thêm nhân viên" className="add-employee-card">
       <Form name="addEmployeeForm" onFinish={onFinish} form={form}>
-        {/* Upload Field */}
         <Form.Item
-          label="Upload"
+          label="Tải Ảnh"
           valuePropName="fileList"
           getValueFromEvent={normFile}
           name="upload"
@@ -75,13 +74,11 @@ const AddEmployeePage = () => {
           </Upload>
         </Form.Item>
 
-
         <InputField
           name="name"
           label="Họ và tên"
           rules={[{ required: true, message: ERROR_MESSAGES.nameRequired }]}
         />
-
 
         <SelectField
           name="position"
@@ -90,13 +87,13 @@ const AddEmployeePage = () => {
           rules={[{ required: true, message: ERROR_MESSAGES.positionRequired }]}
         />
 
-
         <InputField
           name="qualification"
           label="Bằng cấp"
-          rules={[{ required: true, message: ERROR_MESSAGES.qualificationRequired }]}
+          rules={[
+            { required: true, message: ERROR_MESSAGES.qualificationRequired },
+          ]}
         />
-
 
         <NumberField
           name="experience"
@@ -112,7 +109,7 @@ const AddEmployeePage = () => {
         />
 
         <Form.Item>
-          <Button type="primary" htmlType="submit">
+          <Button block type="primary" htmlType="submit">
             Thêm nhân viên
           </Button>
         </Form.Item>

@@ -1,11 +1,39 @@
 /* Định dạng cho Card bao quanh Form */
 .add-employee-card {
-  width: 400px; /* Độ rộng của Card */
+  width: 500px; /* Độ rộng của Card */
   margin: 0 auto; /* Để căn giữa theo chiều ngang */
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Hiệu ứng bóng đổ */
+  background-color: #fff; /* Màu nền thẻ Card */  
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hiển thị đường viền */
+  border-radius: 8px; /* Bo tròn góc thẻ Card */
+  color: #333; /* Màu chữ trên thẻ Card */
 }
 
 .add-employee-button {
   margin-top: 10px; /* Khoảng cách từ nút Submit đến các trường trước đó */
+}
+.ant-form-item-label {
+  font-weight: bold; /* Đậm chữ tiêu đề trường dữ liệu */
+}
+.ant-input,
+.ant-select {
+  width: 100%; /* Chiếm toàn bộ chiều rộng của trường dữ liệu */
+}
+
+.ant-form-item-explain-error {
+  color: #f5222d; /* Màu thông báo lỗi */
+}
+.ant-upload.ant-upload-select-picture-card {
+  width: 100px; /* Kích thước ô tải ảnh */
+  height: 100px; /* Kích thước ô tải ảnh */
+  border: 2px dashed #d9d9d9; /* Đường viền ô tải ảnh */
+  border-radius: 8px; /* Bo tròn góc ô tải ảnh */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.add-employee-card .ant-card-head-title {
+  font-size: 24px; /* Kích thước chữ tiêu đề */
 }
