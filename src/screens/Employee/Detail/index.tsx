@@ -117,12 +117,12 @@ const EmployeeDetailPage = () => {
     </Card>,
   };
   const [activeTabKey1, setActiveTabKey1] = useState<string>('tab1');
- 
+
 
   const onTab1Change = (key: string) => {
     setActiveTabKey1(key);
   };
-  
+
   const totalAppointments = employee.appointments.length;
 
   // Tính toán số đơn hoàn thành
@@ -247,18 +247,6 @@ const EmployeeDetailPage = () => {
 
           </div>
         </div>
-        <div className="col-8">
-
-          <div>
-           
-            
-            
-          </div>
-        </div>
-
-
-
-
       </div>
 
     </div>
