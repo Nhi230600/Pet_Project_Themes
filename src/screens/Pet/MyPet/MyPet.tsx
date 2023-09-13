@@ -15,11 +15,8 @@ import "./MyPet.css";
 const MyPet = () => {
   const [isModalPetProfileOpen, setIsModalPetProfileOpen] = useState(false);
 
-  const showModalPetProfile = () => {
-    setIsModalPetProfileOpen(true);
-  };
-  const handleCancelPetProfile = () => {
-    setIsModalPetProfileOpen(false);
+  const ModalPetProfile = (isShow: boolean) => {
+    return setIsModalPetProfileOpen(isShow);
   };
   return (
     <div className="mypet">
@@ -71,14 +68,14 @@ const MyPet = () => {
               <button
                 className="container-mypet-infor-content-viewdetail-button"
                 style={{ fontSize: FONTSIZE.textButton }}
-                onClick={showModalPetProfile}
+                onClick={() => ModalPetProfile(true)}
               >
                 Xem chi tiết
               </button>
               <Modal
                 width={1100}
                 open={isModalPetProfileOpen}
-                onCancel={handleCancelPetProfile}
+                onCancel={() => ModalPetProfile(false)}
                 footer={[]}
               >
                 <PetProfilePage />
@@ -118,14 +115,14 @@ const MyPet = () => {
               <button
                 className="container-mypet-infor-content-viewdetail-button"
                 style={{ fontSize: FONTSIZE.textButton }}
-                onClick={showModalPetProfile}
+                onClick={() => ModalPetProfile(true)}
               >
                 Xem chi tiết
               </button>
               <Modal
                 width={1100}
                 open={isModalPetProfileOpen}
-                onCancel={handleCancelPetProfile}
+                onCancel={() => ModalPetProfile(false)}
                 footer={[]}
               >
                 <PetProfilePage />
@@ -165,14 +162,14 @@ const MyPet = () => {
               <button
                 className="container-mypet-infor-content-viewdetail-button"
                 style={{ fontSize: FONTSIZE.textButton }}
-                onClick={showModalPetProfile}
+                onClick={() => ModalPetProfile(true)}
               >
                 Xem chi tiết
               </button>
               <Modal
                 width={1100}
                 open={isModalPetProfileOpen}
-                onCancel={handleCancelPetProfile}
+                onCancel={() => ModalPetProfile(false)}
                 footer={[]}
               >
                 <PetProfilePage />
