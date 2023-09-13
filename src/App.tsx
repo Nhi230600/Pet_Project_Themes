@@ -13,9 +13,6 @@ import Homepage from "./screens/Homepage/Homepage";
 const App = () => {
   return (
     <div className="App">
-      <Header />
-      <HeaderDashboard />
-
       <ToastContainer />
       <Routes />
       <Footer />
