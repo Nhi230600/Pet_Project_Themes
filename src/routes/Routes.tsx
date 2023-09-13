@@ -1,9 +1,14 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
-import { AddEmp, BookCare, BookSpa, BookTrainer, DetailEmp } from "../screens";
-
+import {
+  AddEmp,
+  BookCare,
+  BookSpa,
+  BookTrainer,
+  Dashboard,
+  DashboardEmp,
+  DetailEmp,
+} from "../screens";
 import Contact from "../screens/Contact/Contact";
-
 import EmployeeListPage from "../screens/Employee/ListEmployee";
 
 import AddEmployeePage from "../screens/Employee/Add";
@@ -28,21 +33,27 @@ import AddShiftPage from "../screens/Employee/Add-Shift";
 
 import ViewAppointmentAdmin from "../screens/Admin-menu/appointment/View";
 
-import MyPet from "../screens/Pet/MyPet/MyPet";
-
-import Homepage from "../screens/Homepage/Homepage";
-
 const Router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Homepage />,
+  },
   {
     path: "/mypet",
     element: <MyPet />,
   },
   {
-    path: "/",
-
-    element: <Homepage />,
+    path: "/mypet",
+    element: <MyPet />,
   },
-
+  {
+    path: "/dashboard",
+    element: <Dashboard />,
+  },
+  {
+    path: "/dashboardemp",
+    element: <DashboardEmp />,
+  },
   {
     path: "/bookspa",
 
@@ -114,19 +125,14 @@ const Router = createBrowserRouter([
 
     element: <ViewAppointmentAdmin />,
   },
-
   {
     path: "/employee/add",
-
     element: <AddEmp />,
   },
-
   {
     path: "/employee/detail",
-
     element: <DetailEmp />,
   },
-
   {
     path: "/dashboardpage",
 
