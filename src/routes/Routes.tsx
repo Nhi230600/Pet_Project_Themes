@@ -36,9 +36,12 @@ import ViewAppointmentAdmin from "../screens/Admin-menu/appointment/View";
 import Homepage from "../screens/Homepage/Homepage";
 import MyPet from "../screens/Pet/MyPet/MyPet";
 import EmployeeAppointmentListPage from "../screens/EmployeeView/appointmentList";
+
+import CustomerTreatment from "../screens/EmployeeView/customerTreatment";
+import PetCheckupPage from "../screens/EmployeeView/reBook";
+=======
 import EmployeeeCustomerProfile from "../screens/EmployeeView/CustomerProfile";
 import CreateTreatmentIn from "../screens/EmployeeView/CreateTreatmentIn";
-
 
 const Router = createBrowserRouter([
   {
@@ -151,6 +154,14 @@ const Router = createBrowserRouter([
     element: <EmployeeAppointmentListPage />,
   },
   {
+
+    path: "/employee/customer/treatment",
+    element: <CustomerTreatment />,
+  },
+  {
+    path: "/employee/customer/rebook",
+    element: <PetCheckupPage />,
+
     path: "/employee/customer",
     element: <EmployeeeCustomerProfile />,
   },
@@ -163,6 +174,7 @@ const Router = createBrowserRouter([
     path: "/dashboard",
 
     element: <Dashboard />,
+
 
   },
 ]);
