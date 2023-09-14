@@ -1,8 +1,8 @@
 .booking-spa{
-    background-image: url('../../../images/booking-image.avif');
+    background-image: url('../../../images/bg_book.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position:right;
+    background-position: 40% 70%;
     margin-bottom: 0;
     padding:6rem 0;
 
