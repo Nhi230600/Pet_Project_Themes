@@ -29,11 +29,11 @@ const SideBar = () => {
           {
             label: "Dashboard",
             icon: <AppstoreOutlined style={{ fontSize: FONTSIZE.logoSmall }} />,
-            key: "/dashboardpage",
+            key: "/dashboard",
           },
           {
             label: "Danh sách nhân viên",
-            key: "/employee/list",
+            key: "/employee",
             icon: <UserOutlined style={{ fontSize: FONTSIZE.logoSmall }} />,
           },
         ]}

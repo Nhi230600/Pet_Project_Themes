@@ -1,45 +1,23 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import {
-  AddEmp,
-  BookCare,
-  BookSpa,
-  BookTrainer,
-  Dashboard,
-  DashboardEmp,
-  DetailEmp,
-} from "../screens";
+import { BookCare, BookSpa, BookTrainer, Dashboard } from "../screens";
 import Contact from "../screens/Contact/Contact";
 import EmployeeListPage from "../screens/Employee/ListEmployee";
-
 import AddEmployeePage from "../screens/Employee/Add";
-
 import EmployeeDetailPage from "../screens/Employee/Detail";
-
 import ProfileUser from "../screens/ProfileUser/ProfileUser";
-
 import EmployeeEditPage from "../screens/Employee/Edit";
-
-import DashboardPage from "../screens/DashboardPage/DashboardPage";
-
-import Dashboard from "../screens/DashBoard";
-
+import DashboardPage from "../screens/DashBoard";
 import ViewServicePage from "../screens/Service/View";
-
 import AddServicePage from "../screens/Service/Add";
-
 import EditServicePage from "../screens/Service/Edit";
-
 import AddShiftPage from "../screens/Employee/Add-Shift";
-
 import ViewAppointmentAdmin from "../screens/Admin-menu/appointment/View";
-
 import Homepage from "../screens/Homepage/Homepage";
 import MyPet from "../screens/Pet/MyPet/MyPet";
 import EmployeeAppointmentListPage from "../screens/EmployeeView/appointmentList";
 
 import CustomerTreatment from "../screens/EmployeeView/customerTreatment";
 import PetCheckupPage from "../screens/EmployeeView/reBook";
-=======
 import EmployeeeCustomerProfile from "../screens/EmployeeView/CustomerProfile";
 import CreateTreatmentIn from "../screens/EmployeeView/CreateTreatmentIn";
 
@@ -53,102 +31,70 @@ const Router = createBrowserRouter([
     element: <MyPet />,
   },
   {
-    path: "/mypet",
-    element: <MyPet />,
+    path: "/bookspa",
+    element: <BookSpa />,
   },
   {
     path: "/dashboard",
     element: <Dashboard />,
   },
+
   {
-    path: "/dashboardemp",
-    element: <DashboardEmp />,
+    path: "/booktrainer",
+    element: <BookTrainer />,
   },
   {
-    path: "/bookspa",
-
-    element: <BookSpa />,
+    path: "/bookcare",
+    element: <BookCare />,
   },
-
   {
     path: "/contact",
-
     element: <Contact />,
   },
-
   {
     path: "/profile",
-
     element: <ProfileUser />,
   },
-
   {
     path: "/employee",
-
     element: <EmployeeListPage />,
   },
-
   {
     path: "/employee/add",
-
     element: <AddEmployeePage />,
   },
-
   {
     path: "/employee/detail",
-
     element: <EmployeeDetailPage />,
   },
-
   {
     path: "/employee/edit",
-
     element: <EmployeeEditPage />,
   },
-
   {
     path: "/admin/service",
-
     element: <ViewServicePage />,
   },
-
   {
     path: "/admin/service/add",
-
     element: <AddServicePage />,
   },
-
   {
     path: "/admin/service/edit",
-
     element: <EditServicePage />,
   },
-
   {
     path: "/employee/add-shift",
-
     element: <AddShiftPage />,
   },
-
   {
     path: "/admin/appointment",
-
     element: <ViewAppointmentAdmin />,
   },
   {
-    path: "/employee/add",
-    element: <AddEmp />,
-  },
-  {
-    path: "/employee/detail",
-    element: <DetailEmp />,
-  },
-  {
     path: "/dashboardpage",
-
     element: <DashboardPage />,
   },
-
   {
     path: "/employee/appointment",
     element: <EmployeeAppointmentListPage />,
@@ -161,21 +107,14 @@ const Router = createBrowserRouter([
   {
     path: "/employee/customer/rebook",
     element: <PetCheckupPage />,
-
+  },
+  {
     path: "/employee/customer",
     element: <EmployeeeCustomerProfile />,
   },
   {
     path: "/employee/createtreatmentin",
     element: <CreateTreatmentIn />,
-
-
-  {
-    path: "/dashboard",
-
-    element: <Dashboard />,
-
-
   },
 ]);
 
