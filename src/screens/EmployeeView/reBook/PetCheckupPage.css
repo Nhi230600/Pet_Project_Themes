@@ -1,0 +1,31 @@
+/* CSS cho Card */
+.card-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-divider {
+    margin: 10px 0;
+  }
+  
+  /* CSS cho Card */
+.info-card {
+    max-width: 600px;
+    margin: 10px auto;
+    padding: 0px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, background-color 0.3s; /* Hiệu ứng hover */
+  }
+  
+  .info-card:hover {
+    transform: scale(1.05); /* Hiệu ứng phóng to khi hover */
+    background-color: #f0f0f0; /* Màu nền thay đổi khi hover */
+  }
+  
+  
