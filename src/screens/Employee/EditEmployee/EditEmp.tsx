@@ -4,7 +4,7 @@ import "antd/dist/antd.css";
 import { UploadOutlined } from "@ant-design/icons"; // Import biểu tượng UploadOutlined
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "./EditEmp.css";
+
 import { FONTSIZE } from "../../../constants";
 
 const { Option } = Select;

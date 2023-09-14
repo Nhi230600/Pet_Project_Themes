@@ -1,13 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import {
-  AddEmp,
-  BookCare,
-  BookSpa,
-  BookTrainer,
-  Dashboard,
-  DashboardEmp,
-  DetailEmp,
-} from "../screens";
+import { BookCare, BookSpa, BookTrainer } from "../screens";
 import Contact from "../screens/Contact/Contact";
 import EmployeeListPage from "../screens/Employee/ListEmployee";
 
@@ -18,8 +10,6 @@ import EmployeeDetailPage from "../screens/Employee/Detail";
 import ProfileUser from "../screens/ProfileUser/ProfileUser";
 
 import EmployeeEditPage from "../screens/Employee/Edit";
-
-import DashboardPage from "../screens/DashboardPage/DashboardPage";
 
 import Dashboard from "../screens/DashBoard";
 
@@ -39,7 +29,6 @@ import EmployeeAppointmentListPage from "../screens/EmployeeView/appointmentList
 
 import CustomerTreatment from "../screens/EmployeeView/customerTreatment";
 import PetCheckupPage from "../screens/EmployeeView/reBook";
-=======
 import EmployeeeCustomerProfile from "../screens/EmployeeView/CustomerProfile";
 import CreateTreatmentIn from "../screens/EmployeeView/CreateTreatmentIn";
 
@@ -60,10 +49,7 @@ const Router = createBrowserRouter([
     path: "/dashboard",
     element: <Dashboard />,
   },
-  {
-    path: "/dashboardemp",
-    element: <DashboardEmp />,
-  },
+
   {
     path: "/bookspa",
 
@@ -135,47 +121,32 @@ const Router = createBrowserRouter([
 
     element: <ViewAppointmentAdmin />,
   },
-  {
-    path: "/employee/add",
-    element: <AddEmp />,
-  },
-  {
-    path: "/employee/detail",
-    element: <DetailEmp />,
-  },
-  {
-    path: "/dashboardpage",
-
-    element: <DashboardPage />,
-  },
 
   {
     path: "/employee/appointment",
     element: <EmployeeAppointmentListPage />,
   },
   {
-
     path: "/employee/customer/treatment",
     element: <CustomerTreatment />,
   },
   {
-    path: "/employee/customer/rebook",
+    path: "employee/customer/rebook",
     element: <PetCheckupPage />,
-
+  },
+  {
     path: "/employee/customer",
     element: <EmployeeeCustomerProfile />,
   },
   {
     path: "/employee/createtreatmentin",
     element: <CreateTreatmentIn />,
-
+  },
 
   {
     path: "/dashboard",
 
     element: <Dashboard />,
-
-
   },
 ]);
 
