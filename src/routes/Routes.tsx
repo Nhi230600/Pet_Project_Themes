@@ -89,6 +89,10 @@ const Router = createBrowserRouter([
     element: <ViewAppointmentAdmin />,
   },
   {
+    path: "/dashboardpage",
+    element: <DashboardPage />,
+  },
+  {
     path: "/employee/appointment",
     element: <EmployeeAppointmentListPage />,
   },
