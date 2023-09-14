@@ -14,6 +14,9 @@ import AddShiftPage from "../screens/Employee/Add-Shift";
 import ViewAppointmentAdmin from "../screens/Admin-menu/appointment/View";
 import Homepage from "../screens/Homepage/Homepage";
 import MyPet from "../screens/Pet/MyPet/MyPet";
+import EmployeeAppointmentListPage from "../screens/EmployeeView/appointmentList";
+import EmployeeeCustomerProfile from "../screens/EmployeeView/CustomerProfile";
+import CreateTreatmentIn from "../screens/EmployeeView/CreateTreatmentIn";
 
 const Router = createBrowserRouter([
   {
@@ -66,10 +69,6 @@ const Router = createBrowserRouter([
     element: <EmployeeEditPage />,
   },
   {
-    path: "/dashboard",
-    element: <DashboardPage />,
-  },
-  {
     path: "/admin/service",
     element: <ViewServicePage />,
   },
@@ -92,6 +91,18 @@ const Router = createBrowserRouter([
   {
     path: "/dashboardpage",
     element: <DashboardPage />,
+  },
+  {
+    path: "/employee/appointment",
+    element: <EmployeeAppointmentListPage />,
+  },
+  {
+    path: "/employee/customer",
+    element: <EmployeeeCustomerProfile />,
+  },
+  {
+    path: "/employee/createtreatmentin",
+    element: <CreateTreatmentIn />,
   },
 ]);
 
