@@ -180,7 +180,7 @@ const Homepage = () => {
         {/* Training-END */}
       </div>
       <div id="footer">
-        <Footer></Footer>
+        
       </div>
     </div>
   );
