@@ -1,0 +1,18 @@
+.container_PetProfilePage{
+    display: flex;
+}
+.container_PetProfilePage_img{
+    margin-right: 20vw;
+    margin-left: 5vw;
+}
+.container_PetProfilePage_petName{
+    align-items: center;
+}
+.container_PetProfilePage_properti{
+    justify-content: space-between;
+}
+
+.container_PetProfilePage_properti_icon{
+    display: flex;
+    font-size: 20px;
+}
