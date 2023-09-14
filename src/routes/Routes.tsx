@@ -11,7 +11,7 @@ import ProfileUser from "../screens/ProfileUser/ProfileUser";
 
 import EmployeeEditPage from "../screens/Employee/Edit";
 
-import Dashboard from "../screens/DashBoard";
+import Dashboard from "../screens/Admin/EmployeeManage/Dashboard";
 
 import ViewServicePage from "../screens/Service/View";
 
@@ -141,12 +141,6 @@ const Router = createBrowserRouter([
   {
     path: "/employee/createtreatmentin",
     element: <CreateTreatmentIn />,
-  },
-
-  {
-    path: "/dashboard",
-
-    element: <Dashboard />,
   },
 ]);
 
