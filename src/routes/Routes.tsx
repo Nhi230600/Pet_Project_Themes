@@ -33,6 +33,13 @@ import AddShiftPage from "../screens/Employee/Add-Shift";
 
 import ViewAppointmentAdmin from "../screens/Admin-menu/appointment/View";
 
+import Homepage from "../screens/Homepage/Homepage";
+import MyPet from "../screens/Pet/MyPet/MyPet";
+import EmployeeAppointmentListPage from "../screens/EmployeeView/appointmentList";
+import EmployeeeCustomerProfile from "../screens/EmployeeView/CustomerProfile";
+import CreateTreatmentIn from "../screens/EmployeeView/CreateTreatmentIn";
+
+
 const Router = createBrowserRouter([
   {
     path: "/",
@@ -140,9 +147,23 @@ const Router = createBrowserRouter([
   },
 
   {
+    path: "/employee/appointment",
+    element: <EmployeeAppointmentListPage />,
+  },
+  {
+    path: "/employee/customer",
+    element: <EmployeeeCustomerProfile />,
+  },
+  {
+    path: "/employee/createtreatmentin",
+    element: <CreateTreatmentIn />,
+
+
+  {
     path: "/dashboard",
 
     element: <Dashboard />,
+
   },
 ]);
 
