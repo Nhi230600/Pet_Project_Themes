@@ -3,12 +3,148 @@ import { Header } from "../../../components";
 import Footer from "../../../components/Footer";
 import "./BookSpa.css";
 
-const BookSpa = () => {
-  const [selectedForm, setSelectedForm] = useState("spa");
+type BookProps = {
+  typeof_book? : string;
+}
+
+const BookSpa = (props : BookProps) => {
+  
+  const { typeof_book = "spa"} = props;
+ 
+
+  const [selectedForm, setSelectedForm] = useState(typeof_book);
 
   const handleFormChange = (form: any) => {
     setSelectedForm(form);
   };
+
+  const optionsSpa = [
+    [
+    {
+      label: "Tỉa lông",
+      value: "",
+    },
+
+    {
+      label: "Tắm rửa",
+      value: ""
+    },
+
+    {
+      label: "Massage",
+      value: "",
+    },
+
+    {
+      label: "Manicure và Pedicure",
+      value: "",
+    },
+
+    {
+      label: "Nhuộm lông",
+      value: "",
+    }
+    ],
+    
+    [
+    {
+      label: "Nguyễn Văn A",
+      value: "",
+    },
+
+    {
+      label: "Phạm Thị D",
+      value: "",
+    },
+
+    {
+      label: "Mai Thị F",
+      value: "",
+    },
+
+    {
+      label: "Đinh Văn H",
+      value: "",
+    },
+
+    ]
+  ]
+
+  const optionsTrainer = [
+    [
+      {
+        label: "Khóa học cơ bản",
+        value: '',
+      },
+      {
+        label: "Khóa học nâng cao",
+        value: '',
+      },
+      {
+        label: "Khóa học chó sủa",
+        value: '',
+      },
+    ],
+    
+    [
+      {
+        label: "Lê Quang C",
+        value: '',
+      },
+
+      {
+        label: "Lý Thanh G",
+        value: '',
+      },
+
+      {
+        label: "Trần Văn J",
+        value: '',
+      },
+    ]
+
+  ]
+
+  const optionsCare = [
+    [
+      {
+        label: "Kiểm tra sức khỏe định kỳ",
+        value: '',  
+      },
+
+      {
+        label: "Chăm sóc y tế",
+        value: '',  
+      },
+
+      {
+        label: "Phòng ngừa bệnh",
+        value: '',  
+      },
+      
+    ],
+
+    [
+
+      {
+        label: "Trần Thị B",
+        value: '',
+      },
+
+      {
+        label: "Hoàng Văn E",
+        value: '',
+      },
+      
+      {
+        label: "Vũ Thị I",
+        value: '',
+      }
+
+    ]
+
+  ]
+
 
   return (
     <>
@@ -58,26 +194,19 @@ const BookSpa = () => {
                   bị, và phục vụ các bé một cách chu đáo nhất nhé!
                 </p>
                 <select name="services" id="services">
-                  <option value="">Tắm vệ sinh</option>
-                  <option value="">Cắt tỉa lông</option>
-                  <option value="">Combo 1: (Tắm sấy + vệ sinh)</option>
-                  <option value="">Combo 2: (Cắt tỉa lông + vệ sinh)</option>
-                  <option value="">
-                    Combo 3: (Tắm sấy + vệ sinh + cắt tỉa lông)
-                  </option>
-                  <option value="">
-                    Combo 4: (Tắm sấy + vệ sinh + cạo lông)
-                  </option>
+                {optionsSpa[0].map((option) => (
+                    <option value={option.value}>{option.label}</option>))  
+                }
                 </select>
+                
                 <br />
                 <h3>
                   CHỌN NHÂN VIÊN: <strong className="important">*</strong>
                 </h3>
                 <select name="services" id="services">
-                  <option value="">Chọn nhân viên Spa</option>
-                  <option value="employee1">Nhân viên 1</option>
-                  <option value="employee2">Nhân viên 2</option>
-                  {/* Thêm các tùy chọn khác cho nhân viên Spa */}
+                  {optionsSpa[1].map((option) => (
+                    <option value={option.value}>{option.label}</option>))  
+                  }
                 </select>
                 <h3>
                   THỜI GIAN: <strong className="important">*</strong>
@@ -119,8 +248,9 @@ const BookSpa = () => {
                   bị, và phục vụ các bé một cách chu đáo nhất nhé!
                 </p>
                 <select name="services" id="services">
-                  <option value="">Dạy học</option>
-                  <option value="">Huấn luyện thể thao</option>
+                  {optionsTrainer[0].map((option) => (
+                      <option value={option.value}>{option.label}</option>))  
+                  }
                   {/* Thêm các tùy chọn khác cho dịch vụ Trainer */}
                 </select>
                 <br />
@@ -128,9 +258,9 @@ const BookSpa = () => {
                   CHỌN NHÂN VIÊN: <strong className="important">*</strong>
                 </h3>
                 <select name="services" id="services">
-                  <option value="">Chọn nhân viên Spa</option>
-                  <option value="employee1">Nhân viên 1</option>
-                  <option value="employee2">Nhân viên 2</option>
+                  {optionsTrainer[1].map((option) => (
+                      <option value={option.value}>{option.label}</option>))  
+                  }
                   {/* Thêm các tùy chọn khác cho nhân viên Spa */}
                 </select>
                 <h3>
@@ -173,8 +303,9 @@ const BookSpa = () => {
                   bị, và phục vụ các bé một cách chu đáo nhất nhé!
                 </p>
                 <select name="services" id="services">
-                  <option value="">Chăm sóc trẻ</option>
-                  <option value="">Giúp việc gia đình</option>
+                  {optionsCare[0].map((option) => (
+                      <option value={option.value}>{option.label}</option>))  
+                  }
                   {/* Thêm các tùy chọn khác cho dịch vụ Care */}
                 </select>
                 <br />
@@ -182,9 +313,9 @@ const BookSpa = () => {
                   CHỌN NHÂN VIÊN: <strong className="important">*</strong>
                 </h3>
                 <select name="services" id="services">
-                  <option value="">Chọn nhân viên Spa</option>
-                  <option value="employee1">Nhân viên 1</option>
-                  <option value="employee2">Nhân viên 2</option>
+                  {optionsCare[1].map((option) => (
+                      <option value={option.value}>{option.label}</option>))  
+                  }
                   {/* Thêm các tùy chọn khác cho nhân viên Spa */}
                 </select>
                 <h3>
