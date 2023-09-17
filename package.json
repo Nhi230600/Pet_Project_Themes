@@ -1,9 +1,9 @@
 {
   "name": "cra-template-typescript-antwind",
   "version": "0.1.1",
-  "main": "template.json",
-  "repository": "git@github.com:GeekEast/cra-antwind.git",
-  "author": "James Tan <xiang.tan.p2109@gmail.com>",
+  "private": true,
+  "main": "index.js",
+  "author": "",
   "description": "A quick start Create React App template with Antd + Tailwind",
   "license": "MIT",
   "engines": {
@@ -18,36 +18,33 @@
     "antd",
     "tailwind"
   ],
-  "files": [
-    "template",
-    "template.json"
-  ],
-  "bugs": {
-    "url": "https://github.com/GeekEast/cra-antwind/issues"
-  },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
-    "tag": "latest",
-    "access": "public"
-  },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-conventional-changelog"
-    }
-  },
   "dependencies": {
     "@ant-design/icons": "^5.2.6",
-    "@craco/craco": "^6.1.1",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@fortawesome/fontawesome-free": "^6.4.2",
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@iconscout/react-unicons": "^2.0.2",
-    "@mui/material": "^5.14.8",
-    "@react-navigation/native": "^6.1.7",
-    "@react-navigation/native-stack": "^6.9.13",
     "@tailwindcss/postcss7-compat": "^2.1.0",
+    "antd": "^4.15.1",
+    "axios": "^1.5.0",
+    "dayjs": "^1.10.4",
+    "font-awesome": "^4.7.0",
+    "lodash": "^4.17.21",
+    "moment-timezone": "^0.5.43",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.15.0",
+    "react-toastify": "^8.1.0",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.15",
+    "@babel/preset-env": "^7.22.15",
+    "@babel/preset-react": "^7.22.15",
+    "@craco/craco": "^6.1.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -55,33 +52,22 @@
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
-    "antd": "^4.15.1",
     "autoprefixer": "^9",
-    "axios": "^1.5.0",
-    "bootstrap": "^5.3.1",
+    "commitizen": "^4.2.3",
     "craco-antd": "^1.19.0",
     "craco-less": "^1.17.1",
-    "dayjs": "^1.10.4",
-    "font-awesome": "^4.7.0",
-    "moment-timezone": "^0.5.43",
+    "cz-conventional-changelog": "^3.3.0",
     "postcss": "^7",
-    "primereact": "^9.6.2",
-    "react": "^17.0.2",
-    "react-beautiful-dnd": "^13.1.1",
-    "react-dom": "^17.0.2",
-    "react-router-dom": "^6.15.0",
     "react-scripts": "4.0.3",
-    "react-toastify": "^8.1.0",
     "sass-loader": "^13.3.2",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "typescript": "^4.1.2",
     "web-vitals": "^1.0.1",
     "webpack-bundle-analyzer": "^4.4.1",
     "webpackbar": "^5.0.0-3"
   },
   "scripts": {
-    "start": "craco --openssl-legacy-provider start",
-    "build": "craco --openssl-legacy-provider build",
+    "start": "craco start",
+    "build": "craco build",
     "test": "craco test",
     "analyze": "cross-env REACT_INTERACTIVE_ANALYZE=1 yarn build",
     "eject": "react-scripts eject",
@@ -104,18 +90,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "jest": {
-    "transformIgnorePatterns": [
-      "/node_modules/(?!antd|@ant-design|rc-.+?|@babel/runtime).+(js|jsx)$"
-    ]
-  },
-  "devDependencies": {
-    "@babel/core": "^7.22.15",
-    "@babel/preset-env": "^7.22.15",
-    "@babel/preset-react": "^7.22.15",
-    "@fortawesome/fontawesome-free": "^6.4.2",
-    "commitizen": "^4.2.3",
-    "cz-conventional-changelog": "^3.3.0"
   }
 }
