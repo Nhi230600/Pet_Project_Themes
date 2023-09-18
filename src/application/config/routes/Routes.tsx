@@ -1,6 +1,5 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
 import Homepage from "../../../screens/Homepage/Homepage";
 import MyPet from "../../../screens/Pet/MyPet/MyPet";
 import Dashboard from "../../../screens/Admin/EmployeeManage/Dashboard";
@@ -21,6 +20,7 @@ import CustomerTreatment from "../../../screens/EmployeeView/customerTreatment";
 import PetCheckupPage from "../../../screens/EmployeeView/reBook";
 import EmployeeeCustomerProfile from "../../../screens/EmployeeView/CustomerProfile";
 import CreateTreatmentIn from "../../../screens/EmployeeView/CreateTreatmentIn";
+import UserList from "screens/UserList/List/Page";
 
 const Router = createBrowserRouter([
   {
@@ -90,6 +90,15 @@ const Router = createBrowserRouter([
             ]
           },
 
+        ]
+      },
+      {
+        path : 'customer',
+        children : [
+          {
+            path : '',
+            element: <UserList/>,
+          }
         ]
       }
     ],
