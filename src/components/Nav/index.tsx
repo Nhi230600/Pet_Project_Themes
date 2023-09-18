@@ -1,6 +1,6 @@
 import React from "react";
 import "./Nav.css";
-import { FONTSIZE } from "../../constants";
+import { FONTSIZE } from "../../application/config/constants";
 
 const Nav = () => {
   return (

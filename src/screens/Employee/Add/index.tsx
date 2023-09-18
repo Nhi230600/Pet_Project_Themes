@@ -5,10 +5,10 @@ import "antd/dist/antd.css";
 import "./AddEmployeePage.css";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import InputField from "../../../components/InputField";
+import InputField from "../../../components/Form/InputField";
 import SelectField from "../../../components/SelectField";
-import NumberField from "../../../components/NumberField";
-import { ERROR_MESSAGES } from "../../../components/formConstants";
+import NumberField from "../../../components/Form/NumberField";
+import { ERROR_MESSAGES } from "../../../components/Form/formConstants";
 
 const options = [
   { value: "Spa", label: "Spa" },

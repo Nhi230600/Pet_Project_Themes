@@ -1,6 +1,6 @@
 import { Form, Input } from "antd";
 import { useState } from "react";
-import { FONTSIZE } from "../../constants";
+import { FONTSIZE } from "../../application/config/constants";
 import Logo from "../../images/logo.png";
 import "./RegisterPage.css";
 

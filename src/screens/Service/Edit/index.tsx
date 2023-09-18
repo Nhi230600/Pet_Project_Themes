@@ -4,10 +4,10 @@ import { Form, Button, Spin, Card } from "antd";
 import { toast, ToastContainer } from "react-toastify";
 import "antd/dist/antd.css";
 import "./EditServicePage.css";
-import InputField from "../../../components/InputField";
+import InputField from "../../../components/Form/InputField";
 import TextAreaField from "../../../components/TextAreaField";
-import NumberField from "../../../components/NumberField";
-import { ERROR_MESSAGES } from "../../../components/formConstants"; // Import ERROR_MESSAGES từ formConstants
+import NumberField from "../../../components/Form/NumberField";
+import { ERROR_MESSAGES } from "../../../components/Form/formConstants"; // Import ERROR_MESSAGES từ formConstants
 
 const EditServicePage = () => {
   const { serviceId } = useParams();

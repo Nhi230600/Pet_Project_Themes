@@ -6,9 +6,9 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { PlusOutlined } from "@ant-design/icons";
 import "./EditEmployeePage.css";
-import InputField from "../../../components/InputField"; // Import InputField component
+import InputField from "../../../components/Form/InputField"; // Import InputField component
 import SelectField from "../../../components/SelectField"; // Import SelectField component
-import NumberField from "../../../components/NumberField"; // Import NumberField component
+import NumberField from "../../../components/Form/NumberField"; // Import NumberField component
 
 const EditEmployeePage = () => {
   const [fileList, setFileList] = useState<any[]>([]);

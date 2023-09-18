@@ -1,7 +1,7 @@
 import { Modal } from "antd";
 import { useState } from "react";
 import { LoginPage, RegisterPage } from "../../screens";
-import { FONTSIZE } from "../../constants";
+import { FONTSIZE } from "../../application/config/constants";
 import "./LoginRegister.css";
 
 const LoginRegister = () => {

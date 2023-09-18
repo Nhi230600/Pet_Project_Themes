@@ -7,7 +7,7 @@ import {
   faUserEdit,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { FONTSIZE } from "../../constants";
+import { FONTSIZE } from "../../application/config/constants";
 import AvatarUser from "../../images/avatar-user.jpeg";
 import "./ProfileUser.css";
 

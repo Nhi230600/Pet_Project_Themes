@@ -1,5 +1,5 @@
 import { Footer } from "antd/lib/layout/layout";
-import { FONTSIZE } from "../../constants";
+import { FONTSIZE } from "../../application/config/constants";
 import Logo from "../../images/logo.png";
 
 const FooterDashboard = () => {

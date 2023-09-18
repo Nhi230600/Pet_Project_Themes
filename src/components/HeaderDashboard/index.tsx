@@ -1,4 +1,4 @@
-import { FONTSIZE } from "../../constants";
+import { FONTSIZE } from "../../application/config/constants";
 import Logo from "../../images/logo.png";
 import "./HeaderDashboard.css";
 

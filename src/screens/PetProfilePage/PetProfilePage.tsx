@@ -6,7 +6,7 @@ import {
   faBirthdayCake,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { COLORS, FONTCOLOR, FONTSIZE } from "../../constants";
+import { COLORS, FONTCOLOR, FONTSIZE } from "../../application/config/constants";
 import "./PetProfilePage.css";
 const PetProfilePage = () => {
   return (

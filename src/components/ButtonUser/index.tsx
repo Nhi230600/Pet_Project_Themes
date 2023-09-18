@@ -1,7 +1,7 @@
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 import { Drawer } from "antd";
 import { useState } from "react";
-import { FONTSIZE } from "../../constants";
+import { FONTSIZE } from "../../application/config/constants";
 import DrawerContent from "../DrawerContent";
 import "./ButtonUser.css";
 

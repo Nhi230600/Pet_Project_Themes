@@ -2,7 +2,7 @@ import { AppstoreOutlined, UserOutlined } from "@ant-design/icons";
 import { Menu } from "antd";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { FONTSIZE } from "../../constants";
+import { FONTSIZE } from "../../application/config/constants";
 import "./SideBar.css";
 
 const SideBar = () => {

@@ -1,7 +1,7 @@
 import { faCakeCandles } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Footer, Header } from "../../../components";
-import { FONTSIZE } from "../../../constants";
+import { FONTSIZE } from "../../../application/config/constants";
 import { Modal } from "antd";
 import { useState } from "react";
 import PetProfilePage from "../../PetProfilePage/PetProfilePage";

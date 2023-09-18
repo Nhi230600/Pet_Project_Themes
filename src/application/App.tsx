@@ -1,6 +1,9 @@
-import { ToastContainer } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Routes from "./config/routes/Routes";
+import "react-toastify/dist/ReactToastify.css";
 import { Footer } from "components";
-import Routes from "./configs/routers";
+
 
 const App = () => {
   return (
@@ -11,5 +14,5 @@ const App = () => {
     </div>
   );
 };
-
 export default App;
+
