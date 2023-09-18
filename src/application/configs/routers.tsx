@@ -5,7 +5,7 @@ import EmployeeListPage from "screens/Employee/ListEmployee";
 
 import AddEmployeePage from "screens/Employee/Add";
 
-import EmployeeDetailPage from "screens/Employee/Detail";
+import EmployeeDetailPage from "screens/Employee/Detail/Page";
 
 import ProfileUser from "screens/ProfileUser/ProfileUser";
 
@@ -25,7 +25,7 @@ import ViewAppointmentAdmin from "screens/Admin-menu/appointment/View";
 
 import Homepage from "screens/Homepage/Homepage";
 import MyPet from "screens/Pet/MyPet/MyPet";
-import EmployeeAppointmentListPage from "screens/EmployeeView/appointmentList";
+import EmployeeAppointmentListPage from "screens/EmployeeView/AppointmentList";
 
 import CustomerTreatment from "screens/EmployeeView/customerTreatment";
 import PetCheckupPage from "screens/EmployeeView/reBook";
@@ -59,13 +59,13 @@ const Router = createBrowserRouter([
   {
     path: "/booktrainer",
 
-    element: <BookSpa typeof_book="trainer"/>,
+    element: <BookSpa typeof_book="trainer" />,
   },
 
   {
     path: "/bookcare",
 
-    element: <BookSpa typeof_book="care"/>,
+    element: <BookSpa typeof_book="care" />,
   },
 
   {

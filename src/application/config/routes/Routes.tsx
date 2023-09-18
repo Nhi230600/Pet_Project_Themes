@@ -16,7 +16,7 @@ import AddServicePage from "../../../screens/Service/Add";
 import EditServicePage from "../../../screens/Service/Edit";
 import AddShiftPage from "../../../screens/Employee/Add-Shift";
 import ViewAppointmentAdmin from "../../../screens/Admin-menu/appointment/View";
-import EmployeeAppointmentListPage from "../../../screens/EmployeeView/appointmentList";
+import EmployeeAppointmentListPage from "../../../screens/EmployeeView/AppointmentList";
 import CustomerTreatment from "../../../screens/EmployeeView/customerTreatment";
 import PetCheckupPage from "../../../screens/EmployeeView/reBook";
 import EmployeeeCustomerProfile from "../../../screens/EmployeeView/CustomerProfile";
@@ -54,8 +54,6 @@ const Router = createBrowserRouter([
             element: <EditServicePage />,
           },
         ],
-
-
       },
       {
         path: "appointment",
@@ -87,11 +85,10 @@ const Router = createBrowserRouter([
                 path: "add-shift",
                 element: <AddShiftPage />,
               },
-            ]
+            ],
           },
-
-        ]
-      }
+        ],
+      },
     ],
   },
   {
@@ -131,15 +128,14 @@ const Router = createBrowserRouter([
                 path: "createtreatmentin",
                 element: <CreateTreatmentIn />,
               },
-            ]
+            ],
           },
           {
             path: "rebook",
             element: <PetCheckupPage />,
           },
-        ]
+        ],
       },
-
     ],
   },
 ]);

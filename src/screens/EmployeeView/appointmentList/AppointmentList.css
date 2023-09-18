@@ -1,0 +1,15 @@
+.list-container {
+  background-color: #fff;
+  padding: 10px;
+}
+.list-appointment {
+  display: flex;
+  flex-direction: column;
+  align-items: normal;
+  margin: auto;
+  width: 1200px;
+}
+
+.list-title {
+  color: #333;
+}
