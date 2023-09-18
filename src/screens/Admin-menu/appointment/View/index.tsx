@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Table, DatePicker, Tag, Card, Pagination } from "antd";
 import "antd/dist/antd.css";
 import moment, { Moment } from "moment";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import "./EmployeeSchedulePage.css";
 
 const { RangePicker } = DatePicker;
@@ -26,44 +25,104 @@ const EmployeeSchedulePage = () => {
     {
       employee: "Nhân viên A",
       slots: [
-        { time: "2023-09-07T00:00:00", customer: "Khách hàng Ngày 7/9 của A", service: "Dịch vụ A", status: 1 },
-        { time: "2023-09-08T00:00:00", customer: "Khách hàng Ngày 8/9 của A", service: "Dịch vụ B", status: 2 },
+        {
+          time: "2023-09-07T00:00:00",
+          customer: "Khách hàng Ngày 7/9 của A",
+          service: "Dịch vụ A",
+          status: 1,
+        },
+        {
+          time: "2023-09-08T00:00:00",
+          customer: "Khách hàng Ngày 8/9 của A",
+          service: "Dịch vụ B",
+          status: 2,
+        },
       ],
     },
     {
       employee: "Nhân viên B",
       slots: [
-        { time: "2023-09-07T00:00:00", customer: "Khách hàng Ngày 7/9 của B", service: "Dịch vụ C", status: 3 },
-        { time: "2023-09-08T00:00:00", customer: "Khách hàng Ngày 8/9 của B", service: "Dịch vụ D", status: 1 },
+        {
+          time: "2023-09-07T00:00:00",
+          customer: "Khách hàng Ngày 7/9 của B",
+          service: "Dịch vụ C",
+          status: 3,
+        },
+        {
+          time: "2023-09-08T00:00:00",
+          customer: "Khách hàng Ngày 8/9 của B",
+          service: "Dịch vụ D",
+          status: 1,
+        },
       ],
     },
     {
       employee: "Nhân viên B",
       slots: [
-        { time: "2023-09-07T00:00:00", customer: "Khách hàng Ngày 7/9 của B", service: "Dịch vụ C", status: 3 },
-        { time: "2023-09-08T00:00:00", customer: "Khách hàng Ngày 8/9 của B", service: "Dịch vụ D", status: 1 },
+        {
+          time: "2023-09-07T00:00:00",
+          customer: "Khách hàng Ngày 7/9 của B",
+          service: "Dịch vụ C",
+          status: 3,
+        },
+        {
+          time: "2023-09-08T00:00:00",
+          customer: "Khách hàng Ngày 8/9 của B",
+          service: "Dịch vụ D",
+          status: 1,
+        },
       ],
     },
     {
       employee: "Nhân viên B",
       slots: [
-        { time: "2023-09-07T00:00:00", customer: "Khách hàng Ngày 7/9 của B", service: "Dịch vụ C", status: 3 },
-        { time: "2023-09-08T00:00:00", customer: "Khách hàng Ngày 8/9 của B", service: "Dịch vụ D", status: 1 },
+        {
+          time: "2023-09-07T00:00:00",
+          customer: "Khách hàng Ngày 7/9 của B",
+          service: "Dịch vụ C",
+          status: 3,
+        },
+        {
+          time: "2023-09-08T00:00:00",
+          customer: "Khách hàng Ngày 8/9 của B",
+          service: "Dịch vụ D",
+          status: 1,
+        },
       ],
     },
 
     {
       employee: "Nhân viên B",
       slots: [
-        { time: "2023-09-07T00:00:00", customer: "Khách hàng Ngày 7/9 của B", service: "Dịch vụ C", status: 3 },
-        { time: "2023-09-08T00:00:00", customer: "Khách hàng Ngày 8/9 của B", service: "Dịch vụ D", status: 1 },
+        {
+          time: "2023-09-07T00:00:00",
+          customer: "Khách hàng Ngày 7/9 của B",
+          service: "Dịch vụ C",
+          status: 3,
+        },
+        {
+          time: "2023-09-08T00:00:00",
+          customer: "Khách hàng Ngày 8/9 của B",
+          service: "Dịch vụ D",
+          status: 1,
+        },
       ],
     },
     {
       employee: "Nhân viên B",
       slots: [
-        { time: "2023-09-07T00:00:00", customer: "Khách hàng Ngày 7/9 của B", service: "Dịch vụ C", status: 3 },
-        { time: "2023-09-08T00:00:00", customer: "Khách hàng Ngày 8/9 của B", service: "Dịch vụ D", status: 1 },
+        {
+          time: "2023-09-07T00:00:00",
+          customer: "Khách hàng Ngày 7/9 của B",
+          service: "Dịch vụ C",
+          status: 3,
+        },
+        {
+          time: "2023-09-08T00:00:00",
+          customer: "Khách hàng Ngày 8/9 của B",
+          service: "Dịch vụ D",
+          status: 1,
+        },
       ],
     },
   ];
@@ -87,27 +146,28 @@ const EmployeeSchedulePage = () => {
   }, [currentPage]);
 
   const filteredSlots = scheduleData.flatMap((item) => {
-    const filteredByDate = item.slots.filter((slot) =>
-      moment(slot.time).isSame(selectedDate, "day") &&
-      moment(slot.time).isSameOrBefore(selectedDate.clone().add(1, "hour"))
+    const filteredByDate = item.slots.filter(
+      (slot) =>
+        moment(slot.time).isSame(selectedDate, "day") &&
+        moment(slot.time).isSameOrBefore(selectedDate.clone().add(1, "hour"))
     );
 
     const filteredByTime = timeSlots.map((timeSlot) => {
-      const slotData = filteredByDate.find((slot) =>
-        moment(slot.time).format("HH:mm") === timeSlot
+      const slotData = filteredByDate.find(
+        (slot) => moment(slot.time).format("HH:mm") === timeSlot
       );
 
       return slotData
         ? {
-          customer: slotData.customer,
-          service: slotData.service,
-          status: slotData.status,
-        }
+            customer: slotData.customer,
+            service: slotData.service,
+            status: slotData.status,
+          }
         : {
-          customer: "",
-          service: "",
-          status: 0,
-        };
+            customer: "",
+            service: "",
+            status: 0,
+          };
     });
 
     return {
@@ -130,19 +190,27 @@ const EmployeeSchedulePage = () => {
       render: (text: Slot) => (
         <div>
           <Card className="slot-card">
-          {text.status ? (
-            <div>
-              <Tag color={text.status === 1 ? 'green' : text.status === 2 ? 'yellow' : text.status === 3 ? 'red' : 'gray'}>
-                {text.customer}
-              </Tag>
-              <Tag>
-                {text.service}
-              </Tag>
-            </div>
-          ) : (
-            <Tag color="gray">Trống</Tag>
-          )}
-        </Card>
+            {text.status ? (
+              <div>
+                <Tag
+                  color={
+                    text.status === 1
+                      ? "green"
+                      : text.status === 2
+                      ? "yellow"
+                      : text.status === 3
+                      ? "red"
+                      : "gray"
+                  }
+                >
+                  {text.customer}
+                </Tag>
+                <Tag>{text.service}</Tag>
+              </div>
+            ) : (
+              <Tag color="gray">Trống</Tag>
+            )}
+          </Card>
         </div>
       ),
     })),
