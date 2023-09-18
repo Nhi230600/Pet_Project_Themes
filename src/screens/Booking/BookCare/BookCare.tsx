@@ -3,7 +3,7 @@ import { DatePicker, Space } from "antd";
 import { Header } from "../../../components";
 
 import "./BookCare.css";
-import { FONTSIZE } from "../../../constants";
+import { FONTSIZE } from "../../../application/config/constants";
 
 const BookCare = () => {
   return (

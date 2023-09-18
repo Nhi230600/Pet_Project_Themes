@@ -1,7 +1,7 @@
 import React from "react";
 import "./Search.css";
 import { SearchOutlined } from "@ant-design/icons";
-import { FONTSIZE } from "../../constants";
+import { FONTSIZE } from "../../application/config/constants";
 
 const Search = () => {
   return (

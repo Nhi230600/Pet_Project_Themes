@@ -7,7 +7,7 @@ import {
   faStreetView,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { COLORS, FONTCOLOR, FONTSIZE } from "../../constants";
+import { COLORS, FONTCOLOR, FONTSIZE } from "../../application/config/constants";
 import Logo from "../../images/logo.png";
 import "./Footer.css";
 

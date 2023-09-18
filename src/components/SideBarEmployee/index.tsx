@@ -7,7 +7,7 @@ import { Menu } from "antd";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./SideBarEmployee.css";
-import { FONTSIZE } from "../../constants";
+import { FONTSIZE } from "../../application/config/constants";
 
 const SideBarEmployee = () => {
   const location = useLocation();

@@ -9,7 +9,7 @@ import {
 import { Modal } from "antd";
 
 import { useState } from "react";
-import { COLORS, FONTCOLOR, FONTSIZE } from "../../constants";
+import { COLORS, FONTCOLOR, FONTSIZE } from "../../application/config/constants";
 import { Menu, Drawer } from "antd";
 import Logo from "../../images/logo.png";
 import LoginPage from "../../screens/LoginPage/LoginPage";

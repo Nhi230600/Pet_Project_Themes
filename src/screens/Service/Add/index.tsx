@@ -5,10 +5,10 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./AddServicePage.css";
 import SelectField from "../../../components/SelectField";
-import InputField from "../../../components/InputField";
+import InputField from "../../../components/Form/InputField";
 import TextAreaField from "../../../components/TextAreaField";
-import NumberField from "../../../components/NumberField";
-import { ERROR_MESSAGES } from "../../../components/formConstants"; // Import ERROR_MESSAGES từ formConstants
+import NumberField from "../../../components/Form/NumberField";
+import { ERROR_MESSAGES } from "../../../components/Form/formConstants"; // Import ERROR_MESSAGES từ formConstants
 
 const AddServicePage = () => {
   const navigate = useNavigate();

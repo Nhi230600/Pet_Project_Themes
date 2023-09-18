@@ -2,7 +2,7 @@
 import React from 'react'
 import { Footer, Header } from "../../../components";
 
-import { FONTSIZE } from "../../../constants";
+import { FONTSIZE } from "../../../application/config/constants";
 import "./BookTrainer.css";
 
 type BookTrainerProps = {};

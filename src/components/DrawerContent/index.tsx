@@ -1,7 +1,7 @@
 import { LogoutOutlined, QqOutlined, UserOutlined } from "@ant-design/icons";
 import { Avatar, Menu, Space } from "antd";
 import { useState } from "react";
-import { FONTSIZE } from "../../constants";
+import { FONTSIZE } from "../../application/config/constants";
 import AvatarUser from "../../images/avatar-user.jpeg";
 
 import "./DrawerContent.css";

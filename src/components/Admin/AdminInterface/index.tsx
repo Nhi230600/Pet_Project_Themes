@@ -3,7 +3,7 @@ import { Layout } from "antd";
 import Sider from "antd/lib/layout/Sider";
 import { useState } from "react";
 import SideBar from "../../SideBar";
-import { FONTSIZE } from "../../../constants";
+import { FONTSIZE } from "../../../application/config/constants";
 import "./AdminInterface.css";
 import FooterDashboard from "../../FooterDashboard";
 interface AdminInterfaceProps {

@@ -1,5 +1,5 @@
 import { Checkbox, Form, Input } from "antd";
-import { FONTSIZE } from "../../constants";
+import { FONTSIZE } from "../../application/config/constants";
 import Logo from "../../images/logo.png";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

@@ -4,10 +4,10 @@ import "antd/dist/antd.css";
 import "./AddShiftPage.css";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import InputField from "../../../components/InputField";
+import InputField from "../../../components/Form/InputField";
 import SelectField from "../../../components/SelectField";
-import InputFieldDatePicker from "../../../components/InputFieldDatePicker";
-import { ERROR_MESSAGES } from "../../../components/formConstants";
+import InputFieldDatePicker from "../../../components/Form/InputFieldDatePicker";
+import { ERROR_MESSAGES } from "../../../components/Form/formConstants";
 
 const AddShiftPage = () => {
   const [form] = Form.useForm();

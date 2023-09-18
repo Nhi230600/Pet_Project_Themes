@@ -8,7 +8,7 @@ import {
 } from "@ant-design/icons";
 import { Drawer } from "antd";
 import { useState } from "react";
-import { COLORS, FONTCOLOR, FONTSIZE } from "../../constants";
+import { COLORS, FONTCOLOR, FONTSIZE } from "../../application/config/constants";
 import Logo from "../../images/logo.png";
 import DrawerContent from "../DrawerContent";
 

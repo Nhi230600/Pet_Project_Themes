@@ -5,7 +5,7 @@ import { UploadOutlined } from "@ant-design/icons"; // Import biểu tượng Up
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import { FONTSIZE } from "../../../constants";
+import { FONTSIZE } from "../../../application/config/constants";
 
 const { Option } = Select;
 

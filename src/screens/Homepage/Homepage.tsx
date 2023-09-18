@@ -1,6 +1,6 @@
 import { type } from "os";
 import React from "react";
-import { FONTFAMILY } from "../../constants";
+import { FONTFAMILY } from "../../application/config/constants";
 import "./Homepage.css";
 import { Carousel, Slider } from "antd";
 import Header from "../../components/Header";
