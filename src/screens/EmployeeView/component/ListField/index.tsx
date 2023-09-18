@@ -1,8 +1,9 @@
-
 import React from "react";
 import { List, Avatar, Button } from "antd";
 import { CloseOutlined, EyeOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
+import "./ListField.css";
+
 export interface Appointment {
   treatment: string;
   customerName: string;
@@ -35,8 +36,10 @@ const ListField: React.FC<ListFieldProps> = ({
   onCancel,
 }) => {
   return (
-    <>
-      <h4>Appointments {currentDateTitle}</h4>
+    <div>
+      <div className="title-1">
+        <h4> Đơn khám {currentDateTitle}</h4>
+      </div>
       <List
         dataSource={appointments}
         renderItem={(item: Appointment) => (
@@ -65,7 +68,9 @@ const ListField: React.FC<ListFieldProps> = ({
           </List.Item>
         )}
       />
-      <h4>Future Appointments</h4>
+      <div className="title-2">
+        <h4>Đơn đặt</h4>
+      </div>
       <List
         dataSource={futureAppointments}
         renderItem={(item: FutureAppointment) => (
@@ -96,9 +101,8 @@ const ListField: React.FC<ListFieldProps> = ({
           </List.Item>
         )}
       />
-    </>
+    </div>
   );
 };
 
 export default ListField;
-

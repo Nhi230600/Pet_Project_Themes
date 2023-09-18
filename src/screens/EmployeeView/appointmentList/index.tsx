@@ -1,37 +1,46 @@
 import React, { useState } from "react";
-import { PageHeader, Button, Row, Col } from "antd";
+import { PageHeader, Button, Row, Col, Typography, Card } from "antd";
 import ListField, { FutureAppointment } from "../component/ListField"; // Import the ListField component
 import { Appointment } from "../component/ListField"; // Import the Appointment interface
+import "./AppointmentList.css";
 
 const AppointmentListPage: React.FC = () => {
   // Sample appointment data
   const initialAppointments: Appointment[] = [
     {
-      treatment: "Dental Checkup",
-      customerName: "John Doe",
+      treatment: "Khám da",
+      customerName: "Nguyễn Văn A",
       time: "09:00 AM",
-      status: "Pending",
+      status: "Đang chờ",
       customerAvatar: "https://example.com/johndoe.jpg",
     },
     {
-      treatment: "Eye Examination",
-      customerName: "Alice Smith",
+      treatment: "Khám mắt",
+      customerName: "Nguyễn Nhức Đầu",
       time: "10:30 AM",
-      status: "Completed",
+      status: "Hoàn thành",
       customerAvatar: "https://example.com/alicesmith.jpg",
     },
     {
-      treatment: "Physical Therapy",
-      customerName: "Bob Johnson",
+      treatment: "Vật lý trị liệu",
+      customerName: "Trần Mệt Mõi",
       time: "02:00 PM",
-      status: "Cancelled",
+      status: "Đã hủy",
       customerAvatar: "https://example.com/bobjohnson.jpg",
     },
   ];
   const futureAppointments: FutureAppointment[] = [
     {
-      treatment: "Dental Checkup",
-      customerName: "Jane Smith",
+      treatment: "Trị bệnh dở css",
+      customerName: "Lê Trầm Cảm",
+      time: "11:00 AM",
+      date: "2023-09-17", // Thêm ngày tháng năm ở đây
+      customerAvatar: "https://example.com/janesmith.jpg",
+      status: "Scheduled", // Thêm trạng thái ở đây
+    },
+    {
+      treatment: "Trị bệnh đau đầu",
+      customerName: "Phạm E",
       time: "11:00 AM",
       date: "2023-09-17", // Thêm ngày tháng năm ở đây
       customerAvatar: "https://example.com/janesmith.jpg",
@@ -54,20 +63,21 @@ const AppointmentListPage: React.FC = () => {
 
   return (
     <>
-      <PageHeader
-        title="Danh sách đặt phiếu khám"
-        className="site-page-header"
-      />
-      <Row gutter={[16, 16]}>
-        <Col span={24}>
+      <div>
+        <div className="list-container">
+          <Typography.Title level={2}>Danh sách đặt lịch khám</Typography.Title>
+        </div>
+        <br />
+
+        <Card className="list-appointment">
           <ListField
             appointments={appointments}
             onViewDetail={onViewDetail}
             onCancel={onCancel}
             futureAppointments={futureappointments}
           />
-        </Col>
-      </Row>
+        </Card>
+      </div>
     </>
   );
 };

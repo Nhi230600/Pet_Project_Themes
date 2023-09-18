@@ -5,10 +5,10 @@ import "antd/dist/antd.css";
 import "./AddEmployeePage.css";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import InputField from "../../../components/Form/InputField";
-import SelectField from "../../../components/SelectField";
-import NumberField from "../../../components/Form/NumberField";
-import { ERROR_MESSAGES } from "../../../components/Form/formConstants";
+import InputField from "components/Form/InputField";
+import SelectField from "components/Form/SelectField";
+import NumberField from "components/Form/NumberField";
+import { ERROR_MESSAGES } from "components/Form/formConstants";
 
 const options = [
   { value: "Spa", label: "Spa" },
@@ -22,7 +22,7 @@ const AddEmployeePage = () => {
   const navigate = useNavigate();
   const onFinish = (values: any) => {
     toast.success("Thêm nhân viên thành công");
-    navigate("/employee");
+    navigate("/admin/employee");
   };
 
   const normFile = (e: any) => {
@@ -40,7 +40,7 @@ const AddEmployeePage = () => {
   };
 
   return (
-    <Card title="Thêm nhân viên" className="add-employee-card">
+    <Card className="add-employee-card" title="Thêm nhân viên">
       <Form name="addEmployeeForm" onFinish={onFinish} form={form}>
         <Form.Item
           label="Tải Ảnh"
@@ -109,7 +109,7 @@ const AddEmployeePage = () => {
         />
 
         <Form.Item>
-          <Button block type="primary" htmlType="submit">
+          <Button className="add-Button" block type="primary" htmlType="submit">
             Thêm nhân viên
           </Button>
         </Form.Item>

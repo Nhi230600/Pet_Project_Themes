@@ -7,7 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { PlusOutlined } from "@ant-design/icons";
 import "./EditEmployeePage.css";
 import InputField from "../../../components/Form/InputField"; // Import InputField component
-import SelectField from "../../../components/SelectField"; // Import SelectField component
+import SelectField from "../../../components/Form/SelectField"; // Import SelectField component
 import NumberField from "../../../components/Form/NumberField"; // Import NumberField component
 
 const EditEmployeePage = () => {
@@ -150,7 +150,12 @@ const EditEmployeePage = () => {
           />
 
           <Form.Item>
-            <Button block type="primary" htmlType="submit">
+            <Button
+              className="edit-Button"
+              block
+              type="primary"
+              htmlType="submit"
+            >
               Lưu
             </Button>
           </Form.Item>

@@ -1,22 +1,28 @@
 .shift-card {
-  width: 400px; /* Độ rộng của Card */
+  width: 30%; /* Độ rộng của Card đã được điều chỉnh */
   margin: 0 auto; /* Để căn giữa theo chiều ngang */
-  padding: 20px;
+  padding: 30px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Hiệu ứng bóng đổ */
-  background-color: #fff; /* Màu nền thẻ Card */  
+  background-color: #fff; /* Màu nền thẻ Card */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hiển thị đường viền */
   border-radius: 8px; /* Bo tròn góc thẻ Card */
-  color: #333; /* Màu chữ trên thẻ Card */
+  color: #6e6893;
 }
 
 .shift-card .ant-card-head-title {
   font-size: 24px; /* Kích thước chữ tiêu đề */
+  color: var(--fonts-primary-variant, #6e6893);
 }
 
-.button {
-  width: 300px;
+.ant-form-item-label {
+  font-weight: bold;
+  color: #6e6893;
 }
 
-
-
-/* Add more CSS styles as needed */
+.add-shift-button {
+  color: var(--fonts-primary-variant, #534b81);
+  margin-bottom: 20px;
+  border-radius: 8px;
+  background-color: #dad7ea;
+  font-weight: bold;
+}
