@@ -7,7 +7,7 @@ const Nav = () => {
     <div className="header-nav" style={{ fontSize: FONTSIZE.textNav }}>
       <ul className="header-nav-list">
         <li className="header-nav-list-name">
-          <a className="header-nav-list-homepage" href="">
+          <a className="header-nav-list-homepage" href="/">
             TRANG CHỦ
           </a>
         </li>
@@ -50,7 +50,7 @@ const Nav = () => {
           </ul>
         </li>
         <li className="header-nav-list-name">
-          <a href="contact.html" className="navContact">
+          <a href="/contact" className="navContact">
             LIÊN HỆ
           </a>
         </li>

@@ -153,26 +153,7 @@ const Homepage = () => {
               <span></span>
             </div>
             <div className="trainer-container">
-              <Carousel>
-                {Employees.map((Employee, index) => (
-                  <div className="trainer-body" key={index}>
-                    <div className="trainer-avatar">
-                      <i>
-                        <FontAwesomeIcon icon={faUser} />
-                      </i>
-                    </div>
-                    <div className="trainer-name"> {Employee.Name} </div>
-                    <div className="trainer-description">
-                      {" "}
-                      {Employee.Description}
-                      <ul>
-                        <li>Chuyên ngành: {Employee.Props}</li>
-                        <li>Kinh nghiệm: {Employee.Experience}</li>
-                      </ul>
-                    </div>
-                  </div>
-                ))}
-              </Carousel>
+              
             </div>
           </div>
         </div>
@@ -180,7 +161,7 @@ const Homepage = () => {
         {/* Training-END */}
       </div>
       <div id="footer">
-        <Footer></Footer>
+        
       </div>
     </div>
   );

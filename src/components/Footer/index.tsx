@@ -47,7 +47,7 @@ const Footer = (props: FooterProps) => {
               icon={faMapMarkerAlt}
               style={{ marginRight: "1rem" }}
             />
-            <a href="" style={{ color: FONTCOLOR.primary }}>
+            <a href="" style={{ color: FONTCOLOR.primary, textDecoration: "none" }}>
               397-5 Hapjeong-dong, Mapo-gu, Seoul, Hàn Quốc
             </a>
           </div>
@@ -56,13 +56,13 @@ const Footer = (props: FooterProps) => {
               icon={faPhoneAlt}
               style={{ marginRight: "1rem" }}
             />
-            <a href="" style={{ color: FONTCOLOR.primary }}>
+            <a href="" style={{ color: FONTCOLOR.primary , textDecoration: "none"}}>
               +82234421104
             </a>
           </div>
           <div>
             <FontAwesomeIcon icon={faClock} style={{ marginRight: "1rem" }} />
-            <a href="" style={{ color: FONTCOLOR.primary }}>
+            <a href="" style={{ color: FONTCOLOR.primary , textDecoration: "none"}}>
               08:00 MON - 23:00 SAT
             </a>
           </div>
@@ -78,7 +78,7 @@ const Footer = (props: FooterProps) => {
               icon={faStreetView}
               style={{ marginRight: "1rem" }}
             />
-            <a href="" style={{ color: FONTCOLOR.primary }}>
+            <a href="" style={{ color: FONTCOLOR.primary , textDecoration: "none"}}>
               Chi nhánh tại TPHCM
             </a>
           </div>
@@ -87,7 +87,7 @@ const Footer = (props: FooterProps) => {
               icon={faStreetView}
               style={{ marginRight: "1rem" }}
             />
-            <a href="" style={{ color: FONTCOLOR.primary }}>
+            <a href="" style={{ color: FONTCOLOR.primary, textDecoration: "none" }}>
               Chi nhánh tại Hà Nội
             </a>
           </div>
@@ -96,7 +96,7 @@ const Footer = (props: FooterProps) => {
               icon={faStreetView}
               style={{ marginRight: "1rem" }}
             />
-            <a href="" style={{ color: FONTCOLOR.primary }}>
+            <a href="" style={{ color: FONTCOLOR.primary, textDecoration: "none" }}>
               Chi nhánh tại Đà Nẵng
             </a>
           </div>
@@ -109,13 +109,13 @@ const Footer = (props: FooterProps) => {
         <div className="footer-network-content">
           <div>
             <FacebookOutlined style={{ marginRight: "1rem" }} />
-            <a href="" style={{ color: FONTCOLOR.primary }}>
+            <a href="" style={{ color: FONTCOLOR.primary, textDecoration: "none" }}>
               Facebook
             </a>
           </div>
           <div>
             <InstagramOutlined style={{ marginRight: "1rem" }} />
-            <a href="" style={{ color: FONTCOLOR.primary }}>
+            <a href="" style={{ color: FONTCOLOR.primary, textDecoration: "none" }}>
               Instagram
             </a>
           </div>
@@ -124,7 +124,7 @@ const Footer = (props: FooterProps) => {
               icon={faEnvelope}
               style={{ marginRight: "1rem" }}
             />
-            <a href="" style={{ color: FONTCOLOR.primary }}>
+            <a href="" style={{ color: FONTCOLOR.primary, textDecoration: "none" }}>
               Email
             </a>
           </div>

@@ -57,6 +57,18 @@ const Router = createBrowserRouter([
   },
 
   {
+    path: "/booktrainer",
+
+    element: <BookSpa typeof_book="trainer"/>,
+  },
+
+  {
+    path: "/bookcare",
+
+    element: <BookSpa typeof_book="care"/>,
+  },
+
+  {
     path: "/contact",
 
     element: <Contact />,
