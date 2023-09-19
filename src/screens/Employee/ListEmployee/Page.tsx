@@ -250,13 +250,13 @@ const EmployeeListPage = () => {
         </Typography.Title>
       </div>
       <div className="search-container">
-        <div>
-          <Input.Search
-            placeholder="Tìm kiếm nhân viên"
-            onSearch={handleSearch}
-            className="search-input"
-          />
-        </div>
+        <Input.Search
+          className="search-input"
+          placeholder="Tìm kiếm nhân viên"
+          onSearch={handleSearch}
+        />
+      </div>
+      <div className="button-container">
         <Button className="addButton" type="primary" onClick={showModal}>
           <PlusCircleOutlined /> Thêm nhân viên
         </Button>

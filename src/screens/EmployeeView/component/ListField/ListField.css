@@ -4,3 +4,65 @@
 .title-2 {
   font-size: 20px;
 }
+.custom-card {
+  margin-bottom: 5px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease-in-out;
+  height: 100px;
+}
+
+.custom-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.horizontal-div-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.horizontal-div {
+  font-weight: 500;
+  flex: 1;
+  margin-right: 30px;
+}
+.eye-icon {
+  background-color: #9b96bc; /* Màu viền đỏ */
+  color: white; /* Màu chữ trắng */
+}
+
+.close-icon {
+  background-color: red;
+  color: white;
+}
+/* Trong tệp CSS của bạn */
+.bold-text {
+  color: #534b81;
+  font-weight: bold; /* Để in đậm cho customerName */
+}
+
+.status-tag-pending {
+  background-color: #cae3fa;
+  color: blue; /* Màu nền cho status */
+  border-radius: 10px; /* Bo góc cho thẻ tag */
+  /* Thêm bất kỳ thuộc tính CSS khác mà bạn muốn */
+}
+.status-tag-completed {
+  background-color: #cdffcd;
+  color: green; /* Màu nền cho status */
+  border-radius: 10px; /* Bo góc cho thẻ tag */
+  /* Thêm bất kỳ thuộc tính CSS khác mà bạn muốn */
+}
+.status-tag-canceled {
+  background-color: #ffe0e0;
+  color: red; /* Màu nền cho status */
+  border-radius: 10px; /* Bo góc cho thẻ tag */
+  /* Thêm bất kỳ thuộc tính CSS khác mà bạn muốn */
+}
+.pagination-container {
+  display: flex;
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  margin-top: 20px; /* Điều chỉnh khoảng cách từ phân trang đến danh sách */
+}
