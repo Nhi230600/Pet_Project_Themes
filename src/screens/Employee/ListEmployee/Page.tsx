@@ -10,7 +10,7 @@ import {
   Tag,
 } from "antd";
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "./ListEmployee.css";
 
@@ -25,6 +25,7 @@ import {
 const EmployeeListPage = () => {
   const [employees, setEmployees] = useState<Employee[]>([
     {
+      id: 1,
       name: "Nguyễn Văn A",
       type: "Nhân viên chăm sóc",
       account: "nvana",
@@ -32,6 +33,7 @@ const EmployeeListPage = () => {
       avatar: "https://picsum.photos/id/267/500/300",
     },
     {
+      id: 2,
       name: "Trần Thị B",
       type: "Bác sĩ",
       account: "ttb",
@@ -39,6 +41,7 @@ const EmployeeListPage = () => {
       avatar: "https://picsum.photos/id/238/400/400",
     },
     {
+      id: 3,
       name: "Lê Quang C",
       type: "Huấn luyện viên",
       account: "lqc",
@@ -46,6 +49,7 @@ const EmployeeListPage = () => {
       avatar: "https://picsum.photos/id/235/240/500",
     },
     {
+      id: 4,
       name: "Phạm Thị D",
       type: "Nhân viên chăm sóc",
       account: "ptd",
@@ -53,6 +57,7 @@ const EmployeeListPage = () => {
       avatar: "https://picsum.photos/id/250/740/600",
     },
     {
+      id: 5,
       name: "Hoàng Văn E",
       type: "Bác sĩ",
       account: "hve",
@@ -60,6 +65,7 @@ const EmployeeListPage = () => {
       avatar: "https://picsum.photos/id/237/200/300",
     },
     {
+      id: 6,
       name: "Mai Thị F",
       type: "Nhân viên chăm sóc",
       account: "mtf",
@@ -67,6 +73,7 @@ const EmployeeListPage = () => {
       avatar: "https://picsum.photos/id/300/200/300",
     },
     {
+      id: 7,
       name: "Lý Thanh G",
       type: "Huấn luyện viên",
       account: "ltg",
@@ -74,6 +81,7 @@ const EmployeeListPage = () => {
       avatar: "https://picsum.photos/id/289/200/500",
     },
     {
+      id: 8,
       name: "Đinh Văn H",
       type: "Nhân viên chăm sóc",
       account: "dvh",
@@ -81,6 +89,7 @@ const EmployeeListPage = () => {
       avatar: "https://picsum.photos/id/600/200/300",
     },
     {
+      id: 9,
       name: "Vũ Thị I",
       type: "Bác sĩ",
       account: "vti",
@@ -88,6 +97,7 @@ const EmployeeListPage = () => {
       avatar: "https://picsum.photos/id/123/200/300",
     },
     {
+      id: 10,
       name: "Trần Văn J",
       type: "Huấn luyện viên",
       account: "tvj",
@@ -95,6 +105,7 @@ const EmployeeListPage = () => {
       avatar: "https://picsum.photos/id/107/200/300",
     },
     {
+      id: 11,
       name: "Nguyễn Thị K",
       type: "Nhân viên chăm sóc",
       account: "ntk",
@@ -102,6 +113,7 @@ const EmployeeListPage = () => {
       avatar: "https://picsum.photos/id/209/200/300",
     },
     {
+      id: 12,
       name: "Lê Văn L",
       type: "Bác sĩ",
       account: "lvl",
@@ -109,6 +121,7 @@ const EmployeeListPage = () => {
       avatar: "https://picsum.photos/id/237/200/300",
     },
     {
+      id: 13,
       name: "Trương Thị M",
       type: "Nhân viên chăm sóc",
       account: "ttm",
@@ -116,6 +129,7 @@ const EmployeeListPage = () => {
       avatar: "https://picsum.photos/id/254/200/300",
     },
     {
+      id: 14,
       name: "Phan Văn N",
       type: "Huấn luyện viên",
       account: "pvn",
@@ -135,18 +149,6 @@ const EmployeeListPage = () => {
 
   const handleSearch = (value: any) => {
     setSearchText(value);
-  };
-  const handleCancel = () => {
-    setIsModalVisible(false);
-  };
-  const handleFilter = () => {
-    // Xử lý logic lọc ở đây
-    // Hiển thị Modal hoặc giao diện lọc tùy theo nhu cầu của bạn
-  };
-
-  const handleViewEmployee = (record: Employee) => {
-    // Chuyển hướng đến trang employeedetail và truyền thông tin chi tiết nhân viên
-    navigate(`/admin/employee/detail`, { state: { employee: record } });
   };
 
   const handleDeleteEmployee = (record: Employee) => {
@@ -211,13 +213,14 @@ const EmployeeListPage = () => {
       render: (text: string, record: Employee) => (
         <Space className="info-buttons-space">
           <Tooltip title="Xem chi tiết">
-            <Button
-              className="info-button"
-              type="primary"
-              shape="circle"
-              icon={<InfoCircleOutlined />}
-              onClick={() => handleViewEmployee(record)}
-            />
+            <Link to={`${record.id}`}>
+              <Button
+                className="info-button"
+                type="primary"
+                shape="circle"
+                icon={<InfoCircleOutlined />}
+              />
+            </Link>
           </Tooltip>
           <Tooltip title="Xóa">
             <Button

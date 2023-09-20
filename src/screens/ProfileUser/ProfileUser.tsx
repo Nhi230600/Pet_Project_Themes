@@ -7,7 +7,6 @@ import {
   faUserEdit,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { FONTSIZE } from "../../application/config/constants";
 import AvatarUser from "../../images/avatar-user.jpeg";
 import "./ProfileUser.css";
 
@@ -51,12 +50,7 @@ const ProfileUser = () => {
                 />
               </div>
               <div>
-                <label
-                  style={{ fontSize: FONTSIZE.text, fontWeight: "600" }}
-                  htmlFor=""
-                >
-                  Truong Y Nhi
-                </label>
+                <label htmlFor="">Truong Y Nhi</label>
               </div>
               <div>
                 <Upload {...props}>

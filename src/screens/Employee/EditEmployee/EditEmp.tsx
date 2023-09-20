@@ -5,8 +5,6 @@ import { UploadOutlined } from "@ant-design/icons"; // Import biểu tượng Up
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import { FONTSIZE } from "../../../application/config/constants";
-
 const { Option } = Select;
 
 const EditEmp = () => {
@@ -144,11 +142,7 @@ const EditEmp = () => {
               span: 30,
             }}
           >
-            <button
-              type="submit"
-              className="form-button styled"
-              style={{ fontSize: FONTSIZE.text }}
-            >
+            <button type="submit" className="form-button styled">
               Lưu
             </button>
           </Form.Item>

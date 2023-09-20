@@ -3,7 +3,6 @@ import { Layout } from "antd";
 import Sider from "antd/lib/layout/Sider";
 import { useState } from "react";
 import SideBar from "../../SideBar";
-import { FONTSIZE } from "../../../application/config/constants";
 import "./AdminInterface.css";
 import FooterDashboard from "../../FooterDashboard";
 interface AdminInterfaceProps {
@@ -29,7 +28,6 @@ const AdminInterface: React.FC<AdminInterfaceProps> = ({ content }) => {
           <div className="container-dashboard-content-header">
             <button
               style={{
-                fontSize: FONTSIZE.text,
                 cursor: "pointer",
                 borderRadius: "0.2vw",
                 border: "0.1vw solid black",

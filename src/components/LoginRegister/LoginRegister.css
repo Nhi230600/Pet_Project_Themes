@@ -1,52 +1,47 @@
 .header-button {
-    display: flex;
+  display: flex;
+  flex-direction: row;
 }
 .header-button-login {
-    margin-right: 0.5vw;
+  margin-right: 0.5vw;
 }
 .header-button-login-action {
-    height:'3vw';
-
-    width:'100%';
-
-    border: 0;
-
-    line-height: 2.5;
-
-    padding: 0 20px;
-
-    font-size: 1rem;
-
-    text-align: center;
-
-    color: #fff;
-
-    text-shadow: 1px 1px 1px #000;
-
-    border-radius: 10px;
-
-    background-color: rgba(220, 0, 0, 1);
-
-    background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
-
-    box-shadow:
-
-      inset 2px 2px 3px rgba(255, 255, 255, 0.6),
-
-      inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+  width: 120px;
+  height: 40px;
+  color: white;
+  font-weight: 500;
+  border-radius: 10px;
+  background-color: rgba(255, 100, 0, 1); /* Đổi màu thành cam */
+  background-image: linear-gradient(
+    to top left,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2) 30%,
+    rgba(0, 0, 0, 0)
+  );
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+  white-space: nowrap; /* Để ngăn chữ xuống dòng */
 }
+
+/* box-shadow: 0 0 0 2px #ed6436 inset !important;
+    background: transparent!important;
+    font-weight: 700;
+    border-radius: 25px;
+    color: #181818!important;
+    overflow: hidden;
+    border-top-left-radius: 0px;
+    border: none!important; */
+
 .header-button-login-action:hover {
-    cursor: pointer;
-    background-color: rgba(255, 0, 0, 1);
+  cursor: pointer;
+  background-color: rgba(255, 0, 0, 1);
 }
 .header-button-login-action:active {
-  box-shadow:
-      inset -2px -2px 3px rgba(255, 255, 255, 0.6),
-      inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+    inset 2px 2px 3px rgba(0, 0, 0, 0.6);
 }
 .button-cancel {
-
-  height:3vw;
+  height: 3vw;
 
   border: 0;
 
@@ -66,60 +61,47 @@
 
   background-color: rgba(220, 0, 0, 1);
 
-  background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
+  background-image: linear-gradient(
+    to top left,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2) 30%,
+    rgba(0, 0, 0, 0)
+  );
 
-  box-shadow:
-
-    inset 2px 2px 3px rgba(255, 255, 255, 0.6),
-
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
     inset -2px -2px 3px rgba(0, 0, 0, 0.6);
 }
 .button-cancel:hover {
-cursor: pointer;
-background-color: rgba(255, 0, 0, 1);
+  cursor: pointer;
+  background-color: rgba(255, 0, 0, 1);
 }
 .button-cancel:active {
-box-shadow:
-  inset -2px -2px 3px rgba(255, 255, 255, 0.6),
-  inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+    inset 2px 2px 3px rgba(0, 0, 0, 0.6);
 }
 .header-button-register-action {
-  height:'3vw';
-
-  width:'100%';
-
-  border: 0;
-
-  line-height: 2.5;
-
-  padding: 0 20px;
-
-  font-size: 1rem;
-
-  text-align: center;
-
-  color: #fff;
-
-  text-shadow: 1px 1px 1px #000;
-
+  width: 120px;
+  height: 40px;
+  color: white;
+  font-weight: 500;
   border-radius: 10px;
-
-  background-color: rgba(220, 0, 0, 1);
-
-  background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
-
-  box-shadow:
-
-    inset 2px 2px 3px rgba(255, 255, 255, 0.6),
-
+  background-color: rgba(255, 100, 0, 1); /* Đổi màu thành cam */
+  background-image: linear-gradient(
+    to top left,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2) 30%,
+    rgba(0, 0, 0, 0)
+  );
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
     inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+  white-space: nowrap; /* Để ngăn chữ xuống dòng */
 }
+
 .header-button-register-action:hover {
-    cursor: pointer;
-    background-color: rgba(255, 0, 0, 1);
+  cursor: pointer;
+  background-color: rgba(255, 0, 0, 1);
 }
 .header-button-register-action:active {
-  box-shadow:
-      inset -2px -2px 3px rgba(255, 255, 255, 0.6),
-      inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+    inset 2px 2px 3px rgba(0, 0, 0, 0.6);
 }

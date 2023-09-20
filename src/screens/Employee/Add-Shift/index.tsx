@@ -1,84 +1,13 @@
-import React, { useState } from "react";
-import { Card, Form, Button } from "antd";
-import "antd/dist/antd.css";
-import "./AddShiftPage.css";
-import { Link, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
-import InputField from "../../../components/Form/InputField";
-import SelectField from "../../../components/Form/SelectField";
-import InputFieldDatePicker from "../../../components/Form/InputFieldDatePicker";
-import { ERROR_MESSAGES } from "../../../components/Form/formConstants";
+import React from "react";
+import AdminInterface from "../../../components/Admin/AdminInterface"; // Import AdminInterface
+import Content from "./Content";
 
-const AddShiftPage = () => {
-  const [form] = Form.useForm();
-  const navigate = useNavigate();
-
-  const onFinish = (values: any) => {
-    toast.success("Lưu Ca làm thành công");
-    navigate("/employee/detail");
-  };
-
+const App = () => {
   return (
     <div>
-      <Card className="shift-card" title="Tạo Ca làm Mới">
-        <div className="add-shift-page">
-          <Form
-            form={form}
-            onFinish={onFinish}
-            layout="vertical"
-            labelCol={{ span: 6 }}
-            wrapperCol={{ span: 12 }}
-          >
-            <InputField
-              name="employee"
-              label="Nhân viên"
-              initialValue="Nguyễn Văn A"
-              disabled={true}
-              rules={[]} //
-            />
-
-            <InputField
-              name="type"
-              label="Chức vụ"
-              initialValue="Bác sĩ"
-              disabled={true}
-              rules={[]}
-            />
-
-            <InputFieldDatePicker
-              name="timeRange"
-              label="Thời gian"
-              rules={[
-                { required: true, message: ERROR_MESSAGES.timeRangeRequired },
-              ]}
-            />
-
-            <SelectField
-              name="shift"
-              label="Ca làm"
-              options={[
-                { value: "morning", label: "Sáng" },
-                { value: "afternoon", label: "Chiều" },
-              ]}
-              rules={[{ required: true, message: "Vui lòng chọn ca làm" }]}
-              useRadio={true} // Enable radio buttons
-            />
-
-            <Form.Item>
-              <Button
-                block
-                type="primary"
-                htmlType="submit"
-                className="add-shift-button"
-              >
-                Lưu Ca làm
-              </Button>
-            </Form.Item>
-          </Form>
-        </div>
-      </Card>
+      <AdminInterface content={<Content />} />
     </div>
   );
 };
 
-export default AddShiftPage;
+export default App;

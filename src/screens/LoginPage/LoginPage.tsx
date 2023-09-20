@@ -1,41 +1,40 @@
 import { Checkbox, Form, Input } from "antd";
-import { FONTSIZE } from "../../application/config/constants";
 import Logo from "../../images/logo.png";
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./LoginPage.css";
-import axios from 'axios'; 
+import axios from "axios";
 
 const LoginPage = () => {
-  const onFinish = async (values : any) => {
+  const onFinish = async (values: any) => {
     try {
-      const response = await axios.post('http://localhost:3000/api/auth/login', {
-        account: values.account,
-        password: values.password,
-      });
+      const response = await axios.post(
+        "http://localhost:3000/api/auth/login",
+        {
+          account: values.account,
+          password: values.password,
+        }
+      );
 
       // Handle a successful login response here (e.g., set user token, redirect, etc.)
-      if (response.data.success){
+      if (response.data.success) {
         const accountJson = JSON.stringify(response.data.user);
-        sessionStorage.setItem('account', accountJson);
-        window.location.href = '/';
-      }
-      else{
+        sessionStorage.setItem("account", accountJson);
+        window.location.href = "/";
+      } else {
         toast.error(response.data.message, {
           position: toast.POSITION.TOP_CENTER,
           autoClose: 2000,
           hideProgressBar: true,
         });
       }
-      
-
     } catch (error) {
       // Handle login failure (e.g., show an error message)
-      console.error('Login failed:', error);
+      console.error("Login failed:", error);
     }
   };
 
-  const onFinishFailed = (errorInfo : any) => {
+  const onFinishFailed = (errorInfo: any) => {
     // Handle form validation failure here
     console.log("Failed:", errorInfo);
   };
@@ -50,7 +49,6 @@ const LoginPage = () => {
         <div className="container-login-header-name">
           <span
             style={{
-              fontSize: FONTSIZE.logoSmall,
               textShadow: "0.1rem 0.2rem 0.1rem rgb(245, 214, 129)",
             }}
           >

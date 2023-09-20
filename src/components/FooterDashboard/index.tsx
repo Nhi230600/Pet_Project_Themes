@@ -1,5 +1,4 @@
 import { Footer } from "antd/lib/layout/layout";
-import { FONTSIZE } from "../../application/config/constants";
 import Logo from "../../images/logo.png";
 
 const FooterDashboard = () => {
@@ -9,7 +8,6 @@ const FooterDashboard = () => {
       style={{
         textAlign: "center",
         width: "100%",
-        fontSize: FONTSIZE.text,
       }}
     >
       <img src={Logo} alt="logo" style={{ width: "20vw", height: "auto" }} />
