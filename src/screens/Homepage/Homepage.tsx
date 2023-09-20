@@ -1,6 +1,5 @@
 import { type } from "os";
 import React from "react";
-import { FONTFAMILY } from "../../application/config/constants";
 import "./Homepage.css";
 import { Carousel, Slider } from "antd";
 import Header from "../../components/Header";
@@ -22,7 +21,7 @@ const Homepage = () => {
     },
     {
       id: 3,
-      content: "BLLALALALALLALAL",
+      content: "CHĂM SÓC VÀ HUẤN LUYỆN CHO THÚ CƯNG",
       imageUrl: "https://wallpaperaccess.com/full/390954.jpg",
     },
   ];
@@ -30,20 +29,21 @@ const Homepage = () => {
     {
       Number: 1,
       Name: "Nguyễn Văn A",
-      Avatar: "",
+      Avatar: "https://example.com/avatar.jpg",
       Props: "Bác sĩ",
       Experience: "3 năm",
       Description:
-        "Adalkdhliwdlkasdlijaliawjlidjlcnskdjaoiwhdslkjdoaiwhdkjloaiwjdoiahd",
+        "Tôi là một bác sĩ có 3 năm kinh nghiệm trong lĩnh vực y học. Tôi cam kết đem lại sự chăm sóc tốt nhất cho bệnh nhân và luôn nỗ lực để nâng cao kiến thức và kỹ năng của mình trong lĩnh vực này. Tôi tin rằng sức khỏe là quý báu và luôn sẵn sàng hỗ trợ bệnh nhân để họ có cuộc sống khỏe mạnh và hạnh phúc.",
     },
+
     {
       Number: 2,
       Name: "Nguyễn Văn A",
-      Avatar: "",
+      Avatar: "https://example.com/avatar.jpg",
       Props: "Bác sĩ",
       Experience: "3 năm",
       Description:
-        "Adalkdhliwdlkasdlijaliawjlidjlcnskdjaoiwhdslkjdoaiwhdkjloaiwjdoiahd",
+        "Tôi là một bác sĩ có 3 năm kinh nghiệm trong lĩnh vực y học. Tôi cam kết đem lại sự chăm sóc tốt nhất cho bệnh nhân và luôn nỗ lực để nâng cao kiến thức và kỹ năng của mình trong lĩnh vực này. Tôi tin rằng sức khỏe là quý báu và luôn sẵn sàng hỗ trợ bệnh nhân để họ có cuộc sống khỏe mạnh và hạnh phúc.",
     },
   ];
   return (
@@ -52,7 +52,7 @@ const Homepage = () => {
         <Header></Header>
       </div>
       <div id="content">
-        <div style={{ font: FONTFAMILY.primary }} className="slider">
+        <div className="slider">
           <Carousel autoplay>
             {Sliders.map((Slider, index) => (
               <div key={index}>
@@ -65,11 +65,8 @@ const Homepage = () => {
 
         {/* Service-Start */}
 
-        <div style={{ font: FONTFAMILY.primary }} className="service">
-          <div
-            className="service-title"
-            style={{ fontStyle: FONTFAMILY.primary }}
-          >
+        <div className="service">
+          <div className="service-title">
             <div className="service-title-img"></div>
             <h1>CÁC DỊCH VỤ HÀNG ĐẦU</h1>
           </div>
@@ -122,7 +119,7 @@ const Homepage = () => {
 
         {/* Contact-START */}
 
-        <div style={{ font: FONTFAMILY.primary }} className="contact">
+        <div className="contact">
           <div className="contact-address">NgaoService.com</div>
           <div className="contact-content">
             Chúng tôi luôn <span>sẵn sàng</span> phục vụ bạn
@@ -141,7 +138,7 @@ const Homepage = () => {
 
         {/* Training-START */}
 
-        <div className="trainer" style={{ font: FONTFAMILY.primary }}>
+        <div className="trainer">
           <div className="trainer-title">
             <div className="trainer-title-background"></div>
             <div className="trainer-title-description">
@@ -152,17 +149,13 @@ const Homepage = () => {
             <div className="trainer-preview">
               <span></span>
             </div>
-            <div className="trainer-container">
-              
-            </div>
+            <div className="trainer-container"></div>
           </div>
         </div>
 
         {/* Training-END */}
       </div>
-      <div id="footer">
-        
-      </div>
+      <div id="footer"></div>
     </div>
   );
 };

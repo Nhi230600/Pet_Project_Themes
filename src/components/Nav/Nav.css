@@ -1,52 +1,69 @@
 .header-nav {
-    display: flex;
-    width: 100%;
-    height: auto;
-    align-items: center;
+  display: flex;
+  width: 100%;
+  height: auto;
+  align-items: center;
 }
 
 .header-nav-list {
-    width: 100%;
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin-top: 2vw;
-  }
-  .header-nav-list li {
-    position: relative;
-  }
-  .header-nav-list-name {
-    margin: 0 6vw 0 6vw;
-  }
-  .header-nav-list li a {
-    text-decoration: none;
-    padding: 0.9vw 0.4vw;
-    display: block;
-    color: black;
-  }
-  .header-nav-list ul.header-nav-list-sub {
-    list-style: none;
-    margin: 0;
-    padding: 0.5vw 0vw;
-    position: absolute;
-    background-color: white;
-    border: 3px dashed rgb(237, 182, 31);
-    color: #eeeeee;
-    width: 19vw;
-    display: none;
-    font-family: 'Courier New', Courier, monospace;
-  }
-  .header-nav-list li:focus>ul.header-nav-list-sub,
-  .header-nav-list li:hover>ul.header-nav-list-sub {
-    display: block;
-  
-  }
-  .header-nav-list ul.header-nav-list-sub a {
-    padding: 0.3vw 0.9vw;
-    border-bottom: 1px solid rgb(245, 214, 129);
-    font-size: 1.3vw;
-    color: black;
-  }
-  .header-nav-list-sub li:last-child a {
-    border: none;
-  }
+  width: 100%;
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin-top: 2vw;
+}
+
+.header-nav-list-name {
+  margin: 0 9vw 0 9vw;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Trong file Nav.css */
+
+/* Gạch chân màu cam khi hover */
+.header-nav-list-name:hover a {
+  color: rgba(255, 100, 0, 1);
+}
+.ant-dropdown-menu {
+  background-color: #ffffff; /* Màu nền */
+  border: 1px solid #cccccc; /* Viền */
+  font-family: Arial, sans-serif; /* Font chữ */
+}
+
+.ant-dropdown-menu-item a {
+  color: #333333; /* Màu chữ */
+}
+
+.ant-dropdown-menu-item a:hover {
+  color: #ff0000; /* Màu chữ khi hover */
+  transform: scale(1.1);
+}
+.ant-dropdown-menu-item:hover {
+  background-color: #f0f0f0; /* Màu nền khi hover */
+}
+.ant-dropdown-menu {
+  min-width: 200px; /* Độ rộng tối thiểu của dropdown */
+}
+
+.ant-dropdown-menu-item {
+  padding: 10px 20px; /* Khoảng cách giữa các mục */
+}
+.ant-dropdown-menu-item:active {
+  background-color: #ff0000; /* Màu nền khi mục được chọn */
+  color: #ffffff; /* Màu chữ khi mục được chọn */
+}
+.header-nav-list-booking {
+  box-shadow: 0 0 0 2px #ed6436 inset !important;
+  border-radius: 25px;
+  color: #181818 !important;
+  overflow: hidden;
+  border-top-left-radius: 0px;
+  border: none !important;
+  text-transform: uppercase;
+}
+
+.header-nav-list-booking:hover {
+  background-color: #ed6436;
+  color: #ffffff !important;
+  transform: scale(1.1);
+}
