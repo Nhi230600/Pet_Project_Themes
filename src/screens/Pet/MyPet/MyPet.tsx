@@ -1,7 +1,6 @@
 import { faCakeCandles } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Footer, Header } from "../../../components";
-import { FONTSIZE } from "../../../application/config/constants";
 import { Modal } from "antd";
 import { useState } from "react";
 import PetProfilePage from "../../PetProfilePage/PetProfilePage";
@@ -26,7 +25,6 @@ const MyPet = () => {
           <div className="container-mypet-infor-heading">
             <span
               style={{
-                fontSize: FONTSIZE.logoSmall,
                 textShadow: "0.1rem 0.1rem 0.1rem rgb(245, 214, 129)",
               }}
             >
@@ -43,9 +41,7 @@ const MyPet = () => {
             </div>
             <div className="container-mypet-infor-content-name">
               <div>
-                <span style={{ fontSize: FONTSIZE.text, fontWeight: 600 }}>
-                  APOLLO
-                </span>
+                <span>APOLLO</span>
               </div>
               <div className="container-mypet-infor-content-name-age">
                 <FontAwesomeIcon
@@ -56,18 +52,15 @@ const MyPet = () => {
                     fontSize: "1.5vw",
                   }}
                 />
-                <span style={{ fontSize: FONTSIZE.text }}>2 tuổi</span>
+                <span>2 tuổi</span>
               </div>
               <div>
-                <span style={{ fontSize: FONTSIZE.text }}>
-                  Golden Retrievers
-                </span>
+                <span>Golden Retrievers</span>
               </div>
             </div>
             <div className="container-mypet-infor-content-viewdetail">
               <button
                 className="container-mypet-infor-content-viewdetail-button"
-                style={{ fontSize: FONTSIZE.textButton }}
                 onClick={() => ModalPetProfile(true)}
               >
                 Xem chi tiết
@@ -92,9 +85,7 @@ const MyPet = () => {
             </div>
             <div className="container-mypet-infor-content-name">
               <div>
-                <span style={{ fontSize: FONTSIZE.text, fontWeight: 600 }}>
-                  GRETCHEN
-                </span>
+                <span>GRETCHEN</span>
               </div>
               <div className="container-mypet-infor-content-name-age">
                 <FontAwesomeIcon
@@ -105,16 +96,15 @@ const MyPet = () => {
                     fontSize: "1.5vw",
                   }}
                 />
-                <span style={{ fontSize: FONTSIZE.text }}>1 tuổi</span>
+                <span>1 tuổi</span>
               </div>
               <div>
-                <span style={{ fontSize: FONTSIZE.text }}>Poodle</span>
+                <span>Poodle</span>
               </div>
             </div>
             <div className="container-mypet-infor-content-viewdetail">
               <button
                 className="container-mypet-infor-content-viewdetail-button"
-                style={{ fontSize: FONTSIZE.textButton }}
                 onClick={() => ModalPetProfile(true)}
               >
                 Xem chi tiết
@@ -139,9 +129,7 @@ const MyPet = () => {
             </div>
             <div className="container-mypet-infor-content-name">
               <div>
-                <span style={{ fontSize: FONTSIZE.text, fontWeight: 600 }}>
-                  PEPPER
-                </span>
+                <span>PEPPER</span>
               </div>
               <div className="container-mypet-infor-content-name-age">
                 <FontAwesomeIcon
@@ -152,16 +140,15 @@ const MyPet = () => {
                     fontSize: "1.5vw",
                   }}
                 />
-                <span style={{ fontSize: FONTSIZE.text }}>2 tuổi</span>
+                <span>2 tuổi</span>
               </div>
               <div>
-                <span style={{ fontSize: FONTSIZE.text }}>Mèo ba tư</span>
+                <span>Mèo ba tư</span>
               </div>
             </div>
             <div className="container-mypet-infor-content-viewdetail">
               <button
                 className="container-mypet-infor-content-viewdetail-button"
-                style={{ fontSize: FONTSIZE.textButton }}
                 onClick={() => ModalPetProfile(true)}
               >
                 Xem chi tiết

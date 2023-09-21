@@ -136,7 +136,7 @@ const EmployeeDetailPage = () => {
           onStatusChange={(index) => handleStatusChange(index)}
           selectedDate={selectedDate}
         />
-        <Link to="/admin/employee/:id/add-shift">
+        <Link to={`add-shift`}>
           <Button icon={<PlusOutlined />} className="add-shift-button">
             Thêm ca làm
           </Button>
@@ -262,7 +262,7 @@ const EmployeeDetailPage = () => {
             <Text className="profile-text">
               <strong>Kinh nghiệm:</strong> {employee.experience} năm
             </Text>
-            <Link to="/admin/employee/:id/edit">
+            <Link to={`edit`}>
               <Button icon={<EditOutlined />} className="editButton">
                 Sửa thông tin
               </Button>

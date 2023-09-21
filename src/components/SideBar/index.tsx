@@ -2,7 +2,6 @@ import { AppstoreOutlined, UserOutlined } from "@ant-design/icons";
 import { Menu } from "antd";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { FONTSIZE } from "../../application/config/constants";
 import "./SideBar.css";
 
 const SideBar = () => {
@@ -28,13 +27,13 @@ const SideBar = () => {
         items={[
           {
             label: "Dashboard",
-            icon: <AppstoreOutlined style={{ fontSize: FONTSIZE.logoSmall }} />,
+            icon: <AppstoreOutlined />,
             key: "/dashboard",
           },
           {
             label: "Danh sách nhân viên",
             key: "/employee",
-            icon: <UserOutlined style={{ fontSize: FONTSIZE.logoSmall }} />,
+            icon: <UserOutlined />,
           },
           {
             label: "Danh sách dịch vụ",

@@ -1,7 +1,6 @@
 import React from "react";
 import "./Search.css";
 import { SearchOutlined } from "@ant-design/icons";
-import { FONTSIZE } from "../../application/config/constants";
 
 const Search = () => {
   return (
@@ -21,10 +20,7 @@ const Search = () => {
         />
       </div>
       <div className="search-button">
-        <button
-          className="search-button-action"
-          style={{ fontSize: FONTSIZE.text }}
-        >
+        <button className="search-button-action">
           <SearchOutlined />
         </button>
       </div>

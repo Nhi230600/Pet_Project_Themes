@@ -3,13 +3,13 @@ import { BookSpa } from "screens";
 import Contact from "screens/Contact/Contact";
 import EmployeeListPage from "screens/Employee/ListEmployee";
 
-import AddEmployeePage from "screens/Employee/Add";
+import AddEmployeePage from "screens/Employee/Add/Page";
 
 import EmployeeDetailPage from "screens/Employee/Detail/Page";
 
 import ProfileUser from "screens/ProfileUser/ProfileUser";
 
-import EmployeeEditPage from "screens/Employee/Edit";
+import EmployeeEditPage from "screens/Employee/Edit/Page";
 
 import Dashboard from "screens/Admin/EmployeeManage/Dashboard";
 
@@ -19,13 +19,13 @@ import AddServicePage from "screens/Service/Add";
 
 import EditServicePage from "screens/Service/Edit";
 
-import AddShiftPage from "screens/Employee/Add-Shift";
+import AddShiftPage from "screens/Employee/Add-Shift/Page";
 
 import ViewAppointmentAdmin from "screens/Admin-menu/appointment/View";
 
 import Homepage from "screens/Homepage/Homepage";
 import MyPet from "screens/Pet/MyPet/MyPet";
-import EmployeeAppointmentListPage from "screens/EmployeeView/appointmentList";
+import EmployeeAppointmentListPage from "screens/EmployeeView/AppointmentList";
 
 import CustomerTreatment from "screens/EmployeeView/customerTreatment";
 import PetCheckupPage from "screens/EmployeeView/reBook";

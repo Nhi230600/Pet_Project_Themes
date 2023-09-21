@@ -1,7 +1,6 @@
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 import { Drawer } from "antd";
 import { useState } from "react";
-import { FONTSIZE } from "../../application/config/constants";
 import DrawerContent from "../DrawerContent";
 import "./ButtonUser.css";
 
@@ -22,12 +21,8 @@ const ButtonUser = () => {
     setPlacement(e.target.value);
   };
   return (
-    <div className="header-user" style={{ fontSize: FONTSIZE.textButton }}>
-      <button
-        style={{ fontSize: FONTSIZE.text }}
-        className="header-user-button"
-        onClick={showDrawer}
-      >
+    <div className="header-user">
+      <button className="header-user-button" onClick={showDrawer}>
         {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
       </button>
       <Drawer closable={false} onClose={onClose} open={open} key={placement}>

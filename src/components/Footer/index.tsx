@@ -7,7 +7,6 @@ import {
   faStreetView,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { COLORS, FONTCOLOR, FONTSIZE } from "../../application/config/constants";
 import Logo from "../../images/logo.png";
 import "./Footer.css";
 
@@ -15,9 +14,9 @@ type FooterProps = {};
 
 const Footer = (props: FooterProps) => {
   const {} = props;
-  const backgroundColor = COLORS.primary;
+
   return (
-    <footer className="footer" style={{ backgroundColor }}>
+    <footer className="footer">
       <div className="footer-logo">
         <div className="footer-logo-image">
           <img style={{ width: "80%" }} src={Logo} alt="Logo" />
@@ -26,8 +25,6 @@ const Footer = (props: FooterProps) => {
           <a
             href=""
             style={{
-              color: FONTCOLOR.primary,
-              fontSize: FONTSIZE.logoSmall,
               textDecoration: "none",
             }}
           >
@@ -37,7 +34,7 @@ const Footer = (props: FooterProps) => {
           </a>
         </div>
       </div>
-      <div className="footer-information" style={{ fontSize: FONTSIZE.text }}>
+      <div className="footer-information">
         <div className="footer-information-name">
           <span>INFORMATION</span>
         </div>
@@ -47,28 +44,22 @@ const Footer = (props: FooterProps) => {
               icon={faMapMarkerAlt}
               style={{ marginRight: "1rem" }}
             />
-            <a href="" style={{ color: FONTCOLOR.primary, textDecoration: "none" }}>
-              397-5 Hapjeong-dong, Mapo-gu, Seoul, Hàn Quốc
-            </a>
+            <a href="">397-5 Hapjeong-dong, Mapo-gu, Seoul, Hàn Quốc</a>
           </div>
           <div>
             <FontAwesomeIcon
               icon={faPhoneAlt}
               style={{ marginRight: "1rem" }}
             />
-            <a href="" style={{ color: FONTCOLOR.primary , textDecoration: "none"}}>
-              +82234421104
-            </a>
+            <a href="">+82234421104</a>
           </div>
           <div>
             <FontAwesomeIcon icon={faClock} style={{ marginRight: "1rem" }} />
-            <a href="" style={{ color: FONTCOLOR.primary , textDecoration: "none"}}>
-              08:00 MON - 23:00 SAT
-            </a>
+            <a href="">08:00 MON - 23:00 SAT</a>
           </div>
         </div>
       </div>
-      <div className="footer-service" style={{ fontSize: FONTSIZE.text }}>
+      <div className="footer-service">
         <div className="footer-service-name">
           <span>SERVICE</span>
         </div>
@@ -78,55 +69,43 @@ const Footer = (props: FooterProps) => {
               icon={faStreetView}
               style={{ marginRight: "1rem" }}
             />
-            <a href="" style={{ color: FONTCOLOR.primary , textDecoration: "none"}}>
-              Chi nhánh tại TPHCM
-            </a>
+            <a href="">Chi nhánh tại TPHCM</a>
           </div>
           <div>
             <FontAwesomeIcon
               icon={faStreetView}
               style={{ marginRight: "1rem" }}
             />
-            <a href="" style={{ color: FONTCOLOR.primary, textDecoration: "none" }}>
-              Chi nhánh tại Hà Nội
-            </a>
+            <a href="">Chi nhánh tại Hà Nội</a>
           </div>
           <div>
             <FontAwesomeIcon
               icon={faStreetView}
               style={{ marginRight: "1rem" }}
             />
-            <a href="" style={{ color: FONTCOLOR.primary, textDecoration: "none" }}>
-              Chi nhánh tại Đà Nẵng
-            </a>
+            <a href="">Chi nhánh tại Đà Nẵng</a>
           </div>
         </div>
       </div>
-      <div className="footer-network" style={{ fontSize: FONTSIZE.text }}>
+      <div className="footer-network">
         <div className="footer-network-name">
           <span>NETWORK</span>
         </div>
         <div className="footer-network-content">
           <div>
             <FacebookOutlined style={{ marginRight: "1rem" }} />
-            <a href="" style={{ color: FONTCOLOR.primary, textDecoration: "none" }}>
-              Facebook
-            </a>
+            <a href="">Facebook</a>
           </div>
           <div>
             <InstagramOutlined style={{ marginRight: "1rem" }} />
-            <a href="" style={{ color: FONTCOLOR.primary, textDecoration: "none" }}>
-              Instagram
-            </a>
+            <a href="">Instagram</a>
           </div>
           <div>
             <FontAwesomeIcon
               icon={faEnvelope}
               style={{ marginRight: "1rem" }}
             />
-            <a href="" style={{ color: FONTCOLOR.primary, textDecoration: "none" }}>
-              Email
-            </a>
+            <a href="">Email</a>
           </div>
         </div>
       </div>
