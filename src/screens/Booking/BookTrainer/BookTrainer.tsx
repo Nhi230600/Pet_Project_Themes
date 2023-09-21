@@ -1,7 +1,7 @@
 import React from "react";
-import { Footer, Header } from "../../../components";
 
 import "./BookTrainer.css";
+import Nav from "components/Nav";
 
 type BookTrainerProps = {};
 
@@ -10,7 +10,7 @@ const BookTrainer = (props: BookTrainerProps) => {
 
   return (
     <div>
-      <Header />
+      <Nav />
       <div className="container-booktrainer">
         <div className="container-booktrainer-heading">
           <span>Book Online 24/7</span>
