@@ -1,24 +1,18 @@
-
-import React from 'react'
+import React from "react";
 import { Footer, Header } from "../../../components";
 
-import { FONTSIZE } from "../../../application/config/constants";
 import "./BookTrainer.css";
 
 type BookTrainerProps = {};
 
 const BookTrainer = (props: BookTrainerProps) => {
-
-  const { } = props;
+  const {} = props;
 
   return (
     <div>
       <Header />
       <div className="container-booktrainer">
-        <div
-          className="container-booktrainer-heading"
-          style={{ fontSize: FONTSIZE.logoLarge }}
-        >
+        <div className="container-booktrainer-heading">
           <span>Book Online 24/7</span>
         </div>
         <div className="container-booktrainer-content">
@@ -71,7 +65,6 @@ const BookTrainer = (props: BookTrainerProps) => {
           </form>
         </div>
       </div>
-
     </div>
   );
 };

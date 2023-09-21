@@ -1,7 +1,6 @@
 import { LogoutOutlined, QqOutlined, UserOutlined } from "@ant-design/icons";
 import { Avatar, Menu, Space } from "antd";
 import { useState } from "react";
-import { FONTSIZE } from "../../application/config/constants";
 import AvatarUser from "../../images/avatar-user.jpeg";
 
 import "./DrawerContent.css";
@@ -56,7 +55,7 @@ const DrawerContent = () => {
           </Space>
         </div>
         <div className="drawer-user-name">
-          <span style={{ fontSize: FONTSIZE.text }}>Truong Y Nhi</span>
+          <span>Truong Y Nhi</span>
         </div>
       </div>
       <div className="drawer-detail">

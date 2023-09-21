@@ -1,6 +1,5 @@
 import { Form, Input } from "antd";
 import { useState } from "react";
-import { FONTSIZE } from "../../application/config/constants";
 import Logo from "../../images/logo.png";
 import "./RegisterPage.css";
 
@@ -41,7 +40,6 @@ const RegisterPage = () => {
         <div className="container-register-header-name">
           <span
             style={{
-              fontSize: FONTSIZE.logoSmall,
               textShadow: "0.1rem 0.2rem 0.1rem rgb(245, 214, 129)",
             }}
           >

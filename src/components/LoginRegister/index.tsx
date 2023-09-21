@@ -1,7 +1,6 @@
 import { Modal } from "antd";
 import { useState } from "react";
 import { LoginPage, RegisterPage } from "../../screens";
-import { FONTSIZE } from "../../application/config/constants";
 import "./LoginRegister.css";
 
 const LoginRegister = () => {
@@ -23,7 +22,7 @@ const LoginRegister = () => {
   };
 
   return (
-    <div className="header-button" style={{ fontSize: FONTSIZE.textButton }}>
+    <div className="header-button">
       <div className="header-button-login">
         <button className="header-button-login-action" onClick={showModalLogin}>
           Đăng nhập

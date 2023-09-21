@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./AddServicePage.css";
-import SelectField from "../../../components/SelectField";
+import SelectField from "../../../components/Form/SelectField";
 import InputField from "../../../components/Form/InputField";
 import TextAreaField from "../../../components/TextAreaField";
 import NumberField from "../../../components/Form/NumberField";
