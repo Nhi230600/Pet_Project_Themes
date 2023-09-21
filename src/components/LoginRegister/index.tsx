@@ -45,7 +45,7 @@ const LoginRegister = () => {
           Đăng ký
         </button>
         <Modal
-          width={800}
+          width={1000}
           open={isModalRegisterOpen}
           onCancel={handleCancelRegister}
           footer={[]}

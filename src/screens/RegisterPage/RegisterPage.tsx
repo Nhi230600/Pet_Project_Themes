@@ -32,6 +32,7 @@ const RegisterPage = () => {
   };
 
   return (
+    
     <div className="container-register">
       <div className="container-register-header">
         <div className="container-register-header-logo">
@@ -211,6 +212,7 @@ const RegisterPage = () => {
         </Form.Item>
       </Form>
     </div>
+    
   );
 };
 

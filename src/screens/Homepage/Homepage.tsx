@@ -4,6 +4,7 @@ import { FONTFAMILY } from "../../application/config/constants";
 import "./Homepage.css";
 import { Carousel, Slider } from "antd";
 import Header from "../../components/Header";
+import { HeaderUser } from "components";
 import Footer from "../../components/Footer";
 import { faPhone, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
