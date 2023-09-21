@@ -1,16 +1,13 @@
 import React, { useState } from "react";
-import { Header } from "../../../components";
-import Footer from "../../../components/Footer";
 import "./BookSpa.css";
+import Nav from "components/Nav";
 
 type BookProps = {
-  typeof_book? : string;
-}
+  typeof_book?: string;
+};
 
-const BookSpa = (props : BookProps) => {
-  
-  const { typeof_book = "spa"} = props;
- 
+const BookSpa = (props: BookProps) => {
+  const { typeof_book = "spa" } = props;
 
   const [selectedForm, setSelectedForm] = useState(typeof_book);
 
@@ -20,135 +17,128 @@ const BookSpa = (props : BookProps) => {
 
   const optionsSpa = [
     [
-    {
-      label: "Tỉa lông",
-      value: "",
-    },
+      {
+        label: "Tỉa lông",
+        value: "",
+      },
 
-    {
-      label: "Tắm rửa",
-      value: ""
-    },
+      {
+        label: "Tắm rửa",
+        value: "",
+      },
 
-    {
-      label: "Massage",
-      value: "",
-    },
+      {
+        label: "Massage",
+        value: "",
+      },
 
-    {
-      label: "Manicure và Pedicure",
-      value: "",
-    },
+      {
+        label: "Manicure và Pedicure",
+        value: "",
+      },
 
-    {
-      label: "Nhuộm lông",
-      value: "",
-    }
+      {
+        label: "Nhuộm lông",
+        value: "",
+      },
     ],
-    
+
     [
-    {
-      label: "Nguyễn Văn A",
-      value: "",
-    },
+      {
+        label: "Nguyễn Văn A",
+        value: "",
+      },
 
-    {
-      label: "Phạm Thị D",
-      value: "",
-    },
+      {
+        label: "Phạm Thị D",
+        value: "",
+      },
 
-    {
-      label: "Mai Thị F",
-      value: "",
-    },
+      {
+        label: "Mai Thị F",
+        value: "",
+      },
 
-    {
-      label: "Đinh Văn H",
-      value: "",
-    },
-
-    ]
-  ]
+      {
+        label: "Đinh Văn H",
+        value: "",
+      },
+    ],
+  ];
 
   const optionsTrainer = [
     [
       {
         label: "Khóa học cơ bản",
-        value: '',
+        value: "",
       },
       {
         label: "Khóa học nâng cao",
-        value: '',
+        value: "",
       },
       {
         label: "Khóa học chó sủa",
-        value: '',
+        value: "",
       },
     ],
-    
+
     [
       {
         label: "Lê Quang C",
-        value: '',
+        value: "",
       },
 
       {
         label: "Lý Thanh G",
-        value: '',
+        value: "",
       },
 
       {
         label: "Trần Văn J",
-        value: '',
+        value: "",
       },
-    ]
-
-  ]
+    ],
+  ];
 
   const optionsCare = [
     [
       {
         label: "Kiểm tra sức khỏe định kỳ",
-        value: '',  
+        value: "",
       },
 
       {
         label: "Chăm sóc y tế",
-        value: '',  
+        value: "",
       },
 
       {
         label: "Phòng ngừa bệnh",
-        value: '',  
+        value: "",
       },
-      
     ],
 
     [
-
       {
         label: "Trần Thị B",
-        value: '',
+        value: "",
       },
 
       {
         label: "Hoàng Văn E",
-        value: '',
+        value: "",
       },
-      
+
       {
         label: "Vũ Thị I",
-        value: '',
-      }
-
-    ]
-
-  ]
-
+        value: "",
+      },
+    ],
+  ];
 
   return (
     <>
-      <Header />
+      <Nav />
       <div className="booking-spa">
         <h1 className="booking-spa-title">Booking Online 24/7</h1>
         <div className="booking-spa-form">
@@ -161,15 +151,17 @@ const BookSpa = (props : BookProps) => {
                 SPA
               </button>
               <button
-                className={`form-btn ${selectedForm === "trainer" ? "active" : ""
-                  }`}
+                className={`form-btn ${
+                  selectedForm === "trainer" ? "active" : ""
+                }`}
                 onClick={() => handleFormChange("trainer")}
               >
                 Trainer
               </button>
               <button
-                className={`form-btn ${selectedForm === "care" ? "active" : ""
-                  }`}
+                className={`form-btn ${
+                  selectedForm === "care" ? "active" : ""
+                }`}
                 onClick={() => handleFormChange("care")}
               >
                 Care
@@ -181,8 +173,10 @@ const BookSpa = (props : BookProps) => {
                 <p> Đặt lịch nhanh</p>
                 <p>
                   {" "}
-                  Các trường đánh dấu <strong className="important">*</strong> là
-                  bắt buộc
+                  Các trường đánh dấu <strong className="important">
+                    *
+                  </strong>{" "}
+                  là bắt buộc
                 </p>
                 <h3>
                   {" "}
@@ -190,23 +184,23 @@ const BookSpa = (props : BookProps) => {
                 </h3>
                 <p>
                   {" "}
-                  Vui lòng chọn 1 dịch vụ bạn đang cần để NgáoService có thể chuẩn
-                  bị, và phục vụ các bé một cách chu đáo nhất nhé!
+                  Vui lòng chọn 1 dịch vụ bạn đang cần để NgáoService có thể
+                  chuẩn bị, và phục vụ các bé một cách chu đáo nhất nhé!
                 </p>
                 <select name="services" id="services">
-                {optionsSpa[0].map((option) => (
-                    <option value={option.value}>{option.label}</option>))  
-                }
+                  {optionsSpa[0].map((option) => (
+                    <option value={option.value}>{option.label}</option>
+                  ))}
                 </select>
-                
+
                 <br />
                 <h3>
                   CHỌN NHÂN VIÊN: <strong className="important">*</strong>
                 </h3>
                 <select name="services" id="services">
                   {optionsSpa[1].map((option) => (
-                    <option value={option.value}>{option.label}</option>))  
-                  }
+                    <option value={option.value}>{option.label}</option>
+                  ))}
                 </select>
                 <h3>
                   THỜI GIAN: <strong className="important">*</strong>
@@ -227,7 +221,6 @@ const BookSpa = (props : BookProps) => {
                   Gửi yêu cầu
                 </button>
               </form>
-
             )}
             {selectedForm === "trainer" && (
               <form action="#" className="form-content">
@@ -235,8 +228,10 @@ const BookSpa = (props : BookProps) => {
                 <p> Đặt lịch nhanh</p>
                 <p>
                   {" "}
-                  Các trường đánh dấu <strong className="important">*</strong> là
-                  bắt buộc
+                  Các trường đánh dấu <strong className="important">
+                    *
+                  </strong>{" "}
+                  là bắt buộc
                 </p>
                 <h3>
                   {" "}
@@ -244,13 +239,13 @@ const BookSpa = (props : BookProps) => {
                 </h3>
                 <p>
                   {" "}
-                  Vui lòng chọn 1 dịch vụ bạn đang cần để NgáoService có thể chuẩn
-                  bị, và phục vụ các bé một cách chu đáo nhất nhé!
+                  Vui lòng chọn 1 dịch vụ bạn đang cần để NgáoService có thể
+                  chuẩn bị, và phục vụ các bé một cách chu đáo nhất nhé!
                 </p>
                 <select name="services" id="services">
                   {optionsTrainer[0].map((option) => (
-                      <option value={option.value}>{option.label}</option>))  
-                  }
+                    <option value={option.value}>{option.label}</option>
+                  ))}
                   {/* Thêm các tùy chọn khác cho dịch vụ Trainer */}
                 </select>
                 <br />
@@ -259,8 +254,8 @@ const BookSpa = (props : BookProps) => {
                 </h3>
                 <select name="services" id="services">
                   {optionsTrainer[1].map((option) => (
-                      <option value={option.value}>{option.label}</option>))  
-                  }
+                    <option value={option.value}>{option.label}</option>
+                  ))}
                   {/* Thêm các tùy chọn khác cho nhân viên Spa */}
                 </select>
                 <h3>
@@ -282,7 +277,6 @@ const BookSpa = (props : BookProps) => {
                   Gửi yêu cầu
                 </button>
               </form>
-
             )}
             {selectedForm === "care" && (
               <form action="#" className="form-content">
@@ -290,8 +284,10 @@ const BookSpa = (props : BookProps) => {
                 <p> Đặt lịch nhanh</p>
                 <p>
                   {" "}
-                  Các trường đánh dấu <strong className="important">*</strong> là
-                  bắt buộc
+                  Các trường đánh dấu <strong className="important">
+                    *
+                  </strong>{" "}
+                  là bắt buộc
                 </p>
                 <h3>
                   {" "}
@@ -299,13 +295,13 @@ const BookSpa = (props : BookProps) => {
                 </h3>
                 <p>
                   {" "}
-                  Vui lòng chọn 1 dịch vụ bạn đang cần để NgáoService có thể chuẩn
-                  bị, và phục vụ các bé một cách chu đáo nhất nhé!
+                  Vui lòng chọn 1 dịch vụ bạn đang cần để NgáoService có thể
+                  chuẩn bị, và phục vụ các bé một cách chu đáo nhất nhé!
                 </p>
                 <select name="services" id="services">
                   {optionsCare[0].map((option) => (
-                      <option value={option.value}>{option.label}</option>))  
-                  }
+                    <option value={option.value}>{option.label}</option>
+                  ))}
                   {/* Thêm các tùy chọn khác cho dịch vụ Care */}
                 </select>
                 <br />
@@ -314,8 +310,8 @@ const BookSpa = (props : BookProps) => {
                 </h3>
                 <select name="services" id="services">
                   {optionsCare[1].map((option) => (
-                      <option value={option.value}>{option.label}</option>))  
-                  }
+                    <option value={option.value}>{option.label}</option>
+                  ))}
                   {/* Thêm các tùy chọn khác cho nhân viên Spa */}
                 </select>
                 <h3>
@@ -337,12 +333,10 @@ const BookSpa = (props : BookProps) => {
                   Gửi yêu cầu
                 </button>
               </form>
-
             )}
           </div>
         </div>
       </div>
-
     </>
   );
 };

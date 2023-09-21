@@ -2,10 +2,9 @@ import { type } from "os";
 import React from "react";
 import "./Homepage.css";
 import { Carousel, Slider } from "antd";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
 import { faPhone, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Nav from "components/Nav";
 
 const Homepage = () => {
   const Sliders = [
@@ -49,7 +48,7 @@ const Homepage = () => {
   return (
     <div id="homepage">
       <div id="header">
-        <Header></Header>
+        <Nav></Nav>
       </div>
       <div id="content">
         <div className="slider">
