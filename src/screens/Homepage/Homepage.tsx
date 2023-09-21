@@ -2,28 +2,35 @@ import { type } from "os";
 import React from "react";
 import { FONTFAMILY } from "../../application/config/constants";
 import "./Homepage.css";
-import { Carousel, Slider } from "antd";
+import { Carousel, Slider, Card } from "antd";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { faPhone, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import ImagesComponent from "components/Banner";
+import Content1 from "screens/Content/1"
+import Content2 from "screens/Content/2"
+import Content3 from "screens/Content/3"
+import "bootstrap/dist/css/bootstrap.min.css";
 const Homepage = () => {
   const Sliders = [
     {
       id: 1,
-      content: "DỊCH VỤ THÚ CƯNG TẠI NHÀ",
-      imageUrl: "https://wallpaperaccess.com/full/390954.jpg",
+      content: <Content1/>,
+      imageUrl: "https://images.deccanherald.com/deccanherald%2F2023-08%2Fb5368628-0ea6-4bc8-a793-8e2b5c6e21a9%2FCheems.png?auto=format%2Ccompress&fmt=webp&fit=max&format=webp&w=900&dpr=1.3",
+      contentType: "image",
     },
     {
       id: 2,
-      content: "UY TÍN HÀNG ĐẦU VIỆT NAM",
-      imageUrl: "https://wallpaperaccess.com/full/390954.jpg",
+      content: <Content2/>,
+      imageUrl: "https://images.deccanherald.com/deccanherald%2F2023-08%2Fb5368628-0ea6-4bc8-a793-8e2b5c6e21a9%2FCheems.png?auto=format%2Ccompress&fmt=webp&fit=max&format=webp&w=900&dpr=1.3",
+      contentType: "image",
     },
     {
       id: 3,
-      content: "BLLALALALALLALAL",
-      imageUrl: "https://wallpaperaccess.com/full/390954.jpg",
+      content: <Content3/>,
+      imageUrl: "https://www.google.com/maps/embed/v1/place?key=AIzaSyAEIpgj38KyLFELm2bK9Y7krBkz1K-cMq8&q=place_id:ChIJn6wOs6lZwokRLKy1iqRcoKw",
+      contentType: "iframe",
     },
   ];
   const Employees = [
@@ -51,17 +58,28 @@ const Homepage = () => {
       <div id="header">
         <Header></Header>
       </div>
+      <div>
+
+      </div>
       <div id="content">
         <div style={{ font: FONTFAMILY.primary }} className="slider">
           <Carousel autoplay>
             {Sliders.map((Slider, index) => (
-              <div key={index}>
-                <img className="slider-background" src={Slider.imageUrl}></img>
-                <div className="slider-content"> {Slider.content} </div>
+              <div className="banner">
+                <div className="row main">
+                  <div className="col-md-7 carousel-content">
+                    {Slider.content}
+                  </div>
+                  <div className="col-md-4 ">
+                    <ImagesComponent contentUrl={Slider.imageUrl} contentType={Slider.contentType}/>
+                  </div>
+                </div>
               </div>
             ))}
           </Carousel>
+
         </div>
+
 
         {/* Service-Start */}
 
@@ -153,7 +171,7 @@ const Homepage = () => {
               <span></span>
             </div>
             <div className="trainer-container">
-              
+
             </div>
           </div>
         </div>
@@ -161,7 +179,7 @@ const Homepage = () => {
         {/* Training-END */}
       </div>
       <div id="footer">
-        
+
       </div>
     </div>
   );

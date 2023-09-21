@@ -4,7 +4,7 @@ import Homepage from "../../../screens/Homepage/Homepage";
 import MyPet from "../../../screens/Pet/MyPet/MyPet";
 import Dashboard from "../../../screens/Admin/EmployeeManage/Dashboard";
 import BookSpa from "../../../screens/Booking/BookSpa/BookSpa";
-import Contact from "../../../screens/Contact/Contact";
+import Contact from "../../../screens/Contact";
 import ProfileUser from "../../../screens/ProfileUser/ProfileUser";
 import EmployeeListPage from "../../../screens/Employee/ListEmployee";
 import AddEmployeePage from "../../../screens/Employee/Add";
@@ -20,9 +20,20 @@ import CustomerTreatment from "../../../screens/EmployeeView/customerTreatment";
 import PetCheckupPage from "../../../screens/EmployeeView/reBook";
 import EmployeeeCustomerProfile from "../../../screens/EmployeeView/CustomerProfile";
 import CreateTreatmentIn from "../../../screens/EmployeeView/CreateTreatmentIn";
-import UserList from "screens/UserList/List/Page";
+import UserList from "screens/UserList/List";
+import Test from "screens/TableTest";
+import PageContent from "screens/Content/3";
 
 const Router = createBrowserRouter([
+  {
+    path: 'contact',
+    element : <PageContent/>,
+  },
+
+  {
+    path: 'test',
+    element : <Test/>,
+  },
   {
     path: "",
     element: <Homepage />,

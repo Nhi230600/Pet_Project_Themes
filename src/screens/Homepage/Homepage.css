@@ -263,8 +263,18 @@
 .trainer-describtion{
 
 }
-
-
+.carousel-content{
+    position: relative;
+}
+.banner{
+    padding: 20px;
+    
+}
+.carousel-content {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+}
 
 
 /* End trainer */
