@@ -36,6 +36,11 @@ const SideBar = () => {
             key: "/employee",
             icon: <UserOutlined style={{ fontSize: FONTSIZE.logoSmall }} />,
           },
+          {
+            label: "Danh sách dịch vụ",
+            key: "admin/service",
+            icon: <UserOutlined style={{ fontSize: FONTSIZE.logoSmall }} />,
+          },
         ]}
       ></Menu>
     </div>

@@ -16,7 +16,7 @@ import AddServicePage from "../../../screens/Service/Add";
 import EditServicePage from "../../../screens/Service/Edit";
 import AddShiftPage from "../../../screens/Employee/Add-Shift";
 import ViewAppointmentAdmin from "../../../screens/Admin-menu/appointment/View";
-import EmployeeAppointmentListPage from "../../../screens/EmployeeView/AppointmentList";
+import EmployeeAppointmentListPage from "../../../screens/EmployeeView/appointmentList";
 import CustomerTreatment from "../../../screens/EmployeeView/customerTreatment";
 import PetCheckupPage from "../../../screens/EmployeeView/reBook";
 import EmployeeeCustomerProfile from "../../../screens/EmployeeView/CustomerProfile";
