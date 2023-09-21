@@ -1,0 +1,30 @@
+.chip-mark {
+    /* Đường dẫn đến tệp hình ảnh nền */
+    background-image: url(images/background.png);
+    /* Kích thước cố định cho background */
+    max-width: 1000px; /* Điều chỉnh kích thước chiều rộng theo ý muốn */
+    height: auto; /* Điều chỉnh kích thước chiều cao theo ý muốn */
+    /* Đặt mask image */
+    mask-image: url(images/background.png);
+    /* Điều chỉnh kích thước của mask */
+    mask-size: 100% 100%; /* Mask sẽ được phóng to 100% kích thước của background */
+    /* Hiệu ứng blending mode */
+    mask-composite: source-over;
+    /* Điều chỉnh vị trí mask */
+    mask-position: center;
+  }
+  .iframe-chip-mark{
+     /* Đường dẫn đến tệp hình ảnh nền */
+     background-image: url(images/background.png);
+     /* Kích thước cố định cho background */
+     min-width: 1000px; /* Điều chỉnh kích thước chiều rộng theo ý muốn */
+     height: 800px; /* Điều chỉnh kích thước chiều cao theo ý muốn */
+     /* Đặt mask image */
+     mask-image: url(images/background.png);
+     /* Điều chỉnh kích thước của mask */
+     mask-size: 100% 100%; /* Mask sẽ được phóng to 100% kích thước của background */
+     /* Hiệu ứng blending mode */
+     mask-composite: source-over;
+     /* Điều chỉnh vị trí mask */
+     mask-position: center;
+  }

@@ -1,33 +1,24 @@
-import { Form, Input } from "antd";
+
+import React from "react";
+import { Form, Input, Button } from "antd";
+
+
+
 import { useState } from "react";
+
 import Logo from "../../images/logo.png";
 import "./RegisterPage.css";
+import { toast } from "react-toastify";
+import { Link, useNavigate } from "react-router-dom";
 
 const RegisterPage = () => {
-  const [values, setValues] = useState({
-    name: "",
-    phonenumber: "",
-    email: "",
-    username: "",
-    password: "",
-    repeatpassword: "",
-  });
-
-  function handleInput(event: any) {
-    const newObj = { ...values, [event.target.name]: event.target.value };
-    setValues(newObj);
-  }
-
-  function handleValidation(event: any) {
-    event.preventDefault();
-  }
-
+  const navigate = useNavigate();
   const onFinish = (values: any) => {
-    console.log("Success:", values);
+    toast.success("Đăng kí thành công");
   };
 
   const onFinishFailed = (errorInfo: any) => {
-    console.log("Failed:", errorInfo);
+    toast.error("đăng kí thất bại");
   };
 
   return (
@@ -78,6 +69,7 @@ const RegisterPage = () => {
             }}
           />
         </Form.Item>
+
         <Form.Item
           label="Số điện thoại: "
           name="phonenumber"
@@ -117,6 +109,7 @@ const RegisterPage = () => {
             }}
           />
         </Form.Item>
+
         <Form.Item
           label="Mật khẩu: "
           name="password"
@@ -134,6 +127,7 @@ const RegisterPage = () => {
             }}
           />
         </Form.Item>
+
         <Form.Item
           label="Nhập lại mật khẩu: "
           name="confirmPassword"
@@ -161,38 +155,8 @@ const RegisterPage = () => {
           />
         </Form.Item>
 
-        <Form.Item>
-          label="Mật khẩu: " name="password" rules=
-          {[
-            {
-              required: true,
-              message: "Please input your password!",
-            },
-          ]}
-          <Input.Password
-            style={{
-              height: "2.5vw",
-              boxShadow: "0.1rem 0.2rem 0.1rem rgb(245, 214, 129)",
-            }}
-          />
-        </Form.Item>
-        <Form.Item
-          label="Nhập lại mật khẩu: "
-          name="repeatpassword"
-          rules={[
-            {
-              required: true,
-              message: "Please input your password repeat!",
-            },
-          ]}
-        >
-          <Input.Password
-            style={{
-              height: "2.5vw",
-              boxShadow: "0.1rem 0.2rem 0.1rem rgb(245, 214, 129)",
-            }}
-          />
-        </Form.Item>
+
+
         <Form.Item
           wrapperCol={{
             offset: 2,
@@ -200,7 +164,6 @@ const RegisterPage = () => {
           }}
         >
           <button
-            onSubmit={handleValidation}
             type="submit"
             className="container-register-submit"
           >
