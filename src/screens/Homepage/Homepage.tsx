@@ -3,7 +3,7 @@ import React from "react";
 import "./Homepage.css";
 import { Carousel, Slider } from "antd";
 import Header from "../../components/Header";
-import { HeaderUser } from "components";
+import { HeaderUser, TrainerList } from "components";
 import Footer from "../../components/Footer";
 import { faPhone, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -50,8 +50,9 @@ const Homepage = () => {
   return (
     <div id="homepage">
       <div id="header">
-        <Header></Header>
+        <Header />
       </div>
+      <TrainerList />
       <div id="content">
         <div className="slider">
           <Carousel autoplay>
