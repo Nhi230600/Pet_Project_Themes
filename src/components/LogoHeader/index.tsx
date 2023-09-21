@@ -1,20 +1,12 @@
-import { FONTCOLOR, FONTSIZE } from "../../application/config/constants";
 import "./LogoHeader.css";
-import Logo from "../../images/logo.png";
+import Logo from "../../images/logo1.png";
 
 const LogoHeader = () => {
   return (
-    <div className="logoheader">
-      <img className="logoheader-image" src={Logo} alt="Logo" />
-      <a
-        href=""
-        style={{
-          textDecoration: "none",
-          fontSize: FONTSIZE.logoSmall,
-          color: FONTCOLOR.primary,
-        }}
-      >
-        <span className="logoheader-name">NgáoService</span>
+    <div className="logo-header">
+      <img className="logo-header-image" src={Logo} alt="Logo" />
+      <a href="">
+        <span className="logo-header-name">PetsLove</span>
       </a>
     </div>
   );

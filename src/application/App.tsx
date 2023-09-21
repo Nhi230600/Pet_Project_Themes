@@ -3,11 +3,10 @@ import "react-toastify/dist/ReactToastify.css";
 import Routes from "./config/routes/Routes";
 import "react-toastify/dist/ReactToastify.css";
 import { Footer } from "components";
-
-
+import "./App.css";
 const App = () => {
   return (
-    <div className="App">
+    <div className="app">
       <ToastContainer />
       <Routes />
       <Footer />
@@ -15,4 +14,3 @@ const App = () => {
   );
 };
 export default App;
-

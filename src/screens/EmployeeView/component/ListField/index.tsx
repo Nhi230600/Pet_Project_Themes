@@ -1,13 +1,14 @@
-
-import React from "react";
-import { List, Avatar, Button } from "antd";
+import React, { useState } from "react";
+import { List, Avatar, Button, Divider, Card, Tag, Pagination } from "antd";
 import { CloseOutlined, EyeOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
+import "./ListField.css";
+
 export interface Appointment {
   treatment: string;
   customerName: string;
   time: string;
-  status: string;
+  status: number;
   customerAvatar: string;
 }
 
@@ -15,7 +16,6 @@ export interface FutureAppointment {
   treatment: string;
   customerName: string;
   time: string;
-  status: string;
   customerAvatar: string;
   date: string;
 }
@@ -26,6 +26,7 @@ interface ListFieldProps {
   onViewDetail: (appointment: Appointment | FutureAppointment) => void;
   onCancel: (appointment: Appointment | FutureAppointment) => void;
 }
+
 const currentDate = new Date();
 const currentDateTitle = `Hôm nay, ${currentDate.toLocaleDateString()} `;
 const ListField: React.FC<ListFieldProps> = ({
@@ -34,71 +35,149 @@ const ListField: React.FC<ListFieldProps> = ({
   onViewDetail,
   onCancel,
 }) => {
+  const [currentPage, setCurrentPage] = useState(1); // Trang hiện tại
+  const pageSize = 4; // Số mục trên mỗi trang
+
+  const handleChangePage = (page: any) => {
+    setCurrentPage(page);
+  };
   return (
-    <>
-      <h4>Appointments {currentDateTitle}</h4>
+    <div>
+      <div className="title-1">
+        <h4> Đơn khám {currentDateTitle}</h4>
+      </div>
+      <Divider />
       <List
-        dataSource={appointments}
+        dataSource={appointments.slice(
+          (currentPage - 1) * pageSize,
+          currentPage * pageSize
+        )}
         renderItem={(item: Appointment) => (
-          <List.Item
-            actions={[
-              <Link to="/employee/customer">
-                <Button icon={<EyeOutlined />} />
-              </Link>,
-              <Button
-                icon={<CloseOutlined />}
-                onClick={() => onCancel(item)}
-              />,
-            ]}
-          >
-            <List.Item.Meta
-              avatar={<Avatar src={item.customerAvatar} />}
-              title={item.treatment}
-              description={
-                <>
-                  <div>{item.customerName}</div>
-                  <div>{item.time}</div>
-                  <div>{item.status}</div>
-                </>
-              }
-            />
-          </List.Item>
+          <Card className="custom-card">
+            <List.Item
+              actions={[
+                <Link to="/employee/customer">
+                  <Button
+                    className="eye-icon"
+                    shape="circle"
+                    icon={<EyeOutlined />}
+                  />
+                </Link>,
+                <Button
+                  className="close-icon"
+                  shape="circle"
+                  icon={<CloseOutlined />}
+                  onClick={() => onCancel(item)}
+                />,
+              ]}
+            >
+              <List.Item.Meta
+                avatar={
+                  <Avatar
+                    className="avatar-customer"
+                    src={item.customerAvatar}
+                  />
+                }
+                description={
+                  <div className="horizontal-div-container">
+                    <div className="horizontal-div">
+                      <span className="bold-text">{item.customerName}</span>
+                    </div>
+                    <div className="horizontal-div">{item.treatment}</div>
+                    <div className="horizontal-div">{item.time}</div>
+                    <div className="horizontal-div">
+                      {item.status === 1 ? (
+                        <Tag className="status-tag-pending">
+                          <span> Đang chờ</span>
+                        </Tag>
+                      ) : item.status === 2 ? (
+                        <Tag className="status-tag-completed">
+                          <span> Hoàn thành</span>
+                        </Tag>
+                      ) : (
+                        <Tag className="status-tag-canceled">
+                          <span>Đã hủy</span>
+                        </Tag>
+                      )}
+                    </div>
+                  </div>
+                }
+              />
+            </List.Item>
+          </Card>
         )}
       />
-      <h4>Future Appointments</h4>
+      <div className="pagination-container">
+        <Pagination
+          current={currentPage}
+          total={appointments.length}
+          pageSize={pageSize}
+          onChange={handleChangePage}
+          showSizeChanger={true}
+          pageSizeOptions={["5", "10", "20"]}
+        />
+      </div>
+      <Divider />
+
+      <div className="title-2">
+        <h4>Đơn đặt</h4>
+      </div>
+      <Divider />
       <List
-        dataSource={futureAppointments}
+        dataSource={futureAppointments.slice(
+          (currentPage - 1) * pageSize,
+          currentPage * pageSize
+        )}
         renderItem={(item: FutureAppointment) => (
-          <List.Item
-            actions={[
-              <Button
-                icon={<EyeOutlined />}
-                onClick={() => onViewDetail(item)}
-              />,
-              <Button
-                icon={<CloseOutlined />}
-                onClick={() => onCancel(item)}
-              />,
-            ]}
-          >
-            <List.Item.Meta
-              avatar={<Avatar src={item.customerAvatar} />}
-              title={item.treatment}
-              description={
-                <>
-                  <div>{item.customerName}</div>
-                  <div>{item.time}</div>
-                  <div>{item.date}</div>
-                  <div>{item.status}</div>
-                </>
-              }
-            />
-          </List.Item>
+          <Card className="custom-card">
+            <List.Item
+              actions={[
+                <Link to="/employee/customer">
+                  <Button
+                    className="eye-icon"
+                    shape="circle"
+                    icon={<EyeOutlined />}
+                  />
+                </Link>,
+                <Button
+                  className="close-icon"
+                  shape="circle"
+                  icon={<CloseOutlined />}
+                  onClick={() => onCancel(item)}
+                />,
+              ]}
+            >
+              <List.Item.Meta
+                avatar={<Avatar src={item.customerAvatar} />}
+                description={
+                  <>
+                    <div className="horizontal-div-container">
+                      <div className="horizontal-div">
+                        <span className="bold-text">{item.customerName}</span>
+                      </div>
+                      <div className="horizontal-div">{item.treatment}</div>
+                      <div className="horizontal-div">{item.time}</div>
+                      <div className="horizontal-div">{item.date}</div>
+                    </div>
+                  </>
+                }
+              />
+            </List.Item>
+          </Card>
         )}
       />
-    </>
+      <div className="pagination-container">
+        <Pagination
+          current={currentPage}
+          total={futureAppointments.length}
+          pageSize={pageSize}
+          onChange={handleChangePage}
+          showSizeChanger={true}
+          pageSizeOptions={["5", "10", "20"]}
+        />
+      </div>
+    </div>
   );
 };
 
 export default ListField;
-

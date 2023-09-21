@@ -1,17 +1,21 @@
 
-import { COLORS, FONTCOLOR, FONTSIZE } from "../../application/config/constants";
 import { Drawer } from "antd";
+
+
+
 import LoginRegister from "../LoginRegister";
 import LogoHeader from "../LogoHeader";
 import Nav from "../Nav";
 import Search from "../Search";
 import "./Header.css";
+
 import DrawerContent from "../DrawerContent";
 import { useState } from "react";
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
 } from "@ant-design/icons";
+
 
 const Header = () => {
 
@@ -34,18 +38,17 @@ const Header = () => {
     account = null; // or provide a default value
   }
 
-  const backgroundColor = COLORS.primary;
   return (
-    <header className="header" style={{ backgroundColor }}>
+    <header className="header">
 
-      <div className="header-nav" style={{ fontSize: FONTSIZE.textNav }}>
+      <div className="header-nav" >
 
         <LogoHeader />
         <Search />
         {account ? (
-          <div className="header-user" style={{ fontSize: FONTSIZE.textButton }}>
+          <div className="header-user" >
             <button
-              style={{ fontSize: FONTSIZE.text }}
+           
               className="header-user-button"
               onClick={showDrawer}
             >
@@ -66,9 +69,9 @@ const Header = () => {
 
 
       </div>
-      <div className="header-nav" style={{ fontSize: FONTSIZE.textNav }}>
-        <Nav />
-      </div>
+
+
+
     </header>
   );
 };

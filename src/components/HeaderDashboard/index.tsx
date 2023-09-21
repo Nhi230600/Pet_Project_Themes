@@ -1,4 +1,3 @@
-import { FONTSIZE } from "../../application/config/constants";
 import Logo from "../../images/logo.png";
 import "./HeaderDashboard.css";
 
@@ -11,7 +10,6 @@ const HeaderDashboard = () => {
       <div>
         <span
           style={{
-            fontSize: FONTSIZE.logoLarge,
             textShadow: "0.2rem 0.1rem 0.1rem rgb(245, 214, 129)",
           }}
         >

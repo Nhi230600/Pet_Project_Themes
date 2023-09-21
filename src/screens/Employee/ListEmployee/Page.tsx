@@ -2,141 +2,139 @@ import React, { useState } from "react";
 import {
   Table,
   Button,
-  Modal,
   Form,
   Input,
   Tooltip,
-  Card,
   Typography,
   Space,
   Tag,
 } from "antd";
-import {
-  InfoCircleOutlined,
-  DeleteOutlined,
-  PlusCircleOutlined,
-  UserOutlined,
-} from "@ant-design/icons";
-import { useNavigate } from "react-router-dom";
+
+import { useNavigate, Link } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "./ListEmployee.css";
 
 import "antd/dist/antd.css";
 import { Employee } from "./Employee";
+import {
+  InfoCircleOutlined,
+  DeleteOutlined,
+  PlusCircleOutlined,
+} from "@ant-design/icons";
 
 const EmployeeListPage = () => {
   const [employees, setEmployees] = useState<Employee[]>([
     {
+      id: 1,
       name: "Nguyễn Văn A",
       type: "Nhân viên chăm sóc",
       account: "nvana",
       password: "password123",
-      avatar:
-        "https://scontent.fdad2-1.fna.fbcdn.net/v/t39.30808-6/366932763_3665015117155608_5881902676761915179_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=a2f6c7&_nc_ohc=Ex7zO_okcJsAX8JxOKk&_nc_ht=scontent.fdad2-1.fna&oh=00_AfACoJjz-hlvxaWP_-mJtiZDhvwXADQhA4Zf2Y3O2atgGg&oe=65045391",
+      avatar: "https://picsum.photos/id/267/500/300",
     },
     {
+      id: 2,
       name: "Trần Thị B",
       type: "Bác sĩ",
       account: "ttb",
       password: "doctor456",
-      avatar:
-        "https://scontent.fdad2-1.fna.fbcdn.net/v/t39.30808-6/366932763_3665015117155608_5881902676761915179_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=a2f6c7&_nc_ohc=Ex7zO_okcJsAX8JxOKk&_nc_ht=scontent.fdad2-1.fna&oh=00_AfACoJjz-hlvxaWP_-mJtiZDhvwXADQhA4Zf2Y3O2atgGg&oe=65045391",
+      avatar: "https://picsum.photos/id/238/400/400",
     },
     {
+      id: 3,
       name: "Lê Quang C",
       type: "Huấn luyện viên",
       account: "lqc",
       password: "trainer789",
-      avatar:
-        "https://scontent.fdad2-1.fna.fbcdn.net/v/t39.30808-6/366932763_3665015117155608_5881902676761915179_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=a2f6c7&_nc_ohc=Ex7zO_okcJsAX8JxOKk&_nc_ht=scontent.fdad2-1.fna&oh=00_AfACoJjz-hlvxaWP_-mJtiZDhvwXADQhA4Zf2Y3O2atgGg&oe=65045391",
+      avatar: "https://picsum.photos/id/235/240/500",
     },
     {
+      id: 4,
       name: "Phạm Thị D",
       type: "Nhân viên chăm sóc",
       account: "ptd",
       password: "care123",
-      avatar:
-        "https://scontent.fdad2-1.fna.fbcdn.net/v/t39.30808-6/366932763_3665015117155608_5881902676761915179_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=a2f6c7&_nc_ohc=Ex7zO_okcJsAX8JxOKk&_nc_ht=scontent.fdad2-1.fna&oh=00_AfACoJjz-hlvxaWP_-mJtiZDhvwXADQhA4Zf2Y3O2atgGg&oe=65045391",
+      avatar: "https://picsum.photos/id/250/740/600",
     },
     {
+      id: 5,
       name: "Hoàng Văn E",
       type: "Bác sĩ",
       account: "hve",
       password: "medic456",
-      avatar:
-        "https://scontent.fdad2-1.fna.fbcdn.net/v/t39.30808-6/366932763_3665015117155608_5881902676761915179_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=a2f6c7&_nc_ohc=Ex7zO_okcJsAX8JxOKk&_nc_ht=scontent.fdad2-1.fna&oh=00_AfACoJjz-hlvxaWP_-mJtiZDhvwXADQhA4Zf2Y3O2atgGg&oe=65045391",
+      avatar: "https://picsum.photos/id/237/200/300",
     },
     {
+      id: 6,
       name: "Mai Thị F",
       type: "Nhân viên chăm sóc",
       account: "mtf",
       password: "care567",
-      avatar:
-        "https://scontent.fdad2-1.fna.fbcdn.net/v/t39.30808-6/366932763_3665015117155608_5881902676761915179_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=a2f6c7&_nc_ohc=Ex7zO_okcJsAX8JxOKk&_nc_ht=scontent.fdad2-1.fna&oh=00_AfACoJjz-hlvxaWP_-mJtiZDhvwXADQhA4Zf2Y3O2atgGg&oe=65045391",
+      avatar: "https://picsum.photos/id/300/200/300",
     },
     {
+      id: 7,
       name: "Lý Thanh G",
       type: "Huấn luyện viên",
       account: "ltg",
       password: "trainer890",
-      avatar:
-        "https://scontent.fdad2-1.fna.fbcdn.net/v/t39.30808-6/366932763_3665015117155608_5881902676761915179_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=a2f6c7&_nc_ohc=Ex7zO_okcJsAX8JxOKk&_nc_ht=scontent.fdad2-1.fna&oh=00_AfACoJjz-hlvxaWP_-mJtiZDhvwXADQhA4Zf2Y3O2atgGg&oe=65045391",
+      avatar: "https://picsum.photos/id/289/200/500",
     },
     {
+      id: 8,
       name: "Đinh Văn H",
       type: "Nhân viên chăm sóc",
       account: "dvh",
       password: "care246",
-      avatar:
-        "https://scontent.fdad2-1.fna.fbcdn.net/v/t39.30808-6/366932763_3665015117155608_5881902676761915179_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=a2f6c7&_nc_ohc=Ex7zO_okcJsAX8JxOKk&_nc_ht=scontent.fdad2-1.fna&oh=00_AfACoJjz-hlvxaWP_-mJtiZDhvwXADQhA4Zf2Y3O2atgGg&oe=65045391",
+      avatar: "https://picsum.photos/id/600/200/300",
     },
     {
+      id: 9,
       name: "Vũ Thị I",
       type: "Bác sĩ",
       account: "vti",
       password: "medic789",
-      avatar:
-        "https://scontent.fdad2-1.fna.fbcdn.net/v/t39.30808-6/366932763_3665015117155608_5881902676761915179_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=a2f6c7&_nc_ohc=Ex7zO_okcJsAX8JxOKk&_nc_ht=scontent.fdad2-1.fna&oh=00_AfACoJjz-hlvxaWP_-mJtiZDhvwXADQhA4Zf2Y3O2atgGg&oe=65045391",
+      avatar: "https://picsum.photos/id/123/200/300",
     },
     {
+      id: 10,
       name: "Trần Văn J",
       type: "Huấn luyện viên",
       account: "tvj",
       password: "trainer123",
-      avatar:
-        "https://scontent.fdad2-1.fna.fbcdn.net/v/t39.30808-6/366932763_3665015117155608_5881902676761915179_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=a2f6c7&_nc_ohc=Ex7zO_okcJsAX8JxOKk&_nc_ht=scontent.fdad2-1.fna&oh=00_AfACoJjz-hlvxaWP_-mJtiZDhvwXADQhA4Zf2Y3O2atgGg&oe=65045391",
+      avatar: "https://picsum.photos/id/107/200/300",
     },
     {
+      id: 11,
       name: "Nguyễn Thị K",
       type: "Nhân viên chăm sóc",
       account: "ntk",
       password: "care789",
-      avatar:
-        "https://scontent.fdad2-1.fna.fbcdn.net/v/t39.30808-6/366932763_3665015117155608_5881902676761915179_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=a2f6c7&_nc_ohc=Ex7zO_okcJsAX8JxOKk&_nc_ht=scontent.fdad2-1.fna&oh=00_AfACoJjz-hlvxaWP_-mJtiZDhvwXADQhA4Zf2Y3O2atgGg&oe=65045391",
+      avatar: "https://picsum.photos/id/209/200/300",
     },
     {
+      id: 12,
       name: "Lê Văn L",
       type: "Bác sĩ",
       account: "lvl",
       password: "medic246",
-      avatar:
-        "https://scontent.fdad2-1.fna.fbcdn.net/v/t39.30808-6/366932763_3665015117155608_5881902676761915179_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=a2f6c7&_nc_ohc=Ex7zO_okcJsAX8JxOKk&_nc_ht=scontent.fdad2-1.fna&oh=00_AfACoJjz-hlvxaWP_-mJtiZDhvwXADQhA4Zf2Y3O2atgGg&oe=65045391",
+      avatar: "https://picsum.photos/id/237/200/300",
     },
     {
+      id: 13,
       name: "Trương Thị M",
       type: "Nhân viên chăm sóc",
       account: "ttm",
       password: "care135",
-      avatar:
-        "https://scontent.fdad2-1.fna.fbcdn.net/v/t39.30808-6/366932763_3665015117155608_5881902676761915179_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=a2f6c7&_nc_ohc=Ex7zO_okcJsAX8JxOKk&_nc_ht=scontent.fdad2-1.fna&oh=00_AfACoJjz-hlvxaWP_-mJtiZDhvwXADQhA4Zf2Y3O2atgGg&oe=65045391",
+      avatar: "https://picsum.photos/id/254/200/300",
     },
     {
+      id: 14,
       name: "Phan Văn N",
       type: "Huấn luyện viên",
       account: "pvn",
       password: "trainer357",
-      avatar:
-        "https://scontent.fdad2-1.fna.fbcdn.net/v/t39.30808-6/366932763_3665015117155608_5881902676761915179_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=a2f6c7&_nc_ohc=Ex7zO_okcJsAX8JxOKk&_nc_ht=scontent.fdad2-1.fna&oh=00_AfACoJjz-hlvxaWP_-mJtiZDhvwXADQhA4Zf2Y3O2atgGg&oe=65045391",
+      avatar: "https://picsum.photos/id/287/200/300",
     },
   ]);
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -145,16 +143,12 @@ const EmployeeListPage = () => {
   const [pageSize, setPageSize] = useState(5);
   const navigate = useNavigate();
   const showModal = () => {
-    navigate("/employee/add");
+    navigate("/admin/employee/add");
   };
+  const [searchText, setSearchText] = useState("");
 
-  const handleCancel = () => {
-    setIsModalVisible(false);
-  };
-
-  const handleViewEmployee = (record: Employee) => {
-    // Chuyển hướng đến trang employeedetail và truyền thông tin chi tiết nhân viên
-    navigate(`/employee/detail`, { state: { employee: record } });
+  const handleSearch = (value: any) => {
+    setSearchText(value);
   };
 
   const handleDeleteEmployee = (record: Employee) => {
@@ -180,7 +174,7 @@ const EmployeeListPage = () => {
       dataIndex: "avatar", // Thêm một trường avatar trong mảng Employee và cung cấp đường dẫn đến ảnh avatar.
       key: "avatar",
       render: (avatar: string) => (
-        <div className="avatar">
+        <div className="avatar-add-employee">
           <img
             src={avatar}
             alt="Avatar"
@@ -193,13 +187,14 @@ const EmployeeListPage = () => {
       title: "Họ và tên",
       dataIndex: "name",
       key: "name",
+      render: (text: string) => <span className="style-bold-name">{text}</span>,
     },
 
     {
       title: "Chức vụ",
       dataIndex: "type",
       key: "type",
-      render: (type: string) => <Tag color="green">{type}</Tag>,
+      render: (type: string) => <Tag className="style">{type}</Tag>,
     },
     {
       title: "Tài khoản",
@@ -210,23 +205,26 @@ const EmployeeListPage = () => {
       title: "Mật khẩu",
       dataIndex: "password",
       key: "password",
-      render: (type: string) => <Tag color="red">{type}</Tag>,
+      render: (type: string) => <Tag className="style2">{type}</Tag>,
     },
     {
       title: "Hành động",
       key: "action",
       render: (text: string, record: Employee) => (
-        <Space className="action-buttons">
+        <Space className="info-buttons-space">
           <Tooltip title="Xem chi tiết">
-            <Button
-              type="primary"
-              shape="circle"
-              icon={<InfoCircleOutlined />}
-              onClick={() => handleViewEmployee(record)}
-            />
+            <Link to={`${record.id}`}>
+              <Button
+                className="info-button"
+                type="primary"
+                shape="circle"
+                icon={<InfoCircleOutlined />}
+              />
+            </Link>
           </Tooltip>
           <Tooltip title="Xóa">
             <Button
+              className="delete-button"
               type="default"
               shape="circle"
               icon={<DeleteOutlined />}
@@ -240,15 +238,28 @@ const EmployeeListPage = () => {
 
   const startIndex = (currentPage - 1) * pageSize;
   const endIndex = startIndex + pageSize;
-  const displayedEmployees = employees.slice(startIndex, endIndex);
+  const displayedEmployees = employees
+    .filter((employee) => {
+      // Áp dụng logic tìm kiếm ở đây, ví dụ: tìm theo tên nhân viên
+      return employee.name.toLowerCase().includes(searchText.toLowerCase());
+    })
+    .slice(startIndex, endIndex);
 
   return (
-    <div className="list-container">
-      <Typography.Title level={2} className="list-title">
-        Danh sách nhân viên
-      </Typography.Title>
-
-      <div>
+    <div>
+      <div className="list-container">
+        <Typography.Title level={2} className="list-title">
+          Danh sách nhân viên
+        </Typography.Title>
+      </div>
+      <div className="search-container">
+        <Input.Search
+          className="search-input"
+          placeholder="Tìm kiếm nhân viên"
+          onSearch={handleSearch}
+        />
+      </div>
+      <div className="button-container">
         <Button className="addButton" type="primary" onClick={showModal}>
           <PlusCircleOutlined /> Thêm nhân viên
         </Button>

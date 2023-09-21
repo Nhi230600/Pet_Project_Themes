@@ -8,7 +8,6 @@ import {
 } from "@ant-design/icons";
 import { Drawer } from "antd";
 import { useState } from "react";
-import { COLORS, FONTCOLOR, FONTSIZE } from "../../application/config/constants";
 import Logo from "../../images/logo.png";
 import DrawerContent from "../DrawerContent";
 
@@ -31,9 +30,7 @@ const items = [
   },
 ];
 
-
 const HeaderUser = () => {
-  const backgroundColor = COLORS.primary;
   const [collapsed, setCollapsed] = useState(false);
   const toggleCollapsed = () => {
     setCollapsed(!collapsed);
@@ -51,7 +48,7 @@ const HeaderUser = () => {
   };
 
   return (
-    <header className="header" style={{ backgroundColor }}>
+    <header className="header">
       <div className="header-logo-search">
         <div className="header-logo">
           <img className="header-logo-image" src={Logo} alt="Logo" />
@@ -59,8 +56,6 @@ const HeaderUser = () => {
             href=""
             style={{
               textDecoration: "none",
-              fontSize: FONTSIZE.logoLarge,
-              color: FONTCOLOR.primary,
             }}
           >
             <span className="header-logo-name">NgáoService</span>
@@ -82,20 +77,13 @@ const HeaderUser = () => {
             />
           </div>
           <div className="header-search-search">
-            <button
-              style={{ fontSize: FONTSIZE.text }}
-              className="header-search-search-action"
-            >
+            <button className="header-search-search-action">
               <SearchOutlined />
             </button>
           </div>
         </div>
-        <div className="header-user" style={{ fontSize: FONTSIZE.textButton }}>
-          <button
-            style={{ fontSize: FONTSIZE.text }}
-            className="header-user-button"
-            onClick={showDrawer}
-          >
+        <div className="header-user">
+          <button className="header-user-button" onClick={showDrawer}>
             {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
           </button>
           <Drawer
@@ -108,7 +96,7 @@ const HeaderUser = () => {
           </Drawer>
         </div>
       </div>
-      <div className="header-nav" style={{ fontSize: FONTSIZE.textNav }}>
+      <div className="header-nav">
         <ul className="header-nav-list">
           <li className="header-nav-list-name">
             <a className="header-nav-list-homepage" href="">

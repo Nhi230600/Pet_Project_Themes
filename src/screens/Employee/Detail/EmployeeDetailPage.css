@@ -1,130 +1,107 @@
 /* EmployeeDetailPage.css */
 
 /* Phần tử gốc của trang */
-.EmployeeDetailPage {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
-  
-  /* Card chứa thông tin nhân viên */
-  .employee-card {
-    width: 80%;
-    margin: 20px auto; /* Đặt margin tự động cho phần còn lại của hai bên để căn giữa */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  
-  /* Tiêu đề của trang */
-  .EmployeeDetailPage h1 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  /* Hình ảnh đại diện */
-  .EmployeeDetailPage__Avatar {
-    width: 100px;
-    height: 100px;
-
-    display: flex;
-    justify-content: center; /* Căn giữa theo chiều ngang */
-    align-items: center; /* Căn giữa theo chiều dọc */
-    margin: 20px auto;
-  }
-  
-  /* Các mục thông tin chi tiết */
-  .EmployeeDetailPage__Item {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 12px;
-    padding: 8px 0;
-    border-bottom: 1px solid #ccc;
-  }
-  
-  .EmployeeDetailPage__Label {
-    font-weight: bold;
-  }
-  
-  .EmployeeDetailPage__Value {
-    color: #333;
-  }
-  
-  /* Mô tả chi tiết */
-  .EmployeeDetailPage__Description {
-    margin: 20px 0;
-    font-size: 16px;
-  }
-  
-  /* EmployeeDetailPage.css */
-
-/* Phần tử gốc của trang */
-.EmployeeDetailPage {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
+.employee-detail-page {
+  height: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
 }
 
 /* Card chứa thông tin nhân viên */
-.employee-card {
-    width: 80%;
-    margin: 20px auto; /* Đặt margin tự động cho phần còn lại của hai bên để căn giữa */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Căn giữa nội dung bên trong Card */
-    text-align: center; /* Căn giữa tiêu đề Card và mô tả */
-}
 
 /* Tiêu đề của trang */
-.EmployeeDetailPage h1 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
+.employee-detail-page h1 {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+.employee-card {
+  width: 300px;
+  height: 610px;
+  margin: auto 0; /* Đặt margin tự động cho phần còn lại của hai bên để căn giữa */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center; /* Căn giữa nội dung bên trong Card */
+  text-align: center; /* Căn giữa tiêu đề Card và mô tả */
+}
+.employee-card .avatar-profile-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: -110px;
+  margin-bottom: 40px;
+}
+.avatar-profile-card:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
 }
 
-/* Hình ảnh đại diện */
-.EmployeeDetailPage__Avatar {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+.employee-card .ant-card-meta-title {
+  font-size: 24px; /* Điều chỉnh kích thước của tên */
+} /* EmployeeDetailPage.css */
+
+/* Phần tử gốc của trang */
+
+.profile-text {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  line-height: 1;
+  display: flex;
+  align-items: center; /* Căn dọc theo trục y */
 }
 
-/* Các mục thông tin chi tiết */
-.EmployeeDetailPage__Item {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 12px;
-    padding: 8px 0;
-    border-bottom: 1px solid #ccc;
+.profile-text strong {
+  flex-shrink: 0; /* Không cho phần tử strong co lại */
+  margin-right: 10px; /* Đặt khoảng cách giữa strong và nội dung */
+}
+.color-background {
+  border-top-right-radius: 5%;
+  border-top-left-radius: 5%;
+  height: 140px;
+  width: 305px;
+  background-color: #dad7ea;
+  color: #534b81;
+  font-size: 25px;
+  padding: 50px;
+  font-style: normal;
+}
+/* Card chứa thông tin nhân viên */
+
+/* Hiệu ứng hover cho thẻ Card */
+
+.editButton {
+  margin-top: 20px;
+  bottom: -20px;
+  color: var(--fonts-primary-variant, #534b81);
+  background-color: #dad7ea;
+  justify-content: center;
+  border-radius: 5%;
+  align-items: center;
+  font-style: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.editButton:hover {
+  transform: scale(1.05);
 }
 
-.EmployeeDetailPage__Label {
-    font-weight: bold;
-}
-
-.EmployeeDetailPage__Value {
-    color: #333;
-}
-
-/* Mô tả chi tiết */
-.EmployeeDetailPage__Description {
-    margin: 20px 0;
-    font-size: 16px;
-}
-.edit-button {
-    position: absolute; /* Thiết lập vị trí tuyệt đối */
-    bottom: 200px; /* Khoảng cách từ dưới cùng là 20px */
-    right: 20px; /* Khoảng cách từ bên phải cùng là 20px */
-  }
-  /* Trong tệp EmployeeDetailPage.css */
+/* Trong tệp EmployeeDetailPage.css */
 .add-shift-button {
-  position: absolute;
-  bottom: 100px; /* Điều chỉnh khoảng cách từ dưới */
-  right: 20px; /* Điều chỉnh khoảng cách từ phải */
-  z-index: 1; /* Đảm bảo nút này hiển thị phía trên các phần tử khác có z-index mặc định */
+  color: var(--fonts-primary-variant, #534b81);
+  background-color: #dad7ea;
+  justify-content: center;
+  border-radius: 5%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  align-items: center;
+  font-style: bold; /* Đảm bảo nút này hiển thị phía trên các phần tử khác có z-index mặc định */
+}
+.add-shift-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 .green-status {
   background-color: green; /* Hoặc màu xanh khác mà bạn muốn sử dụng */
@@ -138,5 +115,133 @@
   cursor: not-allowed; /* Biểu tượng con trỏ tắt khi di chuột vào */
   pointer-events: none; /* Tắt sự kiện click */
 }
+.appointment-card {
+  background-color: #f5f4fd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 200px; /* Độ rộng của thẻ */
+  height: 150px; /* Độ cao của thẻ */
+  margin-right: 13px;
+  display: inline-flex;
+  border-radius: 10%;
+  margin: 5px;
+  margin-bottom: 10px;
+  color: var(--neutral-800, #534b81);
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.appointment-card:hover {
+  transform: scale(1.05); /* Tăng kích thước khi hover */
+  transition: transform 0.2s ease-in-out; /* Hiệu ứng mượt mà */
+  cursor: pointer; /* Biểu tượng con trỏ khi hover */
+}
+/* CSS */
+.appointment-card.total-appointments {
+  background-color: #a6c0fe; /* Màu nền cho Card 1 */
+}
 
+.appointment-card.completed-appointments {
+  background-color: #b4f0a6; /* Màu nền cho Card 2 */
+}
 
+.appointment-card.canceled-appointments {
+  background-color: #ffb3d9; /* Màu nền cho Card 3 */
+}
+/* CSS */
+
+.appointment-card-number {
+  color: var(--neutral-800, #262626);
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-top: 15px;
+}
+.appointment-card-in {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 0;
+  flex-grow: 1;
+}
+.card-content {
+  display: flex; /* Sử dụng Flexbox */
+  /* Căn giữa theo chiều dọc */
+}
+.icon {
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 10px; /* Đặt khoảng cách giữa biểu tượng và nội dung khác */
+}
+.total-appointments .icon {
+  color: blue; /* Màu xanh cho total-appointments */
+}
+
+/* Màu cho biểu tượng khi là completed-appointments */
+.completed-appointments .icon {
+  color: green; /* Màu xanh lá cây cho completed-appointments */
+}
+
+/* Màu cho biểu tượng khi là canceled-appointments */
+.canceled-appointments .icon {
+  color: red; /* Màu đỏ cho canceled-appointments */
+}
+.shift {
+  width: 100%;
+}
+.appointment-tab {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  border-radius: 5%;
+  height: 450px;
+}
+/* Kiểu dáng cho trạng thái hoàn thành */
+.status.completed {
+  color: green;
+  font-weight: bold; /* Màu văn bản cho trạng thái hoàn thành */
+}
+
+/* Kiểu dáng cho trạng thái bị hủy */
+.status.canceled {
+  color: red;
+  font-weight: bold; /* Màu văn bản cho trạng thái bị hủy */
+}
+
+/* Kiểu dáng cho trạng thái đang chờ */
+.status.pending {
+  color: blue;
+  font-weight: bold; /* Màu văn bản cho trạng thái đang chờ */
+}
+
+/* Kiểu dáng cho biểu tượng trong mỗi trạng thái */
+.status-button .icon-status {
+  margin-right: 5px; /* Đặt khoảng cách giữa biểu tượng và văn bản */
+}
+.icon-status {
+  font-size: 10px;
+  align-items: flex-start;
+  margin-right: 10px;
+}
+.price-info {
+  color: gold;
+}
+.price-text {
+  font-weight: bold;
+}
+.status-icon {
+  color: blue;
+}
+.block {
+  display: flex;
+  flex-direction: row;
+}
+.block-1 {
+  margin: auto;
+  margin-right: 10px;
+}
+.block-2 {
+  margin: auto;
+  margin-left: 20px;
+}

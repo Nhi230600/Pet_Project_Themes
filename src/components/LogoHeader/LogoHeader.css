@@ -1,13 +1,21 @@
-.logoheader {
-    display: block;
-    width: 20%;
-    height: auto;
-    text-align: center;
+.logo-header {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  width: 20%;
+  height: auto;
+  align-items: center; /* Để căn giữa theo chiều dọc */
 }
-.logoheader-image {
-    width: 100%;
-    height: auto;
+
+.logo-header-image {
+  width: 6rem;
+  height: 6rem;
 }
-.logoheader-name {
-    text-Shadow: 0.1rem 0.1rem 0.1rem white;
+
+.logo-header-name {
+  font-family: cursive;
+  font-weight: 600;
+  font-size: 28px;
+  color: #000;
+  text-align: center; /* Để căn giữa theo chiều ngang */
 }

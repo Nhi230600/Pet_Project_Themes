@@ -1,14 +1,14 @@
 import { Checkbox, Form, Input } from "antd";
-import { FONTSIZE } from "../../application/config/constants";
 import Logo from "../../images/logo.png";
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./LoginPage.css";
 
 
+
 const LoginPage = () => {
-  const onFinish = async (values : any) => {
-    const { account} = values;
+  const onFinish = async (values: any) => {
+    const { account } = values;
 
     // Check if account is equal to '1'
     if (account === '1') {
@@ -25,10 +25,11 @@ const LoginPage = () => {
     }
     else {
       toast.error("Tài khoản không tồn tại");
+
     }
   };
 
-  const onFinishFailed = (errorInfo : any) => {
+  const onFinishFailed = (errorInfo: any) => {
     // Handle form validation failure here
     toast.error("Lỗi!!!");
   };
@@ -43,7 +44,6 @@ const LoginPage = () => {
         <div className="container-login-header-name">
           <span
             style={{
-              fontSize: FONTSIZE.logoSmall,
               textShadow: "0.1rem 0.2rem 0.1rem rgb(245, 214, 129)",
             }}
           >
