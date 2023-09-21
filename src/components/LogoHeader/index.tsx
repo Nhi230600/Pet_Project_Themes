@@ -1,15 +1,13 @@
 import "./LogoHeader.css";
 import Logo from "../../images/logo1.png";
 
-const LogoHeader = () => {
+const LogoNav = () => {
   return (
     <div className="logo-header">
       <img className="logo-header-image" src={Logo} alt="Logo" />
-      <a href="">
-        <span className="logo-header-name">PetsLove</span>
-      </a>
+      <span className="logo-header-name">PetsLove</span>
     </div>
   );
 };
 
-export default LogoHeader;
+export default LogoNav;

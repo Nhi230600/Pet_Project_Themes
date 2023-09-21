@@ -1,6 +1,5 @@
 import { faCakeCandles } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Footer, Header } from "../../../components";
 import { Modal } from "antd";
 import { useState } from "react";
 import PetProfilePage from "../../PetProfilePage/PetProfilePage";
@@ -10,6 +9,7 @@ import Avatar_Poodle from "../../../images/avatar_poodle.jpg";
 import ImagePet from "../../../images/image-pagemypet.png";
 
 import "./MyPet.css";
+import Nav from "components/Nav";
 
 const MyPet = () => {
   const [isModalPetProfileOpen, setIsModalPetProfileOpen] = useState(false);
@@ -19,7 +19,7 @@ const MyPet = () => {
   };
   return (
     <div className="mypet">
-      <Header />
+      <Nav />
       <div className="container-mypet">
         <div className="container-mypet-infor">
           <div className="container-mypet-infor-heading">
