@@ -1,27 +1,37 @@
-/* Nav.css */
-
-/* Định dạng toàn bộ navbar */
-.nav-content {
+.navbar {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border-bottom: 2px solid #e0e0e0;
+  padding: 0rem 1.5rem;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+.collapse {
   width: 100%;
 }
-.container {
-  width: 100%;
-  padding-right: 0;
-  padding-left: 0;
-  margin-right: auto;
-  margin-left: auto;
+.nav-logo {
+  width: 85%;
 }
 .nav-item {
-  font-size: 18px;
-  margin: 0 2vw 0 2vw;
+  font-size: 16px;
+  margin: 0 1vw 0 1vw;
+  margin-top: 10px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  white-space: nowrap;
+}
+.nav-i-booking {
+  font-size: 16px;
+  margin: 0 1vw 0 1vw;
+  margin-top: 18px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  white-space: nowrap;
+}
+.nav-log {
+  margin-top: 10px;
 }
 
 /* Định dạng các liên kết trong navbar */
-.nav-link-hompage,
-.nav-link-service,
-.nav-link-blog,
-.nav-link-contact {
+.nav-link {
   text-decoration: none;
   color: #333; /* Màu chữ */
   transition: color 0.3s ease-in-out;
@@ -29,11 +39,7 @@
 /* Thêm padding cho các liên kết trong menu */
 
 /* Định dạng màu chữ khi hover */
-.nav-item:hover .nav-link-hompage,
-.nav-item:hover .nav-link-service,
-.nav-item:hover .nav-link-blog,
-.nav-item:hover .nav-link-contact,
-.nav-item:hover .nav-link-booking {
+.nav-item:hover .nav-link {
   color: #ff4500; /* Màu chữ khi hover */
 }
 
@@ -65,47 +71,27 @@
 /* Định dạng viền màu cam cho .nav-link-booking */
 /* Định dạng viền màu cam cho .nav-link-booking */
 /* Định dạng viền màu cam cho .nav-link-booking */
-.nav-link-booking {
+.nav-booking {
+  margin-bottom: 100px;
   box-shadow: 0 0 0 2px #ed6436 inset !important;
   text-decoration: none;
   border-radius: 25px;
   color: #181818 !important;
   padding: 8px 20px; /* Điều chỉnh khoảng cách giữa viền và chữ */
   overflow: hidden;
-  border: none !important;
   border-top-left-radius: 0px;
   text-transform: uppercase;
 }
 
 /* Định dạng khi hover */
-.nav-link-booking:hover {
+.nav-booking:hover {
   text-decoration: none;
   background-color: #ed6436;
   color: #ffffff !important;
   transform: scale(1.1);
 }
 /* Tùy chỉnh dropdown menu */
-.ant-dropdown-menu {
-  background-color: #fff; /* Màu nền dropdown */
-  border: 1px solid #ccc; /* Viền dropdown */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Đổ bóng dropdown */
-  max-height: 300px; /* Độ cao tối đa của dropdown menu */
-  overflow-y: auto; /* Cho phép cuộn nếu nội dung quá dài */
-}
 
-/* Tùy chỉnh màu chữ trong dropdown menu và loại bỏ dấu gạch chân */
-.ant-dropdown-menu-item a {
-  color: #333; /* Màu chữ */
-  text-decoration: none; /* Loại bỏ dấu gạch chân */
-  padding: 10px 20px; /* Kích thước của mỗi mục trong dropdown menu */
-  font-size: 16px; /* Kích thước chữ */
-  display: block; /* Hiển thị các mục theo dạng block để có thể tùy chỉnh kích thước */
-}
-
-/* Tùy chỉnh màu chữ khi hover trong dropdown menu */
-.ant-dropdown-menu-item a:hover {
-  color: #ff4500; /* Màu chữ khi hover */
-}
 .nav-logo-login {
   display: flex;
   align-items: center; /* Căn chỉnh theo chiều dọc */
