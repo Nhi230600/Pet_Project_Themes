@@ -6,6 +6,11 @@
   padding: 0rem 1.5rem;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
+.navbar-toggler-icon-sm {
+  font-size: 16px; /* Điều chỉnh kích thước phù hợp */
+  /* Thêm bất kỳ thuộc tính CSS khác để tùy chỉnh biểu tượng */
+}
+
 .collapse {
   width: 100%;
 }
