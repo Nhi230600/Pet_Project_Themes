@@ -1,11 +1,5 @@
-import { FacebookOutlined, InstagramOutlined } from "@ant-design/icons";
-import {
-  faClock,
-  faEnvelope,
-  faMapMarkerAlt,
-  faPhoneAlt,
-  faStreetView,
-} from "@fortawesome/free-solid-svg-icons";
+import { FacebookOutlined, InstagramOutlined, MailOutlined  } from "@ant-design/icons";
+import { EnvironmentOutlined, PhoneOutlined, ClockCircleOutlined, ShopOutlined, GlobalOutlined } from '@ant-design/icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Logo from "../../images/logo.png";
 import "./Footer.css";
@@ -38,22 +32,15 @@ const Footer = (props: FooterProps) => {
           </div>
           <div className="footer-information-content">
             <div>
-              <FontAwesomeIcon
-                icon={faMapMarkerAlt}
-                className="icon-footer"
-              />
-              <a href="">397-5 Hapjeong-dong, Mapo-gu, Seoul, Hàn Quốc</a>
+              <EnvironmentOutlined className="icon-footer" />
+              <a href="">Số 16, Bế Văn Đàn,Ghềnh Ráng, Thàng phố Quy Nhơn </a>
             </div>
             <div>
-              <FontAwesomeIcon
-                icon={faPhoneAlt}
-                className="icon-footer"
-
-              />
+              <PhoneOutlined className="icon-footer" />
               <a href="">+82234421104</a>
             </div>
             <div>
-              <FontAwesomeIcon icon={faClock} className="icon-footer" />
+              <ClockCircleOutlined className="icon-footer" />
               <a href="">08:00 MON - 23:00 SAT</a>
             </div>
           </div>
@@ -64,25 +51,15 @@ const Footer = (props: FooterProps) => {
           </div>
           <div className="footer-information-content">
             <div>
-              <FontAwesomeIcon
-                icon={faStreetView}
-                className="icon-footer"
-
-              />
+              <ShopOutlined className="icon-footer" />
               <a href="">Chi nhánh tại TPHCM</a>
             </div>
             <div>
-              <FontAwesomeIcon
-                icon={faStreetView}
-                className="icon-footer"
-              />
+              <ShopOutlined className="icon-footer" />
               <a href="">Chi nhánh tại Hà Nội</a>
             </div>
             <div>
-              <FontAwesomeIcon
-                icon={faStreetView}
-                className="icon-footer"
-              />
+              <ShopOutlined className="icon-footer" />
               <a href="">Chi nhánh tại Đà Nẵng</a>
             </div>
           </div>
@@ -101,14 +78,10 @@ const Footer = (props: FooterProps) => {
               <a href="">Instagram</a>
             </div>
             <div>
-              <FontAwesomeIcon
-                icon={faEnvelope}
-                className="icon-footer"
-              />
+              <MailOutlined  className="icon-footer" />
               <a href="">Email</a>
             </div>
           </div>
-
         </div>
 
 
