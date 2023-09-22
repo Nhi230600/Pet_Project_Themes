@@ -1,8 +1,7 @@
 import { type } from "os";
 import React from "react";
 import "./Homepage.css";
-import Header from "../../components/Header";
-import { HeaderUser, TrainerList } from "components";
+import { TrainerList } from "components";
 import Nav from "components/Nav";
 import { Carousel, Slider, Card } from "antd";
 import Footer from "../../components/Footer";
