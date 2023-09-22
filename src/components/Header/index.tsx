@@ -48,7 +48,7 @@ const Header = () => {
         {account ? (
           <div className="header-user" >
             <button
-           
+
               className="header-user-button"
               onClick={showDrawer}
             >

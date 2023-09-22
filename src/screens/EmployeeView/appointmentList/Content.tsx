@@ -1,7 +1,6 @@
 import React from "react";
 import AdminContent from "../../../components/Admin/AdminContent"; // Import AdminInterface
-import Page from "../appointmentList/Page"
-
+import Page from "./Page";
 const App = () => {
   return (
     <div>
