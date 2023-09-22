@@ -272,8 +272,8 @@ const EmployeeDetailPage = () => {
         <div className="block-2">
           <div className="appointment">
             <Card className="appointment-card total-appointments">
-              <div className="card-content">
-                <CalendarOutlined className="icon" />
+              <div className="card-content-1">
+                <CalendarOutlined className="icon-detail-employee" />
                 <div className="appointment-card-in">
                   <Text>Tổng số đơn hẹn</Text>
                   <br />
@@ -285,8 +285,8 @@ const EmployeeDetailPage = () => {
             </Card>
 
             <Card className="appointment-card completed-appointments">
-              <div className="card-content">
-                <CheckCircleOutlined className="icon" />
+              <div className="card-content-1">
+                <CheckCircleOutlined className="icon-detail-employee" />
                 <div className="appointment-card-in">
                   <Text>Đơn hoàn thành</Text>
                   <br />
@@ -298,8 +298,8 @@ const EmployeeDetailPage = () => {
             </Card>
 
             <Card className="appointment-card canceled-appointments">
-              <div className="card-content">
-                <CloseCircleOutlined className="icon" />
+              <div className="card-content-1">
+                <CloseCircleOutlined className="icon-detail-employee" />
                 <div className="appointment-card-in">
                   <Text>Số đơn bị hủy</Text>
                   <br />
