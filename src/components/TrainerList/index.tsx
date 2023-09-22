@@ -21,7 +21,7 @@ const TrainerList = () => {
     },
     {
       img : trainer3,
-      name: 'Jack Dang',
+      name: 'Jack Ngo',
       position: 'Founder',
       exp: '5 years' 
     }
