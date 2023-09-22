@@ -1,0 +1,38 @@
+.content-3{
+    
+    padding: 20px;
+    width: 500px;
+    text-align: center;
+}
+/* EmployeeCard.css */
+.card-content {
+    background-color: rgb(242, 242, 244);
+    padding: 10px;
+}
+.content-3-cover {
+  margin: 20px;
+   
+}
+.icon {
+    color: orange;
+    width: 100px;
+    height: 100px;
+}
+.card-title{
+    font-family: 'Nunito', sans-serif;
+}
+.card-box h4{
+    color: orange;
+    font-size: 50px;
+}
+.card-box p{
+    font-size: 25px;
+}
+
+.mbr-text{
+    font-family: 'Nunito', sans-serif;
+}
+.item {
+    display: flex;
+}
+

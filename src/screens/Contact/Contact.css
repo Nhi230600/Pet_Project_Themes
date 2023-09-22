@@ -1,4 +1,4 @@
-.container-contact{
+.container-contact {
     width: 100%;
     display: flex;
     padding: 5rem;
@@ -7,57 +7,66 @@
 
 }
 
-.container-contact-info{
+.container-contact-info {
     width: 50%;
     display: block;
     text-align: justify;
 }
 
-.container-contact-form{
+.container-contact-form {
     display: block;
-    
+
 }
 
+.form-contact h4 {
+    font-family: "Nunito", sans-serif;
+    color: rgb(237, 100, 54)
+}
+.form-contact h5 {
+    font-family: cursive;
+    font-size: 45px;
 
+}
 
-.form-contact-1-input{
+.form-contact-1-input {
     width: 30rem;
 }
 
-.form-contact-2{
+.form-contact-2 {
     display: flex;
-    gap : 3rem;
+    gap: 3rem;
 }
 
-.form-contact-2-phone-input{
+.form-contact-2-phone-input {
     width: 11rem;
 }
 
-.form-contact-2-email-input{
+.form-contact-2-email-input {
     width: 16rem;
 }
 
-.form-contact-3-text{
+.form-contact-3-text {
     width: 30rem;
 }
 
-.form-contact{
+.form-contact {
     padding: 2rem;
     height: auto;
     border: 0.1rem solid rgb(245, 214, 129);
     background: linear-gradient(#f5d681, #8dd9ec);
     border-radius: 20px;
-   
+
 }
 
-.form-contact > div{
+.form-contact>div {
     padding-bottom: 1rem;
 
 }
 
-.form-btn{
+.form-btn {
     margin-top: 1rem;
 }
+
 .styled {
     border: 0;
     line-height: 2.5;
@@ -70,21 +79,21 @@
     background-color: rgba(220, 0, 0, 1);
     background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
     box-shadow:
-      inset 2px 2px 3px rgba(255, 255, 255, 0.6),
-      inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+        inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+        inset -2px -2px 3px rgba(0, 0, 0, 0.6);
 }
-  
+
 .styled:hover {
     background-color: rgba(255, 0, 0, 1);
 }
-  
+
 .styled:active {
     box-shadow:
-      inset -2px -2px 3px rgba(255, 255, 255, 0.6),
-      inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+        inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+        inset 2px 2px 3px rgba(0, 0, 0, 0.6);
 }
 
 
-strong{
+strong {
     color: red;
 }

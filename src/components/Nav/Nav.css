@@ -1,69 +1,114 @@
-.header-nav {
-  display: flex;
-  width: 100%;
-  height: auto;
-  align-items: center;
-}
+/* Nav.css */
 
-.header-nav-list {
+/* Định dạng toàn bộ navbar */
+.nav-content {
   width: 100%;
-  display: flex;
-  list-style: none;
-  padding: 0;
-  margin-top: 2vw;
 }
-
-.header-nav-list-name {
-  margin: 0 9vw 0 9vw;
+.container {
+  width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+  margin-right: auto;
+  margin-left: auto;
+}
+.nav-item {
+  font-size: 18px;
+  margin: 0 2vw 0 2vw;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-/* Trong file Nav.css */
-
-/* Gạch chân màu cam khi hover */
-.header-nav-list-name:hover a {
-  color: rgba(255, 100, 0, 1);
+/* Định dạng các liên kết trong navbar */
+.nav-link-hompage,
+.nav-link-service,
+.nav-link-blog,
+.nav-link-contact {
+  text-decoration: none;
+  color: #333; /* Màu chữ */
+  transition: color 0.3s ease-in-out;
 }
+/* Thêm padding cho các liên kết trong menu */
+
+/* Định dạng màu chữ khi hover */
+.nav-item:hover .nav-link-hompage,
+.nav-item:hover .nav-link-service,
+.nav-item:hover .nav-link-blog,
+.nav-item:hover .nav-link-contact,
+.nav-item:hover .nav-link-booking {
+  color: #ff4500; /* Màu chữ khi hover */
+}
+
+/* Định dạng dropdown menu */
+/* Nav.css */
+
+/* Định dạng dropdown menu */
 .ant-dropdown-menu {
-  background-color: #ffffff; /* Màu nền */
-  border: 1px solid #cccccc; /* Viền */
-  font-family: Arial, sans-serif; /* Font chữ */
+  background-color: #fff; /* Màu nền dropdown */
+  border: 1px solid #ccc; /* Viền dropdown */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Đổ bóng dropdown */
+  max-height: 300px; /* Độ cao tối đa của dropdown menu */
 }
 
+/* Định dạng màu chữ trong dropdown menu và loại bỏ dấu gạch chân */
 .ant-dropdown-menu-item a {
-  color: #333333; /* Màu chữ */
+  color: #333; /* Màu chữ */
+  text-decoration: none; /* Loại bỏ dấu gạch chân */
+  padding: 10px 20px; /* Kích thước của mỗi mục trong dropdown menu */
+  font-size: 16px; /* Kích thước chữ */
+  display: block; /* Hiển thị các mục theo dạng block để có thể tùy chỉnh kích thước */
 }
 
+/* Định dạng màu chữ khi hover trong dropdown menu */
 .ant-dropdown-menu-item a:hover {
-  color: #ff0000; /* Màu chữ khi hover */
-  transform: scale(1.1);
-}
-.ant-dropdown-menu-item:hover {
-  background-color: #f0f0f0; /* Màu nền khi hover */
-}
-.ant-dropdown-menu {
-  min-width: 200px; /* Độ rộng tối thiểu của dropdown */
+  color: #ff4500; /* Màu chữ khi hover */
 }
 
-.ant-dropdown-menu-item {
-  padding: 10px 20px; /* Khoảng cách giữa các mục */
-}
-.ant-dropdown-menu-item:active {
-  background-color: #ff0000; /* Màu nền khi mục được chọn */
-  color: #ffffff; /* Màu chữ khi mục được chọn */
-}
-.header-nav-list-booking {
+/* Định dạng viền màu cam cho .nav-link-booking */
+/* Định dạng viền màu cam cho .nav-link-booking */
+/* Định dạng viền màu cam cho .nav-link-booking */
+.nav-link-booking {
   box-shadow: 0 0 0 2px #ed6436 inset !important;
+  text-decoration: none;
   border-radius: 25px;
   color: #181818 !important;
+  padding: 8px 20px; /* Điều chỉnh khoảng cách giữa viền và chữ */
   overflow: hidden;
-  border-top-left-radius: 0px;
   border: none !important;
+  border-top-left-radius: 0px;
   text-transform: uppercase;
 }
 
-.header-nav-list-booking:hover {
+/* Định dạng khi hover */
+.nav-link-booking:hover {
+  text-decoration: none;
   background-color: #ed6436;
   color: #ffffff !important;
   transform: scale(1.1);
+}
+/* Tùy chỉnh dropdown menu */
+.ant-dropdown-menu {
+  background-color: #fff; /* Màu nền dropdown */
+  border: 1px solid #ccc; /* Viền dropdown */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Đổ bóng dropdown */
+  max-height: 300px; /* Độ cao tối đa của dropdown menu */
+  overflow-y: auto; /* Cho phép cuộn nếu nội dung quá dài */
+}
+
+/* Tùy chỉnh màu chữ trong dropdown menu và loại bỏ dấu gạch chân */
+.ant-dropdown-menu-item a {
+  color: #333; /* Màu chữ */
+  text-decoration: none; /* Loại bỏ dấu gạch chân */
+  padding: 10px 20px; /* Kích thước của mỗi mục trong dropdown menu */
+  font-size: 16px; /* Kích thước chữ */
+  display: block; /* Hiển thị các mục theo dạng block để có thể tùy chỉnh kích thước */
+}
+
+/* Tùy chỉnh màu chữ khi hover trong dropdown menu */
+.ant-dropdown-menu-item a:hover {
+  color: #ff4500; /* Màu chữ khi hover */
+}
+.nav-logo-login {
+  display: flex;
+  align-items: center; /* Căn chỉnh theo chiều dọc */
+  justify-content: space-between; /* Để logo và LoginRegister nằm ở hai đầu */
+  flex-grow: 1; /* Để logo và LoginRegister mở rộng để lấp đầy không gian còn trống */
 }

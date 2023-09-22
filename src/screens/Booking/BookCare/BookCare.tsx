@@ -1,13 +1,13 @@
 import "./BookCare.css";
 import { DatePicker, Space } from "antd";
-import { Header } from "../../../components";
 
 import "./BookCare.css";
+import Nav from "components/Nav";
 
 const BookCare = () => {
   return (
     <div>
-      <Header />
+      <Nav />
       <div className="container-bookcare">
         <div className="container-bookcare-heading">
           <span>Book Online 24/7</span>

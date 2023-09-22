@@ -3,6 +3,7 @@
     display: flex;
     height: auto;
     padding: 3rem 1rem;
+    background-image: linear-gradient( rgb(221, 221, 142), rgb(208, 230, 170), rgb(218, 228, 223));
 }
 .footer-logo {
     display: block;
@@ -31,26 +32,23 @@
     display: block;
     line-height: 2.5rem;
 }
-.footer-service {
-    width: 25%;
+.footer-information-content a{
+    color: black;
 }
-.footer-service-name {
-    font-weight: 600;
-    margin-bottom: 1.5rem;
+.icon-footer{
+    color: orange;
+    margin-right: 10px;
 }
-.footer-service-content {
-    display: block;
-    line-height: 2.5rem;
+.footer-information-name span{
+    font-family: cursive;
+    font-size: 20px;
+    color: rgb(160, 107, 8);
 }
-.footer-network {
-    width: 25%;
+.copy-right{
+    background-color: orange;
+    text-align: center;
+    padding: 20px;
 }
-.footer-network-name {
-    font-weight: 600;
-    margin-bottom: 1.5rem;
+.copy-right-content p {
+    font-size: 20px;
 }
-.footer-network-content {
-    display: block;
-    line-height: 2.5rem;
-}
-
