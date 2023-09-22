@@ -41,27 +41,7 @@ const Homepage = () => {
       contentType: "iframe",
     },
   ];
-  const Employees = [
-    {
-      Number: 1,
-      Name: "Nguyễn Văn A",
-      Avatar: "https://example.com/avatar.jpg",
-      Props: "Bác sĩ",
-      Experience: "3 năm",
-      Description:
-        "Tôi là một bác sĩ có 3 năm kinh nghiệm trong lĩnh vực y học. Tôi cam kết đem lại sự chăm sóc tốt nhất cho bệnh nhân và luôn nỗ lực để nâng cao kiến thức và kỹ năng của mình trong lĩnh vực này. Tôi tin rằng sức khỏe là quý báu và luôn sẵn sàng hỗ trợ bệnh nhân để họ có cuộc sống khỏe mạnh và hạnh phúc.",
-    },
 
-    {
-      Number: 2,
-      Name: "Nguyễn Văn A",
-      Avatar: "https://example.com/avatar.jpg",
-      Props: "Bác sĩ",
-      Experience: "3 năm",
-      Description:
-        "Tôi là một bác sĩ có 3 năm kinh nghiệm trong lĩnh vực y học. Tôi cam kết đem lại sự chăm sóc tốt nhất cho bệnh nhân và luôn nỗ lực để nâng cao kiến thức và kỹ năng của mình trong lĩnh vực này. Tôi tin rằng sức khỏe là quý báu và luôn sẵn sàng hỗ trợ bệnh nhân để họ có cuộc sống khỏe mạnh và hạnh phúc.",
-    },
-  ];
   return (
     <div id="homepage">
       <div id="header">

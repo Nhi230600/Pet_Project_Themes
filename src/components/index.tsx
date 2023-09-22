@@ -8,3 +8,5 @@ export { default as ButtonUser } from "./ButtonUser";
 export { default as Service } from "./Service";
 
 export { default as TrainerList } from "./TrainerList";
+
+export { default as button } from "./Button/Index";
