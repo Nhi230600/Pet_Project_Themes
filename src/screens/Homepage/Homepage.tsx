@@ -85,7 +85,8 @@ const Homepage = () => {
               ))}
             </Carousel>
           </div>
-
+          
+          <TrainerList />
           {/* Service-Start */}
 
           <div className="service">
