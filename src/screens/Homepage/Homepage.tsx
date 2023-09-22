@@ -68,19 +68,23 @@ const Homepage = () => {
           <div className="slider">
             <Carousel autoplay>
               {Sliders.map((Slider, index) => (
-                <div className="banner">
-                  <div className="row main">
-                    <div className="col-md-7 carousel-content">
-                      {Slider.content}
-                    </div>
-                    <div className="col-md-4 ">
-                      <ImagesComponent
-                        contentUrl={Slider.imageUrl}
-                        contentType={Slider.contentType}
-                      />
+                <Card>
+
+
+                  <div className="banner">
+                    <div className="row main">
+                      <div className="col-md-7 carousel-content">
+                        {Slider.content}
+                      </div>
+                      <div className="col-md-4 ">
+                        <ImagesComponent
+                          contentUrl={Slider.imageUrl}
+                          contentType={Slider.contentType}
+                        />
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Card>
               ))}
             </Carousel>
           </div>

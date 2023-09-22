@@ -7,19 +7,15 @@ import {
     faEnvelope
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import image from "images/content-3.jpg"
 const App = () => {
     return (
         <div className="content-3">
             <Card className="card-content"
-                cover={
-                    <div
-                        className="content-3-cover" >
-                    </div>
-                }
-
-
             >
+                <div  className="content-3-cover" >
+                    <img src={image}/>
+                </div>
                 <div className="item">
                     <div className="card-img">
                         <FontAwesomeIcon className="icon"
