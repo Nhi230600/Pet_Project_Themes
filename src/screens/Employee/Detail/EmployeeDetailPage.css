@@ -164,28 +164,28 @@
   flex: 1 0 0;
   flex-grow: 1;
 }
-.card-content {
+.card-content-1 {
   display: flex; /* Sử dụng Flexbox */
   /* Căn giữa theo chiều dọc */
 }
-.icon {
+.icon-detail-employee {
   font-size: 20px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin-right: 10px; /* Đặt khoảng cách giữa biểu tượng và nội dung khác */
 }
-.total-appointments .icon {
+.total-appointments .icon-detail-employee {
   color: blue; /* Màu xanh cho total-appointments */
 }
 
 /* Màu cho biểu tượng khi là completed-appointments */
-.completed-appointments .icon {
+.completed-appointments .icon-detail-employee {
   color: green; /* Màu xanh lá cây cho completed-appointments */
 }
 
 /* Màu cho biểu tượng khi là canceled-appointments */
-.canceled-appointments .icon {
+.canceled-appointments .icon-detail-employee {
   color: red; /* Màu đỏ cho canceled-appointments */
 }
 .shift {
