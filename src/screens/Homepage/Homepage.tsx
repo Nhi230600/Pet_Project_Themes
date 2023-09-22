@@ -90,7 +90,9 @@ const Homepage = () => {
           </div>
 
           {/* Service-Start */}
-
+          <div>
+            <TrainerList/>
+          </div>
           <div className="service">
             <div className="service-title">
               <div className="service-title-img"></div>
