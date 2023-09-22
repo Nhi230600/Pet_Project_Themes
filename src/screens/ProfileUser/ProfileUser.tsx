@@ -1,5 +1,4 @@
 import { Upload, message } from "antd";
-import { Header } from "../../components";
 
 import {
   faEdit,
@@ -9,6 +8,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import AvatarUser from "../../images/avatar-user.jpeg";
 import "./ProfileUser.css";
+import Nav from "components/Nav";
 
 const props = {
   name: "file",
@@ -31,7 +31,7 @@ const props = {
 const ProfileUser = () => {
   return (
     <div>
-      <Header />
+      <Nav />
       <div className="container-profile">
         <div className="container-profile-avatar">
           <div className="container-profile-avatar-img">

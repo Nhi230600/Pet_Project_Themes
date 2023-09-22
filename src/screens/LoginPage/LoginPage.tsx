@@ -3,40 +3,35 @@ import Logo from "../../images/logo.png";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./LoginPage.css";
-import axios from "axios";
+
+
 
 const LoginPage = () => {
   const onFinish = async (values: any) => {
-    try {
-      const response = await axios.post(
-        "http://localhost:3000/api/auth/login",
-        {
-          account: values.account,
-          password: values.password,
-        }
-      );
+    const { account } = values;
 
-      // Handle a successful login response here (e.g., set user token, redirect, etc.)
-      if (response.data.success) {
-        const accountJson = JSON.stringify(response.data.user);
-        sessionStorage.setItem("account", accountJson);
-        window.location.href = "/";
-      } else {
-        toast.error(response.data.message, {
-          position: toast.POSITION.TOP_CENTER,
-          autoClose: 2000,
-          hideProgressBar: true,
-        });
-      }
-    } catch (error) {
-      // Handle login failure (e.g., show an error message)
-      console.error("Login failed:", error);
+    // Check if account is equal to '1'
+    if (account === '1') {
+      sessionStorage.setItem('account', '1');
+      window.location.href = '/';
+    }
+    else if (account === '2') {
+      sessionStorage.setItem('account', '2');
+      window.location.href = '/admin';
+    }
+    else if (account === '3') {
+      sessionStorage.setItem('account', '3');
+      window.location.href = '/employee';
+    }
+    else {
+      toast.error("Tài khoản không tồn tại");
+
     }
   };
 
   const onFinishFailed = (errorInfo: any) => {
     // Handle form validation failure here
-    console.log("Failed:", errorInfo);
+    toast.error("Lỗi!!!");
   };
 
   return (

@@ -1,0 +1,44 @@
+.content-3{
+    
+    padding: 20px;
+    width: 500px;
+    text-align: center;
+}
+/* EmployeeCard.css */
+.card-content {
+    background-color: rgb(242, 242, 244);
+    padding: 10px;
+}
+.content-3-cover {
+  height: 300px;
+  width: 100%;
+  background: rgba(6, 127, 161, 0.2);
+  color: white;
+  font-size: 30px;
+  padding-top: 20px;
+  font-family: cursive;
+  background-image: url(images/content-3.jpg);
+  background-repeat: no-repeat;
+}
+.icon {
+    font-size: 50px;
+    color: orange;
+}
+.card-title{
+    font-family: 'Nunito', sans-serif;
+}
+.card-box h4{
+    color: orange;
+    font-size: 50px;
+}
+.card-box p{
+    font-size: 25px;
+}
+
+.mbr-text{
+    font-family: 'Nunito', sans-serif;
+}
+.item {
+    display: flex;
+}
+

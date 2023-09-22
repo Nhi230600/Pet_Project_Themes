@@ -1,16 +1,15 @@
-
 import {
   faEnvelope,
   faPhone,
   faStore,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Footer, Header } from "../../components";
 import "./Contact.css";
+import Nav from "components/Nav";
 const Contact = () => {
   return (
     <div>
-      <Header />
+      <Nav />
       <div className="container-contact">
         <div className="container-contact-info">
           <div className="container-contact-info-1">
@@ -36,76 +35,71 @@ const Contact = () => {
             <span>ngaoservice@gmail.com</span>
           </div>
         </div>
-        
 
         <div className="container-contact-form">
-              <form action="" className="form-contact">
-                <span>Đóng góp ý kiến</span> <br />
-                <span>
-                  Các trường đánh dấu <strong>*</strong> là bắt buộc
-                </span>
-                <br />
-                <div className="form-contact-1">
-                  <h3>
-                    Họ và tên <strong>*</strong>
-                  </h3>
-                  <input
-                    type="text"
-                    id="name-contact"
-                    className="form-contact-1-input"
-                    name="name-contact"
-                    placeholder="..."
-                    required
-                  />
-                </div>
-                <div className="form-contact-2">
-                  <div className="form-contact-2-phone">
-                    <h3>
-                      Số điện thoại <strong>*</strong>
-                    </h3>  
-                    <input
-                      type="text"
-                      id="phone-contact"
-                      className="form-contact-2-phone-input"
-                      name="phone-contact"
-                      placeholder="..."
-                      pattern="[0-9]{10}"
-                      required
-                    />
-                  </div>
-                  <div className="form-contact-2-email">
-                    <h3>
-                      Email <strong>*</strong>
-                    </h3>  
-                    <input
-                      type="email"
-                      id="email-contact"
-                      className="form-contact-2-email-input"
-                      name="email-contact"
-                      placeholder="..."
-                      required
-                    />
-                  </div>
-
-                </div>
-                <div className="form-contact-3">
-                  <h3>
-                    Lời nhắn
-                  </h3>
-                  <textarea 
-                    name="text-contact" 
-                    className="form-contact-3-text" 
-                    rows={8}
-                    placeholder=""></textarea>
-                </div>
-                <button className="form-btn styled" type="submit">
-                  Gửi yêu cầu
-                </button>
-              </form>
-
+          <form action="" className="form-contact">
+            <span>Đóng góp ý kiến</span> <br />
+            <span>
+              Các trường đánh dấu <strong>*</strong> là bắt buộc
+            </span>
+            <br />
+            <div className="form-contact-1">
+              <h3>
+                Họ và tên <strong>*</strong>
+              </h3>
+              <input
+                type="text"
+                id="name-contact"
+                className="form-contact-1-input"
+                name="name-contact"
+                placeholder="..."
+                required
+              />
+            </div>
+            <div className="form-contact-2">
+              <div className="form-contact-2-phone">
+                <h3>
+                  Số điện thoại <strong>*</strong>
+                </h3>
+                <input
+                  type="text"
+                  id="phone-contact"
+                  className="form-contact-2-phone-input"
+                  name="phone-contact"
+                  placeholder="..."
+                  pattern="[0-9]{10}"
+                  required
+                />
+              </div>
+              <div className="form-contact-2-email">
+                <h3>
+                  Email <strong>*</strong>
+                </h3>
+                <input
+                  type="email"
+                  id="email-contact"
+                  className="form-contact-2-email-input"
+                  name="email-contact"
+                  placeholder="..."
+                  required
+                />
+              </div>
+            </div>
+            <div className="form-contact-3">
+              <h3>Lời nhắn</h3>
+              <textarea
+                name="text-contact"
+                className="form-contact-3-text"
+                rows={8}
+                placeholder=""
+              ></textarea>
+            </div>
+            <button className="form-btn styled" type="submit">
+              Gửi yêu cầu
+            </button>
+          </form>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

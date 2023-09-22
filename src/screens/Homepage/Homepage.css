@@ -226,4 +226,26 @@
   max-width: 60%;
 }
 
-/* End trainer */
+
+.trainer-name{
+
+}
+
+.trainer-describtion{
+
+}
+.carousel-content{
+    position: relative;
+}
+.banner{
+    padding: 20px;
+    
+}
+.carousel-content {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+}
+
+
+
