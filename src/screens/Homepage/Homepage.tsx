@@ -1,9 +1,8 @@
 import { type } from "os";
 import React from "react";
 import "./Homepage.css";
-
+import { TrainerList } from "components";
 import Nav from "components/Nav";
-
 import { Carousel, Slider, Card } from "antd";
 import Footer from "../../components/Footer";
 import { faPhone, faUser } from "@fortawesome/free-solid-svg-icons";
@@ -61,6 +60,7 @@ const Homepage = () => {
   return (
     <div id="homepage">
       <div id="header">
+
         <Nav></Nav>
 
         <div></div>
