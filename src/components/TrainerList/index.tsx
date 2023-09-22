@@ -46,7 +46,8 @@ const TrainerList = () => {
               <button className='trainerlist-container-content-detail-btn'>VIEW MORE</button>
             </div>
           </div>
-        ))}
+        ))
+        }
       </div>
     </div>
   )

@@ -12,6 +12,15 @@
     padding: 1rem;
 }
 
+h1 {
+    font-size: x-large;
+    
+}
+
+p {
+    font-size: larger;
+}
+
 span {
     font-size: 50px;
     font-weight: 700;
