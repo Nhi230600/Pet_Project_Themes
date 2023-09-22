@@ -47,68 +47,66 @@ const Nav = () => {
   };
 
   return (
-    <div className="navbar-container">
-      <nav
-        className={`navbar navbar-expand-sm navbar-light ${
-          menuOpen ? "menu-open" : ""
-        }`}
+    <nav
+      className={`navbar navbar-expand-sm navbar-light ${
+        menuOpen ? "menu-open" : ""
+      }`}
+    >
+      <div className="nav-logo">
+        <LogoNav />
+      </div>
+      <button
+        className="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        onClick={handleMenuClick}
       >
-        <div className="container">
-          <LogoNav />
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-            onClick={handleMenuClick}
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div
-            className={`collapse navbar-collapse ${menuOpen ? "show" : ""}`}
-            id="navbarNav"
-          >
-            <ul className="navbar-nav">
-              <li className="nav-item">
-                <a className="nav-link" href="/">
-                  Trang chủ
-                </a>
-              </li>
-              <li className="nav-item">
-                <Dropdown overlay={serviceMenu} trigger={["click"]}>
-                  <a className="nav-link" href="#">
-                    Dịch vụ
-                  </a>
-                </Dropdown>
-              </li>
-              <li className="nav-item">
-                <Dropdown overlay={blogMenu} trigger={["click"]}>
-                  <a className="nav-link" href="#">
-                    Blog
-                  </a>
-                </Dropdown>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/contact">
-                  Liên hệ
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/bookspa">
-                  Booking
-                </a>
-              </li>
-            </ul>
-            <div className="ml-auto">
-              <LoginRegister />
-            </div>
-          </div>
+        <span className="navbar-toggler-icon navbar-toggler-icon-sm"></span>
+      </button>
+      <div
+        className={`collapse navbar-collapse ${menuOpen ? "show" : ""}`}
+        id="navbarNav"
+      >
+        <ul className="navbar-nav">
+          <li className="nav-item">
+            <a className="nav-link" href="/">
+              Trang chủ
+            </a>
+          </li>
+          <li className="nav-item">
+            <Dropdown overlay={serviceMenu} trigger={["click"]}>
+              <a className="nav-link" href="#">
+                Dịch vụ
+              </a>
+            </Dropdown>
+          </li>
+          <li className="nav-item">
+            <Dropdown overlay={blogMenu} trigger={["click"]}>
+              <a className="nav-link" href="#">
+                Blog
+              </a>
+            </Dropdown>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="/contact">
+              Liên hệ
+            </a>
+          </li>
+          <li className="nav-i-booking">
+            <a className="nav-booking" href="/bookspa">
+              Booking
+            </a>
+          </li>
+        </ul>
+        <div className="nav-log">
+          <LoginRegister />
         </div>
-      </nav>
-    </div>
+      </div>
+    </nav>
   );
 };
 

@@ -31,7 +31,7 @@ const TrainerList = () => {
   return (
     <div className="trainerlist-container">
       <div className="trainerlist-container-title">
-        <span>Our Trainer</span>
+        <span className="trainerlist-container-title-1">Our Trainer</span>
       </div>
 
       <div className="trainerlist-container-content">
@@ -41,10 +41,18 @@ const TrainerList = () => {
               <img className="trainer-img" src={data.img} alt="" />
             </div>
             <div className="trainerlist-container-content-detail-name">
-              <h1>{data.name}</h1>
-              <p>{data.position}</p>
-              <p>{data.exp}</p>
-              <Button />
+              <h1 className="trainerlist-container-content-detail-name-1">
+                {data.name}
+              </h1>
+              <p className="trainerlist-container-content-detail-name-2">
+                {data.position}
+              </p>
+              <p className="trainerlist-container-content-detail-name-2">
+                {data.exp}
+              </p>
+              <button className="trainerlist-container-content-detail-btn">
+                VIEW MORE
+              </button>
             </div>
           </div>
         ))}

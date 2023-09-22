@@ -70,7 +70,8 @@ const Homepage = () => {
               ))}
             </Carousel>
           </div>
-
+          
+          
           {/* Service-Start */}
           <div>
             <TrainerList />
