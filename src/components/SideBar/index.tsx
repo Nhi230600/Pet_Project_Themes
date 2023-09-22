@@ -35,6 +35,11 @@ const SideBar = () => {
             key: "/employee",
             icon: <UserOutlined />,
           },
+          {
+            label: "Danh sách dịch vụ",
+            key: "admin/service",
+            icon: <UserOutlined />,
+          },
         ]}
       ></Menu>
     </div>
