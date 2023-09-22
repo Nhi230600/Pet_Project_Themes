@@ -8,17 +8,17 @@
     padding: 1rem;
 }
 
-h1 {
+.trainerlist-container-content-detail-name-1 {
     font-size: x-large;
     
 }
 
-p {
+.trainerlist-container-content-detail-name-2 {
     font-size: larger;
     font-weight: bold;
 }
 
-span {
+.trainerlist-container-title-1 {
     font-size: 50px;
     font-weight: 700;
 }
