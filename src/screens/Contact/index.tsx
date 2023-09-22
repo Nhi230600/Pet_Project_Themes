@@ -1,5 +1,3 @@
-
-
 import "./Contact.css";
 const Contact = () => {
   return (
@@ -43,14 +41,14 @@ const Contact = () => {
                   required
                 />
               </div>
-
             </div>
             <div className="form-contact-3">
               <textarea
                 name="text-contact"
                 className="form-contact-3-text"
                 rows={8}
-                placeholder="Lời nhắn"></textarea>
+                placeholder="Lời nhắn"
+              ></textarea>
             </div>
             <button className="form-btn styled" type="submit">
               Gửi yêu cầu

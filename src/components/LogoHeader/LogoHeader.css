@@ -2,13 +2,13 @@
   cursor: pointer;
   display: flex;
   flex-direction: row;
-  width: 20%;
-  height: auto;
+  width: 100px;
+  height: 100px;
   align-items: center; /* Để căn giữa theo chiều dọc */
 }
 
 .logo-header-image {
-  width: 6rem;
+  width: 16rem;
   height: 6rem;
 }
 
