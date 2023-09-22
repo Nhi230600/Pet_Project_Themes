@@ -6,7 +6,7 @@ import {
     faHeartbeat,
     faGraduationCap,
 } from "@fortawesome/free-solid-svg-icons";
-import "./Content.css"
+
 
 const App = () => {
     return (
