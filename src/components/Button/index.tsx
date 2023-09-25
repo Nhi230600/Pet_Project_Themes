@@ -21,7 +21,7 @@ const Button = (props: btnProps) => {
         }
       >
         {name_btn}
-      </button> 
+      </button>
     </div>
   );
 };
