@@ -12,6 +12,7 @@ import Contact from "screens/Contact";
 import Content1 from "screens/Content/1";
 import Content2 from "screens/Content/2";
 import Content3 from "screens/Content/3";
+import Sales from "screens/Sales";
 const Homepage = () => {
   const Sliders = [
     {
@@ -75,14 +76,14 @@ const Homepage = () => {
               ))}
             </Carousel>
           </div>
-
+            
           {/* Service-Start */}
           <div>
             <TrainerList />
           </div>
 
           {/* Service-END */}
-
+              <Sales/>
           <div>
             <Contact />
           </div>
