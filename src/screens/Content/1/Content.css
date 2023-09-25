@@ -31,7 +31,6 @@
     height: auto;
   }
   .link-wrap {
-    display: inline-block;
     cursor: pointer;
     position: relative;
     overflow: hidden;

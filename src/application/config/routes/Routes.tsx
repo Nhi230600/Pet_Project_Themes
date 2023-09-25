@@ -42,9 +42,15 @@ import EmployeeeCustomerProfile from "../../../screens/EmployeeView/CustomerProf
 
 import CreateTreatmentIn from "../../../screens/EmployeeView/CreateTreatmentIn";
 
-import Content from "screens/Content/3";
+import Content from "screens/Content/1";
+import Sales from "screens/Sales";
 
 const Router = createBrowserRouter([
+  {
+    path: "sales",
+
+    element: <Sales />,
+  },
   {
     path: "content",
 

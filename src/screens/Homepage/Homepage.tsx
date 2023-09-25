@@ -16,6 +16,8 @@ import ImagesComponent from "components/Banner";
 import Content1 from "screens/Content/1";
 import Content2 from "screens/Content/2";
 import Content3 from "screens/Content/3";
+import Achievement from "screens/Achievements"
+import Sales from "screens/Sales";
 import "bootstrap/dist/css/bootstrap.min.css";
 const Homepage = () => {
   const Sliders = [
@@ -46,6 +48,12 @@ const Homepage = () => {
     <div id="homepage">
       <div id="header">
         <Nav></Nav>
+         {/* Achievement-START */}
+         <div>
+          <Achievement/>
+        </div>
+
+        {/* Achievement-END */}
 
         <div></div>
         <div id="content">
@@ -79,44 +87,11 @@ const Homepage = () => {
 
           {/* Service-END */}
 
-          {/* Contact-START */}
-
-          <div className="contact">
-            <div className="contact-address">NgaoService.com</div>
-            <div className="contact-content">
-              Chúng tôi luôn <span>sẵn sàng</span> phục vụ bạn
-            </div>
-            <div className="contact-button-area">
-              <button className="contact-button">
-                <i>
-                  <FontAwesomeIcon icon={faPhone} shake />
-                </i>
-                <span>DỊCH VỤ THÚ CƯNG TẠI NHÀ-24/7</span>
-              </button>
-            </div>
-          </div>
-
-          {/* Contact-END */}
-
-          {/* Training-START */}
-
-          <div className="trainer">
-            <div className="trainer-title">
-              <div className="trainer-title-background"></div>
-              <div className="trainer-title-description">
-                Chuyên gia huấn luyện <span>hàng đầu</span>
-              </div>
-            </div>
-            <div className="trainer-content">
-              <div className="trainer-preview">
-                <span></span>
-              </div>
-              <div className="trainer-container"></div>
-            </div>
-          </div>
-
-          {/* Training-END */}
+          
         </div>
+      </div>
+      <div>
+        <Sales/>
       </div>
       <div id="content">
         {/* Service-Start */}
@@ -129,11 +104,10 @@ const Homepage = () => {
           <Service />
         </div>
 
+
         {/* Contact-END */}
 
-        {/* Training-START */}
-
-        {/* Training-END */}
+       
       </div>
       <div id="footer"></div>
     </div>
