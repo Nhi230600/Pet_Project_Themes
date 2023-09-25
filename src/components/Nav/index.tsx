@@ -9,10 +9,9 @@ import { Drawer } from "antd";
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 
 const Nav = () => {
-  const [menuOpen, setMenuOpen] = useState(false); // Trạng thái của menu
+  const [menuOpen, setMenuOpen] = useState(false);
   const accountJson = sessionStorage.getItem("account");
   const [collapsed, setCollapsed] = useState(false);
-
   const [open, setOpen] = useState(false);
   const [placement, setPlacement] = useState("left");
   const showDrawer = () => {

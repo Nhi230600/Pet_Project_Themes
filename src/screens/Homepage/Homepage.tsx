@@ -1,20 +1,17 @@
-import { type } from "os";
-import React from "react";
 import "./Homepage.css";
 
-import Service from "components/Service";
+import { Card, Carousel } from "antd";
 import { TrainerList } from "components";
 import Nav from "components/Nav";
-import { Carousel, Slider, Card } from "antd";
+import Service from "components/Service";
 
-import { faPhone, faUser } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "bootstrap/dist/css/bootstrap.min.css";
 import ImagesComponent from "components/Banner";
+import Achievement from "screens/Achievements";
+import Contact from "screens/Contact";
 import Content1 from "screens/Content/1";
 import Content2 from "screens/Content/2";
 import Content3 from "screens/Content/3";
-import "bootstrap/dist/css/bootstrap.min.css";
-import Contact from "screens/Contact";
 const Homepage = () => {
   const Sliders = [
     {
@@ -44,6 +41,18 @@ const Homepage = () => {
     <div id="homepage">
       <div id="header">
         <Nav />
+
+        {/* Achievement-START */}
+        <div>
+          <Achievement />
+        </div>
+
+        {/* Achievement-END */}
+
+
+
+
+
         <div id="content">
           <div className="slider">
             <Carousel autoplay>
@@ -73,6 +82,7 @@ const Homepage = () => {
           </div>
 
           {/* Service-END */}
+
           <div>
             <Contact />
           </div>
@@ -84,7 +94,8 @@ const Homepage = () => {
         </div>
       </div>
       <div></div>
-    </div>
+
+    </div >
   );
 };
 

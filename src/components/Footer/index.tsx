@@ -54,7 +54,7 @@ const Footer = (props: FooterProps) => {
         </div>
         <div className="footer-information">
           <div className="footer-information-name">
-            <span>SERVICE</span>
+            <span>LOCATION</span>
           </div>
           <div className="footer-information-content">
             <div>

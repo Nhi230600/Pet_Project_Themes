@@ -1,0 +1,45 @@
+.sales-content {
+    background-color: rgb(249, 175, 38);
+    border-radius: 0 25px 25px 25px ;
+    margin: 0px 100px;
+    display: flex;
+    max-height: 200px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.doge {
+    position: relative;
+}
+
+.sales-background {
+    height: 400px;
+    align-items: flex-end;
+    display: flex;
+}
+
+.box-content {
+    flex: 1;
+    text-align: center;
+    padding: 10px; /* Thêm padding cho mỗi box-content nếu cần */
+  }
+  
+  .doge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @media screen and (max-width: 600px) {
+    .sales-content{
+        display: flex;
+        flex-direction: column;
+        max-height: 1000px;
+        margin: 0;
+        align-items: center;
+    }
+    .sales-background {
+        height: 600px;
+        
+    }
+  }

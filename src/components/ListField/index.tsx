@@ -22,9 +22,7 @@ const TableList: React.FC<TableProps> = ({ fields, tableData, onDelete, onViewDe
   const [showPopup, setShowPopup] = useState(false);
   const [id, setId] = useState(-1);
   useEffect(() => {
-    // Cập nhật data khi tableData thay đổi
     setData(tableData);
-    // Đặt lại trang hiện tại về 1 khi dữ liệu thay đổi
     setCurrentPage(1);
   }, [tableData]);
 
@@ -85,9 +83,8 @@ const TableList: React.FC<TableProps> = ({ fields, tableData, onDelete, onViewDe
   };
   const onFinish = () => {
     setShowPopup(false);
-    if (onDelete) {
-      onDelete(id);
-    }
+    onDelete && onDelete(id);
+    
   }
 
   const handleViewDetail = (rowData: TableRow) => {
