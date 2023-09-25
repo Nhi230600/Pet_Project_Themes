@@ -3,7 +3,6 @@ import React from "react";
 import "./Homepage.css";
 
 import Service from "components/Service";
-
 import { TrainerList } from "components";
 import Nav from "components/Nav";
 import { Carousel, Slider, Card } from "antd";
@@ -15,6 +14,7 @@ import Content1 from "screens/Content/1";
 import Content2 from "screens/Content/2";
 import Content3 from "screens/Content/3";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Contact from "screens/Contact";
 const Homepage = () => {
   const Sliders = [
     {
@@ -43,9 +43,7 @@ const Homepage = () => {
   return (
     <div id="homepage">
       <div id="header">
-        <Nav></Nav>
-
-        <div></div>
+        <Nav />
         <div id="content">
           <div className="slider">
             <Carousel autoplay>
@@ -68,25 +66,24 @@ const Homepage = () => {
               ))}
             </Carousel>
           </div>
+
+          {/* Service-Start */}
           <div>
             <TrainerList />
           </div>
+
+          {/* Service-END */}
+          <div>
+            <Contact />
+          </div>
+          {/* Contact-START */}
+          <div>
+            <Service />
+          </div>
+          {/* Contact-END */}
         </div>
       </div>
-      <div id="content">
-        {/* Service-Start */}
-
-        <div className="service">
-          <Service />
-        </div>
-
-        {/* Contact-END */}
-
-        {/* Training-START */}
-
-        {/* Training-END */}
-      </div>
-      <div id="footer"></div>
+      <div></div>
     </div>
   );
 };

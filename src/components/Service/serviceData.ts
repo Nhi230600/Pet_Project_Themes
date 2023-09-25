@@ -18,7 +18,11 @@ export const serviceData: service[] = [
         src: pettrain, title: "PET TRAIN", main: "Huấn luyện thú cưng đi vệ sinh đúng chỗ, nghe lời cơ bản, huấn luyện ăn uống đúng chất, đúng bữa có khoa học,..."
     },
     {
+
+       
+
         src: petspa, title: "PET SPA", main: "Giúp làm sạch lông, tai, móng, răng miệng; khử mùi; giúp dưỡng lông mềm mượt; tránh các bệnh, vi khuẩn về da, lông... giúp bé cưng luôn xinh xắn, khỏe mạnh"
+
     }
 ];
 
