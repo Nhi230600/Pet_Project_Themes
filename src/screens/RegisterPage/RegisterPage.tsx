@@ -1,15 +1,9 @@
 
-import React from "react";
-import { Form, Input, Button } from "antd";
-
-
-
-import { useState } from "react";
-
+import { Form, Input } from "antd";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import Logo from "../../images/logo.png";
 import "./RegisterPage.css";
-import { toast } from "react-toastify";
-import { Link, useNavigate } from "react-router-dom";
 
 const RegisterPage = () => {
   const navigate = useNavigate();

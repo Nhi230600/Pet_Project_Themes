@@ -1,13 +1,21 @@
-import { FacebookOutlined, InstagramOutlined, MailOutlined  } from "@ant-design/icons";
-import { EnvironmentOutlined, PhoneOutlined, ClockCircleOutlined, ShopOutlined, GlobalOutlined } from '@ant-design/icons';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  FacebookOutlined,
+  InstagramOutlined,
+  MailOutlined,
+} from "@ant-design/icons";
+import {
+  EnvironmentOutlined,
+  PhoneOutlined,
+  ClockCircleOutlined,
+  ShopOutlined,
+} from "@ant-design/icons";
 import Logo from "../../images/logo.png";
 import "./Footer.css";
 
 type FooterProps = {};
 
 const Footer = (props: FooterProps) => {
-  const { } = props;
+  const {} = props;
 
   return (
     <>
@@ -22,8 +30,7 @@ const Footer = (props: FooterProps) => {
               style={{
                 textDecoration: "none",
               }}
-            >
-            </a>
+            ></a>
           </div>
         </div>
         <div className="footer-information">
@@ -47,7 +54,7 @@ const Footer = (props: FooterProps) => {
         </div>
         <div className="footer-information">
           <div className="footer-information-name">
-            <span>SERVICE</span>
+            <span>LOCATION</span>
           </div>
           <div className="footer-information-content">
             <div>
@@ -78,25 +85,20 @@ const Footer = (props: FooterProps) => {
               <a href="">Instagram</a>
             </div>
             <div>
-              <MailOutlined  className="icon-footer" />
+              <MailOutlined className="icon-footer" />
               <a href="">Email</a>
             </div>
           </div>
         </div>
-
-
       </footer>
       <div className="">
         <div className="copy-right">
           <div className="copy-right-content">
-            <p className="col-12">
-              © Copyright 2023  - FPT software
-            </p>
+            <p className="col-12">&copy; Copyright 2023 - FPT software</p>
           </div>
         </div>
       </div>
     </>
-
   );
 };
 

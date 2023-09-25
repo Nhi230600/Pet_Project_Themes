@@ -1,9 +1,17 @@
 import "./Contact.css";
 const Contact = () => {
   return (
-    <div>
-      <div className="container-contact">
-        <div className="container-contact-form">
+    <div className="container-contact">
+      <div className="row">
+        <div className="col-md-6 image-contact">
+          <img
+            src="https://i.pinimg.com/originals/cd/19/25/cd1925df955e7bf77548b0f6a48702f8.jpg"
+            alt="Avatar của bạn"
+            className="img-fluid circle"
+          />
+        </div>
+
+        <div className="col-md-6 container-contact-form">
           <form action="" className="form-contact">
             <div className="title">
               <h4>Bạn cần chăm sóc thú cưng?</h4>
@@ -15,7 +23,7 @@ const Contact = () => {
                 id="name-contact"
                 className="form-contact-1-input"
                 name="name-contact"
-                placeholder="Họ và tên "
+                placeholder="Họ và tên"
                 required
               />
             </div>
@@ -26,7 +34,7 @@ const Contact = () => {
                   id="phone-contact"
                   className="form-contact-2-phone-input"
                   name="phone-contact"
-                  placeholder=" Số điện thoại "
+                  placeholder="Số điện thoại"
                   pattern="[0-9]{10}"
                   required
                 />
@@ -46,11 +54,10 @@ const Contact = () => {
               <textarea
                 name="text-contact"
                 className="form-contact-3-text"
-                rows={8}
                 placeholder="Lời nhắn"
               ></textarea>
             </div>
-            <button className="form-btn styled" type="submit">
+            <button className="form-btn" type="submit">
               Gửi yêu cầu
             </button>
           </form>

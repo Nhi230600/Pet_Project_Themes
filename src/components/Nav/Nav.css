@@ -6,12 +6,13 @@
   padding: 0rem 1.5rem;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
+
 .navbar-toggler-icon-sm {
-  font-size: 16px; /* Điều chỉnh kích thước phù hợp */
-  /* Thêm bất kỳ thuộc tính CSS khác để tùy chỉnh biểu tượng */
+  font-size: 16px;
 }
 
 .collapse {
+  margin-left: 130px;
   width: 100%;
 }
 .nav-logo {
@@ -45,7 +46,7 @@
 
 /* Định dạng màu chữ khi hover */
 .nav-item:hover .nav-link {
-  color: #ff4500; /* Màu chữ khi hover */
+  color: #ec3216; /* Màu chữ khi hover */
 }
 
 /* Định dạng dropdown menu */
@@ -70,7 +71,7 @@
 
 /* Định dạng màu chữ khi hover trong dropdown menu */
 .ant-dropdown-menu-item a:hover {
-  color: #ff4500; /* Màu chữ khi hover */
+  color: #ec3216; /* Màu chữ khi hover */
 }
 
 /* Định dạng viền màu cam cho .nav-link-booking */
@@ -78,7 +79,7 @@
 /* Định dạng viền màu cam cho .nav-link-booking */
 .nav-booking {
   margin-bottom: 100px;
-  box-shadow: 0 0 0 2px #ed6436 inset !important;
+  box-shadow: 0 0 0 2px #ec3216 inset !important;
   text-decoration: none;
   border-radius: 25px;
   color: #181818 !important;
@@ -91,7 +92,7 @@
 /* Định dạng khi hover */
 .nav-booking:hover {
   text-decoration: none;
-  background-color: #ed6436;
+  background-color: #ec3216;
   color: #ffffff !important;
   transform: scale(1.1);
 }

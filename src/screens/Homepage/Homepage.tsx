@@ -1,21 +1,18 @@
-import { type } from "os";
-import React from "react";
 import "./Homepage.css";
 
-import Service from "components/Service";
-
+import { Card, Carousel } from "antd";
 import { TrainerList } from "components";
 import Nav from "components/Nav";
-import { Carousel, Slider, Card } from "antd";
+import Service from "components/Service";
 
-import { faPhone, faUser } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "bootstrap/dist/css/bootstrap.min.css";
 import ImagesComponent from "components/Banner";
+import Achievement from "screens/Achievements";
+import Contact from "screens/Contact";
 import Content1 from "screens/Content/1";
 import Content2 from "screens/Content/2";
 import Content3 from "screens/Content/3";
-import "bootstrap/dist/css/bootstrap.min.css";
-
+import Sales from "screens/Sales";
 const Homepage = () => {
   const Sliders = [
     {
@@ -44,9 +41,19 @@ const Homepage = () => {
   return (
     <div id="homepage">
       <div id="header">
-        <Nav></Nav>
+        <Nav />
 
-        <div></div>
+        {/* Achievement-START */}
+        <div>
+          <Achievement />
+        </div>
+
+        {/* Achievement-END */}
+
+
+
+
+
         <div id="content">
           <div className="slider">
             <Carousel autoplay>
@@ -69,75 +76,27 @@ const Homepage = () => {
               ))}
             </Carousel>
           </div>
-          
-          
+            
           {/* Service-Start */}
           <div>
             <TrainerList />
           </div>
 
           {/* Service-END */}
-
+              <Sales/>
+          <div>
+            <Contact />
+          </div>
           {/* Contact-START */}
-
-          <div className="contact">
-            <div className="contact-address">NgaoService.com</div>
-            <div className="contact-content">
-              Chúng tôi luôn <span>sẵn sàng</span> phục vụ bạn
-            </div>
-            <div className="contact-button-area">
-              <button className="contact-button">
-                <i>
-                  <FontAwesomeIcon icon={faPhone} shake />
-                </i>
-                <span>DỊCH VỤ THÚ CƯNG TẠI NHÀ-24/7</span>
-              </button>
-            </div>
+          <div>
+            <Service />
           </div>
-
           {/* Contact-END */}
-
-          {/* Training-START */}
-
-          <div className="trainer">
-            <div className="trainer-title">
-              <div className="trainer-title-background"></div>
-              <div className="trainer-title-description">
-                Chuyên gia huấn luyện <span>hàng đầu</span>
-              </div>
-            </div>
-            <div className="trainer-content">
-              <div className="trainer-preview">
-                <span></span>
-              </div>
-              <div className="trainer-container"></div>
-            </div>
-          </div>
-
-          {/* Training-END */}
         </div>
       </div>
-      <div id="content">
-        {/* Service-Start */}
+      <div></div>
 
-        <div className="service">
-          <div className="service-title">
-            <div className="service-title-img"></div>
-            <h1>CÁC DỊCH VỤ HÀNG ĐẦU</h1>
-          </div>
-          <Service />
-        </div>
-
-        {/* Contact-END */}
-
-
-        {/* Training-START */}
-
-        {/* Training-END */}
-      </div>
-     
-      <div id="footer"></div>
-    </div>
+    </div >
   );
 };
 
