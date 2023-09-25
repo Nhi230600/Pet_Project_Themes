@@ -1,25 +1,21 @@
-
-.trainerlist-container-content-detail-btn{
-    background-color: #ec701d;
-    color: white;
-    
-    padding: 15px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: bold;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 10px 30px;
-    border: 5px;
-    border-color: white;
-    border-style: solid;
+.trainerlist-container-content-detail-btn {
+  background-color: #ec701d;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px 30px;
+  border: 5px;
+  border-color: white;
+  border-style: solid;
 }
 
-.trainerlist-container-content-detail-btn:hover{
-    background-color: white;
-    color: #ec701d;
-    border-color: #ec701d;
-    
-    
+.trainerlist-container-content-detail-btn:hover {
+  background-color: white;
+  color: #ec701d;
+  border-color: #ec701d;
 }

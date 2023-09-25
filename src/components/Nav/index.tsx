@@ -6,19 +6,12 @@ import LoginRegister from "components/LoginRegister";
 import LogoNav from "components/LogoHeader";
 import DrawerContent from "components/DrawerContent";
 import { Drawer } from "antd";
-import {
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
-
-} from "@ant-design/icons";
+import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 
 const Nav = () => {
-  const [menuOpen, setMenuOpen] = useState(false); // Trạng thái của menu
-  const accountJson = sessionStorage.getItem('account');
+  const [menuOpen, setMenuOpen] = useState(false);
+  const accountJson = sessionStorage.getItem("account");
   const [collapsed, setCollapsed] = useState(false);
-  const toggleCollapsed = () => {
-    setCollapsed(!collapsed);
-  };
   const [open, setOpen] = useState(false);
   const [placement, setPlacement] = useState("left");
   const showDrawer = () => {
@@ -27,24 +20,8 @@ const Nav = () => {
   const onClose = () => {
     setOpen(false);
   };
-  const onChange = (e: any) => {
-    setPlacement(e.target.value);
-  };
 
   // Dữ liệu cho dropdown "Dịch vụ"
-  const serviceMenu = (
-    <Menu>
-      <Menu.Item key="1">
-        <a href="#">Cắt tỉa lông tại nhà</a>
-      </Menu.Item>
-      <Menu.Item key="2">
-        <a href="#">Tắm - Vệ sinh tại nhà</a>
-      </Menu.Item>
-      <Menu.Item key="3">
-        <a href="#">Combo tốt nhất</a>
-      </Menu.Item>
-    </Menu>
-  );
 
   const blogMenu = (
     <Menu>
@@ -71,8 +48,9 @@ const Nav = () => {
 
   return (
     <nav
-      className={`navbar navbar-expand-sm navbar-light ${menuOpen ? "menu-open" : ""
-        }`}
+      className={`navbar navbar-expand-sm navbar-light ${
+        menuOpen ? "menu-open" : ""
+      }`}
     >
       <div className="nav-logo">
         <LogoNav />
@@ -99,13 +77,7 @@ const Nav = () => {
               Trang chủ
             </a>
           </li>
-          <li className="nav-item">
-            <Dropdown overlay={serviceMenu} trigger={["click"]}>
-              <a className="nav-link" href="#">
-                Dịch vụ
-              </a>
-            </Dropdown>
-          </li>
+
           <li className="nav-item">
             <Dropdown overlay={blogMenu} trigger={["click"]}>
               <a className="nav-link" href="#">
@@ -124,31 +96,25 @@ const Nav = () => {
             </a>
           </li>
         </ul>
-        {
-          accountJson ? (
-            <div className="header-user" >
-              <button
-
-                className="header-user-button"
-                onClick={showDrawer}
-              >
-                {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-              </button>
-              <Drawer
-                closable={false}
-                onClose={onClose}
-                open={open}
-                key={placement}
-              >
-                <DrawerContent />
-              </Drawer>
-            </div>
-          ) :
-            <div className="nav-log">
-              <LoginRegister />
-            </div>
-        }
-
+        {accountJson ? (
+          <div className="header-user">
+            <button className="header-user-button" onClick={showDrawer}>
+              {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+            </button>
+            <Drawer
+              closable={false}
+              onClose={onClose}
+              open={open}
+              key={placement}
+            >
+              <DrawerContent />
+            </Drawer>
+          </div>
+        ) : (
+          <div className="nav-log">
+            <LoginRegister />
+          </div>
+        )}
       </div>
     </nav>
   );

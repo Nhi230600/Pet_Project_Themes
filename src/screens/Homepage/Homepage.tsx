@@ -1,24 +1,17 @@
-import { type } from "os";
-import React from "react";
 import "./Homepage.css";
 
-import Header from "../../components/Header";
-import Service from "components/Service";
-
+import { Card, Carousel } from "antd";
 import { TrainerList } from "components";
 import Nav from "components/Nav";
-import { Carousel, Slider, Card } from "antd";
+import Service from "components/Service";
 
-import Footer from "../../components/Footer";
-import { faPhone, faUser } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "bootstrap/dist/css/bootstrap.min.css";
 import ImagesComponent from "components/Banner";
+import Achievement from "screens/Achievements";
+import Contact from "screens/Contact";
 import Content1 from "screens/Content/1";
 import Content2 from "screens/Content/2";
 import Content3 from "screens/Content/3";
-import Achievement from "screens/Achievements"
-import Sales from "screens/Sales";
-import "bootstrap/dist/css/bootstrap.min.css";
 const Homepage = () => {
   const Sliders = [
     {
@@ -47,15 +40,19 @@ const Homepage = () => {
   return (
     <div id="homepage">
       <div id="header">
-        <Nav></Nav>
-         {/* Achievement-START */}
-         <div>
-          <Achievement/>
+        <Nav />
+
+        {/* Achievement-START */}
+        <div>
+          <Achievement />
         </div>
 
         {/* Achievement-END */}
 
-        <div></div>
+
+
+
+
         <div id="content">
           <div className="slider">
             <Carousel autoplay>
@@ -78,8 +75,7 @@ const Homepage = () => {
               ))}
             </Carousel>
           </div>
-          
-          
+
           {/* Service-Start */}
           <div>
             <TrainerList />
@@ -87,30 +83,19 @@ const Homepage = () => {
 
           {/* Service-END */}
 
-          
-        </div>
-      </div>
-      <div>
-        <Sales/>
-      </div>
-      <div id="content">
-        {/* Service-Start */}
-
-        <div className="service">
-          <div className="service-title">
-            <div className="service-title-img"></div>
-            <h1>CÁC DỊCH VỤ HÀNG ĐẦU</h1>
+          <div>
+            <Contact />
           </div>
-          <Service />
+          {/* Contact-START */}
+          <div>
+            <Service />
+          </div>
+          {/* Contact-END */}
         </div>
-
-
-        {/* Contact-END */}
-
-       
       </div>
-      <div id="footer"></div>
-    </div>
+      <div></div>
+
+    </div >
   );
 };
 
