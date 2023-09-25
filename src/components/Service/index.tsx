@@ -6,11 +6,15 @@ import { serviceData } from "./serviceData";
 const Service = () => {
   return (
     <>
-      <h3 className="border-b mt-12 mb-12 pb-6">List Service</h3>
-      <div className="grid grid-cols-3 gap-10 mb-10">
-        {serviceData.map((service, index) => (
-          <ServiceCard key={index} service={service} />
-        ))}
+      <div className="listservice-container">
+        <div className="listservice-container-title">
+          <span className="listservice-container-title-1">List Service</span>
+        </div>
+        <div className="grid grid-cols-3 gap-10 mb-10">
+          {serviceData.map((service, index) => (
+            <ServiceCard key={index} service={service} />
+          ))}
+        </div>
       </div>
     </>
   );

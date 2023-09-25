@@ -17,7 +17,7 @@ export const serviceData: service[] = [
         src: pettrain, title: "pet train", main: "chăm sóc con pet"
     },
     {
-        src: petspa, title: "pet care", main: "chăm sóc con pet"
+        src: petspa, title: "pet spa", main: "chăm sóc con pet"
     }
 ];
 
