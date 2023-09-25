@@ -1,15 +1,17 @@
 import { service } from "./serviceData";
+import Button from "components/Button";
 
 const ServiceCard = ({ service }: { service: service }) => {
   const { src, title, main } = service;
   return (
-    <div className="bg-yellow-100 rounded-md shadow-md shawdow-yellow-100 group  relative max-w-xs   ">
-      <div>
-        <img src={src} className="w h-3/6" />
+    <div className="max-w-xs bg-gray-50  rounded overflow-hidden shadow-md transition-transform transform hover:scale-110   ">
+      <img className="w-full h-64 m-auto" src={src} alt="Placeholder" />
+      <div className="px-6 py-4  h-56      justify-center">
+        <div className="font-bold text-3xl text-center  mb-2 ">{title}</div>
+        <p className="text-gray-700 text-base">{main}</p>
       </div>
-      <div>
-        <h4>{title}</h4>
-        <p>{main}</p>
+      <div className="px-6 py-4 flex justify-center ">
+        <Button name_btn="VIEW MORE" width_btn="30" height_btn="100" />
       </div>
     </div>
   );

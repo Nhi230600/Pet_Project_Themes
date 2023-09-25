@@ -68,62 +68,15 @@ const Homepage = () => {
               ))}
             </Carousel>
           </div>
-          
-          
-          {/* Service-Start */}
           <div>
             <TrainerList />
           </div>
-
-          {/* Service-END */}
-
-          {/* Contact-START */}
-
-          <div className="contact">
-            <div className="contact-address">NgaoService.com</div>
-            <div className="contact-content">
-              Chúng tôi luôn <span>sẵn sàng</span> phục vụ bạn
-            </div>
-            <div className="contact-button-area">
-              <button className="contact-button">
-                <i>
-                  <FontAwesomeIcon icon={faPhone} shake />
-                </i>
-                <span>DỊCH VỤ THÚ CƯNG TẠI NHÀ-24/7</span>
-              </button>
-            </div>
-          </div>
-
-          {/* Contact-END */}
-
-          {/* Training-START */}
-
-          <div className="trainer">
-            <div className="trainer-title">
-              <div className="trainer-title-background"></div>
-              <div className="trainer-title-description">
-                Chuyên gia huấn luyện <span>hàng đầu</span>
-              </div>
-            </div>
-            <div className="trainer-content">
-              <div className="trainer-preview">
-                <span></span>
-              </div>
-              <div className="trainer-container"></div>
-            </div>
-          </div>
-
-          {/* Training-END */}
         </div>
       </div>
       <div id="content">
         {/* Service-Start */}
 
         <div className="service">
-          <div className="service-title">
-            <div className="service-title-img"></div>
-            <h1>CÁC DỊCH VỤ HÀNG ĐẦU</h1>
-          </div>
           <Service />
         </div>
 
