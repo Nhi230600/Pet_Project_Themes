@@ -13,7 +13,7 @@ const Button = (props : btnProps) => {
     <div>
       <button className={"trainerlist-container-content-detail-btn "+"w-"+ width_btn + " h-" + height_btn} >
         {name_btn}
-      </button>
+      </button> 
     </div>
   );
 };
