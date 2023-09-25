@@ -50,8 +50,8 @@ const TrainerList = () => {
               <p className="trainerlist-container-content-detail-name-2">
                 {data.exp}
               </p>
-              
-              <Button name_btn="VIEW MORE" width_btn="40" height_btn="15"/>
+
+              <Button name_btn="VIEW MORE" width_btn="40" height_btn="15" />
             </div>
           </div>
         ))}
