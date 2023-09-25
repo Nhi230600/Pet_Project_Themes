@@ -1,5 +1,4 @@
 import "./Contact.css";
-import Button from "components/Button/Index";
 const Contact = () => {
   return (
     <div className="container-contact">

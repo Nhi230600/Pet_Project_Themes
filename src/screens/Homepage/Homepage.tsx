@@ -2,12 +2,11 @@ import { type } from "os";
 import React from "react";
 import "./Homepage.css";
 
-import Header from "../../components/Header";
 import Service from "components/Service";
 import { TrainerList } from "components";
 import Nav from "components/Nav";
 import { Carousel, Slider, Card } from "antd";
-import Footer from "../../components/Footer";
+
 import { faPhone, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ImagesComponent from "components/Banner";

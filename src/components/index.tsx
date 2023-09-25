@@ -4,9 +4,6 @@ export { default as LogoHeader } from "./LogoHeader";
 export { default as Search } from "./Search";
 export { default as LoginRegister } from "./LoginRegister";
 export { default as ButtonUser } from "./ButtonUser";
-
 export { default as Service } from "./Service";
-
 export { default as TrainerList } from "./TrainerList";
-
-export { default as button } from "./Button/Index";
+export { default as Button } from "./Button";
