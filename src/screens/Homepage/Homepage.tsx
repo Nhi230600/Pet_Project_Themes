@@ -15,6 +15,7 @@ import Content1 from "screens/Content/1";
 import Content2 from "screens/Content/2";
 import Content3 from "screens/Content/3";
 import "bootstrap/dist/css/bootstrap.min.css";
+
 const Homepage = () => {
   const Sliders = [
     {
@@ -129,10 +130,12 @@ const Homepage = () => {
 
         {/* Contact-END */}
 
+
         {/* Training-START */}
 
         {/* Training-END */}
       </div>
+     
       <div id="footer"></div>
     </div>
   );
