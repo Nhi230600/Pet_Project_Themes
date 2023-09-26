@@ -1,26 +1,25 @@
-import React from "react";
 import "./Button.css";
 
 type btnProps = {
-  name_btn: string;
-  width_btn: string;
-  height_btn: string;
+  btnName: string;
+  btnWidth: string;
+  btnHeight: string;
 };
 
 const Button = (props: btnProps) => {
-  const { name_btn, width_btn, height_btn } = props;
+  const { btnName, btnWidth, btnHeight } = props;
   return (
     <div>
       <button
         className={
           "trainerlist-container-content-detail-btn " +
           "w-" +
-          width_btn +
+          btnWidth +
           " h-" +
-          height_btn
+          btnHeight
         }
       >
-        {name_btn}
+        {btnName}
       </button>
     </div>
   );
