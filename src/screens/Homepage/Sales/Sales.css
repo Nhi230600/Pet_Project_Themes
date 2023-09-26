@@ -26,6 +26,7 @@
 .box-content {
     flex: 1;
     text-align: center;
+    
     padding: 10px; /* Thêm padding cho mỗi box-content nếu cần */
   }
   
@@ -34,7 +35,7 @@
     justify-content: center;
     align-items: center;
   }
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 800px) {
     .sales-content{
         display: flex;
         flex-direction: column;

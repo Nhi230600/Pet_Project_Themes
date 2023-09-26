@@ -9,7 +9,8 @@ const App = () => {
 
                     <div className="sales-content">
                         <div className="box-content">
-                            <h1 >Pets Boarding</h1>
+                            <h1 >Pets</h1><br/>
+                            <h1> Boarding</h1>
                         </div>
 
                         <div className="box-content doge">
