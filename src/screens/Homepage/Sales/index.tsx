@@ -1,9 +1,10 @@
 import image from "images/doge.png";
 import "./Sales.css";
 import { Card } from "antd";
+import Button  from "components/ButtonBooking";
 const Sales = () => {
   return (
-    <div className="sale-page">
+    <div className="sale-page"  data-aos="fade-up">
       <Card>
         <div className="sales-background">
           <div className="sales-content">
@@ -16,7 +17,7 @@ const Sales = () => {
               <img src={image} />
             </div>
 
-            <div className="box-content button-sale"> ahihi</div>
+            <Button/>
           </div>
         </div>
       </Card>
