@@ -1,50 +1,70 @@
 .sales-content {
-    background-color: rgb(249, 175, 38);
-    border-radius: 0 25px 25px 25px ;
-    margin: 0px 100px;
-    display: flex;
-    max-height: 200px;
-    width: 100%;
-    justify-content: space-between;
-    align-items: flex-end;
+  background-color: rgb(242, 185, 70);
+  border-radius: 0 70px 70px 70px;
+  margin: 0px 150px;
+  display: flex;
+  max-height: 250px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 .sales-content h1 {
-    font-size: 40px;
-    font-weight:bold;
-}
-
-.doge {
-    position: relative;
+  font-size: 40px;
+  font-weight: bold;
 }
 
 .sales-background {
-    height: 400px;
-    align-items: flex-end;
-    display: flex;
+  height: 400px;
+  align-items: flex-end;
+  display: flex;
 }
 
 .box-content {
-    flex: 1;
-    text-align: center;
-    
-    padding: 10px; /* Thêm padding cho mỗi box-content nếu cần */
-  }
-  
-  .doge {
+  flex: 1;
+  margin-left: 10px;
+  text-align: left;
+  padding: 10px;
+}
+.box-content img {
+  max-width: 500px;
+  max-height: 500px;
+}
+
+.text-sale-off {
+  font: 1em cursive;
+  color: black;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.text-sales {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+.button-sale {
+  font: 4em cursive;
+  color: black;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.doge {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 800px) {
+  .sales-content {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    max-height: 1000px;
+    margin: 0;
     align-items: center;
   }
-  @media screen and (max-width: 800px) {
-    .sales-content{
-        display: flex;
-        flex-direction: column;
-        max-height: 1000px;
-        margin: 0;
-        align-items: center;
-    }
-    .sales-background {
-        height: 600px;
-        
-    }
+  .sales-background {
+    height: 600px;
   }
+}
