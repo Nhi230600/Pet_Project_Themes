@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import { useParams } from "react-router-dom";
-import { Card, Typography, Divider, List, Button, Modal, Col, Row } from "antd";
 import {
-  MedicineBoxOutlined,
   EyeOutlined,
-  UserOutlined,
+  MedicineBoxOutlined,
   PlusCircleOutlined,
+  UserOutlined,
 } from "@ant-design/icons";
+import { Button, Card, Col, Divider, List, Modal, Row, Typography } from "antd";
+import { useState } from "react";
+import { useParams } from "react-router-dom";
 
 const { Meta } = Card;
 const { Title, Text } = Typography;
