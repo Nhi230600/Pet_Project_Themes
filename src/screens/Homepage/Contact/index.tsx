@@ -13,7 +13,7 @@ const Contact = () => {
 
         <div className="col-md-6 container-contact-form">
           <form action="" className="form-contact">
-            <div className="title">
+            <div className="title-contact">
               <h4>Bạn cần chăm sóc thú cưng?</h4>
               <h5>Contact US.</h5>
             </div>
