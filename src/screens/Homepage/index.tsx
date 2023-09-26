@@ -16,8 +16,8 @@ const Homepage = () => {
   return (
     <div id="homepage">
       <div id="header">
-        <Nav />
-        <Suspense fallback={<Loading/>}>
+        <Suspense fallback={<Loading />}>
+          <Nav />
           <div>
             <LazyAchievement />
           </div>
