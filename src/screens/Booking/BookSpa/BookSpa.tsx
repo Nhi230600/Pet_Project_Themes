@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import "./BookSpa.css";
 import Nav from "components/Nav";
+import { useState } from "react";
+import "./BookSpa.css";
 
 type BookProps = {
   typeof_book?: string;

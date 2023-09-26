@@ -1,10 +1,9 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./application/App";
-import reportWebVitals from "./reportWebVitals";
 import Application from "application";
 import day from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
+import React from "react";
+import ReactDOM from "react-dom";
+import reportWebVitals from "./reportWebVitals";
 
 day.extend(relativeTime);
 

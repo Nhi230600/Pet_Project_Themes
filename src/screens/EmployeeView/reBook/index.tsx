@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { Card, Typography, Divider, Button, PageHeader } from "antd";
-import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
 import { LeftOutlined } from "@ant-design/icons";
+import { Button, Card, PageHeader, Typography } from "antd";
+import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import "./PetCheckupPage.css";
 
 const { Title, Text } = Typography;

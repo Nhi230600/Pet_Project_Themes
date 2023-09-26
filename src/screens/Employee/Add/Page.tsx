@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import { Card, Form, Button, Upload, message } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
+import { Button, Card, Form, Upload } from "antd";
 import "antd/dist/antd.css";
-import "./AddEmployeePage.css";
-import { Link, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 import InputField from "components/Form/InputField";
-import SelectField from "components/Form/SelectField";
 import NumberField from "components/Form/NumberField";
+import SelectField from "components/Form/SelectField";
 import { ERROR_MESSAGES } from "components/Form/formConstants";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import "./AddEmployeePage.css";
 
 const options = [
   { value: "Spa", label: "Spa" },

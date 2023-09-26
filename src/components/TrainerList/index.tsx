@@ -1,7 +1,5 @@
-import React from "react";
 import "./TrainerList.css";
 import Button from "components/Button";
-import trainer1 from "images/trainer1.jpg";
 import trainer2 from "images/trainer2.jpg";
 import trainer3 from "images/trainer3.jpg";
 import trainer4 from "images/trainer4.jpg";
@@ -51,7 +49,7 @@ const TrainerList = () => {
                 {data.exp}
               </p>
 
-              <Button name_btn="VIEW MORE" width_btn="40" height_btn="15" />
+              <Button btnName="VIEW MORE" btnWidth="40" btnHeight="15" />
             </div>
           </div>
         ))}

@@ -1,21 +1,19 @@
 .mbr-section-title span {
-    color: inherit;
-    font-weight: 100;
-    font-family: Nunito, sans-serif;
+  font-size: 50px;
+  font-weight: bold;
 }
-.element-achievements{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.element-achievements {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .card-ico {
-    margin: 10px;
+  margin: 10px;
 }
-.card-ico h4{
-    font-size: 15px;
+.card-ico h4 {
+  font-size: 15px;
 }
-.card-text h3{
-    font-size: 75px;
-    margin: 10px;
+.card-text h3 {
+  font-size: 75px;
+  margin: 10px;
 }
-
