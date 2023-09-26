@@ -3,7 +3,7 @@ import "./Sales.css";
 import { Card } from "antd";
 const App = () => {
     return (
-        <div className="sale-page">
+        <div className="sale-page" data-aos="fade-up" >
             <Card >
                 <div className="sales-background">
 
