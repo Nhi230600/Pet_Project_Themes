@@ -48,10 +48,6 @@ const Homepage = () => {
 
         {/* Achievement-END */}
 
-
-
-
-
         <div id="content">
           <div className="slider">
             <Carousel autoplay>
@@ -74,14 +70,14 @@ const Homepage = () => {
               ))}
             </Carousel>
           </div>
-            
+
           {/* Service-Start */}
           <div>
             <TrainerList />
           </div>
 
           {/* Service-END */}
-              <Sales/>
+          <Sales />
           <div>
             <Contact />
           </div>
@@ -93,8 +89,7 @@ const Homepage = () => {
         </div>
       </div>
       <div></div>
-
-    </div >
+    </div>
   );
 };
 

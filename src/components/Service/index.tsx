@@ -1,13 +1,14 @@
-import React from "react";
-import "./service.css";
 import ServiceCard from "./ServiceCard";
+import "./service.css";
 import { serviceData } from "./serviceData";
 
 const Service = () => {
   return (
     <>
       <div className=" text-center p-4">
-        <h3 className="border-b mt-12 mb-12 pb-6 text-5xl">List Services</h3>
+        <h3 className="mbr-section-title mbr-bold pb-5 align-center mbr-fonts-style display-2">
+          Dịch vụ
+        </h3>
       </div>
       <div className="flex justify-around group my-9">
         {serviceData.map((service, index) => (

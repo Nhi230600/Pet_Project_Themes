@@ -44,7 +44,7 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div>
+    <div data-aos="fade-up">
       <section
         className="progress-bars2 counters cid-rGtBgCg3f6"
         id="counters1-31"
