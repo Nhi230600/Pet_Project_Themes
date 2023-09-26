@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-import { Card, Row, Col, Button, Modal, Pagination } from "antd";
+import { Button, Card, Col, Modal, Pagination, Row } from "antd";
 
 import {
-  DollarCircleOutlined,
   DeleteOutlined,
+  DollarCircleOutlined,
   EditOutlined,
   PlusOutlined,
 } from "@ant-design/icons";
