@@ -1,7 +1,9 @@
+import { Card, Typography } from "antd";
 import React, { useState } from "react";
-import { PageHeader, Button, Row, Col, Typography, Card } from "antd";
-import ListField, { FutureAppointment } from "../component/ListField"; // Import the ListField component
-import { Appointment } from "../component/ListField"; // Import the Appointment interface
+import ListField, {
+  Appointment,
+  FutureAppointment,
+} from "../component/ListField"; // Import the ListField component
 import "./AppointmentList.css";
 
 const AppointmentListPage: React.FC = () => {

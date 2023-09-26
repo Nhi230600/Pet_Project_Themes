@@ -2,14 +2,14 @@ import { faCakeCandles } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Modal } from "antd";
 import { useState } from "react";
-import PetProfilePage from "../../PetProfilePage/PetProfilePage";
 import Avatar_Cat from "../../../images/avatar_cat.jpeg";
 import Avatar_Golden from "../../../images/avatar_golden.jpg";
 import Avatar_Poodle from "../../../images/avatar_poodle.jpg";
 import ImagePet from "../../../images/image-pagemypet.png";
+import PetProfilePage from "../../PetProfilePage/PetProfilePage";
 
-import "./MyPet.css";
 import Nav from "components/Nav";
+import "./MyPet.css";
 
 const MyPet = () => {
   const [isModalPetProfileOpen, setIsModalPetProfileOpen] = useState(false);

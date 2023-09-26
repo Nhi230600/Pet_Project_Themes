@@ -1,26 +1,26 @@
-import React, { useState } from "react";
 import {
-  Table,
   Button,
   Form,
   Input,
+  Space,
+  Table,
+  Tag,
   Tooltip,
   Typography,
-  Space,
-  Tag,
 } from "antd";
+import { useState } from "react";
 
-import { useNavigate, Link } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import "./ListEmployee.css";
 
-import "antd/dist/antd.css";
-import { Employee } from "./Employee";
 import {
-  InfoCircleOutlined,
   DeleteOutlined,
+  InfoCircleOutlined,
   PlusCircleOutlined,
 } from "@ant-design/icons";
+import "antd/dist/antd.css";
+import { Employee } from "./Employee";
 
 const EmployeeListPage = () => {
   const [employees, setEmployees] = useState<Employee[]>([
