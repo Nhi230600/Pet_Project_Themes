@@ -10,7 +10,7 @@ const Service = () => {
           Dịch vụ
         </h3>
       </div>
-      <div className="flex justify-around group my-9">
+      <div className="flex flex-wrap justify-around group my-16">
         {serviceData.map((service, index) => (
           <ServiceCard key={index} service={service} />
         ))}

@@ -1,39 +1,39 @@
-import React, { useState, useEffect } from 'react';
-import moment from 'moment-timezone';
-import { useParams } from 'react-router-dom';
-import { Input, Button, Modal, Form } from 'antd';
-import './CreateTreatmentIn.css';
+import { Button, Input, Modal } from "antd";
+import moment from "moment-timezone";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { useNavigate } from 'react-router-dom';
+import "./CreateTreatmentIn.css";
 const { TextArea } = Input;
 
-
 function CreateTreatmentIn() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [treatmentProfile, setTreatmentProfile] = useState({
-    description: '',
+    description: "",
     customerID: 0,
   });
   const [customer, setCustomer] = useState({
-    fullname: '',
-    gender: '',
-    age: '',
+    fullname: "",
+    gender: "",
+    age: "",
   });
   const [treatmentIn, setTreatmentIn] = useState({
-    process: '',
-    result: '',
-    note: '',
+    process: "",
+    result: "",
+    note: "",
   });
-  const [showConfirmationComplete, setShowConfirmationComplete] = useState(false);
-  const [showConfirmationReappoint, setShowConfirmationReappoint] = useState(false);
+  const [showConfirmationComplete, setShowConfirmationComplete] =
+    useState(false);
+  const [showConfirmationReappoint, setShowConfirmationReappoint] =
+    useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchTreatmentProfile = async () => {
       // Mô phỏng dữ liệu từ API
       const profileData = {
-        description: 'Mô tả treatment của động vật',
+        description: "Mô tả treatment của động vật",
         customerID: 1, // ID của khách hàng
       };
 
@@ -41,9 +41,9 @@ function CreateTreatmentIn() {
 
       // Mô phỏng dữ liệu từ API
       const customerData = {
-        fullname: 'Chó A',
-        gender: 'Nam',
-        age: '5'
+        fullname: "Chó A",
+        gender: "Nam",
+        age: "5",
       };
 
       setCustomer(customerData);
@@ -58,18 +58,19 @@ function CreateTreatmentIn() {
       setShowConfirmationComplete(true);
     } else {
       Modal.error({
-        title: 'Lỗi',
-        content: 'Vui lòng điền đầy đủ thông tin trước khi hoàn thành quá trình dịch vụ.',
+        title: "Lỗi",
+        content:
+          "Vui lòng điền đầy đủ thông tin trước khi hoàn thành quá trình dịch vụ.",
       });
     }
   };
 
   const handleConfirmationCompleteConfirm = async () => {
     try {
-        toast.success("Buổi khám thàng công, ngày mới vui vẻ");
-        navigate("/");
+      toast.success("Buổi khám thàng công, ngày mới vui vẻ");
+      navigate("/");
     } catch (error) {
-      console.error('Error confirming treatment:', error);
+      console.error("Error confirming treatment:", error);
     }
   };
 
@@ -78,8 +79,9 @@ function CreateTreatmentIn() {
       setShowConfirmationReappoint(true);
     } else {
       Modal.error({
-        title: 'Lỗi',
-        content: 'Vui lòng điền đầy đủ thông tin trước khi đặt lại cuộc hẹn sau.',
+        title: "Lỗi",
+        content:
+          "Vui lòng điền đầy đủ thông tin trước khi đặt lại cuộc hẹn sau.",
       });
     }
   };
@@ -88,7 +90,7 @@ function CreateTreatmentIn() {
     try {
       window.location.href = `/rebook`;
     } catch (error) {
-      console.error('Error confirming treatment:', error);
+      console.error("Error confirming treatment:", error);
     }
     setShowConfirmationReappoint(false);
   };
@@ -103,19 +105,27 @@ function CreateTreatmentIn() {
       <div className="profile-details">
         <div>
           <label>Tên:</label>
-          <Input type="text" value={customer ? customer.fullname : ''} readOnly />
+          <Input
+            type="text"
+            value={customer ? customer.fullname : ""}
+            readOnly
+          />
         </div>
         <div>
           <label>Giới tính:</label>
-          <Input type="text" value={customer ? customer.gender : ''} readOnly />
+          <Input type="text" value={customer ? customer.gender : ""} readOnly />
         </div>
         <div>
           <label>Tuổi:</label>
-          <Input type="text" value={customer ? customer.age : ''} readOnly />
+          <Input type="text" value={customer ? customer.age : ""} readOnly />
         </div>
         <div>
           <label>Ngày:</label>
-          <Input type="text" value={moment.tz(moment(), 'Asia/Ho_Chi_Minh').format('YYYY-MM-DD')} readOnly />
+          <Input
+            type="text"
+            value={moment.tz(moment(), "Asia/Ho_Chi_Minh").format("YYYY-MM-DD")}
+            readOnly
+          />
         </div>
       </div>
       <div className="input-form">
@@ -130,7 +140,9 @@ function CreateTreatmentIn() {
               rows={4}
               name="process"
               value={treatmentIn.process}
-              onChange={(e) => setTreatmentIn({ ...treatmentIn, process: e.target.value })}
+              onChange={(e) =>
+                setTreatmentIn({ ...treatmentIn, process: e.target.value })
+              }
             />
           </div>
           <div className="input-box">
@@ -139,7 +151,9 @@ function CreateTreatmentIn() {
               rows={4}
               name="result"
               value={treatmentIn.result}
-              onChange={(e) => setTreatmentIn({ ...treatmentIn, result: e.target.value })}
+              onChange={(e) =>
+                setTreatmentIn({ ...treatmentIn, result: e.target.value })
+              }
             />
           </div>
           <div className="input-box">
@@ -148,7 +162,9 @@ function CreateTreatmentIn() {
               rows={4}
               name="note"
               value={treatmentIn.note}
-              onChange={(e) => setTreatmentIn({ ...treatmentIn, note: e.target.value })}
+              onChange={(e) =>
+                setTreatmentIn({ ...treatmentIn, note: e.target.value })
+              }
             />
           </div>
         </div>
