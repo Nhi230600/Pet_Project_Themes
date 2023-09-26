@@ -27,7 +27,7 @@ const TrainerList = () => {
   ];
 
   return (
-    <div className="trainerlist-container">
+    <div className="trainerlist-container" data-aos="fade-down">
       <div className="trainerlist-container-title">
         <span className="trainerlist-container-title-1">Our Trainer</span>
       </div>
