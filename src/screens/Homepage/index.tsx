@@ -7,12 +7,10 @@ import Service from "components/Service";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import ImagesComponent from "components/Banner";
-import Achievement from "screens/Achievements";
-import Contact from "screens/Contact";
-import Content1 from "screens/Content/1";
-import Content2 from "screens/Content/2";
-import Content3 from "screens/Content/3";
-import Sales from "screens/Sales";
+import Achievement from "screens/Homepage/Achievements";
+import Contact from "screens/Homepage/Contact";
+import { Content1, Content2, Content3 } from "./Content";
+import Sales from "screens/Homepage/Sales";
 const Homepage = () => {
   const Sliders = [
     {
