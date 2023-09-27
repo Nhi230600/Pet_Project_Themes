@@ -1,7 +1,7 @@
 import image from "images/doge.png";
 import "./Sales.css";
 import { Card } from "antd";
-import Button from "components/ButtonBooking";
+import Button  from "components/ButtonDog";
 const Sales = () => {
   return (
     <div className="sale-page" data-aos="fade-up">
@@ -20,9 +20,8 @@ const Sales = () => {
             <div className="box-content doge">
               <img src={image} />
             </div>
-            <div className="button-sale">
-              <Button />
-            </div>
+
+            <Button content="Book now"/>
           </div>
         </div>
       </Card>

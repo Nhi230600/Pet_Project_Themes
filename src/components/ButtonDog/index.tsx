@@ -1,6 +1,12 @@
-import "./ButtonBooking.css";
+import React from "react";
+import "./ButtonDog.css";
 
-const ButtonBooking = () => {
+interface Text {
+  content: string ;
+}
+
+
+const ButtonDog : React.FC<Text> = ({ content })  => {
   return (
     <div className="container-button-booking">
       <div className="button-container">
@@ -27,12 +33,13 @@ const ButtonBooking = () => {
             <div className="right"></div>
           </div>
         </div>
-        <button>Book now</button>
+        <button> {content}</button>
         <div className="paw"></div>
         <div className="paw top"></div>
       </div>
+      
     </div>
   );
 };
 
-export default ButtonBooking;
+export default ButtonDog;

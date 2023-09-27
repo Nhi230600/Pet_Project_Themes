@@ -18,7 +18,7 @@
      background-image: url(images/background.png);
      /* Kích thước cố định cho background */
      min-width: 1000px; /* Điều chỉnh kích thước chiều rộng theo ý muốn */
-     height: 800px; /* Điều chỉnh kích thước chiều cao theo ý muốn */
+     height: 600px; /* Điều chỉnh kích thước chiều cao theo ý muốn */
      /* Đặt mask image */
      mask-image: url(images/background.png);
      /* Điều chỉnh kích thước của mask */
@@ -28,3 +28,12 @@
      /* Điều chỉnh vị trí mask */
      mask-position: center;
   }
+  @media screen and (max-width: 600px) {
+   .chip-mark{
+      width: 500px;
+   }
+   .iframe-chip-mark{
+      min-width: 500px;
+      height: 300px;
+   }
+ }

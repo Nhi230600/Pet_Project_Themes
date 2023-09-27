@@ -23,24 +23,18 @@ const Homepage = () => {
           </div>
           <LazyCarousales />
           <div id="content">
-            {/* Achievement-START */}
-
-            {/* Achievement-END */}
-            {/* Service-Start */}
             <div>
               <LazyService />
             </div>
-            {/* Service-END */}
 
             <LazySales />
             <div>
               <LazyContact />
             </div>
-            {/* Contact-START */}
+
             <div>
               <LazyTrainerList />
             </div>
-            {/* Contact-END */}
           </div>
         </Suspense>
       </div>
