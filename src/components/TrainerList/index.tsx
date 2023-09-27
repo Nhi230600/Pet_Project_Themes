@@ -9,19 +9,19 @@ const TrainerList = () => {
     {
       img: trainer4,
       name: "John Nguyen",
-      position: "Trainer",
+      position: "Huấn luyện viên",
       exp: "4 years",
     },
     {
       img: trainer2,
       name: "Malina Tran",
-      position: "Veterinarian",
+      position: "Bác sĩ thú y",
       exp: "3 years",
     },
     {
       img: trainer3,
       name: "Jack Ngo",
-      position: "Founder",
+      position: "Nhà sáng lập",
       exp: "5 years",
     },
   ];
@@ -42,7 +42,7 @@ const TrainerList = () => {
               <h1 className="trainerlist-container-content-detail-name-1">
                 {data.name}
               </h1>
-              <p className="trainerlist-container-content-detail-name-2">
+              <p className="trainerlist-container-content-detail-name-2 text-yellow-600">
                 {data.position}
               </p>
               <p className="trainerlist-container-content-detail-name-2">
