@@ -36,13 +36,7 @@ const Router = createBrowserRouter([
     element: <Loading />,
 
   },
-  {
-    
-    path: "button",
-
-    element: <Button />,
-
-  },
+  
   {
     path: "sales",
 
