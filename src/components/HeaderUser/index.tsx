@@ -8,7 +8,7 @@ import {
 } from "@ant-design/icons";
 import { Drawer } from "antd";
 import { useState } from "react";
-import Logo from "../../images/logo.png";
+import Logo from "../../images/logo1.png";
 import DrawerContent from "../DrawerContent";
 
 import "./headerUser.css";

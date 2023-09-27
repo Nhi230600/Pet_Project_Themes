@@ -1,10 +1,9 @@
+import { Content } from "antd/lib/layout/layout";
 import React from "react";
 import "./AdminDashboard.css";
-import { Content } from "antd/lib/layout/layout";
 
-// Định nghĩa interface cho ContentDashboardProps
 interface ContentDashboardProps {
-  content: React.ReactNode; // Prop content với kiểu React.ReactNode
+  content: React.ReactNode;
 }
 
 const ContentDashboard: React.FC<ContentDashboardProps> = ({ content }) => {

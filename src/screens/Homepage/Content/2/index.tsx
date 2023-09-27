@@ -1,12 +1,12 @@
-import React from "react";
-import "./Content.css"; // Đảm bảo bạn đã đính kèm tệp CSS của bạn
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faDog,
   faHeartbeat,
   faGraduationCap,
 } from "@fortawesome/free-solid-svg-icons";
 import ButtonDog from "components/ButtonDog";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./Content.css"; // Đảm bảo bạn đã đính kèm tệp CSS của bạn
+
 
 const App = () => {
   return (

@@ -1,11 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { Card, Row, Col, Statistic, Table } from "antd";
-import {
-  ArrowUpOutlined,
-  UserOutlined,
-  DollarCircleOutlined,
-} from "@ant-design/icons";
+import { ArrowUpOutlined, UserOutlined } from "@ant-design/icons";
+import { Card, Col, Row, Statistic, Table } from "antd";
 import "antd/dist/antd.css";
+import { useEffect, useState } from "react";
 import "./DashboardPage.css";
 
 interface Employee {

@@ -11,7 +11,7 @@ const FooterDashboard = () => {
       }}
     >
       <img src={Logo} alt="logo" style={{ width: "20vw", height: "auto" }} />
-      NgáoService ©2023 Created by NgáoService
+      PetsLove ©2023 Created by PetsLove
     </Footer>
   );
 };

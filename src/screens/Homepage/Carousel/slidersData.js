@@ -1,4 +1,3 @@
-import React from 'react';
 import { Content1, Content2, Content3 } from '../Content'; // Import the content components.
 
 const slidersData = [

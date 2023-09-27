@@ -1,43 +1,42 @@
-import React from 'react';
-import MyForm from 'components/MyForm';
+import MyForm from "components/MyForm";
 
 function App() {
   const fieldData = [
     {
-      name: 'Avatar',
-      label: 'Avatar',
-      rules: [{ required: true, message: 'Please upload your avatar!' }],
+      name: "Avatar",
+      label: "Avatar",
+      rules: [{ required: true, message: "Please upload your avatar!" }],
     },
     {
-      name: 'Name',
-      label: 'Name',
-      rules: [{ required: true, message: 'Please input your name!' }],
+      name: "Name",
+      label: "Name",
+      rules: [{ required: true, message: "Please input your name!" }],
     },
     {
-      name: 'Phone',
-      label: 'Phone',
+      name: "Phone",
+      label: "Phone",
       rules: [
-        { required: true, message: 'Please input your phone number!' },
+        { required: true, message: "Please input your phone number!" },
         {
           pattern: /^[0-9]*$/,
-          message: 'Please enter a valid phone number (digits only).',
+          message: "Please enter a valid phone number (digits only).",
         },
       ],
     },
     {
-      name: 'Email',
-      label: 'Email',
+      name: "Email",
+      label: "Email",
       rules: [
-        { required: true, message: 'Please input your email!' },
-        { type: 'email', message: 'Please enter a valid email address!' },
+        { required: true, message: "Please input your email!" },
+        { type: "email", message: "Please enter a valid email address!" },
       ],
     },
     {
-      name: 'Address',
-      label: 'Address',
-      rules: [{ required: true, message: 'Please input your address!' }],
+      name: "Address",
+      label: "Address",
+      rules: [{ required: true, message: "Please input your address!" }],
     },
-    
+
     // Thêm các trường và quy tắc khác tại đây
   ];
   const handleFormSubmit = (data: any) => {

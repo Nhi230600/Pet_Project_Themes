@@ -26,7 +26,7 @@
 .trainerlist-container-content{
     display: flex;
     justify-content: space-between;
-    
+    line-height: 2rem;
     
 }
 

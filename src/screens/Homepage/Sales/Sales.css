@@ -26,6 +26,7 @@
   padding: 10px;
 }
 .box-content img {
+  margin-right: 50px;
   max-width: 500px;
   max-height: 500px;
 }
@@ -45,9 +46,9 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 .button-sale {
-  font: 4em cursive;
   color: black;
-  margin-bottom: 10px;
+  margin-right: 20px;
+  margin-bottom: 20px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 .doge {

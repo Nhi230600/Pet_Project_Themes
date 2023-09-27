@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import "./PetCheckupPage.css";
 
-const { Title, Text } = Typography;
+const { Text } = Typography;
 
 interface PetData {
   petName: string;

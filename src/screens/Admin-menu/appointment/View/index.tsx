@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { Table, DatePicker, Tag, Card, Pagination } from "antd";
+import { Card, DatePicker, Pagination, Table, Tag } from "antd";
 import "antd/dist/antd.css";
 import moment, { Moment } from "moment";
+import { useEffect, useState } from "react";
 import "./EmployeeSchedulePage.css";
 
 const { RangePicker } = DatePicker;

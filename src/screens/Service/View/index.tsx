@@ -1,4 +1,3 @@
-import React from "react";
 import AdminInterface from "../../../components/Admin/AdminInterface"; // Import AdminInterface
 import Content from "./content";
 
