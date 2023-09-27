@@ -1,6 +1,6 @@
 import React from "react";
 import bone from "images/bone.png"
-import Button from "components/ButtonBooking";
+import Button from "components/ButtonDog";
 import "./Content.css";
 
 const App = () => {
@@ -21,7 +21,7 @@ const App = () => {
                 </div>
             </div>
 
-           <Button/>
+           <Button content="Book now"/>
         </div>
     );
 };

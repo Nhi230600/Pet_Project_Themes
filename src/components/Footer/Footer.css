@@ -52,3 +52,19 @@
 .copy-right-content p {
     font-size: 20px;
 }
+@media screen and (max-width: 600px) {
+    .footer {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-information {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    
+   
+    
+}
