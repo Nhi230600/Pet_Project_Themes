@@ -2,11 +2,10 @@ import React from "react";
 import "./ButtonDog.css";
 
 interface Text {
-  content: string ;
+  content: string;
 }
 
-
-const ButtonDog : React.FC<Text> = ({ content })  => {
+const ButtonDog: React.FC<Text> = ({ content }) => {
   return (
     <div className="container-button-booking">
       <div className="button-container">
@@ -37,7 +36,6 @@ const ButtonDog : React.FC<Text> = ({ content })  => {
         <div className="paw"></div>
         <div className="paw top"></div>
       </div>
-      
     </div>
   );
 };
