@@ -5,10 +5,12 @@ import { serviceData } from "./serviceData";
 const Service = () => {
   return (
     <>
-      <div className=" text-center p-4 " data-aos="fade-down">
-        <h3 className="border-b mt-12 mb-12 pb-6 text-5xl">List Services</h3>
+      <div className=" text-center p-4">
+        <h3 className="mbr-section-title mbr-bold pb-5 align-center mbr-fonts-style display-2">
+          Dịch vụ
+        </h3>
       </div>
-      <div className="flex flex-wrap justify-around group my-16">
+      <div className="flex flex-wrap justify-around group my-16 gap-5 p-12">
         {serviceData.map((service, index) => (
           <ServiceCard key={index} service={service} />
         ))}

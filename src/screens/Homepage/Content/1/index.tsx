@@ -1,5 +1,6 @@
 import React from "react";
 import bone from "images/bone.png"
+import Button from "components/ButtonBooking";
 import "./Content.css";
 
 const App = () => {
@@ -20,12 +21,7 @@ const App = () => {
                 </div>
             </div>
 
-            <div className="link-wrap">
-                <div className="image-container">
-                    <img className="bone" src={bone} alt="Hình ảnh bone" id="moving-image" />
-                    <div className="book-now">BOOK NOW</div>
-                </div>
-            </div>
+           <Button/>
         </div>
     );
 };

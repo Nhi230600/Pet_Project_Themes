@@ -44,11 +44,11 @@ const App: React.FC = () => {
   }, []);
 
   return (
-
-
-    <div data-aos="fade-up">
-      <section className="progress-bars2 counters cid-rGtBgCg3f6" id="counters1-31">
-
+    <div>
+      <section
+        className="progress-bars2 counters cid-rGtBgCg3f6"
+        id="counters1-31"
+      >
         <div className="container">
           <h2 className="mbr-section-title mbr-bold pb-5 align-center mbr-fonts-style display-2">
             <div>
