@@ -25,24 +25,15 @@ import {
   Content,
   Sales,
 } from "screens";
-import Button from "components/ButtonDog";
 import Loading from "components/Loading";
 
 const Router = createBrowserRouter([
   {
-    
     path: "loading",
 
     element: <Loading />,
-
   },
-  {
-    
-    path: "button",
 
-    element: <Button />,
-
-  },
   {
     path: "sales",
 
