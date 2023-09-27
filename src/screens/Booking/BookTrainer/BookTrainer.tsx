@@ -1,7 +1,5 @@
-import React from "react";
-
-import "./BookTrainer.css";
 import Nav from "components/Nav";
+import "./BookTrainer.css";
 
 type BookTrainerProps = {};
 

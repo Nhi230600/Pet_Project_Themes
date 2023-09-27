@@ -1,11 +1,11 @@
-import phoc_soc_0 from "../../images/phoc_soc_0.jpg";
 import {
+  faBirthdayCake,
   faDog,
   faPaw,
   faVenusMars,
-  faBirthdayCake,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import phoc_soc_0 from "../../images/phoc_soc_0.jpg";
 import "./PetProfilePage.css";
 const PetProfilePage = () => {
   return (

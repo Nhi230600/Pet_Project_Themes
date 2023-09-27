@@ -1,6 +1,5 @@
-import React from "react";
-import "./Search.css";
 import { SearchOutlined } from "@ant-design/icons";
+import "./Search.css";
 
 const Search = () => {
   return (
