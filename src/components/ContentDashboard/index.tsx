@@ -1,7 +1,6 @@
-import React from "react";
-import "./ContentDashboard.css";
 import { Content } from "antd/lib/layout/layout";
 import DashboardPage from "../../screens/DashBoard";
+import "./ContentDashboard.css";
 
 const ContentDashboard = () => {
   return (

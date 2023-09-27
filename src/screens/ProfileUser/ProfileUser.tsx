@@ -6,9 +6,9 @@ import {
   faUserEdit,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Nav from "components/Nav";
 import AvatarUser from "../../images/avatar-user.jpeg";
 import "./ProfileUser.css";
-import Nav from "components/Nav";
 
 const props = {
   name: "file",

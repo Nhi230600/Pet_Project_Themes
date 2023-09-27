@@ -1,12 +1,9 @@
-
 import { Form, Input } from "antd";
-import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Logo from "../../images/logo.png";
 import "./RegisterPage.css";
 
 const RegisterPage = () => {
-  const navigate = useNavigate();
   const onFinish = (values: any) => {
     toast.success("Đăng kí thành công");
   };
@@ -16,7 +13,6 @@ const RegisterPage = () => {
   };
 
   return (
-    
     <div className="container-register">
       <div className="container-register-header">
         <div className="container-register-header-logo">
@@ -150,24 +146,18 @@ const RegisterPage = () => {
           />
         </Form.Item>
 
-
-
         <Form.Item
           wrapperCol={{
             offset: 2,
             span: 16,
           }}
         >
-          <button
-            type="submit"
-            className="container-register-submit"
-          >
+          <button type="submit" className="container-register-submit">
             Đăng ký
           </button>
         </Form.Item>
       </Form>
     </div>
-    
   );
 };
 

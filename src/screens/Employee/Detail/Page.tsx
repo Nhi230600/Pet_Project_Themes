@@ -1,32 +1,32 @@
-import React, { useState } from "react";
 import {
-  Card,
-  Typography,
-  Avatar,
-  Button,
-  Modal,
-  DatePicker,
-  List,
-  Tag,
-} from "antd";
-import {
-  EditOutlined,
-  PlusOutlined,
+  CalendarOutlined,
   CheckCircleOutlined,
   CloseCircleOutlined,
-  CalendarOutlined,
   DollarOutlined,
+  EditOutlined,
   FacebookFilled,
-  TwitterOutlined,
   InstagramOutlined,
+  PlusOutlined,
+  TwitterOutlined,
   YoutubeFilled,
 } from "@ant-design/icons";
+import {
+  Avatar,
+  Button,
+  Card,
+  DatePicker,
+  List,
+  Modal,
+  Pagination,
+  Tag,
+  Typography,
+} from "antd";
 import "antd/dist/antd.css";
-import "./EmployeeDetailPage.css";
-import { toast } from "react-toastify";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import "./EmployeeDetailPage.css";
 import ShiftsOfDay from "./ShiftsOfDay";
-import { Pagination } from "antd";
 
 const { Text } = Typography;
 

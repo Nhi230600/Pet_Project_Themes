@@ -1,31 +1,25 @@
 import { Checkbox, Form, Input } from "antd";
-import Logo from "../../images/logo.png";
-import { toast, ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Logo from "../../images/logo.png";
 import "./LoginPage.css";
-
-
 
 const LoginPage = () => {
   const onFinish = async (values: any) => {
     const { account } = values;
 
     // Check if account is equal to '1'
-    if (account === '1') {
-      sessionStorage.setItem('account', '1');
-      window.location.href = '/';
-    }
-    else if (account === '2') {
-      sessionStorage.setItem('account', '2');
-      window.location.href = '/admin';
-    }
-    else if (account === '3') {
-      sessionStorage.setItem('account', '3');
-      window.location.href = '/employee';
-    }
-    else {
+    if (account === "1") {
+      sessionStorage.setItem("account", "1");
+      window.location.href = "/";
+    } else if (account === "2") {
+      sessionStorage.setItem("account", "2");
+      window.location.href = "/admin";
+    } else if (account === "3") {
+      sessionStorage.setItem("account", "3");
+      window.location.href = "/employee";
+    } else {
       toast.error("Tài khoản không tồn tại");
-
     }
   };
 
