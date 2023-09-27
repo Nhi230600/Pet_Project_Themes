@@ -11,6 +11,7 @@ const LazyAchievement = lazy(() => import("screens/Homepage/Achievements"));
 const LazyContact = lazy(() => import("screens/Homepage/Contact"));
 const LazySales = lazy(() => import("screens/Homepage/Sales"));
 const LazyCarousales = lazy(() => import("screens/Homepage/Carousel"));
+const LazyMap = lazy(() => import("screens/Homepage/Map"))
 
 const Homepage = () => {
   return (
@@ -35,6 +36,7 @@ const Homepage = () => {
             <div>
               <LazyTrainerList />
             </div>
+            <LazyMap/>
           </div>
         </Suspense>
       </div>
