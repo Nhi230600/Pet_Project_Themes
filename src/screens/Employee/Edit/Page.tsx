@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import { Form, Input, Button, Select, InputNumber, Upload, Card } from "antd";
-import { useNavigate } from "react-router-dom";
-import "antd/dist/antd.css";
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import { PlusOutlined } from "@ant-design/icons";
-import "./EditEmployeePage.css";
+import { Button, Card, Form, Upload } from "antd";
+import "antd/dist/antd.css";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import InputField from "../../../components/Form/InputField"; // Import InputField component
-import SelectField from "../../../components/Form/SelectField"; // Import SelectField component
 import NumberField from "../../../components/Form/NumberField"; // Import NumberField component
+import SelectField from "../../../components/Form/SelectField"; // Import SelectField component
+import "./EditEmployeePage.css";
 
 const EditEmployeePage = () => {
   const [fileList, setFileList] = useState<any[]>([]);

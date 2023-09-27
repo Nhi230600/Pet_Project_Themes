@@ -1,54 +1,66 @@
 .footer {
-    width: 100%;
-    display: flex;
-    height: auto;
-    padding: 3rem 1rem;
-    background-image: linear-gradient( rgb(221, 221, 142), rgb(208, 230, 170), rgb(218, 228, 223));
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 3rem 2rem;
+  background-color: white;
+  justify-content: space-between;
+  align-items: center;
 }
 .footer-logo {
-    display: block;
-    width: 25%;
-    text-align: center;
-}
-.footer-logo-image {
-    width: 100%;
-    height: auto;
-    margin-bottom: 1rem;
-}
-.footer-logo-name {
-    width: 100%;
-    height: auto;
+  display: block;
+  width: 25%;
+
+  align-items: center;
 }
 .footer-information {
-    display: block;
-    width: 25%;
-    height: auto;
+  display: block;
+  width: 25%;
+  padding-left: 2.5rem;
 }
 .footer-information-name {
-    font-weight: 600;
-    margin-bottom: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+.footer-information-name span {
+  font-family: cursive;
+  font-size: 20px;
+  color: rgb(255, 81, 0);
 }
 .footer-information-content {
-    display: block;
-    line-height: 2.5rem;
+  line-height: 2.5rem;
 }
-.footer-information-content a{
-    color: black;
+.footer-information-content a {
+  color: black;
+  font: 1em sans-serif;
 }
-.icon-footer{
-    margin-right: 10px;
+.icon-footer {
+  margin-right: 10px;
 }
 
-.footer-information-name span{
-    font-family: cursive;
-    font-size: 20px;
-    color: rgb(160, 107, 8);
-}
-.copy-right{
-    background-color: orange;
-    text-align: center;
-    padding: 20px;
+.copy-right {
+  background-color: rgb(255, 81, 0);
+  text-align: center;
+  padding: 20px;
 }
 .copy-right-content p {
-    font-size: 20px;
+  color: white;
+  font-size: 20px;
+}
+@media only screen and (max-width: 768px) {
+  .footer {
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-information {
+    margin-bottom: 25px;
+    width: 100%;
+  }
+  .footer-logo {
+    margin-right: 60px;
+    align-items: center;
+  }
 }

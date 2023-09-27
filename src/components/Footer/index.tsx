@@ -1,15 +1,13 @@
 import {
+  ClockCircleOutlined,
+  EnvironmentOutlined,
   FacebookOutlined,
   InstagramOutlined,
   MailOutlined,
-} from "@ant-design/icons";
-import {
-  EnvironmentOutlined,
   PhoneOutlined,
-  ClockCircleOutlined,
   ShopOutlined,
 } from "@ant-design/icons";
-import Logo from "../../images/logo.png";
+import LogoNav from "components/LogoHeader";
 import "./Footer.css";
 
 type FooterProps = {};
@@ -21,18 +19,9 @@ const Footer = (props: FooterProps) => {
     <>
       <footer className="footer">
         <div className="footer-logo">
-          <div className="footer-logo-image">
-            <img style={{ width: "80%" }} src={Logo} alt="Logo" />
-          </div>
-          <div className="footer-logo-name">
-            <a
-              href=""
-              style={{
-                textDecoration: "none",
-              }}
-            ></a>
-          </div>
+          <LogoNav />
         </div>
+
         <div className="footer-information">
           <div className="footer-information-name">
             <span>INFORMATION</span>
@@ -40,7 +29,7 @@ const Footer = (props: FooterProps) => {
           <div className="footer-information-content">
             <div>
               <EnvironmentOutlined className="icon-footer" />
-              <a href="">Số 16, Bế Văn Đàn,Ghềnh Ráng, Thàng phố Quy Nhơn </a>
+              <a href="">Số 16,Bế Văn Đàn,Ghềnh Ráng,Tp Quy Nhơn</a>
             </div>
             <div>
               <PhoneOutlined className="icon-footer" />
@@ -52,6 +41,7 @@ const Footer = (props: FooterProps) => {
             </div>
           </div>
         </div>
+
         <div className="footer-information">
           <div className="footer-information-name">
             <span>LOCATION</span>
@@ -71,6 +61,7 @@ const Footer = (props: FooterProps) => {
             </div>
           </div>
         </div>
+
         <div className="footer-information">
           <div className="footer-information-name">
             <span>NETWORK</span>
@@ -91,10 +82,11 @@ const Footer = (props: FooterProps) => {
           </div>
         </div>
       </footer>
+
       <div className="">
         <div className="copy-right">
           <div className="copy-right-content">
-            <p className="col-12">&copy; Copyright 2023 - FPT software</p>
+            <p className="col-12">&copy; Copyright 2023 - PetsLove</p>
           </div>
         </div>
       </div>

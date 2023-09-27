@@ -1,20 +1,14 @@
 import { useState } from "react";
-
 import { Button, Card, Col, Modal, Pagination, Row } from "antd";
-
 import {
   DeleteOutlined,
   DollarCircleOutlined,
   EditOutlined,
   PlusOutlined,
 } from "@ant-design/icons";
-
 import { Link } from "react-router-dom";
-
 import { toast, ToastContainer } from "react-toastify";
-
 import "antd/dist/antd.css";
-
 import "./ViewServicePage.css";
 
 const initialServices: Record<
