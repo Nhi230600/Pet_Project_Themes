@@ -23,11 +23,9 @@ const App = () => {
                 dui non diam.
               </p>
             </div>
-
-
-           <Button content="Book now"/>
-
+            <Button content="Book now"/>
           </div>
+          
 
         </div>
       </div>
