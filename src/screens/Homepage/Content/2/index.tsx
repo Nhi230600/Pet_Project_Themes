@@ -3,7 +3,7 @@ import {
   faHeartbeat,
   faGraduationCap,
 } from "@fortawesome/free-solid-svg-icons";
-import ButtonDog from "components/ButtonDog";
+import ButtonDog from "components/ButtonBooking";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Content.css"; // Đảm bảo bạn đã đính kèm tệp CSS của bạn
 
