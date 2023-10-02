@@ -26,23 +26,17 @@ import {
   Sales,
 } from "screens";
 import Button from "components/ButtonBooking";
-import Loading from "components/Loading";
+import OrderButton from "screens/Booking/Component/OrderButton";
 
 const Router = createBrowserRouter([
   {
     
-    path: "loading",
+    path: "orderbutton",
 
-    element: <Loading />,
-
-  },
-  {
-    
-    path: "button",
-
-    element: <Button />,
+    element: <OrderButton />,
 
   },
+ 
   {
     path: "sales",
 
