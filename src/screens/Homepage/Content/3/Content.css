@@ -1,10 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+@import url("https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css");
 .content-3{
     
     padding: 20px;
     width: 500px;
     text-align: center;
 }
-/* EmployeeCard.css */
+
 .card-content {
     background-color: rgb(242, 242, 244);
     padding: 10px;
@@ -35,4 +37,3 @@
 .item {
     display: flex;
 }
-
