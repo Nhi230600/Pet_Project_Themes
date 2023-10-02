@@ -25,22 +25,16 @@ import {
   Content,
   Sales,
 } from "screens";
-import Button from "components/ButtonBooking";
-import OrderButton from "screens/Booking/Component/OrderButton";
+import TimeTable from "screens/Booking/Component/TimeTable";
+
 
 const Router = createBrowserRouter([
-  {
-    
-    path: "orderbutton",
-
-    element: <OrderButton />,
-
-  },
+  
  
   {
-    path: "sales",
+    path: "timetable",
 
-    element: <Sales />,
+    element: <TimeTable />,
   },
   {
     path: "content",
