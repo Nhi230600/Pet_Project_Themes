@@ -1,5 +1,5 @@
 .trainerlist-container-content-detail-btn {
-  background-color: #ec701d;
+  background-color: #ec3216;
   color: white;
   padding: 15px;
   text-align: center;
@@ -17,6 +17,6 @@
 
 .trainerlist-container-content-detail-btn:hover {
   background-color: white;
-  color: #ec701d;
-  border-color: #ec701d;
+  color: #ec3216;
+  border-color: #ec3216;
 }
