@@ -1,37 +1,35 @@
-import React from "react";
-
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import {
-  Homepage,
-  MyPet,
-  Dashboard,
+  AddEmployeePage,
+  AddServicePage,
+  AddShiftPage,
   BookSpa,
   Contact,
-  ProfileUser,
-  EmployeeListPage,
-  AddEmployeePage,
-  EmployeeDetailPage,
-  EmployeeEditPage,
-  ViewServicePage,
-  AddServicePage,
-  EditServicePage,
-  AddShiftPage,
-  ViewAppointmentAdmin,
-  EmployeeAppointmentListPage,
-  CustomerTreatment,
-  PetCheckupPage,
-  EmployeeeCustomerProfile,
-  CreateTreatmentIn,
   Content,
+  CreateTreatmentIn,
+  CustomerTreatment,
+  Dashboard,
+  EditServicePage,
+  EmployeeAppointmentListPage,
+  EmployeeDetailPage,
+  EmployeeeCustomerProfile,
+  EmployeeEditPage,
+  EmployeeListPage,
+  Homepage,
+  MyPet,
+  PetCheckupPage,
+  ProfileUser,
   Sales,
+  ViewAppointmentAdmin,
+  ViewServicePage,
 } from "screens";
-import Loading from "components/Loading";
+import OrderButton from "screens/Booking/Component/OrderButton";
 
 const Router = createBrowserRouter([
   {
-    path: "loading",
+    path: "orderbutton",
 
-    element: <Loading />,
+    element: <OrderButton />,
   },
 
   {
