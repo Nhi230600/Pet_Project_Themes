@@ -1,6 +1,6 @@
-import petcare from '../../images/petcare.png'
-import pettrain from '../../images/pettrain.png'
-import petspa from '../../images/petspa.png'
+import petcare  from 'images/petcare.png';
+import pettrain from 'images/pettrain.png';
+import petspa from 'images/petspa.png';
 
 
 export interface service {
