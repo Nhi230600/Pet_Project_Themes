@@ -32,7 +32,7 @@ const Router = createBrowserRouter([
   
  
   {
-    path: "timetable",
+    path: "timetable/:id",
 
     element: <TimeTable />,
   },
