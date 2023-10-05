@@ -23,19 +23,13 @@ import {
   ViewAppointmentAdmin,
   ViewServicePage,
 } from "screens";
-import OrderButton from "screens/Booking/Component/OrderButton";
+import TimeTable from "screens/Booking/Component/TimeTable";
 
 const Router = createBrowserRouter([
   {
-    path: "orderbutton",
+    path: "timetable/:id",
 
-    element: <OrderButton />,
-  },
-
-  {
-    path: "sales",
-
-    element: <Sales />,
+    element: <TimeTable />,
   },
   {
     path: "content",
