@@ -26,11 +26,15 @@ import {
   Sales,
 } from "screens";
 import TimeTable from "screens/Booking/Component/TimeTable";
-
+import DateTimePicker from "screens/Booking/Component/DateTimePicker";
 
 const Router = createBrowserRouter([
   
- 
+  {
+    path: "datetimepicker/:id",
+
+    element: <DateTimePicker />,
+  },
   {
     path: "timetable/:id",
 
