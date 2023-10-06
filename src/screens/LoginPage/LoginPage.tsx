@@ -1,8 +1,8 @@
 import { Checkbox, Form, Input } from "antd";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Logo from "../../images/logo.png";
 import "./LoginPage.css";
+import LogoNav from "components/LogoHeader";
 
 const LoginPage = () => {
   const onFinish = async (values: any) => {
@@ -33,16 +33,10 @@ const LoginPage = () => {
       <ToastContainer />
       <div className="container-login-header">
         <div className="container-login-header-logo">
-          <img style={{ width: "180%" }} src={Logo} alt="logo" />
+          <LogoNav />
         </div>
         <div className="container-login-header-name">
-          <span
-            style={{
-              textShadow: "0.1rem 0.2rem 0.1rem rgb(245, 214, 129)",
-            }}
-          >
-            ĐĂNG NHẬP
-          </span>
+          <span>ĐĂNG NHẬP</span>
         </div>
       </div>
       <Form

@@ -1,13 +1,4 @@
-import {
-  Button,
-  Form,
-  Input,
-  Space,
-  Table,
-  Tag,
-  Tooltip,
-  Typography,
-} from "antd";
+import { Button, Input, Space, Table, Tag, Tooltip, Typography } from "antd";
 import { useState } from "react";
 
 import { Link, useNavigate } from "react-router-dom";
@@ -137,8 +128,7 @@ const EmployeeListPage = () => {
       avatar: "https://picsum.photos/id/287/200/300",
     },
   ]);
-  const [isModalVisible, setIsModalVisible] = useState(false);
-  const [form] = Form.useForm();
+
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(5);
   const navigate = useNavigate();

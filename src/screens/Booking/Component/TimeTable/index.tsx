@@ -43,7 +43,7 @@ function TimeTable() {
     }
 
     fetchAppointments();
-  }, []);
+  }, [id]);
 
   const minTime = new Date(0, 0, 0, 7, 0); // 7:00 AM
   const maxTime = new Date(0, 0, 0, 17, 0); // 5:00 PM

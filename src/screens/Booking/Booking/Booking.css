@@ -3,8 +3,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 40% 70%;
-  margin-bottom: 0;
-  padding: 6rem 0;
+  padding: 5.5rem 0;
 }
 
 .booking-spa-title {
@@ -12,6 +11,7 @@
   font-weight: bold;
   font-size: 30pt;
   text-shadow: 0.2rem 0.2rem 0.2rem white;
+  margin-bottom: 50px;
 }
 
 .form-content > p {

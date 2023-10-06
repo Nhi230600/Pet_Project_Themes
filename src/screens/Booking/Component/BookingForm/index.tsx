@@ -48,7 +48,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
       </select>
       <br />
 
-      <h3>
+      {/* <h3>
         CHỌN NHÂN VIÊN: <strong className="important">*</strong>
       </h3>
 
@@ -58,13 +58,13 @@ const BookingForm: React.FC<BookingFormProps> = ({
             {option.label}
           </option>
         ))}
-      </select>
+      </select> */}
 
-      <h3>
+      {/* <h3>
         {timeLabel}: <strong className="important">*</strong>
       </h3>
 
-      <input type="datetime-local" id="time" name="time" />
+      <input type="datetime-local" id="time" name="time" /> */}
 
       <h3>GHI CHÚ:</h3>
 

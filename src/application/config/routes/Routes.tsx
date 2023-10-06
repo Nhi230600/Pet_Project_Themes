@@ -19,7 +19,6 @@ import {
   MyPet,
   PetCheckupPage,
   ProfileUser,
-  Sales,
   ViewAppointmentAdmin,
   ViewServicePage,
 } from "screens";
