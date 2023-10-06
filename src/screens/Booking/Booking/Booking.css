@@ -1,0 +1,83 @@
+.booking-spa {
+  background-image: url("../../../images/bg_book.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 40% 70%;
+  margin-bottom: 0;
+  padding: 6rem 0;
+}
+
+.booking-spa-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 30pt;
+  text-shadow: 0.2rem 0.2rem 0.2rem white;
+}
+
+.form-content > p {
+  font-size: medium;
+  font-weight: 500;
+}
+
+.form-content > h3 {
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.booking-spa-form-content {
+  margin: 0 5rem;
+  padding: 3rem;
+  width: 50%;
+  background: linear-gradient(#f5b581, #8dd9ec);
+  border-radius: 0 70px 70px 70px;
+}
+
+.booking-spa-form-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: xx-large;
+}
+
+#services,
+#spa-time {
+  width: 100%;
+  height: 3rem;
+  border-radius: 10px;
+  padding: 0rem 1rem 0rem 1rem;
+  margin: 0.5rem 0rem 1rem 0rem;
+}
+
+#note {
+  width: 100%;
+  height: 10rem;
+  padding: 0.5rem;
+}
+
+.important {
+  color: red;
+}
+.form-selector {
+  display: flex;
+  flex-direction: row;
+}
+.form-btn-booking {
+  width: 100%;
+  background-color: #ec3216;
+  color: white;
+  padding: 15px;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  margin: 4px 2px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+}
+.form-btn-booking:hover {
+  background-color: white;
+  color: #ec3216;
+  border-color: #ec3216;
+}
+.form-btn-booking:active {
+  background-color: white;
+}

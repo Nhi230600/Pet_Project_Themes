@@ -1,12 +1,8 @@
 import Nav from "components/Nav";
 import { useState } from "react";
-import "./BookSpa.css";
-import { BookingForm} from "../Component";
-import {
-  formTypes,
-  formConfig,
-} from "./Constants"; // Assuming you've properly imported BookingForm
-
+import { BookingForm } from "../Component";
+import "./Booking.css";
+import { formConfig, formTypes } from "./Constants"; // Assuming you've properly imported BookingForm
 type BookProps = {
   typeof_book?: string;
 };
@@ -31,8 +27,8 @@ const BookSpa = (props: BookProps) => {
               {formTypes.map((formType) => (
                 <button
                   key={formType}
-                  className={`form-btn ${
-                    selectedForm === formType ? "active" : ""
+                  className={`form-btn-booking ${
+                    selectedForm === formType ? "bg-white text-red-500" : ""
                   }`}
                   onClick={() => handleFormChange(formType)}
                 >

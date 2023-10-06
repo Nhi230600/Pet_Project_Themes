@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
-import "./TimeTable.css";
+import axios from "axios"; // Import Axios
+import moment from "moment";
+import { useEffect, useState } from "react";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
-import moment from "moment";
-import axios from "axios"; // Import Axios
 import { useParams } from "react-router-dom";
+import "./TimeTable.css";
 
 const localizer = momentLocalizer(moment);
 interface Appointment {
