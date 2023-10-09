@@ -69,6 +69,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
       <h3>GHI CHÚ:</h3>
 
       <textarea
+        className="note-service"
         name="note"
         id="note"
         rows={3}

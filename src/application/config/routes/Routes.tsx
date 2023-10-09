@@ -3,7 +3,6 @@ import {
   AddEmployeePage,
   AddServicePage,
   AddShiftPage,
-  BookSpa,
   Contact,
   Content,
   CreateTreatmentIn,
@@ -22,6 +21,7 @@ import {
   ViewAppointmentAdmin,
   ViewServicePage,
 } from "screens";
+import Booking from "screens/Booking/Booking";
 import TimeTable from "screens/Booking/Component/TimeTable";
 
 const Router = createBrowserRouter([
@@ -132,9 +132,9 @@ const Router = createBrowserRouter([
   },
 
   {
-    path: "bookspa",
+    path: "booking",
 
-    element: <BookSpa />,
+    element: <Booking />,
   },
 
   {

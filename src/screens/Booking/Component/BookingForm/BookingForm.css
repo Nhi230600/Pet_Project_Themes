@@ -1,7 +1,12 @@
 .request-service {
   width: 100%;
   padding: 10px;
-  margin-bottom: 10px;
   border-radius: 20px;
-  font-size: 18px;
+  font-size: 16px;
+}
+.note-service {
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 16px;
 }

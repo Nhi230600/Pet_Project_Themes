@@ -6,16 +6,12 @@ import { formConfig, formTypes } from "./Constants"; // Assuming you've properly
 type BookProps = {
   typeof_book?: string;
 };
-
 const BookSpa = (props: BookProps) => {
   const { typeof_book = "spa" } = props;
-
   const [selectedForm, setSelectedForm] = useState(typeof_book);
-
   const handleFormChange = (form: string) => {
     setSelectedForm(form);
   };
-
   return (
     <>
       <Nav />

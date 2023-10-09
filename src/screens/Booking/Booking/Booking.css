@@ -1,9 +1,9 @@
 .booking-spa {
-  background-image: url("../../../images/bg_book.jpg");
+  /* background-image: url("../../../images/bg_book.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 40% 70%;
-  padding: 5.5rem 0;
+  padding: 5.5rem 0; */
 }
 
 .booking-spa-title {
@@ -80,4 +80,6 @@
 }
 .form-btn-booking:active {
   background-color: white;
+}
+@media only screen and (max-width: 768px) {
 }

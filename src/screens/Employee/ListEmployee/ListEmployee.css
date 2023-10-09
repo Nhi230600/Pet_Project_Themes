@@ -84,11 +84,11 @@
   display: inline;
   /* Thêm bất kỳ thuộc tính CSS khác mà bạn muốn */
 }
-.button-container {
+.button-container-employee {
   display: flex;
   flex-direction: row-reverse;
 }
-.addButton {
+.add-button-employee {
   color: var(--fonts-primary-variant, #534b81);
   margin-bottom: 20px;
   border-radius: 8px;

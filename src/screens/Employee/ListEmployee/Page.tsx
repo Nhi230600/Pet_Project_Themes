@@ -249,8 +249,12 @@ const EmployeeListPage = () => {
           onSearch={handleSearch}
         />
       </div>
-      <div className="button-container">
-        <Button className="addButton" type="primary" onClick={showModal}>
+      <div className="button-container-employee">
+        <Button
+          className="add-button-employee"
+          type="primary"
+          onClick={showModal}
+        >
           <PlusCircleOutlined /> Thêm nhân viên
         </Button>
       </div>
