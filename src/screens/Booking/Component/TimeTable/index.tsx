@@ -28,7 +28,6 @@ function TimeTable() {
   const [startTime, setStartTime] = useState<Moment | null>(null);
   const [endTime, setEndTime] = useState<Moment | null>(null);
   const [view, setView] = useState("week");
-  const [showModal, setShowModal] = useState(false);
   const [popup, setPopup] = useState(false);
   const [loading, setLoading] = useState(false);
   useEffect(() => {
