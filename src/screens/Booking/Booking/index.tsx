@@ -1,17 +1,8 @@
+import Employee from "components/EmployeeConstant/Type";
 import { useEffect, useState } from "react";
 import { BookingForm } from "../Component";
 import "./Booking.css";
-import { formConfig, formTypes } from "./Constants"; // Assuming you've properly imported BookingForm
-import { EmployeeData } from "components";
-
-interface Employee {
-  id: number;
-  name: string;
-  type: string;
-  account: string;
-  password: string;
-  avatar: string;
-}
+import { formConfig } from "./Constants"; // Assuming you've properly imported BookingForm
 
 type BookProps = {
   typeof_book?: string;
