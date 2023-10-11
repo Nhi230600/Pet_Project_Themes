@@ -9,6 +9,7 @@ import { DatePicker, TimePicker, Button, Modal, Input, Form } from "antd";
 import "antd/dist/antd.css";
 import { toast } from "react-toastify";
 import  BookSpa  from "../../BookSpa"
+import {Loading} from "components"
 
 const localizer = momentLocalizer(moment);
 
@@ -28,8 +29,10 @@ function TimeTable() {
   const [view, setView] = useState("week");
   const [showModal, setShowModal] = useState(false);
   const [popup, setPopup] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     async function fetchAppointments() {
       try {
         // Replace with your actual API endpoint for fetching appointments
@@ -53,6 +56,7 @@ function TimeTable() {
       } catch (error) {
         // Handle errors if necessary
       }
+      setLoading(false);
     }
 
     fetchAppointments();
@@ -105,7 +109,7 @@ function TimeTable() {
         end: endDateTime.toISOString(),
         id_employee: id_employee,
       };
-  
+      setLoading(true)
       try {
         // Perform API check here, replace 'your-check-api-url' with your actual check API URL
         const checkResponse = await axios.post(
@@ -124,9 +128,11 @@ function TimeTable() {
         toast.error("xsxs")
        
       }
+      setLoading(false)
     } else {
       toast.error("Please pick time")
     }
+    
   };
   
 
@@ -147,6 +153,9 @@ function TimeTable() {
   return (
     <div className="">
       <h1>My Calendar App</h1>
+      {
+        loading && <Loading/>
+      }
       <div className="date-picker">
         <div className="date-picker-container">
           <DatePicker value={selectedDate} onChange={handleSelectDate} />
