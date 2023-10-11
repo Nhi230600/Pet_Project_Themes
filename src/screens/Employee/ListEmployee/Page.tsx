@@ -1,10 +1,8 @@
 import { Button, Input, Space, Table, Tag, Tooltip, Typography } from "antd";
 import { useState } from "react";
-
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "./ListEmployee.css";
-
 import {
   DeleteOutlined,
   InfoCircleOutlined,
@@ -116,7 +114,6 @@ const EmployeeListPage = () => {
   const endIndex = startIndex + pageSize;
   const displayedEmployees = employees
     .filter((employee) => {
-      // Áp dụng logic tìm kiếm ở đây, ví dụ: tìm theo tên nhân viên
       return employee.name.toLowerCase().includes(searchText.toLowerCase());
     })
     .slice(startIndex, endIndex);
