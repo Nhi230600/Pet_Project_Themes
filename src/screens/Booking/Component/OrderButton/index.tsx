@@ -2,23 +2,28 @@ import React, { useEffect } from 'react';
 import gsap from 'gsap';
 import "./OrderButton.css"
 
-const TruckButtonAnimation: React.FC = () => {
-  useEffect(() => {
+interface TruckButtonAnimationProps {
+  onClick: () => void;
+}
+
+const TruckButtonAnimation: React.FC<TruckButtonAnimationProps> = ({ onClick }) => {
+
+  const handleButtonClick = async () => {
     const truckButton = document.querySelector('.truck-button') as HTMLButtonElement | null;
 
     if (truckButton) {
-      truckButton.addEventListener('click', (e) => {
-        e.preventDefault();
+      truckButton.removeEventListener('click', handleButtonClick);
+      truckButton.disabled = true;
 
-        let button = e.target as HTMLElement | null;
-        if (button && !button.classList.contains('truck-button')) {
-          button = button.closest('.truck-button');
-        }
+      let button = truckButton;
 
-        if (button && !button.classList.contains('done')) {
-          if (!button.classList.contains('animation')) {
-            button.classList.add('animation');
+      if (!button.classList.contains('done')) {
+        if (!button.classList.contains('animation')) {
+          button.classList.add('animation');
 
+          // Define a function to handle the animation
+          const animateButton = async () => {
+            // Your animation steps
             gsap.to(button, {
               '--box-s': 1,
               '--box-o': 1,
@@ -53,74 +58,85 @@ const TruckButtonAnimation: React.FC = () => {
               '--truck-y-n': -26,
             });
 
-            gsap.to(button, {
-              '--truck-y': 1,
-              '--truck-y-n': -25,
-              duration: 0.2,
-              delay: 1.25,
-              onComplete() {
-                gsap.timeline({
-                  onComplete() {
-                    if (button) {
-                      button.classList.add('done');
-                    }
-                  },
-                })
-                  .to(truckElement, {
-                    x: 0,
-                    duration: 0.4,
-                  })
-                  .to(truckElement, {
-                    x: 40,
-                    duration: 1,
-                  })
-                  .to(truckElement, {
-                    x: 20,
-                    duration: 0.6,
-                  })
-                  .to(truckElement, {
-                    x: 96,
-                    duration: 0.4,
-                  });
-
-                gsap.to(button, {
-                  '--progress': 1,
-                  duration: 2.4,
-                  ease: 'power2.in',
-                });
-              },
+            await new Promise<void>((resolve) => {
+              gsap.to(button, {
+                '--truck-y': 1,
+                '--truck-y-n': -25,
+                duration: 0.2,
+                delay: 1.25,
+                onComplete: () => resolve(),
+              });
             });
-          }
-        } else {
-          if (button) {
-            button.classList.remove('animation', 'done');
-          }
-          const truckElement = button?.querySelector('.truck') as HTMLElement;
-          const boxElement = button?.querySelector('.box') as HTMLElement;
 
-          gsap.set(truckElement, {
-            x: 4,
-          });
-          gsap.set(button, {
-            '--progress': 0,
-            '--hx': 0,
-            '--bx': 0,
-            '--box-s': 0.5,
-            '--box-o': 0,
-            '--truck-y': 0,
-            '--truck-y-n': -26,
-          });
-          gsap.set(boxElement, {
-            x: -24,
-            y: -6,
-          });
+            await new Promise<void>((resolve) => {
+              gsap.timeline({
+                onComplete: () => {
+                  if (button) {
+                    button.classList.add('done');
+                  }
+                  resolve();
+                },
+              })
+                .to(truckElement, {
+                  x: 0,
+                  duration: 0.4,
+                })
+                .to(truckElement, {
+                  x: 40,
+                  duration: 1,
+                })
+                .to(truckElement, {
+                  x: 20,
+                  duration: 0.6,
+                })
+                .to(truckElement, {
+                  x: 96,
+                  duration: 0.4,
+                });
+
+              gsap.to(button, {
+                '--progress': 1,
+                duration: 2.4,
+                ease: 'power2.in',
+              });
+            });
+          };
+
+          // Call the animateButton function and wait for it to complete
+          await animateButton();
         }
-      });
+      } else {
+        if (button) {
+          button.classList.remove('animation', 'done');
+        }
+        const truckElement = button?.querySelector('.truck') as HTMLElement;
+        const boxElement = button?.querySelector('.box') as HTMLElement;
+
+        gsap.set(truckElement, {
+          x: 4,
+        });
+        gsap.set(button, {
+          '--progress': 0,
+          '--hx': 0,
+          '--bx': 0,
+          '--box-s': 0.5,
+          '--box-o': 0,
+          '--truck-y': 0,
+          '--truck-y-n': -26,
+        });
+        gsap.set(boxElement, {
+          x: -24,
+          y: -6,
+        });
+      }
     }
-  }, []);
+
+    // Call the onClick function provided as a prop
+    onClick();
+  };
 
   return (
-    <button className="truck-button">
+    <button className="truck-button" onClick={handleButtonClick}>
       <span className="default">Đặt lịch ngay!</span>
       <span className="success">
         Đặt lịch thành công!
