@@ -1,6 +1,7 @@
 import { Button, DatePicker, TimePicker } from "antd";
 import "antd/dist/antd.css";
 import axios from "axios";
+import { EmployeeData } from "components";
 import moment, { Moment } from "moment";
 import { useEffect, useState } from "react";
 import { Calendar, momentLocalizer } from "react-big-calendar";
@@ -9,10 +10,9 @@ import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import BookSpa from "../../Booking";
 import "./TimeTable.css";
-import { EmployeeData } from "components";
 
 import { Loading } from "components";
-
+import Employee from "components/EmployeeConstant/Type";
 const localizer = momentLocalizer(moment);
 
 interface Appointment {
@@ -20,14 +20,6 @@ interface Appointment {
   start: string;
   end: string;
   title: string;
-}
-interface Employee {
-  id: number;
-  name: string;
-  type: string;
-  account: string;
-  password: string;
-  avatar: string;
 }
 
 function TimeTable() {
@@ -44,6 +36,7 @@ function TimeTable() {
     id: 0,
     name: "",
     type: "",
+    position: "",
     account: "",
     password: "",
     avatar: "",
