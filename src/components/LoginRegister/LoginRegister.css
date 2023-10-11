@@ -11,7 +11,7 @@
   color: white;
   font-weight: 500;
   border-radius: 10px;
-  background-color: rgba(255, 100, 0, 1); /* Đổi màu thành cam */
+  background-color: #ec3216; /* Đổi màu thành cam */
   background-image: linear-gradient(
     to top left,
     rgba(0, 0, 0, 0.2),
@@ -20,17 +20,8 @@
   );
   box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
     inset -2px -2px 3px rgba(0, 0, 0, 0.6);
-  white-space: nowrap; /* Để ngăn chữ xuống dòng */
+  white-space: nowrap;
 }
-
-/* box-shadow: 0 0 0 2px #ed6436 inset !important;
-    background: transparent!important;
-    font-weight: 700;
-    border-radius: 25px;
-    color: #181818!important;
-    overflow: hidden;
-    border-top-left-radius: 0px;
-    border: none!important; */
 
 .header-button-login-action:hover {
   cursor: pointer;
@@ -40,7 +31,7 @@
   box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
     inset 2px 2px 3px rgba(0, 0, 0, 0.6);
 }
-.button-cancel {
+/* .button-cancel {
   height: 3vw;
 
   border: 0;
@@ -70,7 +61,7 @@
 
   box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
     inset -2px -2px 3px rgba(0, 0, 0, 0.6);
-}
+} */
 .button-cancel:hover {
   cursor: pointer;
   background-color: rgba(255, 0, 0, 1);
@@ -85,7 +76,7 @@
   color: white;
   font-weight: 500;
   border-radius: 10px;
-  background-color: rgba(255, 100, 0, 1); /* Đổi màu thành cam */
+  background-color: #ec3216; /* Đổi màu thành cam */
   background-image: linear-gradient(
     to top left,
     rgba(0, 0, 0, 0.2),

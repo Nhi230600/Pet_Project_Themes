@@ -59,7 +59,7 @@ export const optionsSpa: [Option[], Option[]] = [
 export const optionsTrainer: [Option[], Option[]] = [
   [
     {
-      label: "Khóa học cơ bản",
+      label: "Khóa  học cơ bản",
       value: "basic_course",
     },
     {

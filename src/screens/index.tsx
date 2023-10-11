@@ -1,6 +1,4 @@
-export { default as BookSpa } from "./Booking/BookSpa";
-export { default as BookTrainer } from "./Booking/BookTrainer/BookTrainer";
-export { default as BookCare } from "./Booking/BookCare/BookCare";
+export { default as BookSpa } from "./Booking/Booking";
 export { default as LoginPage } from "./LoginPage/LoginPage";
 export { default as RegisterPage } from "./RegisterPage/RegisterPage";
 export { default as Dashboard } from "./Admin/EmployeeManage/Dashboard";
@@ -25,6 +23,4 @@ export { default as EmployeeeCustomerProfile } from "./EmployeeView/CustomerProf
 export { default as CreateTreatmentIn } from "./EmployeeView/CreateTreatmentIn";
 export { default as Content } from "./Homepage/Content/1";
 export { default as Sales } from "./Homepage/Sales";
-
-
-
+export { default as UserList } from "./UserList/List";

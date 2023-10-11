@@ -1,13 +1,4 @@
-import {
-  Button,
-  Form,
-  Input,
-  Space,
-  Table,
-  Tag,
-  Tooltip,
-  Typography,
-} from "antd";
+import { Button, Input, Space, Table, Tag, Tooltip, Typography } from "antd";
 import { useState } from "react";
 
 import { Link, useNavigate } from "react-router-dom";
@@ -21,124 +12,10 @@ import {
 } from "@ant-design/icons";
 import "antd/dist/antd.css";
 import { Employee } from "./Employee";
+import { EmployeeData } from "components";
 
 const EmployeeListPage = () => {
-  const [employees, setEmployees] = useState<Employee[]>([
-    {
-      id: 1,
-      name: "Nguyễn Văn A",
-      type: "Nhân viên chăm sóc",
-      account: "nvana",
-      password: "password123",
-      avatar: "https://picsum.photos/id/267/500/300",
-    },
-    {
-      id: 2,
-      name: "Trần Thị B",
-      type: "Bác sĩ",
-      account: "ttb",
-      password: "doctor456",
-      avatar: "https://picsum.photos/id/238/400/400",
-    },
-    {
-      id: 3,
-      name: "Lê Quang C",
-      type: "Huấn luyện viên",
-      account: "lqc",
-      password: "trainer789",
-      avatar: "https://picsum.photos/id/235/240/500",
-    },
-    {
-      id: 4,
-      name: "Phạm Thị D",
-      type: "Nhân viên chăm sóc",
-      account: "ptd",
-      password: "care123",
-      avatar: "https://picsum.photos/id/250/740/600",
-    },
-    {
-      id: 5,
-      name: "Hoàng Văn E",
-      type: "Bác sĩ",
-      account: "hve",
-      password: "medic456",
-      avatar: "https://picsum.photos/id/237/200/300",
-    },
-    {
-      id: 6,
-      name: "Mai Thị F",
-      type: "Nhân viên chăm sóc",
-      account: "mtf",
-      password: "care567",
-      avatar: "https://picsum.photos/id/300/200/300",
-    },
-    {
-      id: 7,
-      name: "Lý Thanh G",
-      type: "Huấn luyện viên",
-      account: "ltg",
-      password: "trainer890",
-      avatar: "https://picsum.photos/id/289/200/500",
-    },
-    {
-      id: 8,
-      name: "Đinh Văn H",
-      type: "Nhân viên chăm sóc",
-      account: "dvh",
-      password: "care246",
-      avatar: "https://picsum.photos/id/600/200/300",
-    },
-    {
-      id: 9,
-      name: "Vũ Thị I",
-      type: "Bác sĩ",
-      account: "vti",
-      password: "medic789",
-      avatar: "https://picsum.photos/id/123/200/300",
-    },
-    {
-      id: 10,
-      name: "Trần Văn J",
-      type: "Huấn luyện viên",
-      account: "tvj",
-      password: "trainer123",
-      avatar: "https://picsum.photos/id/107/200/300",
-    },
-    {
-      id: 11,
-      name: "Nguyễn Thị K",
-      type: "Nhân viên chăm sóc",
-      account: "ntk",
-      password: "care789",
-      avatar: "https://picsum.photos/id/209/200/300",
-    },
-    {
-      id: 12,
-      name: "Lê Văn L",
-      type: "Bác sĩ",
-      account: "lvl",
-      password: "medic246",
-      avatar: "https://picsum.photos/id/237/200/300",
-    },
-    {
-      id: 13,
-      name: "Trương Thị M",
-      type: "Nhân viên chăm sóc",
-      account: "ttm",
-      password: "care135",
-      avatar: "https://picsum.photos/id/254/200/300",
-    },
-    {
-      id: 14,
-      name: "Phan Văn N",
-      type: "Huấn luyện viên",
-      account: "pvn",
-      password: "trainer357",
-      avatar: "https://picsum.photos/id/287/200/300",
-    },
-  ]);
-  const [isModalVisible, setIsModalVisible] = useState(false);
-  const [form] = Form.useForm();
+  const [employees, setEmployees] = useState(EmployeeData);
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(5);
   const navigate = useNavigate();
@@ -259,8 +136,12 @@ const EmployeeListPage = () => {
           onSearch={handleSearch}
         />
       </div>
-      <div className="button-container">
-        <Button className="addButton" type="primary" onClick={showModal}>
+      <div className="button-container-employee">
+        <Button
+          className="add-button-employee"
+          type="primary"
+          onClick={showModal}
+        >
           <PlusCircleOutlined /> Thêm nhân viên
         </Button>
       </div>
