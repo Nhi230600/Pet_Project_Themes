@@ -69,8 +69,8 @@ const EmployeeListPage = () => {
 
     {
       title: "Chức vụ",
-      dataIndex: "type",
-      key: "type",
+      dataIndex: "position",
+      key: "position",
       render: (type: string) => <Tag className="style">{type}</Tag>,
     },
     {
