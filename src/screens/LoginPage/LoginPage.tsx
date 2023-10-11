@@ -41,15 +41,9 @@ const LoginPage = () => {
       </div>
       <Form
         name="basic"
-        labelCol={{
-          span: 6,
-        }}
-        wrapperCol={{
-          span: 16,
-        }}
-        initialValues={{
-          remember: true,
-        }}
+        labelCol={{ span: 6 }}
+        wrapperCol={{ span: 16 }}
+        initialValues={{ remember: true }}
         onFinish={onFinish} // Call onFinish when the form is submitted
         onFinishFailed={onFinishFailed} // Call onFinishFailed on form validation failure
         autoComplete="off"

@@ -47,25 +47,6 @@ const BookingForm: React.FC<BookingFormProps> = ({
         ))}
       </select>
       <br />
-
-      {/* <h3>
-        CHỌN NHÂN VIÊN: <strong className="important">*</strong>
-      </h3>
-
-      <select name="services" id="services">
-        {options[1].map((option) => (
-          <option value={option.value} key={option.value}>
-            {option.label}
-          </option>
-        ))}
-      </select> */}
-
-      {/* <h3>
-        {timeLabel}: <strong className="important">*</strong>
-      </h3>
-
-      <input type="datetime-local" id="time" name="time" /> */}
-
       <h3>GHI CHÚ:</h3>
 
       <textarea

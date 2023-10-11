@@ -1,14 +1,16 @@
-import React, { useState, useEffect } from "react";
-import "./TimeTable.css";
+import { Button, DatePicker, TimePicker } from "antd";
+import "antd/dist/antd.css";
+import axios from "axios";
+import moment, { Moment } from "moment";
+import { useEffect, useState } from "react";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
-import moment, { Moment } from "moment";
-import axios from "axios";
 import { useParams } from "react-router-dom";
-import { DatePicker, TimePicker, Button, Modal, Input, Form } from "antd";
-import "antd/dist/antd.css";
 import { toast } from "react-toastify";
 import BookSpa from "../../Booking";
+import "./TimeTable.css";
+
+import { Loading } from "components";
 
 const localizer = momentLocalizer(moment);
 
@@ -28,8 +30,9 @@ function TimeTable() {
   const [view, setView] = useState("week");
   const [showModal, setShowModal] = useState(false);
   const [popup, setPopup] = useState(false);
-
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
+    setLoading(true);
     async function fetchAppointments() {
       try {
         // Replace with your actual API endpoint for fetching appointments
@@ -53,6 +56,7 @@ function TimeTable() {
       } catch (error) {
         // Handle errors if necessary
       }
+      setLoading(false);
     }
 
     fetchAppointments();
@@ -106,6 +110,8 @@ function TimeTable() {
         id_employee: id_employee,
       };
 
+      setLoading(true);
+
       try {
         // Perform API check here, replace 'your-check-api-url' with your actual check API URL
         const checkResponse = await axios.post(
@@ -119,6 +125,7 @@ function TimeTable() {
         } else {
           toast.error(checkResponse.data.message);
         }
+        setLoading(false);
       } catch (error) {
         toast.error("xsxs");
       }
@@ -132,7 +139,7 @@ function TimeTable() {
   };
 
   const handleCloseTextForm = () => {
-    setShowModal(false);
+    setPopup(false); // Close the popup
   };
 
   const handleTextFormSubmit = (values: any) => {
@@ -144,6 +151,7 @@ function TimeTable() {
   return (
     <div className="">
       <h1>My Calendar App</h1>
+      {loading && <Loading />}
       <div className="date-picker">
         <div className="date-picker-container">
           <DatePicker value={selectedDate} onChange={handleSelectDate} />
@@ -185,7 +193,11 @@ function TimeTable() {
         />
       </div>
 
-      {popup && <BookSpa />}
+      {popup && (
+        <div className="book-form-action">
+          <BookSpa onClose={handleCloseTextForm} />
+        </div>
+      )}
     </div>
   );
 }

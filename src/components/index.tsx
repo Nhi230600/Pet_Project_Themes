@@ -7,4 +7,4 @@ export { default as ButtonUser } from "./ButtonUser";
 export { default as Service } from "../screens/Homepage/ServiceHomePage";
 export { default as TrainerList } from "../screens/Homepage/TrainerList";
 export { default as Button } from "./Button";
-export { default as ButtonDog } from "./ButtonBooking";
+export { default as Loading } from "./Loading";

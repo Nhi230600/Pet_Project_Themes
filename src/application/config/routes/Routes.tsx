@@ -17,9 +17,11 @@ import {
   Homepage,
   MyPet,
   PetCheckupPage,
-  ProfileUser,
-  ViewAppointmentAdmin,
+  Sales,
+  UserList,
   ViewServicePage,
+  ViewAppointmentAdmin,
+  ProfileUser,
 } from "screens";
 import Booking from "screens/Booking/Booking";
 import TimeTable from "screens/Booking/Component/TimeTable";
@@ -56,7 +58,11 @@ const Router = createBrowserRouter([
 
         element: <Dashboard />,
       },
+      {
+        path: "customer",
 
+        element: <UserList />,
+      },
       {
         path: "service",
 
@@ -129,12 +135,6 @@ const Router = createBrowserRouter([
         ],
       },
     ],
-  },
-
-  {
-    path: "booking",
-
-    element: <Booking />,
   },
 
   {

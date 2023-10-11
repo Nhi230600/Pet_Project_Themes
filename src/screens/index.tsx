@@ -23,3 +23,4 @@ export { default as EmployeeeCustomerProfile } from "./EmployeeView/CustomerProf
 export { default as CreateTreatmentIn } from "./EmployeeView/CreateTreatmentIn";
 export { default as Content } from "./Homepage/Content/1";
 export { default as Sales } from "./Homepage/Sales";
+export { default as UserList } from "./UserList/List";

@@ -1,22 +1,21 @@
-import Nav from "components/Nav";
 import { useState } from "react";
 import { BookingForm } from "../Component";
 import "./Booking.css";
 import { formConfig, formTypes } from "./Constants"; // Assuming you've properly imported BookingForm
+
 type BookProps = {
   typeof_book?: string;
+  onClose: () => void;
 };
-const BookSpa = (props: BookProps) => {
-  const { typeof_book = "spa" } = props;
+const BookSpa: React.FC<BookProps> = (props) => {
+  const { typeof_book = "spa", onClose } = props;
   const [selectedForm, setSelectedForm] = useState(typeof_book);
   const handleFormChange = (form: string) => {
     setSelectedForm(form);
   };
   return (
     <>
-      <Nav />
       <div className="booking-spa">
-        <h1 className="booking-spa-title">Booking Online 24/7</h1>
         <div className="booking-spa-form">
           <div className="booking-spa-form-content">
             <div className="form-selector">
@@ -37,6 +36,9 @@ const BookSpa = (props: BookProps) => {
             )}
           </div>
         </div>
+        <button className="close-button-booking" onClick={onClose}>
+          X
+        </button>
       </div>
     </>
   );
