@@ -1,43 +1,32 @@
-import React from "react";
-
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import {
+  AddEmployeePage,
+  AddServicePage,
+  AddShiftPage,
+  Contact,
+  Content,
+  CreateTreatmentIn,
+  CustomerTreatment,
+  Dashboard,
+  EditServicePage,
+  EmployeeAppointmentListPage,
+  EmployeeDetailPage,
+  EmployeeeCustomerProfile,
+  EmployeeEditPage,
+  EmployeeListPage,
   Homepage,
   MyPet,
-  Dashboard,
-  BookSpa,
-  Contact,
-  ProfileUser,
-  EmployeeListPage,
-  AddEmployeePage,
-  EmployeeDetailPage,
-  EmployeeEditPage,
-  ViewServicePage,
-  AddServicePage,
-  EditServicePage,
-  AddShiftPage,
-  ViewAppointmentAdmin,
-  EmployeeAppointmentListPage,
-  CustomerTreatment,
   PetCheckupPage,
-  EmployeeeCustomerProfile,
-  CreateTreatmentIn,
-  Content,
   Sales,
-  UserList
+  UserList,
+  ViewServicePage,
+  ViewAppointmentAdmin,
+  ProfileUser,
 } from "screens";
+import Booking from "screens/Booking/Booking";
 import TimeTable from "screens/Booking/Component/TimeTable";
-import DateTimePicker from "screens/Booking/Component/DateTimePicker";
-
 
 const Router = createBrowserRouter([
-  
-  
-  {
-    path: "datetimepicker/:id",
-
-    element: <DateTimePicker />,
-  },
   {
     path: "timetable/:id",
 
@@ -71,7 +60,7 @@ const Router = createBrowserRouter([
       },
       {
         path: "customer",
-    
+
         element: <UserList />,
       },
       {
@@ -146,12 +135,6 @@ const Router = createBrowserRouter([
         ],
       },
     ],
-  },
-
-  {
-    path: "bookspa",
-
-    element: <BookSpa />,
   },
 
   {

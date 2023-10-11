@@ -8,3 +8,4 @@ export { default as Service } from "../screens/Homepage/ServiceHomePage";
 export { default as TrainerList } from "../screens/Homepage/TrainerList";
 export { default as Button } from "./Button";
 export { default as Loading } from "./Loading";
+export { default as EmployeeData } from "./EmployeeConstant";

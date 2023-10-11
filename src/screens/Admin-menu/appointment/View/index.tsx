@@ -4,8 +4,6 @@ import moment, { Moment } from "moment";
 import { useEffect, useState } from "react";
 import "./EmployeeSchedulePage.css";
 
-const { RangePicker } = DatePicker;
-
 const EmployeeSchedulePage = () => {
   const [selectedDate, setSelectedDate] = useState<Moment>(moment());
 

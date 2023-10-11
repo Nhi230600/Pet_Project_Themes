@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from "react";
-import "./TimeTable.css";
+import { Button, DatePicker, TimePicker } from "antd";
+import "antd/dist/antd.css";
+import axios from "axios";
+import moment, { Moment } from "moment";
+import { useEffect, useState } from "react";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
-import moment, { Moment } from "moment";
-import axios from "axios";
 import { useParams } from "react-router-dom";
-import { DatePicker, TimePicker, Button, Modal, Input, Form } from "antd";
-import "antd/dist/antd.css";
 import { toast } from "react-toastify";
-import  BookSpa  from "../../BookSpa"
-import {Loading} from "components"
+import BookSpa from "../../Booking";
+import "./TimeTable.css";
+
+import { Loading } from "components";
 
 const localizer = momentLocalizer(moment);
 
@@ -27,10 +28,8 @@ function TimeTable() {
   const [startTime, setStartTime] = useState<Moment | null>(null);
   const [endTime, setEndTime] = useState<Moment | null>(null);
   const [view, setView] = useState("week");
-  const [showModal, setShowModal] = useState(false);
   const [popup, setPopup] = useState(false);
   const [loading, setLoading] = useState(false);
-
   useEffect(() => {
     setLoading(true);
     async function fetchAppointments() {
@@ -87,7 +86,7 @@ function TimeTable() {
       const year = selectedDate.year();
       const month = selectedDate.month();
       const date = selectedDate.date();
-  
+
       // Create startDateTime using year, month, date, startTime
       const startDateTime = moment()
         .year(year)
@@ -95,7 +94,7 @@ function TimeTable() {
         .date(date)
         .hour(startTime.hour())
         .minute(startTime.minute());
-  
+
       // Create endDateTime using year, month, date, endTime
       const endDateTime = moment()
         .year(year)
@@ -103,45 +102,43 @@ function TimeTable() {
         .date(date)
         .hour(endTime.hour())
         .minute(endTime.minute());
-  
+
       const postData = {
         start: startDateTime.toISOString(),
         end: endDateTime.toISOString(),
         id_employee: id_employee,
       };
-      setLoading(true)
+
+      setLoading(true);
+
       try {
         // Perform API check here, replace 'your-check-api-url' with your actual check API URL
         const checkResponse = await axios.post(
-          'https://zzzzzz-rr1t.onrender.com/api/appointment/checkslot',
+          "https://zzzzzz-rr1t.onrender.com/api/appointment/checkslot",
           postData
         );
-  
+
         if (checkResponse.data.success) {
           // If the check is successful, then show the modal
           setPopup(true);
         } else {
-          toast.error(checkResponse.data.message)
+          toast.error(checkResponse.data.message);
         }
-  
+        setLoading(false);
       } catch (error) {
-        toast.error("xsxs")
-       
+        toast.error("xsxs");
       }
-      setLoading(false)
     } else {
-      toast.error("Please pick time")
+      toast.error("Please pick time");
     }
-    
   };
-  
 
   const handleOpenTextForm = () => {
     performAPICheckAndPost();
   };
 
   const handleCloseTextForm = () => {
-    setShowModal(false);
+    setPopup(false); // Close the popup
   };
 
   const handleTextFormSubmit = (values: any) => {
@@ -153,9 +150,7 @@ function TimeTable() {
   return (
     <div className="">
       <h1>My Calendar App</h1>
-      {
-        loading && <Loading/>
-      }
+      {loading && <Loading />}
       <div className="date-picker">
         <div className="date-picker-container">
           <DatePicker value={selectedDate} onChange={handleSelectDate} />
@@ -197,9 +192,11 @@ function TimeTable() {
         />
       </div>
 
-     { popup && <BookSpa/>
-
-     }
+      {popup && (
+        <div className="book-form-action">
+          <BookSpa onClose={handleCloseTextForm} />
+        </div>
+      )}
     </div>
   );
 }

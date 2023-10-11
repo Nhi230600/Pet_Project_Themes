@@ -1,5 +1,3 @@
-import React from "react";
-import bone from "images/bone.png"
 import Button from "components/ButtonBooking";
 import "./Content.css";
 
@@ -23,14 +21,10 @@ const App = () => {
                 dui non diam.
               </p>
             </div>
-            <Button content="Book now"/>
+            <Button content="Book now" />
           </div>
-          
-
         </div>
       </div>
-
-
     </div>
   );
 };

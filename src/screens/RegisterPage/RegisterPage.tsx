@@ -1,6 +1,6 @@
 import { Form, Input } from "antd";
+import LogoNav from "components/LogoHeader";
 import { toast } from "react-toastify";
-import Logo from "../../images/logo.png";
 import "./RegisterPage.css";
 
 const RegisterPage = () => {
@@ -16,16 +16,10 @@ const RegisterPage = () => {
     <div className="container-register">
       <div className="container-register-header">
         <div className="container-register-header-logo">
-          <img style={{ width: "180%" }} src={Logo} alt="logo" />
+          <LogoNav />
         </div>
         <div className="container-register-header-name">
-          <span
-            style={{
-              textShadow: "0.1rem 0.2rem 0.1rem rgb(245, 214, 129)",
-            }}
-          >
-            ĐĂNG KÝ
-          </span>
+          <span>ĐĂNG KÝ</span>
         </div>
       </div>
       <Form

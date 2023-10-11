@@ -1,3 +1,16 @@
-.date-pciker{
-	display: flex;
+.date-pciker {
+  display: flex;
+}
+.book-form-action {
+  position: fixed;
+  top: 50%; /* Đặt vị trí theo chiều dọc ở giữa màn hình */
+  left: 50%; /* Đặt vị trí theo chiều ngang ở giữa màn hình */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Dịch chuyển popup để căn giữa hoàn toàn */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 9999; /* Độ ưu tiên của popup trên các phần khác */
 }
