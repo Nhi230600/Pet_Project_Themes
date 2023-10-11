@@ -1,6 +1,7 @@
 import { Button, DatePicker, TimePicker } from "antd";
 import "antd/dist/antd.css";
 import axios from "axios";
+import { EmployeeData } from "components";
 import moment, { Moment } from "moment";
 import { useEffect, useState } from "react";
 import { Calendar, momentLocalizer } from "react-big-calendar";
@@ -11,7 +12,7 @@ import BookSpa from "../../Booking";
 import "./TimeTable.css";
 
 import { Loading } from "components";
-
+import Employee from "components/EmployeeConstant/Type";
 const localizer = momentLocalizer(moment);
 
 interface Appointment {
@@ -30,6 +31,16 @@ function TimeTable() {
   const [view, setView] = useState("week");
   const [popup, setPopup] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [employees, setEmployees] = useState(EmployeeData);
+  const [employee, setEmployee] = useState<Employee>({
+    id: 0,
+    name: "",
+    type: "",
+    position: "",
+    account: "",
+    password: "",
+    avatar: "",
+  });
   useEffect(() => {
     setLoading(true);
     async function fetchAppointments() {
@@ -60,6 +71,20 @@ function TimeTable() {
 
     fetchAppointments();
   }, [id_employee]);
+
+  useEffect(() => {
+    if (id_employee) {
+      // Chỉ chạy khi id_employee có giá trị
+      const foundEmployee = employees.find(
+        (emp) => emp.id === parseInt(id_employee, 10)
+      );
+
+      if (foundEmployee) {
+        // Nếu tìm thấy nhân viên, cập nhật giá trị cho employee
+        setEmployee(foundEmployee);
+      }
+    }
+  }, [id_employee, employees]);
 
   const minTime = new Date(0, 0, 0, 7, 0);
   const maxTime = new Date(0, 0, 0, 17, 0);
@@ -194,7 +219,7 @@ function TimeTable() {
 
       {popup && (
         <div className="book-form-action">
-          <BookSpa onClose={handleCloseTextForm} />
+          <BookSpa onClose={handleCloseTextForm} employee={employee} />
         </div>
       )}
     </div>
