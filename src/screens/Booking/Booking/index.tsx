@@ -1,20 +1,23 @@
-import { useState } from "react";
+import Employee from "components/EmployeeConstant/Type";
+import { useEffect, useState } from "react";
 import { BookingForm } from "../Component";
 import "./Booking.css";
-import { formConfig, formTypes } from "./Constants"; // Assuming you've properly imported BookingForm
-import { EmployeeData } from "components";
+import { formConfig } from "./Constants"; // Assuming you've properly imported BookingForm
+
 type BookProps = {
   typeof_book?: string;
   onClose: () => void;
+  employee: Employee;
 };
-const BookSpa: React.FC<BookProps> = (props) => {
-  const { typeof_book = "spa", onClose } = props;
 
-  const [employees, setEmployees] = useState(EmployeeData);
-  const [selectedForm, setSelectedForm] = useState(typeof_book);
-  const handleFormChange = (form: string) => {
-    setSelectedForm(form);
-  };
+const BookSpa: React.FC<BookProps> = (props) => {
+  const { employee, onClose } = props;
+  const [employeeDetail, setEmployeeDetail] = useState(employee);
+  const [type, setType] = useState("spa");
+  useEffect(() => {
+    setType(employeeDetail.type);
+  }, [employeeDetail.type]);
+
   return (
     <>
       <div className="booking-spa">
@@ -22,7 +25,7 @@ const BookSpa: React.FC<BookProps> = (props) => {
           <div className="booking-spa-form-content">
             <div className="form-selector"></div>
 
-            <BookingForm {...formConfig[selectedForm]} />
+            <BookingForm {...formConfig[`${type}`]} />
           </div>
         </div>
         <button className="close-button-booking" onClick={onClose}>

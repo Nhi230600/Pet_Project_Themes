@@ -11,9 +11,8 @@ import {
   PlusCircleOutlined,
 } from "@ant-design/icons";
 import "antd/dist/antd.css";
-import { Employee } from "./Employee";
 import { EmployeeData } from "components";
-
+import Employee from "components/EmployeeConstant/Type";
 const EmployeeListPage = () => {
   const [employees, setEmployees] = useState(EmployeeData);
   const [currentPage, setCurrentPage] = useState(1);
@@ -69,8 +68,8 @@ const EmployeeListPage = () => {
 
     {
       title: "Chức vụ",
-      dataIndex: "type",
-      key: "type",
+      dataIndex: "position",
+      key: "position",
       render: (type: string) => <Tag className="style">{type}</Tag>,
     },
     {
