@@ -4,6 +4,7 @@ import React, { Suspense, lazy } from "react";
 import Nav from "components/Nav";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Loading from "components/Loading";
+import { MyCalendar } from "components";
 
 const LazyService = lazy(() => import("components/Service"));
 const LazyTrainerList = lazy(() => import("components/TrainerList"));
@@ -32,7 +33,7 @@ const Homepage = () => {
             <div>
               <LazyContact />
             </div>
-
+            <MyCalendar/>
             <div>
               <LazyTrainerList />
             </div>

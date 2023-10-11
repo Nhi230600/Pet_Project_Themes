@@ -7,3 +7,4 @@ export { default as ButtonUser } from "./ButtonUser";
 export { default as Service } from "./Service";
 export { default as TrainerList } from "./TrainerList";
 export { default as Button } from "./Button";
+export { default as MyCalendar} from "./Calendar/MyCalendar"
