@@ -1,5 +1,6 @@
 import React from "react";
 import { OrderButton } from "..";
+import { useNavigate } from "react-router-dom";
 import "./BookingForm.css";
 interface Option {
   value: string;
@@ -19,8 +20,12 @@ const BookingForm: React.FC<BookingFormProps> = ({
   timeLabel,
   notePlaceholder,
 }) => {
+  const navigate = useNavigate();
+  const handleSubmit = () => {
+   navigate("/appointment");
+  };
   return (
-    <form action="#" className="form-content">
+    <form action="#" className="form-content" >
       <h2 className="booking-spa-form-title">{title}</h2>
 
       <p>
@@ -57,7 +62,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
         placeholder={notePlaceholder}
       ></textarea>
 
-      <OrderButton />
+      <OrderButton onClick={handleSubmit}/>
     </form>
   );
 };
