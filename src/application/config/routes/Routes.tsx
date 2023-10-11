@@ -1,46 +1,36 @@
-import React from "react";
-
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import {
+  AddEmployeePage,
+  AddServicePage,
+  AddShiftPage,
+  Contact,
+  Content,
+  CreateTreatmentIn,
+  CustomerTreatment,
+  Dashboard,
+  EditServicePage,
+  EmployeeAppointmentListPage,
+  EmployeeDetailPage,
+  EmployeeeCustomerProfile,
+  EmployeeEditPage,
+  EmployeeListPage,
   Homepage,
   MyPet,
-  Dashboard,
-  BookSpa,
-  Contact,
-  ProfileUser,
-  EmployeeListPage,
-  AddEmployeePage,
-  EmployeeDetailPage,
-  EmployeeEditPage,
-  ViewServicePage,
-  AddServicePage,
-  EditServicePage,
-  AddShiftPage,
-  ViewAppointmentAdmin,
-  EmployeeAppointmentListPage,
-  CustomerTreatment,
   PetCheckupPage,
-  EmployeeeCustomerProfile,
-  CreateTreatmentIn,
-  Content,
   Sales,
+  UserList,
+  ViewServicePage,
+  ViewAppointmentAdmin,
+  ProfileUser,
 } from "screens";
-import Button from "components/ButtonBooking";
-import Loading from "components/Loading";
+import Booking from "screens/Booking/Booking";
+import TimeTable from "screens/Booking/Component/TimeTable";
 
 const Router = createBrowserRouter([
   {
-    
-    path: "loading",
+    path: "timetable/:id",
 
-    element: <Loading />,
-
-  },
-  
-  {
-    path: "sales",
-
-    element: <Sales />,
+    element: <TimeTable />,
   },
   {
     path: "content",
@@ -68,7 +58,11 @@ const Router = createBrowserRouter([
 
         element: <Dashboard />,
       },
+      {
+        path: "customer",
 
+        element: <UserList />,
+      },
       {
         path: "service",
 
@@ -141,12 +135,6 @@ const Router = createBrowserRouter([
         ],
       },
     ],
-  },
-
-  {
-    path: "bookspa",
-
-    element: <BookSpa />,
   },
 
   {

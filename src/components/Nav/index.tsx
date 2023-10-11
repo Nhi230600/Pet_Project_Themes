@@ -91,7 +91,7 @@ const Nav = () => {
             </a>
           </li>
           <li className="nav-i-booking">
-            <a className="nav-booking" href="/bookspa">
+            <a className="nav-booking" href="/booking">
               Booking
             </a>
           </li>

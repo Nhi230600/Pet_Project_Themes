@@ -1,4 +1,3 @@
-
 import { Carousel, Card } from "antd";
 import ImagesComponent from "components/Banner"
 import slidersData from "./slidersData";
