@@ -19,6 +19,7 @@ interface Appointment {
   id: number;
   start: string;
   end: string;
+  status: number;
   title: string;
 }
 
@@ -56,6 +57,7 @@ function TimeTable() {
               id: appointment.id,
               start: new Date(appointment.start),
               end: new Date(appointment.end),
+              status: appointment.status,
               title: appointment.title,
             })
           );
@@ -214,6 +216,10 @@ function TimeTable() {
           view={view}
           date={selectedDate}
           onView={handleViewChange}
+          className="custom-calendar"
+          eventPropGetter={(event: Appointment) => ({
+            className: `event-status-${event.status}`, // Đặt lớp CSS dựa trên giá trị status
+          })}
         />
       </div>
 
