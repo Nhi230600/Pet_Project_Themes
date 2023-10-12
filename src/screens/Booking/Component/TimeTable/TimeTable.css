@@ -14,3 +14,14 @@
   justify-content: center;
   z-index: 9999; /* Độ ưu tiên của popup trên các phần khác */
 }
+.custom-calendar .event-status-1 {
+  background-color: rgb(92, 92, 197);
+}
+
+.custom-calendar .event-status-2 {
+  background-color: red;
+}
+
+.custom-calendar .event-status-3 {
+  background-color: green;
+}
