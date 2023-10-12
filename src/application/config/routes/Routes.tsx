@@ -22,9 +22,17 @@ import {
   ViewAppointmentAdmin,
   ProfileUser,
 } from "screens";
+
+import { FilterEmployee } from "screens/Booking/Component";
+
 import TimeTable from "screens/Booking/Component/TimeTable";
 
 const Router = createBrowserRouter([
+  {
+    path: "booking",
+    element: <FilterEmployee />,
+  },
+
   {
     path: "timetable/:id",
 

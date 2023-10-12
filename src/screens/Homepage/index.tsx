@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Loading from "components/Loading";
 import Nav from "components/Nav";
 import { Suspense, lazy } from "react";
+import { FilterEmployee } from "screens/Booking/Component";
 const LazyService = lazy(() => import("screens/Homepage/ServiceHomePage"));
 const LazyTrainerList = lazy(() => import("screens/Homepage/TrainerList"));
 const LazyAchievement = lazy(() => import("screens/Homepage/Achievements"));
@@ -38,6 +39,7 @@ const Homepage = () => {
             <LazyContact />
           </div>
 
+          <FilterEmployee/>
           <div>
             <LazyTrainerList />
           </div>
