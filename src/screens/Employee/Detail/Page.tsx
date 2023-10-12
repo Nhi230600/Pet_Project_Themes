@@ -32,7 +32,6 @@ const { Text } = Typography;
 
 const EmployeeDetailPage = () => {
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
-  const [showShifts, setShowShifts] = useState(true);
 
   const [employee] = useState({
     name: "Nguyễn Văn A",
@@ -108,8 +107,8 @@ const EmployeeDetailPage = () => {
       tab: "Buổi hẹn",
     },
   ];
-  const pageSize = 3; // Số mục trên mỗi trang
-  const totalItems = employee.appointments.length; // Tổng số mục
+  const pageSize = 3;
+  const totalItems = employee.appointments.length;
 
   const [currentPage, setCurrentPage] = useState(1);
 

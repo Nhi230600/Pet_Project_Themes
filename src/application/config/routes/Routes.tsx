@@ -17,13 +17,11 @@ import {
   Homepage,
   MyPet,
   PetCheckupPage,
-  Sales,
   UserList,
   ViewServicePage,
   ViewAppointmentAdmin,
   ProfileUser,
 } from "screens";
-import Booking from "screens/Booking/Booking";
 import TimeTable from "screens/Booking/Component/TimeTable";
 
 const Router = createBrowserRouter([

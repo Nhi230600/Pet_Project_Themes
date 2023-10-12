@@ -120,31 +120,21 @@ const initialServices: Record<
 
 const ViewServicePage = () => {
   const [currentServiceType, setCurrentServiceType] = useState("Spa");
-
   const [currentPage, setCurrentPage] = useState(1);
-
   const pageSize = 9;
-
   const serviceList = initialServices[currentServiceType];
-
   const totalPages = Math.ceil(serviceList.length / pageSize);
-
   const handleServiceTypeChange = (serviceType: any) => {
     setCurrentServiceType(serviceType);
-
     setCurrentPage(1);
   };
 
   const handleDeleteService = (serviceName: any) => {
     Modal.confirm({
       title: `Xác nhận xóa ${serviceName}`,
-
       content: `Bạn có chắc chắn muốn xóa dịch vụ "${serviceName}"?`,
-
       okText: "Xóa",
-
       okType: "danger",
-
       cancelText: "Hủy",
 
       onOk() {
@@ -158,25 +148,19 @@ const ViewServicePage = () => {
 
         toast.success("Xóa thành công", {
           position: toast.POSITION.TOP_CENTER,
-
           autoClose: 2000,
-
           hideProgressBar: true,
         });
-
         setCurrentPage(1);
-
         initialServices[currentServiceType] =
           updatedServiceList[currentServiceType];
       },
-
       onCancel() {},
     });
   };
 
   const paginatedServiceList = serviceList.slice(
     (currentPage - 1) * pageSize,
-
     currentPage * pageSize
   );
 
@@ -228,7 +212,6 @@ const ViewServicePage = () => {
               <ul>
                 <li>
                   <p>{subService.description}</p>
-
                   <p className="service-price">
                     <DollarCircleOutlined /> ${subService.price}
                   </p>
