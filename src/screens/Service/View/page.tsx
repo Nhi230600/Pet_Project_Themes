@@ -45,8 +45,6 @@ const initialServices: Record<
       description: "Dịch vụ nhuộm lông cho thú cưng.",
       price: 50,
     },
-
-    // Thêm các dịch vụ con khác tại đây
   ],
 
   "Huấn luyện": [
@@ -79,8 +77,6 @@ const initialServices: Record<
       description: "Khóa học huấn luyện cho chó lớn.",
       price: 70,
     },
-
-    // Thêm các dịch vụ con khác tại đây
   ],
 
   "Chăm sóc sức khỏe thú cưng": [
@@ -113,8 +109,6 @@ const initialServices: Record<
       description: "Dịch vụ xét nghiệm máu cho thú cưng.",
       price: 65,
     },
-
-    // Thêm các dịch vụ con khác tại đây
   ],
 };
 

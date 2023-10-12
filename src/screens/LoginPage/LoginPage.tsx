@@ -7,8 +7,6 @@ import LogoNav from "components/LogoHeader";
 const LoginPage = () => {
   const onFinish = async (values: any) => {
     const { account } = values;
-
-    // Check if account is equal to '1'
     if (account === "1") {
       sessionStorage.setItem("account", "1");
       window.location.href = "/";
@@ -24,7 +22,6 @@ const LoginPage = () => {
   };
 
   const onFinishFailed = (errorInfo: any) => {
-    // Handle form validation failure here
     toast.error("Lỗi!!!");
   };
 
@@ -44,8 +41,8 @@ const LoginPage = () => {
         labelCol={{ span: 6 }}
         wrapperCol={{ span: 16 }}
         initialValues={{ remember: true }}
-        onFinish={onFinish} // Call onFinish when the form is submitted
-        onFinishFailed={onFinishFailed} // Call onFinishFailed on form validation failure
+        onFinish={onFinish}
+        onFinishFailed={onFinishFailed}
         autoComplete="off"
       >
         <Form.Item

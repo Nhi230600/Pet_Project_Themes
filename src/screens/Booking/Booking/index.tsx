@@ -14,8 +14,9 @@ const BookSpa: React.FC<BookProps> = (props) => {
   const { employee, onClose } = props;
   const [employeeDetail, setEmployeeDetail] = useState(employee);
   const [type, setType] = useState("spa");
+
   useEffect(() => {
-    setType(employeeDetail.type);
+    setType(employeeDetail.type); // set giá trị của type
   }, [employeeDetail.type]);
 
   return (
@@ -24,12 +25,11 @@ const BookSpa: React.FC<BookProps> = (props) => {
         <div className="booking-spa-form">
           <div className="booking-spa-form-content">
             <div className="form-selector"></div>
-
             <BookingForm {...formConfig[`${type}`]} />
           </div>
         </div>
         <button className="close-button-booking" onClick={onClose}>
-          X
+          &times;
         </button>
       </div>
     </>

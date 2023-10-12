@@ -1,5 +1,5 @@
-import Button from "components/ButtonBooking";
 import "./Content.css";
+import ButtonDog from "components/ButtonBooking";
 
 const App = () => {
   return (
@@ -20,8 +20,8 @@ const App = () => {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu
                 dui non diam.
               </p>
+              <ButtonDog content="Book now" />
             </div>
-            <Button content="Book now" />
           </div>
         </div>
       </div>

@@ -26,10 +26,7 @@
   font-size: 50px;
   margin: 10px;
 }
-.bone {
-  width: 250px;
-  height: auto;
-}
+
 .link-wrap {
   cursor: pointer;
   position: relative;
@@ -40,11 +37,6 @@
   position: relative;
   width: 200px; /* Điều chỉnh kích thước của container hình ảnh */
   transition: transform 0.3s ease-in-out; /* Hiệu ứng di chuyển */
-}
-
-.bone {
-  width: 200px;
-  height: 250px;
 }
 
 .link-wrap:hover .image-container {
