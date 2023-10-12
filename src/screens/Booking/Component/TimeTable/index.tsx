@@ -29,6 +29,8 @@ function TimeTable() {
   const [selectedDate, setSelectedDate] = useState<Moment | null>(null);
   const [startTime, setStartTime] = useState<Moment | null>(null);
   const [endTime, setEndTime] = useState<Moment | null>(null);
+  const [startDateTime, setStartDateTime] = useState("");
+  const [endDateTime, setEndDateTime] = useState("");
   const [view, setView] = useState("week");
   const [popup, setPopup] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -129,7 +131,9 @@ function TimeTable() {
         .date(date)
         .hour(endTime.hour())
         .minute(endTime.minute());
-
+        
+        setStartDateTime(() => startDateTime.toISOString());
+        setEndDateTime(() => endDateTime.toISOString());
       const postData = {
         start: startDateTime.toISOString(),
         end: endDateTime.toISOString(),
@@ -225,7 +229,7 @@ function TimeTable() {
 
       {popup && (
         <div className="book-form-action">
-          <BookSpa onClose={handleCloseTextForm} employee={employee} />
+          <BookSpa onClose={handleCloseTextForm} employee={employee} start={startDateTime} end={endDateTime}/>
         </div>
       )}
     </div>

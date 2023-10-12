@@ -8,10 +8,12 @@ type BookProps = {
   typeof_book?: string;
   onClose: () => void;
   employee: Employee;
+  start: string;
+  end: string;
 };
 
 const BookSpa: React.FC<BookProps> = (props) => {
-  const { employee, onClose } = props;
+  const { employee, onClose, start, end } = props;
   const [employeeDetail, setEmployeeDetail] = useState(employee);
   const [type, setType] = useState("spa");
   useEffect(() => {
@@ -25,7 +27,7 @@ const BookSpa: React.FC<BookProps> = (props) => {
           <div className="booking-spa-form-content">
             <div className="form-selector"></div>
 
-            <BookingForm {...formConfig[`${type}`]} />
+            <BookingForm {...formConfig[`${type}`]} start={start} end = {end} employee_id={employee.id} />
           </div>
         </div>
         <button className="close-button-booking" onClick={onClose}>
