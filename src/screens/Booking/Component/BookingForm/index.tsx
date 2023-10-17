@@ -5,8 +5,6 @@ import "./BookingForm.css";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-
-
 interface Option {
   value: string;
   label: string;
@@ -22,7 +20,7 @@ interface BookingFormProps {
   employee_id: number;
   setCheckadd: (newValue: number) => void;
   checkadd: number;
-  setPopup : (newValue: boolean) => void;
+  setPopup: (newValue: boolean) => void;
 }
 
 const BookingForm: React.FC<BookingFormProps> = ({
@@ -35,8 +33,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
   employee_id,
   setCheckadd,
   checkadd,
-  setPopup
-  
+  setPopup,
 }) => {
   const navigate = useNavigate();
   const [service, setService] = useState("");
@@ -65,14 +62,18 @@ const BookingForm: React.FC<BookingFormProps> = ({
         // Xử lý lỗi nếu có lỗi kết nối
         toast.error("Lỗi");
       });
-      setCheckadd(checkadd+1);
-      setPopup(false);
+    setCheckadd(checkadd + 1);
+    setPopup(false);
   };
 
   return (
     <form action="#" className="form-content">
       <h2 className="booking-spa-form-title">{title}</h2>
-
+      <h3>YÊU CẦU DỊCH VỤ:</h3>
+      <p>
+        Vui lòng chọn 1 dịch vụ bạn đang cần để PetsLove có thể chuẩn bị, và
+        phục vụ các bé một cách chu đáo nhất nhé!
+      </p>
       <select
         className="request-service"
         name="services"

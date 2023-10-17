@@ -39,7 +39,6 @@ const Homepage = () => {
             <LazyContact />
           </div>
 
-          <FilterEmployee/>
           <div>
             <LazyTrainerList />
           </div>

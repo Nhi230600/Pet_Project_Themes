@@ -1,12 +1,11 @@
-import { useState } from "react";
-import { Menu, Dropdown } from "antd";
+import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
+import { Drawer, Dropdown, Menu } from "antd";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./Nav.css";
+import DrawerContent from "components/DrawerContent";
 import LoginRegister from "components/LoginRegister";
 import LogoNav from "components/LogoHeader";
-import DrawerContent from "components/DrawerContent";
-import { Drawer } from "antd";
-import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
+import { useState } from "react";
+import "./Nav.css";
 
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
