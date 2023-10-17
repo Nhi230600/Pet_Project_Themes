@@ -36,6 +36,8 @@ function TimeTable() {
   const [employee, setEmployee] = useState<Employee>({
     id: 0,
     name: "",
+    exp: 0,
+    gender: "",
     type: "",
     position: "",
     account: "",

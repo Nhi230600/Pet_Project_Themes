@@ -3,6 +3,8 @@
     {
         id: 1,
         name: "Nguyễn Văn A",
+        exp: 5,
+        gender: "Nam",
         type: "care",
         position:"Bác sĩ",      
         account: "nvana",
@@ -12,6 +14,8 @@
       {
         id: 2,
         name: "Trần Thị B",
+        exp: 4,
+        gender: "Nữ",
         type: "care",
         position:"Bác sĩ", 
         account: "ttb",
@@ -21,6 +25,8 @@
       {
         id: 3,
         name: "Lê Quang C",
+        exp: 5,
+        gender: "Nam",
         type: "trainer",
         position: "Huấn luyện viên",
         account: "lqc",
@@ -30,6 +36,8 @@
       {
         id: 4,
         name: "Phạm Thị D",
+        exp: 3,
+        gender: "Nữ",
         type: "spa",
         position: "Nhân viên chăm sóc",
         account: "ptd",
@@ -39,6 +47,8 @@
       {
         id: 5,
         name: "Hoàng Văn E",
+        exp: 2,
+        gender: "Nam",
         type: "care",
         position: "Bác sĩ",
         account: "hve",
@@ -48,6 +58,8 @@
       {
         id: 6,
         name: "Mai Thị F",
+        exp: 3,
+        gender: "Nữ",
         type: "spa",
         position: "Nhân viên chăm sóc",
         account: "mtf",
@@ -57,6 +69,8 @@
       {
         id: 7,
         name: "Lý Thanh G",
+        exp: 5,
+        gender: "Nam",
         type: "trainer",
         position: "Huấn luyện viên",
         account: "ltg",
@@ -66,6 +80,8 @@
       {
         id: 8,
         name: "Đinh Văn H",
+        exp: 4,
+        gender: "Nam",
         type: "spa",
         position: "Nhân viên chăm sóc",
         account: "dvh",
@@ -75,6 +91,8 @@
       {
         id: 9,
         name: "Vũ Thị I",
+        exp: 7,
+        gender: "Nữ",
         type: "care",
         position: "Bác sĩ",
         account: "vti",
@@ -84,6 +102,8 @@
       {
         id: 10,
         name: "Trần Văn J",
+        exp: 6,
+        gender: "Nam",
         type: "trainer",
         position: "Huấn luyện viên",
         account: "tvj",
@@ -93,6 +113,8 @@
       {
         id: 11,
         name: "Nguyễn Thị K",
+        exp: 4,
+        gender: "Nữ",
         type: "spa",
         position: "Nhân viên chăm sóc",
         account: "ntk",
@@ -102,6 +124,8 @@
       {
         id: 12,
         name: "Lê Văn L",
+        exp: 2,
+        gender: "Nam",
         type: "care",
         position: "Bác sĩ",
         account: "lvl",
@@ -111,6 +135,8 @@
       {
         id: 13,
         name: "Trương Thị M",
+        exp: 1,
+        gender: "Nữ",
         type: "spa",
         position: "Nhân viên chăm sóc",
         account: "ttm",
@@ -120,6 +146,8 @@
       {
         id: 14,
         name: "Phan Văn N",
+        exp: 7,
+        gender: "Nam",
         type: "trainer",
         position: "Huấn luyện viên",
         account: "pvn",

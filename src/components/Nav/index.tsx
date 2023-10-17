@@ -25,17 +25,17 @@ const Nav = () => {
 
   const blogMenu = (
     <Menu>
-      <Menu.Item key="4">
+      <Menu.Item>
         <a href="https://mypet.vn/chia-se-kinh-nghiem-cham-soc-thu-cung/">
           Chia sẻ kinh nghiệm
         </a>
       </Menu.Item>
-      <Menu.Item key="5">
+      <Menu.Item>
         <a href="https://taphoamakudo.vn/pages/chamsocthucungtainha">
           Dịch vụ tại nhà
         </a>
       </Menu.Item>
-      <Menu.Item key="6">
+      <Menu.Item>
         <a href="https://nuoicun.com/category/goc-giai-tri/">Góc giải trí</a>
       </Menu.Item>
     </Menu>

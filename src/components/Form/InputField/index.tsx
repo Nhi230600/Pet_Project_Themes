@@ -1,8 +1,6 @@
 // InputField.js
-import { DatePicker, Form, Input } from "antd";
+import { Form, Input } from "antd";
 import React from "react";
-
-const { RangePicker } = DatePicker;
 
 interface InputFieldProps {
   name: string;
