@@ -5,6 +5,8 @@ import "./BookingForm.css";
 import axios from "axios";
 import { toast } from "react-toastify";
 
+
+
 interface Option {
   value: string;
   label: string;
@@ -18,6 +20,9 @@ interface BookingFormProps {
   start: string;
   end: string;
   employee_id: number;
+  setCheckadd: (newValue: number) => void;
+  checkadd: number;
+  setPopup : (newValue: boolean) => void;
 }
 
 const BookingForm: React.FC<BookingFormProps> = ({
@@ -28,6 +33,10 @@ const BookingForm: React.FC<BookingFormProps> = ({
   start,
   end,
   employee_id,
+  setCheckadd,
+  checkadd,
+  setPopup
+  
 }) => {
   const navigate = useNavigate();
   const [service, setService] = useState("");
@@ -46,7 +55,6 @@ const BookingForm: React.FC<BookingFormProps> = ({
         // Xử lý kết quả từ server
         if (response.data.success) {
           // Chuyển hướng sau khi gửi thành công
-          navigate(`/appointment`);
           toast.success("Đặt đơn thành công");
         } else {
           // Xử lý lỗi nếu cần
@@ -57,14 +65,13 @@ const BookingForm: React.FC<BookingFormProps> = ({
         // Xử lý lỗi nếu có lỗi kết nối
         toast.error("Lỗi");
       });
+      setCheckadd(checkadd+1);
+      setPopup(false);
   };
 
   return (
     <form action="#" className="form-content">
       <h2 className="booking-spa-form-title">{title}</h2>
-      <h3>
-        {start} {end} "{employee_id}"
-      </h3>
 
       <select
         className="request-service"
