@@ -26,11 +26,14 @@ interface Appointment {
 function TimeTable() {
   const { id: id_employee } = useParams();
   const [appointments, setAppointments] = useState<Appointment[]>([]);
+  const [checkadd, setCheckadd] = useState<number>(1);
   const [selectedDate, setSelectedDate] = useState<Moment | null>(null);
   const [startTime, setStartTime] = useState<Moment | null>(null);
   const [endTime, setEndTime] = useState<Moment | null>(null);
+  const [startDateTime, setStartDateTime] = useState("");
+  const [endDateTime, setEndDateTime] = useState("");
   const [view, setView] = useState("week");
-  const [popup, setPopup] = useState(false);
+  const [popup, setPopup] = useState<boolean>(false);
   const [loading, setLoading] = useState(false);
   const [employees, setEmployees] = useState(EmployeeData);
   const [employee, setEmployee] = useState<Employee>({
@@ -75,6 +78,37 @@ function TimeTable() {
 
     fetchAppointments();
   }, [id_employee]);
+  useEffect (()=>{
+    setLoading(true);
+    async function fetchAppointments() {
+      try {
+        // Replace with your actual API endpoint for fetching appointments
+        const response = await axios.get(
+          `https://zzzzzz-rr1t.onrender.com/api/appointment/getByEmployeeId/${id_employee}`
+        );
+
+        if (response.status === 200) {
+          const formattedAppointments = response.data.map(
+            (appointment: Appointment) => ({
+              id: appointment.id,
+              start: new Date(appointment.start),
+              end: new Date(appointment.end),
+              status: appointment.status,
+              title: appointment.title,
+            })
+          );
+          setAppointments(formattedAppointments);
+        } else {
+          // Handle errors if necessary
+        }
+      } catch (error) {
+        // Handle errors if necessary
+      }
+      setLoading(false);
+    }
+
+    fetchAppointments();
+  }, [checkadd])
 
   useEffect(() => {
     if (id_employee) {
@@ -131,7 +165,9 @@ function TimeTable() {
         .date(date)
         .hour(endTime.hour())
         .minute(endTime.minute());
-
+        
+        setStartDateTime(() => startDateTime.toISOString());
+        setEndDateTime(() => endDateTime.toISOString());
       const postData = {
         start: startDateTime.toISOString(),
         end: endDateTime.toISOString(),
@@ -227,7 +263,7 @@ function TimeTable() {
 
       {popup && (
         <div className="book-form-action">
-          <BookSpa onClose={handleCloseTextForm} employee={employee} />
+          <BookSpa onClose={handleCloseTextForm} employee={employee} start={startDateTime} end={endDateTime} setCheckadd={setCheckadd} checkadd={checkadd} setPopup={setPopup} />
         </div>
       )}
     </div>
