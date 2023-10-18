@@ -46,6 +46,8 @@ function TimeTable() {
     account: "",
     password: "",
     avatar: "",
+    description: "",
+    appointment: 0,
   });
   useEffect(() => {
     setLoading(true);
@@ -78,7 +80,7 @@ function TimeTable() {
 
     fetchAppointments();
   }, [id_employee]);
-  useEffect (()=>{
+  useEffect(() => {
     setLoading(true);
     async function fetchAppointments() {
       try {
@@ -108,7 +110,7 @@ function TimeTable() {
     }
 
     fetchAppointments();
-  }, [checkadd])
+  }, [checkadd]);
 
   useEffect(() => {
     if (id_employee) {
@@ -165,9 +167,9 @@ function TimeTable() {
         .date(date)
         .hour(endTime.hour())
         .minute(endTime.minute());
-        
-        setStartDateTime(() => startDateTime.toISOString());
-        setEndDateTime(() => endDateTime.toISOString());
+
+      setStartDateTime(() => startDateTime.toISOString());
+      setEndDateTime(() => endDateTime.toISOString());
       const postData = {
         start: startDateTime.toISOString(),
         end: endDateTime.toISOString(),
@@ -263,7 +265,15 @@ function TimeTable() {
 
       {popup && (
         <div className="book-form-action">
-          <BookSpa onClose={handleCloseTextForm} employee={employee} start={startDateTime} end={endDateTime} setCheckadd={setCheckadd} checkadd={checkadd} setPopup={setPopup} />
+          <BookSpa
+            onClose={handleCloseTextForm}
+            employee={employee}
+            start={startDateTime}
+            end={endDateTime}
+            setCheckadd={setCheckadd}
+            checkadd={checkadd}
+            setPopup={setPopup}
+          />
         </div>
       )}
     </div>

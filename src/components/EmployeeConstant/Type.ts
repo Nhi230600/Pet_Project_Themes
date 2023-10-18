@@ -8,6 +8,8 @@ interface Employee {
     account: string;
     password: string;
     avatar: string;
+    description: string;
+    appointment: number;
 
 }
 

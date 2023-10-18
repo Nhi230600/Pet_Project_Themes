@@ -1,0 +1,108 @@
+.select-wrapper-booking {
+  width: 100%;
+  margin-bottom: 20px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.select-content {
+  width: 500px;
+}
+
+.employee-booking {
+  position: relative;
+  width: 65%;
+  background-color: #fff;
+  margin: auto;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.employee-booking > div {
+  position: relative;
+  z-index: 10;
+}
+.employee-booking .title {
+  background-color: black;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
+  font-size: 18px;
+  z-index: 20;
+}
+.employee-booking .text {
+  text-align: left;
+  width: 49.5%;
+  display: inline-block;
+  vertical-align: middle;
+  color: #333;
+  font-weight: 300;
+  padding: 20px 0;
+}
+.employee-booking .text .code {
+  padding: 0 20px;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.employee-booking .text .description {
+  padding: 0 20px;
+  margin-bottom: 10px;
+  color: #757575;
+}
+.employee-booking .text .review {
+  font-size: 14px;
+  padding: 0 20px;
+}
+.employee-booking .text .review > span {
+  vertical-align: middle;
+}
+.employee-booking .text .button-booking-actions {
+  padding: 0 20px;
+}
+.employee-booking .text .button-booking-actions button {
+  width: 50%;
+  border-radius: 20px;
+  vertical-align: middle;
+  background-color: rgb(236, 99, 35);
+  box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+}
+.employee-booking .avatar-booking {
+  width: 50%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.content-avatar-booking {
+  display: flex;
+  justify-content: center;
+}
+
+.employee-booking .avatar-booking img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+.avatar-booking .circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: dotted;
+}
+.employee-booking:hover .avatar-booking .image {
+  -webkit-transform: rotate(20deg);
+  -moz-transform: rotate(20deg);
+  -ms-transform: rotate(20deg);
+  -o-transform: rotate(20deg);
+  transform: rotate(20deg);
+}
+.employee-booking:hover .avatar-booking .circle {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
