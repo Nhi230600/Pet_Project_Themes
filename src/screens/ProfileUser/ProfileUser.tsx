@@ -1,11 +1,10 @@
-import { Upload, message } from "antd";
-
 import {
   faEdit,
   faUpload,
   faUserEdit,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Upload, message } from "antd";
 import Nav from "components/Nav";
 import AvatarUser from "../../images/avatar-user.jpeg";
 import "./ProfileUser.css";
@@ -50,7 +49,7 @@ const ProfileUser = () => {
                 />
               </div>
               <div>
-                <label htmlFor="">Truong Y Nhi</label>
+                <label htmlFor="">Ngocneeee</label>
               </div>
               <div>
                 <Upload {...props}>
@@ -82,7 +81,7 @@ const ProfileUser = () => {
                   }}
                   type="text"
                   name="title"
-                  value="Truong Y Nhi"
+                  value="Ngocneeee"
                 />
               </div>
             </div>
@@ -118,7 +117,7 @@ const ProfileUser = () => {
                   }}
                   type="text"
                   name="title"
-                  value="Nhon Hoa, An Nhon, Binh Dinh"
+                  value="Nhon An, An Nhon, Binh Dinh"
                 />
               </div>
             </div>

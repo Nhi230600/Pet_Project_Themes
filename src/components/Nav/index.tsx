@@ -1,12 +1,11 @@
-import { useState } from "react";
-import { Menu, Dropdown } from "antd";
+import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
+import { Drawer, Dropdown, Menu } from "antd";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./Nav.css";
+import DrawerContent from "components/DrawerContent";
 import LoginRegister from "components/LoginRegister";
 import LogoNav from "components/LogoHeader";
-import DrawerContent from "components/DrawerContent";
-import { Drawer } from "antd";
-import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
+import { useState } from "react";
+import "./Nav.css";
 
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -25,17 +24,17 @@ const Nav = () => {
 
   const blogMenu = (
     <Menu>
-      <Menu.Item key="4">
+      <Menu.Item>
         <a href="https://mypet.vn/chia-se-kinh-nghiem-cham-soc-thu-cung/">
           Chia sẻ kinh nghiệm
         </a>
       </Menu.Item>
-      <Menu.Item key="5">
+      <Menu.Item>
         <a href="https://taphoamakudo.vn/pages/chamsocthucungtainha">
           Dịch vụ tại nhà
         </a>
       </Menu.Item>
-      <Menu.Item key="6">
+      <Menu.Item>
         <a href="https://nuoicun.com/category/goc-giai-tri/">Góc giải trí</a>
       </Menu.Item>
     </Menu>

@@ -1,67 +1,56 @@
 /* Tùy chỉnh kiểu dáng cho phần tử h1 */
 .content-1 h1 {
-    display: block;
-    font-family: 'Nunito', sans-serif;
-    font-size: 96px;
-    font-weight: 800;
-    text-align: left;
-    color: orange;
-  }
-  .align-wrap {
-    font-family: 'Nunito', sans-serif;
-    font-size: 16px;
-    text-align: left;
-    color: orange;
-  }
-  .icon-wrap{
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
-    text-align: left;
-  }
-  .icon-wrap h3 {
-    color: orange;
-  }
-  .fab{
-    font-size: 50px;
-    margin: 10px;
-  }
-  .bone{
-    width: 250px;
-    height: auto;
-  }
-  .link-wrap {
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .image-container {
-    position: relative;
-    width: 200px; /* Điều chỉnh kích thước của container hình ảnh */
-    transition: transform 0.3s ease-in-out; /* Hiệu ứng di chuyển */
-  }
-  
-  .bone {
-    width: 200px;
-    height: 250px;
-  }
-  
-  .link-wrap:hover .image-container {
-    transform: scale(1.1); /* Khi di chuột vào, phóng to hình ảnh */
-  }
-  
-  .book-now {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    padding: 8px 16px;
-    border-radius: 4px;
-    font-weight: bold;/* Hiệu ứng hiển thị */
-    color: orange;
-  }
-  
+  display: block;
+  font-family: "Nunito", sans-serif;
+  font-size: 96px;
+  font-weight: 800;
+  text-align: left;
+  color: orange;
+}
+.align-wrap {
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+  text-align: left;
+  color: orange;
+}
+.icon-wrap {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  text-align: left;
+}
+.icon-wrap h3 {
+  color: orange;
+}
+.fab {
+  font-size: 50px;
+  margin: 10px;
+}
 
-  
+.link-wrap {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.image-container {
+  position: relative;
+  width: 200px; /* Điều chỉnh kích thước của container hình ảnh */
+  transition: transform 0.3s ease-in-out; /* Hiệu ứng di chuyển */
+}
+
+.link-wrap:hover .image-container {
+  transform: scale(1.1); /* Khi di chuột vào, phóng to hình ảnh */
+}
+
+.book-now {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: bold; /* Hiệu ứng hiển thị */
+  color: orange;
+}

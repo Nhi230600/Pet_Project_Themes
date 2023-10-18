@@ -2,7 +2,12 @@ import image from "images/doge.png";
 import "./Sales.css";
 import { Card } from "antd";
 import Button from "components/ButtonBooking";
+import { useNavigate } from "react-router-dom";
 const Sales = () => {
+  const navigate = useNavigate();
+  const showModal = () => {
+    navigate("/booking");
+  };
   return (
     <div className="sale-page" data-aos="fade-up">
       <Card>
@@ -20,7 +25,7 @@ const Sales = () => {
             <div className="box-content doge">
               <img src={image} />
             </div>
-            <div className="button-sale">
+            <div className="button-sale" onClick={showModal}>
               <Button content="BOOK NOW" />
             </div>
           </div>

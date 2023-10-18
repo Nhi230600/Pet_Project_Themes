@@ -4,8 +4,6 @@ import { BookingForm } from "../Component";
 import "./Booking.css";
 import { formConfig } from "./Constants"; // Assuming you've properly imported BookingForm
 
-
-
 type BookProps = {
   typeof_book?: string;
   onClose: () => void;
@@ -13,16 +11,18 @@ type BookProps = {
   start: string;
   end: string;
   setCheckadd: (newValue: number) => void;
-  checkadd : number;
-  setPopup : (newValue: boolean) => void;
+  checkadd: number;
+  setPopup: (newValue: boolean) => void;
 };
 
 const BookSpa: React.FC<BookProps> = (props) => {
-  const { employee, onClose, start, end, setCheckadd, checkadd, setPopup } = props;
+  const { employee, onClose, start, end, setCheckadd, checkadd, setPopup } =
+    props;
   const [employeeDetail, setEmployeeDetail] = useState(employee);
   const [type, setType] = useState("spa");
+
   useEffect(() => {
-    setType(employeeDetail.type);
+    setType(employeeDetail.type); // set giá trị của type
   }, [employeeDetail.type]);
 
   return (
@@ -32,11 +32,19 @@ const BookSpa: React.FC<BookProps> = (props) => {
           <div className="booking-spa-form-content">
             <div className="form-selector"></div>
 
-            <BookingForm {...formConfig[`${type}`]} start={start} end = {end} employee_id={employee.id} setCheckadd={setCheckadd} checkadd={checkadd} setPopup={setPopup} />
+            <BookingForm
+              {...formConfig[`${type}`]}
+              start={start}
+              end={end}
+              employee_id={employee.id}
+              setCheckadd={setCheckadd}
+              checkadd={checkadd}
+              setPopup={setPopup}
+            />
           </div>
         </div>
         <button className="close-button-booking" onClick={onClose}>
-          X
+          &times;
         </button>
       </div>
     </>

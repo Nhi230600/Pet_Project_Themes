@@ -1,26 +1,78 @@
-export { default as BookSpa } from "./Booking/Booking";
-export { default as LoginPage } from "./LoginPage/LoginPage";
-export { default as RegisterPage } from "./RegisterPage/RegisterPage";
-export { default as Dashboard } from "./Admin/EmployeeManage/Dashboard";
-export { default as EditEmp } from "./Employee/EditEmployee/EditEmp";
-export { default as Homepage } from "./Homepage";
-export { default as MyPet } from "./Pet/MyPet/MyPet";
-export { default as Contact } from "./Homepage/Contact";
-export { default as ProfileUser } from "./ProfileUser/ProfileUser";
-export { default as EmployeeListPage } from "./Employee/ListEmployee";
-export { default as AddEmployeePage } from "./Employee/Add";
-export { default as EmployeeDetailPage } from "./Employee/Detail";
-export { default as EmployeeEditPage } from "./Employee/Edit";
-export { default as ViewServicePage } from "./Service/View";
-export { default as AddServicePage } from "./Service/Add";
-export { default as EditServicePage } from "./Service/Edit";
-export { default as AddShiftPage } from "./Employee/Add-Shift";
-export { default as ViewAppointmentAdmin } from "./Admin-menu/appointment/View";
-export { default as EmployeeAppointmentListPage } from "./EmployeeView/appointmentList";
-export { default as CustomerTreatment } from "./EmployeeView/customerTreatment";
-export { default as PetCheckupPage } from "./EmployeeView/reBook";
-export { default as EmployeeeCustomerProfile } from "./EmployeeView/CustomerProfile";
-export { default as CreateTreatmentIn } from "./EmployeeView/CreateTreatmentIn";
-export { default as Content } from "./Homepage/Content/1";
-export { default as Sales } from "./Homepage/Sales";
-export { default as UserList } from "./UserList/List";
+import React, { lazy, Suspense } from "react";
+const LazyBookSpa = React.lazy(() => import("./Booking/Booking"));
+const LazyLoginPage = React.lazy(() => import("./LoginPage/LoginPage"));
+const LazyRegisterPage = React.lazy(
+  () => import("./RegisterPage/RegisterPage")
+);
+const LazyDashboard = React.lazy(
+  () => import("./Admin/EmployeeManage/Dashboard")
+);
+const LazyEditEmp = React.lazy(() => import("./Employee/EditEmployee/EditEmp"));
+const LazyHomepage = React.lazy(() => import("./Homepage"));
+const LazyMyPet = React.lazy(() => import("./Pet/MyPet/MyPet"));
+const LazyContact = React.lazy(() => import("./Homepage/Contact"));
+const LazyProfileUser = React.lazy(() => import("./ProfileUser/ProfileUser"));
+const LazyEmployeeListPage = React.lazy(
+  () => import("./Employee/ListEmployee")
+);
+const LazyAddEmployeePage = React.lazy(() => import("./Employee/Add"));
+const LazyEmployeeDetailPage = React.lazy(() => import("./Employee/Detail"));
+const LazyEmployeeEditPage = React.lazy(() => import("./Employee/Edit"));
+const LazyViewServicePage = React.lazy(() => import("./Service/View"));
+const LazyAddServicePage = React.lazy(() => import("./Service/Add"));
+const LazyEditServicePage = React.lazy(() => import("./Service/Edit"));
+const LazyAddShiftPage = React.lazy(() => import("./Employee/Add-Shift"));
+const LazyViewAppointmentAdmin = React.lazy(
+  () => import("./Admin-menu/appointment/View")
+);
+const LazyEmployeeAppointmentListPage = React.lazy(
+  () => import("./EmployeeView/appointmentList")
+);
+const LazyCustomerTreatment = React.lazy(
+  () => import("./EmployeeView/customerTreatment")
+);
+const LazyPetCheckupPage = React.lazy(() => import("./EmployeeView/reBook"));
+const LazyEmployeeeCustomerProfile = React.lazy(
+  () => import("./EmployeeView/CustomerProfile")
+);
+const LazyCreateTreatmentIn = React.lazy(
+  () => import("./EmployeeView/CreateTreatmentIn")
+);
+const LazyContent = React.lazy(() => import("./Homepage/Content/1"));
+const LazySales = React.lazy(() => import("./Homepage/Sales"));
+const LazyUserList = React.lazy(() => import("./UserList/List"));
+const LazyCustomerPick = React.lazy(
+  () => import("./Booking/Component/ListEmployee")
+);
+const LazyTimetable = React.lazy(() => import("./Booking/Component/TimeTable"));
+
+export {
+  LazyBookSpa as BookSpa,
+  LazyLoginPage as LoginPage,
+  LazyRegisterPage as RegisterPage,
+  LazyDashboard as Dashboard,
+  LazyEditEmp as EditEmp,
+  LazyHomepage as Homepage,
+  LazyMyPet as MyPet,
+  LazyContact as Contact,
+  LazyProfileUser as ProfileUser,
+  LazyEmployeeListPage as EmployeeListPage,
+  LazyAddEmployeePage as AddEmployeePage,
+  LazyEmployeeDetailPage as EmployeeDetailPage,
+  LazyEmployeeEditPage as EmployeeEditPage,
+  LazyViewServicePage as ViewServicePage,
+  LazyAddServicePage as AddServicePage,
+  LazyEditServicePage as EditServicePage,
+  LazyAddShiftPage as AddShiftPage,
+  LazyViewAppointmentAdmin as ViewAppointmentAdmin,
+  LazyEmployeeAppointmentListPage as EmployeeAppointmentListPage,
+  LazyCustomerTreatment as CustomerTreatment,
+  LazyPetCheckupPage as PetCheckupPage,
+  LazyEmployeeeCustomerProfile as EmployeeeCustomerProfile,
+  LazyCreateTreatmentIn as CreateTreatmentIn,
+  LazyContent as Content,
+  LazySales as Sales,
+  LazyUserList as UserList,
+  LazyCustomerPick as CustomerPick,
+  LazyTimetable as TimeTable,
+};

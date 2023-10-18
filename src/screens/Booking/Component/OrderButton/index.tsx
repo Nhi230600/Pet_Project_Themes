@@ -1,38 +1,40 @@
-import React, { useEffect } from 'react';
-import gsap from 'gsap';
-import "./OrderButton.css"
+import gsap from "gsap";
+import React from "react";
+import "./OrderButton.css";
 
 interface TruckButtonAnimationProps {
   onClick: () => void;
 }
 
-const TruckButtonAnimation: React.FC<TruckButtonAnimationProps> = ({ onClick }) => {
-
+const TruckButtonAnimation: React.FC<TruckButtonAnimationProps> = ({
+  onClick,
+}) => {
   const handleButtonClick = async () => {
-    const truckButton = document.querySelector('.truck-button') as HTMLButtonElement | null;
+    const truckButton = document.querySelector(
+      ".truck-button"
+    ) as HTMLButtonElement | null;
 
     if (truckButton) {
-      truckButton.removeEventListener('click', handleButtonClick);
+      truckButton.removeEventListener("click", handleButtonClick);
       truckButton.disabled = true;
 
       let button = truckButton;
 
-      if (!button.classList.contains('done')) {
-        if (!button.classList.contains('animation')) {
-          button.classList.add('animation');
-
-          // Define a function to handle the animation
+      if (!button.classList.contains("done")) {
+        if (!button.classList.contains("animation")) {
+          button.classList.add("animation");
           const animateButton = async () => {
-            // Your animation steps
             gsap.to(button, {
-              '--box-s': 1,
-              '--box-o': 1,
+              "--box-s": 1,
+              "--box-o": 1,
               duration: 0.3,
               delay: 0.5,
             });
 
-            const truckElement = button.querySelector('.truck') ?? document.createElement('div');
-            const boxElement = button.querySelector('.box') ?? document.createElement('div');
+            const truckElement =
+              button.querySelector(".truck") ?? document.createElement("div");
+            const boxElement =
+              button.querySelector(".box") ?? document.createElement("div");
 
             gsap.to(truckElement, {
               x: 0,
@@ -41,8 +43,8 @@ const TruckButtonAnimation: React.FC<TruckButtonAnimationProps> = ({ onClick }) 
             });
 
             gsap.to(button, {
-              '--hx': -5,
-              '--bx': 50,
+              "--hx": -5,
+              "--bx": 50,
               duration: 0.18,
               delay: 0.92,
             });
@@ -54,14 +56,14 @@ const TruckButtonAnimation: React.FC<TruckButtonAnimationProps> = ({ onClick }) 
             });
 
             gsap.set(button, {
-              '--truck-y': 0,
-              '--truck-y-n': -26,
+              "--truck-y": 0,
+              "--truck-y-n": -26,
             });
 
             await new Promise<void>((resolve) => {
               gsap.to(button, {
-                '--truck-y': 1,
-                '--truck-y-n': -25,
+                "--truck-y": 1,
+                "--truck-y-n": -25,
                 duration: 0.2,
                 delay: 1.25,
                 onComplete: () => resolve(),
@@ -69,14 +71,15 @@ const TruckButtonAnimation: React.FC<TruckButtonAnimationProps> = ({ onClick }) 
             });
 
             await new Promise<void>((resolve) => {
-              gsap.timeline({
-                onComplete: () => {
-                  if (button) {
-                    button.classList.add('done');
-                  }
-                  resolve();
-                },
-              })
+              gsap
+                .timeline({
+                  onComplete: () => {
+                    if (button) {
+                      button.classList.add("done");
+                    }
+                    resolve();
+                  },
+                })
                 .to(truckElement, {
                   x: 0,
                   duration: 0.4,
@@ -95,34 +98,32 @@ const TruckButtonAnimation: React.FC<TruckButtonAnimationProps> = ({ onClick }) 
                 });
 
               gsap.to(button, {
-                '--progress': 1,
+                "--progress": 1,
                 duration: 2.4,
-                ease: 'power2.in',
+                ease: "power2.in",
               });
             });
           };
-
-          // Call the animateButton function and wait for it to complete
           await animateButton();
         }
       } else {
         if (button) {
-          button.classList.remove('animation', 'done');
+          button.classList.remove("animation", "done");
         }
-        const truckElement = button?.querySelector('.truck') as HTMLElement;
-        const boxElement = button?.querySelector('.box') as HTMLElement;
+        const truckElement = button?.querySelector(".truck") as HTMLElement;
+        const boxElement = button?.querySelector(".box") as HTMLElement;
 
         gsap.set(truckElement, {
           x: 4,
         });
         gsap.set(button, {
-          '--progress': 0,
-          '--hx': 0,
-          '--bx': 0,
-          '--box-s': 0.5,
-          '--box-o': 0,
-          '--truck-y': 0,
-          '--truck-y-n': -26,
+          "--progress": 0,
+          "--hx": 0,
+          "--bx": 0,
+          "--box-s": 0.5,
+          "--box-o": 0,
+          "--truck-y": 0,
+          "--truck-y-n": -26,
         });
         gsap.set(boxElement, {
           x: -24,
@@ -130,8 +131,6 @@ const TruckButtonAnimation: React.FC<TruckButtonAnimationProps> = ({ onClick }) 
         });
       }
     }
-
-    // Call the onClick function provided as a prop
     onClick();
   };
 
