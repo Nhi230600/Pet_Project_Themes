@@ -1,13 +1,22 @@
-.select-wrapper-booking {
-  width: 100%;
-  margin-bottom: 20px;
-  position: relative;
-  display: flex;
+.wrapper {
   justify-content: center;
-  text-align: center;
 }
+.select-search-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 65%;
+  margin: auto;
+  overflow: hidden;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
 .select-content {
-  width: 500px;
+  width: 300px;
+}
+.search-booking {
+  width: 50%;
 }
 
 .employee-booking {
@@ -105,4 +114,8 @@
   -ms-transform: scale(1);
   -o-transform: scale(1);
   transform: scale(1);
+}
+.pagination-container {
+  display: flex;
+  justify-content: center;
 }

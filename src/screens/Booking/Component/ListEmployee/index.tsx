@@ -1,4 +1,4 @@
-import { Pagination, Select } from "antd";
+import { Input, Pagination, Select } from "antd";
 import employeeData from "components/EmployeeConstant";
 import Nav from "components/Nav";
 import { useState } from "react";
@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 const CustomerPick = () => {
   const [pageNumber, setPageNumber] = useState(1);
   const [selectedType, setSelectedType] = useState<string>(""); // State để lưu loại nhân viên được chọn
+  const [searchText, setSearchText] = useState(""); // Thêm trạng thái cho thanh tìm kiếm
   const employeesPerPage = 3;
   const navigate = useNavigate();
 
@@ -25,12 +26,18 @@ const CustomerPick = () => {
   const indexOfLastEmployee = pageNumber * employeesPerPage;
   const indexOfFirstEmployee = indexOfLastEmployee - employeesPerPage;
 
-  // Lọc danh sách nhân viên
   const filteredEmployees = selectedType
     ? employeeData.filter((item) => item.type === selectedType)
     : employeeData;
 
-  const currentEmployees = filteredEmployees.slice(
+  // Lọc danh sách nhân viên dựa trên giá trị thanh tìm kiếm
+  const filteredBySearch = searchText
+    ? filteredEmployees.filter((item) =>
+        item.name.toLowerCase().includes(searchText.toLowerCase())
+      )
+    : filteredEmployees;
+
+  const currentEmployees = filteredBySearch.slice(
     indexOfFirstEmployee,
     indexOfLastEmployee
   );
@@ -39,31 +46,40 @@ const CustomerPick = () => {
     <div>
       <Nav />
       <div className="wrapper">
-        <div className="select-wrapper-booking">
-          <Select
-            className="select-content"
-            onSelect={handleTypeChange}
-            options={[
-              {
-                value: "",
-                label: "Tất cả",
-              },
-              {
-                value: "trainer",
-                label: "Huấn luyện viên",
-              },
-              {
-                value: "spa",
-                label: "Chăm sóc thú cưng",
-              },
-              {
-                value: "care",
-                label: "Khám bệnh",
-              },
-            ]}
-          />
+        <div className="select-search-container">
+          <div className="search-booking">
+            <Input.Search
+              placeholder="Tìm kiếm theo tên"
+              value={searchText}
+              onChange={(e) => setSearchText(e.target.value)}
+            />
+          </div>
+          <div className="select-wrapper-booking">
+            <Select
+              placeholder="Dịch vụ"
+              className="select-content"
+              onSelect={handleTypeChange}
+              options={[
+                {
+                  value: "",
+                  label: "Tất cả",
+                },
+                {
+                  value: "trainer",
+                  label: "Huấn luyện viên",
+                },
+                {
+                  value: "spa",
+                  label: "Chăm sóc thú cưng",
+                },
+                {
+                  value: "care",
+                  label: "Khám bệnh",
+                },
+              ]}
+            />
+          </div>
         </div>
-
         {currentEmployees.map((item) => (
           <div className="employee-booking" key={item.id}>
             <div className="title">{item.name}</div>
@@ -88,7 +104,7 @@ const CustomerPick = () => {
       <div className="pagination-container">
         <Pagination
           current={pageNumber}
-          total={filteredEmployees.length}
+          total={filteredBySearch.length}
           pageSize={employeesPerPage}
           onChange={handlePageChange}
           showSizeChanger={false}
