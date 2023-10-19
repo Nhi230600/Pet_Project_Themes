@@ -1,4 +1,4 @@
-import {  DatePicker, TimePicker } from "antd";
+import { DatePicker, TimePicker } from "antd";
 import "antd/dist/antd.css";
 import axios from "axios";
 import { EmployeeData, Nav, ButtonDog } from "components";
@@ -216,11 +216,15 @@ function TimeTable() {
 
   return (
     <div className="">
-      <Nav/>
+      <Nav />
       {loading && <Loading />}
       <div className="date-picker">
         <div className="date-picker-container">
-          <DatePicker  size="large" value={selectedDate} onChange={handleSelectDate} />
+          <DatePicker
+            size="large"
+            value={selectedDate}
+            onChange={handleSelectDate}
+          />
         </div>
         <div className="form-group">
           <label>Thời Gian Bắt Đầu:</label>
@@ -242,7 +246,7 @@ function TimeTable() {
           />
         </div>
 
-        <ButtonDog content="Đặt lịch" onClick={performAPICheckAndPost}/>
+        <ButtonDog content="Đặt lịch" onClick={performAPICheckAndPost} />
       </div>
 
       <div style={{ height: 500 }}>
