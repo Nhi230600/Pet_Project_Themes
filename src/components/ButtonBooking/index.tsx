@@ -3,9 +3,13 @@ import "./ButtonDog.css";
 
 interface Text {
   content: string;
+  onClick?: () => void;
 }
 
-const ButtonDog: React.FC<Text> = ({ content }) => {
+const ButtonDog: React.FC<Text> = ({ content, onClick  }) => {
+  const handleClick = () => {
+    (onClick && onClick())
+  };
   return (
     <div className="container-button-booking">
       <div className="button-container">
@@ -32,7 +36,7 @@ const ButtonDog: React.FC<Text> = ({ content }) => {
             <div className="right"></div>
           </div>
         </div>
-        <button> {content}</button>
+        <button onClick={handleClick}> {content}</button>
         <div className="paw"></div>
         <div className="paw top"></div>
       </div>
