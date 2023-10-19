@@ -1,7 +1,7 @@
-import { Button, DatePicker, TimePicker } from "antd";
+import {  DatePicker, TimePicker } from "antd";
 import "antd/dist/antd.css";
 import axios from "axios";
-import { EmployeeData } from "components";
+import { EmployeeData, Nav, ButtonDog } from "components";
 import moment, { Moment } from "moment";
 import { useEffect, useState } from "react";
 import { Calendar, momentLocalizer } from "react-big-calendar";
@@ -216,11 +216,11 @@ function TimeTable() {
 
   return (
     <div className="">
-      <h1>My Calendar App</h1>
+      <Nav/>
       {loading && <Loading />}
       <div className="date-picker">
         <div className="date-picker-container">
-          <DatePicker value={selectedDate} onChange={handleSelectDate} />
+          <DatePicker  size="large" value={selectedDate} onChange={handleSelectDate} />
         </div>
         <div className="form-group">
           <label>Thời Gian Bắt Đầu:</label>
@@ -242,9 +242,7 @@ function TimeTable() {
           />
         </div>
 
-        <Button type="primary" onClick={handleOpenTextForm}>
-          Mở Form Nhập Text
-        </Button>
+        <ButtonDog content="Đặt lịch" onClick={performAPICheckAndPost}/>
       </div>
 
       <div style={{ height: 500 }}>

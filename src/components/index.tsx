@@ -9,3 +9,5 @@ export { default as TrainerList } from "../screens/Homepage/TrainerList";
 export { default as Button } from "./Button";
 export { default as Loading } from "./Loading";
 export { default as EmployeeData } from "./EmployeeConstant";
+export { default as Nav } from "./Nav";
+export { default as ButtonDog } from "./ButtonBooking";

@@ -1,5 +1,7 @@
-.date-pciker {
+.date-picker {
   display: flex;
+  justify-content: space-between;
+  margin: 20px;
 }
 .book-form-action {
   position: fixed;
