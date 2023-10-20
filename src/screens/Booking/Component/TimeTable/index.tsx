@@ -1,4 +1,4 @@
-import {  DatePicker, TimePicker } from "antd";
+import { DatePicker, TimePicker } from "antd";
 import "antd/dist/antd.css";
 import axios from "axios";
 import { EmployeeData, Nav, ButtonDog } from "components";
@@ -25,6 +25,7 @@ interface Appointment {
 
 function TimeTable() {
   const { id: id_employee } = useParams();
+  const accountJson = sessionStorage.getItem("account");
   const [appointments, setAppointments] = useState<Appointment[]>([]);
   const [checkadd, setCheckadd] = useState<number>(1);
   const [selectedDate, setSelectedDate] = useState<Moment | null>(null);
@@ -175,25 +176,28 @@ function TimeTable() {
         end: endDateTime.toISOString(),
         id_employee: id_employee,
       };
+      if (!accountJson) {
+        toast.error("Login đã bé");
+      } else {
+        setLoading(true);
 
-      setLoading(true);
+        try {
+          // Perform API check here, replace 'your-check-api-url' with your actual check API URL
+          const checkResponse = await axios.post(
+            "https://zzzzzz-rr1t.onrender.com/api/appointment/checkslot",
+            postData
+          );
 
-      try {
-        // Perform API check here, replace 'your-check-api-url' with your actual check API URL
-        const checkResponse = await axios.post(
-          "https://zzzzzz-rr1t.onrender.com/api/appointment/checkslot",
-          postData
-        );
-
-        if (checkResponse.data.success) {
-          // If the check is successful, then show the modal
-          setPopup(true);
-        } else {
-          toast.error(checkResponse.data.message);
+          if (checkResponse.data.success) {
+            // If the check is successful, then show the modal
+            setPopup(true);
+          } else {
+            toast.error(checkResponse.data.message);
+          }
+          setLoading(false);
+        } catch (error) {
+          toast.error("xsxs");
         }
-        setLoading(false);
-      } catch (error) {
-        toast.error("xsxs");
       }
     } else {
       toast.error("Please pick time");
@@ -216,11 +220,15 @@ function TimeTable() {
 
   return (
     <div className="">
-      <Nav/>
+      <Nav />
       {loading && <Loading />}
       <div className="date-picker">
         <div className="date-picker-container">
-          <DatePicker  size="large" value={selectedDate} onChange={handleSelectDate} />
+          <DatePicker
+            size="large"
+            value={selectedDate}
+            onChange={handleSelectDate}
+          />
         </div>
         <div className="form-group">
           <label>Thời Gian Bắt Đầu:</label>
@@ -242,7 +250,7 @@ function TimeTable() {
           />
         </div>
 
-        <ButtonDog content="Đặt lịch" onClick={performAPICheckAndPost}/>
+        <ButtonDog content="Đặt lịch" onClick={performAPICheckAndPost} />
       </div>
 
       <div style={{ height: 500 }}>

@@ -44,6 +44,7 @@ const LazyUserList = React.lazy(() => import("./UserList/List"));
 const LazyCustomerPick = React.lazy(
   () => import("./Booking/Component/ListEmployee")
 );
+const LazyCutomerViewAppointment = React.lazy(()=> import("./CustomerViewAppointment"))
 const LazyTimetable = React.lazy(() => import("./Booking/Component/TimeTable"));
 
 export {
@@ -75,4 +76,5 @@ export {
   LazyUserList as UserList,
   LazyCustomerPick as CustomerPick,
   LazyTimetable as TimeTable,
+  LazyCutomerViewAppointment as CustomerViewAppointment,
 };

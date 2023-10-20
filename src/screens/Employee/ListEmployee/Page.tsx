@@ -2,7 +2,7 @@ import { Button, Input, Space, Table, Tag, Tooltip, Typography } from "antd";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import "./ListEmployee.css";
+import "./ListEmployeeAdmin.css";
 import {
   DeleteOutlined,
   InfoCircleOutlined,

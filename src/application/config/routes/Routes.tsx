@@ -25,8 +25,17 @@ import {
   ProfileUser,
   CustomerPick,
   TimeTable,
+  CustomerViewAppointment
 } from "screens";
 const Router = createBrowserRouter([
+  {
+    path: "appointment/:id",
+    element: (
+      <Suspense fallback={<Loading />}>
+        <CustomerViewAppointment />
+      </Suspense>
+    ),
+  },
   {
     path: "booking",
     element: (
