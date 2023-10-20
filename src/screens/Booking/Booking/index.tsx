@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { BookingForm } from "../Component";
 import "./Booking.css";
 import { formConfig } from "./Constants"; // Assuming you've properly imported BookingForm
+import { petData } from "components/PetConstant";
 
 type BookProps = {
   typeof_book?: string;
@@ -34,6 +35,7 @@ const BookSpa: React.FC<BookProps> = (props) => {
 
             <BookingForm
               {...formConfig[`${type}`]}
+              listPet={petData}
               start={start}
               end={end}
               employee_id={employee.id}

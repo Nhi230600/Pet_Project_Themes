@@ -73,7 +73,7 @@ const employeeData = [
     position: "Nhân viên chăm sóc",
     account: "mtf",
     password: "care567",
-    avatar: "https://picsum.photos/id/300/200/300",
+    avatar: "https://picsum.photos/id/301/200/300",
     description: "Tôi có 3 năm kinh nghiệm trong việc chăm sóc và làm đẹp cho thú cưng, đồng thời cũng gắn bó với PetsLove trong suốt thời gian vừa qua cùng với, Phương châm: Vui lòng khách đến, vừa lòng pet đi ",
     appointment: 87,
   },

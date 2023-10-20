@@ -1,7 +1,8 @@
 import { DatePicker, TimePicker } from "antd";
 import "antd/dist/antd.css";
 import axios from "axios";
-import { EmployeeData, Nav, ButtonDog } from "components";
+import { ButtonDog, EmployeeData, Loading, Nav } from "components";
+import Employee from "components/EmployeeConstant/Type";
 import moment, { Moment } from "moment";
 import { useEffect, useState } from "react";
 import { Calendar, momentLocalizer } from "react-big-calendar";
@@ -10,9 +11,6 @@ import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import BookSpa from "../../Booking";
 import "./TimeTable.css";
-
-import { Loading } from "components";
-import Employee from "components/EmployeeConstant/Type";
 const localizer = momentLocalizer(moment);
 
 interface Appointment {
@@ -53,7 +51,6 @@ function TimeTable() {
     setLoading(true);
     async function fetchAppointments() {
       try {
-        // Replace with your actual API endpoint for fetching appointments
         const response = await axios.get(
           `https://zzzzzz-rr1t.onrender.com/api/appointment/getByEmployeeId/${id_employee}`
         );
@@ -70,11 +67,8 @@ function TimeTable() {
           );
           setAppointments(formattedAppointments);
         } else {
-          // Handle errors if necessary
         }
-      } catch (error) {
-        // Handle errors if necessary
-      }
+      } catch (error) {}
       setLoading(false);
     }
 
@@ -84,11 +78,9 @@ function TimeTable() {
     setLoading(true);
     async function fetchAppointments() {
       try {
-        // Replace with your actual API endpoint for fetching appointments
         const response = await axios.get(
           `https://zzzzzz-rr1t.onrender.com/api/appointment/getByEmployeeId/${id_employee}`
         );
-
         if (response.status === 200) {
           const formattedAppointments = response.data.map(
             (appointment: Appointment) => ({
@@ -101,11 +93,8 @@ function TimeTable() {
           );
           setAppointments(formattedAppointments);
         } else {
-          // Handle errors if necessary
         }
-      } catch (error) {
-        // Handle errors if necessary
-      }
+      } catch (error) {}
       setLoading(false);
     }
 
@@ -114,13 +103,11 @@ function TimeTable() {
 
   useEffect(() => {
     if (id_employee) {
-      // Chỉ chạy khi id_employee có giá trị
       const foundEmployee = employees.find(
         (emp) => emp.id === parseInt(id_employee, 10)
       );
 
       if (foundEmployee) {
-        // Nếu tìm thấy nhân viên, cập nhật giá trị cho employee
         setEmployee(foundEmployee);
       }
     }
@@ -147,12 +134,10 @@ function TimeTable() {
   };
   const performAPICheckAndPost = async () => {
     if (selectedDate && startTime && endTime) {
-      // Extract year, month, and date from selectedDate
       const year = selectedDate.year();
       const month = selectedDate.month();
       const date = selectedDate.date();
 
-      // Create startDateTime using year, month, date, startTime
       const startDateTime = moment()
         .year(year)
         .month(month)
@@ -160,7 +145,6 @@ function TimeTable() {
         .hour(startTime.hour())
         .minute(startTime.minute());
 
-      // Create endDateTime using year, month, date, endTime
       const endDateTime = moment()
         .year(year)
         .month(month)
@@ -179,14 +163,12 @@ function TimeTable() {
       setLoading(true);
 
       try {
-        // Perform API check here, replace 'your-check-api-url' with your actual check API URL
         const checkResponse = await axios.post(
           "https://zzzzzz-rr1t.onrender.com/api/appointment/checkslot",
           postData
         );
 
         if (checkResponse.data.success) {
-          // If the check is successful, then show the modal
           setPopup(true);
         } else {
           toast.error(checkResponse.data.message);
@@ -260,7 +242,7 @@ function TimeTable() {
           onView={handleViewChange}
           className="custom-calendar"
           eventPropGetter={(event: Appointment) => ({
-            className: `event-status-${event.status}`, // Đặt lớp CSS dựa trên giá trị status
+            className: `event-status-${event.status}`,
           })}
         />
       </div>
@@ -281,5 +263,4 @@ function TimeTable() {
     </div>
   );
 }
-
 export default TimeTable;

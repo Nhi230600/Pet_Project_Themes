@@ -2,7 +2,7 @@ import { Button, Input, Space, Table, Tag, Tooltip, Typography } from "antd";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import "./ListEmployee.css";
+import "./ListEmployeeAdmin.css";
 import {
   DeleteOutlined,
   InfoCircleOutlined,
@@ -68,7 +68,9 @@ const EmployeeListPage = () => {
       title: "Chức vụ",
       dataIndex: "position",
       key: "position",
-      render: (type: string) => <Tag className="style">{type}</Tag>,
+      render: (type: string) => (
+        <Tag className="style-detail-position">{type}</Tag>
+      ),
     },
     {
       title: "Tài khoản",
@@ -79,7 +81,9 @@ const EmployeeListPage = () => {
       title: "Mật khẩu",
       dataIndex: "password",
       key: "password",
-      render: (type: string) => <Tag className="style2">{type}</Tag>,
+      render: (type: string) => (
+        <Tag className="style-detail-password">{type}</Tag>
+      ),
     },
     {
       title: "Hành động",
@@ -89,7 +93,7 @@ const EmployeeListPage = () => {
           <Tooltip title="Xem chi tiết">
             <Link to={`${record.id}`}>
               <Button
-                className="info-button"
+                className="info-button-employee"
                 type="primary"
                 shape="circle"
                 icon={<InfoCircleOutlined />}
@@ -119,7 +123,7 @@ const EmployeeListPage = () => {
     .slice(startIndex, endIndex);
 
   return (
-    <div>
+    <div className="list-employee-admin">
       <div className="list-container">
         <Typography.Title level={2} className="list-title">
           Danh sách nhân viên
@@ -133,17 +137,12 @@ const EmployeeListPage = () => {
         />
       </div>
       <div className="button-container-employee">
-        <Button
-          className="add-button-employee"
-          type="primary"
-          onClick={showModal}
-        >
+        <Button className="add-button-employee" onClick={showModal}>
           <PlusCircleOutlined /> Thêm nhân viên
         </Button>
       </div>
-      <div>
+      <div className="ant-table-thead">
         <Table
-          className="ant-table-thead"
           dataSource={displayedEmployees}
           bordered={true}
           columns={columns}
