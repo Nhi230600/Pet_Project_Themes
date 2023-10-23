@@ -45,7 +45,7 @@ const EmployeeListPage = () => {
   const columns = [
     {
       title: "Ảnh",
-      dataIndex: "avatar", // Thêm một trường avatar trong mảng Employee và cung cấp đường dẫn đến ảnh avatar.
+      dataIndex: "avatar",
       key: "avatar",
       render: (avatar: string) => (
         <div className="avatar-add-employee">
