@@ -12,8 +12,7 @@
 
 .container_appointment_customer {
   border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+  
 }
 
  .container_appointment_customer .card {
@@ -234,14 +233,15 @@
 }
 
 .calendar {
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
   padding: 10px;
   position: relative;
-  height: 340px;
   width: 400px;
   background-color: #ffffff;
   font-family: "Open Sans", sans-serif;
 }
 .calendar .header {
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
   padding-top: 5px;
   display: flex;
   justify-content: center;
@@ -249,6 +249,7 @@
   flex-direction: column;
 }
 .calendar .header_title {
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
   font-family: "Kaushan Script", cursive;
   font-size: 28px;
   letter-spacing: 2px;
@@ -256,6 +257,7 @@
   color: #0061a8;
 }
 .calendar .header_subtitle {
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
   font-size: 14px;
   color: #919191;
 }
@@ -275,6 +277,9 @@
   grid-column-gap: 18px;
   grid-row-gap: 5px;
 }
+.day-number_current{
+  color: red;
+}
 .calendar .days .day-number {
   display: flex;
   justify-content: center;
@@ -293,6 +298,15 @@
   pointer-events: none;
   color: #c1c1c1;
   background: repeating-linear-gradient(45deg, #f0fbfe, #f0fbfe 5px, #ffffff 5px, #ffffff 10px);
+}
+
+.calendar .days .day-number_has_appointment::after {
+  content: "\2022"; /* Unicode bullet character */
+  display: block;
+  font-size: 10px; /* Adjust the font size as needed */
+  margin-top: 2px; /* Adjust the vertical spacing as needed */
+  color: #228b22; /* Color of the bullet */
+  
 }
 
 /* ----------------------- Animations ----------------------- */
