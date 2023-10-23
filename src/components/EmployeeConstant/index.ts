@@ -73,7 +73,7 @@ const employeeData = [
     position: "Nhân viên chăm sóc",
     account: "mtf",
     password: "care567",
-    avatar: "https://picsum.photos/id/300/200/300",
+    avatar: "https://picsum.photos/id/301/200/300",
     description: "Tôi có 3 năm kinh nghiệm trong việc chăm sóc và làm đẹp cho thú cưng, đồng thời cũng gắn bó với PetsLove trong suốt thời gian vừa qua cùng với, Phương châm: Vui lòng khách đến, vừa lòng pet đi ",
     appointment: 87,
   },
@@ -182,5 +182,49 @@ const employeeData = [
     appointment: 69,
   },
 ];
+const appointments= [
+    {
+      date: "2023-09-10",
+      time: "08:00 - 09:00",
+      status: 1,
+      service: "Trị bệnh ngu",
+      price: 200,
+    },
+    {
+      date: "2023-09-11",
+      time: "10:00 - 11:00",
+      status: 2,
+      service: "Khai sáng tâm hồn",
+      price: 291,
+    },
+    {
+      date: "2023-09-12",
+      time: "14:00 - 15:00",
+      status: 3,
+      service: "Thông não",
+      price: 150,
+    },
+    {
+      date: "2023-09-10",
+      time: "08:00 - 09:00",
+      status: 1,
+      service: "Trị bệnh ngu",
+      price: 10,
+    },
+    {
+      date: "2023-09-10",
+      time: "08:00 - 09:00",
+      status: 1,
+      service: "Trị bệnh ngu",
+      price: 100,
+    },
+    {
+      date: "2023-09-12",
+      time: "14:00 - 15:00",
+      status: 3,
+      service: "Thông não",
+      price: 200,
+    },
+]
 
 export default employeeData;

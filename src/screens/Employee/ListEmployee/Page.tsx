@@ -1,21 +1,24 @@
-import { Button, Input, Space, Table, Tag, Tooltip, Typography } from "antd";
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
-import "./ListEmployeeAdmin.css";
 import {
   DeleteOutlined,
   InfoCircleOutlined,
   PlusCircleOutlined,
 } from "@ant-design/icons";
+import { Button, Input, Space, Table, Tag, Tooltip, Typography } from "antd";
 import "antd/dist/antd.css";
 import { EmployeeData } from "components";
 import Employee from "components/EmployeeConstant/Type";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import "./ListEmployeeAdmin.css";
 const EmployeeListPage = () => {
   const [employees, setEmployees] = useState(EmployeeData);
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(5);
   const navigate = useNavigate();
+  const handleClick = (value: number) => {
+    navigate(`/admin/employee/${value}`);
+  };
   const showModal = () => {
     navigate("/admin/employee/add");
   };
@@ -45,7 +48,7 @@ const EmployeeListPage = () => {
   const columns = [
     {
       title: "Ảnh",
-      dataIndex: "avatar", // Thêm một trường avatar trong mảng Employee và cung cấp đường dẫn đến ảnh avatar.
+      dataIndex: "avatar",
       key: "avatar",
       render: (avatar: string) => (
         <div className="avatar-add-employee">
@@ -68,7 +71,9 @@ const EmployeeListPage = () => {
       title: "Chức vụ",
       dataIndex: "position",
       key: "position",
-      render: (type: string) => <Tag className="style">{type}</Tag>,
+      render: (type: string) => (
+        <Tag className="style-detail-position">{type}</Tag>
+      ),
     },
     {
       title: "Tài khoản",
@@ -79,7 +84,9 @@ const EmployeeListPage = () => {
       title: "Mật khẩu",
       dataIndex: "password",
       key: "password",
-      render: (type: string) => <Tag className="style2">{type}</Tag>,
+      render: (type: string) => (
+        <Tag className="style-detail-password">{type}</Tag>
+      ),
     },
     {
       title: "Hành động",
@@ -87,14 +94,12 @@ const EmployeeListPage = () => {
       render: (text: string, record: Employee) => (
         <Space className="info-buttons-space">
           <Tooltip title="Xem chi tiết">
-            <Link to={`${record.id}`}>
-              <Button
-                className="info-button"
-                type="primary"
-                shape="circle"
-                icon={<InfoCircleOutlined />}
-              />
-            </Link>
+            <Button
+              onClick={() => handleClick(record.id)}
+              className="info-button-employee"
+              shape="circle"
+              icon={<InfoCircleOutlined />}
+            />
           </Tooltip>
           <Tooltip title="Xóa">
             <Button
@@ -119,7 +124,7 @@ const EmployeeListPage = () => {
     .slice(startIndex, endIndex);
 
   return (
-    <div>
+    <div className="list-employee-admin">
       <div className="list-container">
         <Typography.Title level={2} className="list-title">
           Danh sách nhân viên
@@ -133,17 +138,12 @@ const EmployeeListPage = () => {
         />
       </div>
       <div className="button-container-employee">
-        <Button
-          className="add-button-employee"
-          type="primary"
-          onClick={showModal}
-        >
+        <Button className="add-button-employee" onClick={showModal}>
           <PlusCircleOutlined /> Thêm nhân viên
         </Button>
       </div>
-      <div>
+      <div className="ant-table-thead">
         <Table
-          className="ant-table-thead"
           dataSource={displayedEmployees}
           bordered={true}
           columns={columns}

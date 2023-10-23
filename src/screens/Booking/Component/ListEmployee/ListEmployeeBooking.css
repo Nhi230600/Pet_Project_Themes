@@ -1,13 +1,22 @@
-.select-wrapper-booking {
-  width: 100%;
-  margin-bottom: 20px;
-  position: relative;
-  display: flex;
+.wrapper {
   justify-content: center;
-  text-align: center;
 }
+.select-search-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 65%;
+  margin: auto;
+  overflow: hidden;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
 .select-content {
-  width: 500px;
+  width: 300px;
+}
+.search-booking {
+  width: 50%;
 }
 
 .employee-booking {
@@ -27,8 +36,7 @@
   color: #fff;
   font-weight: bold;
   padding: 10px;
-  font-size: 18px;
-  z-index: 20;
+  font-size: 20px;
 }
 .employee-booking .text {
   text-align: left;
@@ -41,7 +49,7 @@
 }
 .employee-booking .text .code {
   padding: 0 20px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   margin-bottom: 5px;
 }
@@ -49,10 +57,13 @@
   padding: 0 20px;
   margin-bottom: 10px;
   color: #757575;
+  font-weight: 400;
 }
 .employee-booking .text .review {
+  color: red;
   font-size: 14px;
   padding: 0 20px;
+  font-weight: 400;
 }
 .employee-booking .text .review > span {
   vertical-align: middle;
@@ -61,11 +72,12 @@
   padding: 0 20px;
 }
 .employee-booking .text .button-booking-actions button {
-  width: 50%;
+  width: 40%;
   border-radius: 20px;
   vertical-align: middle;
   background-color: rgb(236, 99, 35);
   box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.5);
+  margin-top: 10px;
   padding: 5px;
   font-size: 16px;
   font-weight: bold;
@@ -105,4 +117,8 @@
   -ms-transform: scale(1);
   -o-transform: scale(1);
   transform: scale(1);
+}
+.pagination-container {
+  display: flex;
+  justify-content: center;
 }

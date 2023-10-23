@@ -4,6 +4,13 @@
   border-radius: 20px;
   font-size: 16px;
 }
+.choose-mypet {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  font-size: 16px;
+}
 .note-service {
   width: 100%;
   padding: 10px;

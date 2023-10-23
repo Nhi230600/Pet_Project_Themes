@@ -12,5 +12,12 @@ interface Employee {
     appointment: number;
 
 }
+interface Appointments{
+    date: string,
+    time: string,
+    status: number,
+    service: string,
+    price: number,
+}
 
 export default Employee;

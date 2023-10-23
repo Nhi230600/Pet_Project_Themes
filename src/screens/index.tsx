@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React from "react";
 const LazyBookSpa = React.lazy(() => import("./Booking/Booking"));
 const LazyLoginPage = React.lazy(() => import("./LoginPage/LoginPage"));
 const LazyRegisterPage = React.lazy(
@@ -48,33 +48,34 @@ const LazyCutomerViewAppointment = React.lazy(()=> import("./CustomerViewAppoint
 const LazyTimetable = React.lazy(() => import("./Booking/Component/TimeTable"));
 
 export {
+  LazyAddEmployeePage as AddEmployeePage,
+  LazyAddServicePage as AddServicePage,
+  LazyAddShiftPage as AddShiftPage,
   LazyBookSpa as BookSpa,
-  LazyLoginPage as LoginPage,
-  LazyRegisterPage as RegisterPage,
+  LazyContact as Contact,
+  LazyContent as Content,
+  LazyCreateTreatmentIn as CreateTreatmentIn,
+  LazyCustomerPick as CustomerPick,
+  LazyCustomerTreatment as CustomerTreatment,
   LazyDashboard as Dashboard,
   LazyEditEmp as EditEmp,
-  LazyHomepage as Homepage,
-  LazyMyPet as MyPet,
-  LazyContact as Contact,
-  LazyProfileUser as ProfileUser,
-  LazyEmployeeListPage as EmployeeListPage,
-  LazyAddEmployeePage as AddEmployeePage,
-  LazyEmployeeDetailPage as EmployeeDetailPage,
-  LazyEmployeeEditPage as EmployeeEditPage,
-  LazyViewServicePage as ViewServicePage,
-  LazyAddServicePage as AddServicePage,
   LazyEditServicePage as EditServicePage,
-  LazyAddShiftPage as AddShiftPage,
-  LazyViewAppointmentAdmin as ViewAppointmentAdmin,
   LazyEmployeeAppointmentListPage as EmployeeAppointmentListPage,
-  LazyCustomerTreatment as CustomerTreatment,
-  LazyPetCheckupPage as PetCheckupPage,
+  LazyEmployeeDetailPage as EmployeeDetailPage,
   LazyEmployeeeCustomerProfile as EmployeeeCustomerProfile,
-  LazyCreateTreatmentIn as CreateTreatmentIn,
-  LazyContent as Content,
+  LazyEmployeeEditPage as EmployeeEditPage,
+  LazyEmployeeListPage as EmployeeListPage,
+  LazyHomepage as Homepage,
+  LazyLoginPage as LoginPage,
+  LazyMyPet as MyPet,
+  LazyPetCheckupPage as PetCheckupPage,
+  LazyProfileUser as ProfileUser,
+  LazyRegisterPage as RegisterPage,
   LazySales as Sales,
-  LazyUserList as UserList,
-  LazyCustomerPick as CustomerPick,
   LazyTimetable as TimeTable,
   LazyCutomerViewAppointment as CustomerViewAppointment,
+  LazyUserList as UserList,
+  LazyViewAppointmentAdmin as ViewAppointmentAdmin,
+  LazyViewServicePage as ViewServicePage,
+
 };

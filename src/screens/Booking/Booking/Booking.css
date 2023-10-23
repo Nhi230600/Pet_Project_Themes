@@ -22,12 +22,6 @@
   background-color: white;
   color: #ec3216;
 }
-.booking-spa-title {
-  text-align: center;
-  font-weight: bold;
-  font-size: 30pt;
-  text-shadow: 0.2rem 0.2rem 0.2rem white;
-}
 
 .form-content > p {
   font-size: medium;
@@ -40,9 +34,9 @@
 }
 
 .booking-spa-form-content {
-  padding: 3rem;
+  padding: 2.8rem;
   width: 650px;
-  height: 550px;
+  height: 650px;
   background: linear-gradient(#f5b581, #8dd9ec);
   border-radius: 0 70px 70px 70px;
 }

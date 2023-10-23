@@ -5,6 +5,7 @@ import DrawerContent from "components/DrawerContent";
 import LoginRegister from "components/LoginRegister";
 import LogoNav from "components/LogoHeader";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Nav.css";
 
 const Nav = () => {
@@ -52,7 +53,12 @@ const Nav = () => {
       }`}
     >
       <div className="nav-logo">
-        <LogoNav />
+        <Link to="/" className="nav-link">
+          <a>
+            {" "}
+            <LogoNav />
+          </a>
+        </Link>
       </div>
       <button
         className="navbar-toggler"
@@ -72,9 +78,9 @@ const Nav = () => {
       >
         <ul className="navbar-nav">
           <li className="nav-item">
-            <a className="nav-link" href="/">
-              Trang chủ
-            </a>
+            <Link to="/" className="nav-link">
+              <a>Trang chủ</a>
+            </Link>
           </li>
 
           <li className="nav-item">
@@ -85,14 +91,14 @@ const Nav = () => {
             </Dropdown>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/contact">
-              Liên hệ
-            </a>
+            <Link to="/contact" className="nav-link">
+              <a>Liên hệ</a>
+            </Link>
           </li>
           <li className="nav-i-booking">
-            <a className="nav-booking" href="/booking">
-              Booking
-            </a>
+            <Link to="/booking" className="nav-booking">
+              <a>Booking</a>
+            </Link>
           </li>
         </ul>
         {accountJson ? (
