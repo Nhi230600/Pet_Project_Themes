@@ -60,7 +60,7 @@ const AddShiftPage = () => {
                 { value: "afternoon", label: "Chiều" },
               ]}
               rules={[{ required: true, message: "Vui lòng chọn ca làm" }]}
-              useRadio={true} // Enable radio buttons
+              useRadio={true}
             />
 
             <Form.Item>

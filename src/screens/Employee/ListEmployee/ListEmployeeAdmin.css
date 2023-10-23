@@ -1,13 +1,10 @@
-/* EmployeeListPage.css */
-
-.list-container {
+.list-employee-admin .list-container {
   padding: 30px;
   margin: 0 auto;
 }
 
-.list-title {
-  color: var(--fonts-primary-variant, #6e6893);
-  font-size: 14px;
+.list-employee-admin .list-container .list-title {
+  font-size: 20px;
   font-style: normal;
   font-weight: 700;
   letter-spacing: 1.4px;
@@ -15,50 +12,48 @@
   margin-bottom: 30px;
 }
 
-.ant-table-thead > tr > th {
-  text-align: center;
+.list-employee-admin .ant-table-thead > tr > th {
+  background-color: #d8d5ec;
   border-radius: 8px;
-  background: #dad7ea;
   flex-direction: column;
-  color: var(--fonts-primary-variant, #6e6893);
   font-size: 12px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
   letter-spacing: 0.6px;
   text-transform: uppercase;
-  /* Màu viền và chiều dày có thể điều chỉnh tùy ý */
+  text-align: center;
 }
 
-.ant-table-tbody > tr > td {
-  border-bottom: 1px solid #dad7ea; /* Màu viền và chiều dày có thể điều chỉnh tùy ý */
+.list-employee-admin .ant-table-tbody > tr > td {
+  border-bottom: 1px solid #dad7ea;
 }
 
-.ant-table {
+.list-employee-admin .ant-table {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
-  width: 95%; /* Đặt kích thước bảng theo ý muốn */
+  width: 95%;
   margin: 0 auto;
 }
 
-.style {
+.list-employee-admin .style-detail-position {
   width: auto;
   height: 19px;
   flex-shrink: 0;
   border-radius: 10px;
-  background: #cdffcd;
+  background-color: #cdffcd;
   color: var(--fonts-positive, #007f00);
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
 }
-.style2 {
+.list-employee-admin .style-detail-password {
   width: auto;
   height: 19px;
   flex-shrink: 0;
   border-radius: 10px;
-  background: #ffe0e0;
+  background-color: #ffe0e0;
   color: var(--fonts-negative, #d30000);
   font-size: 12px;
   font-style: normal;
@@ -66,60 +61,56 @@
   line-height: normal;
 }
 
-.info-buttons-space {
+.list-employee-admin .info-buttons-space {
   display: flex;
   justify-content: center;
-  align-items: center; /* Tùy chỉnh căn chỉnh theo chiều dọc (tùy chọn) */
-  width: 100%; /* Đảm bảo rằng Space sẽ căn chỉnh theo chiều ngang 100% */
+  align-items: center;
+  width: 100%;
 }
 
-.avatar-add-employee {
+.list-employee-admin .avatar-add-employee {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-/* Trong tệp CSS của bạn */
 .outer-container {
   display: inline;
-  /* Thêm bất kỳ thuộc tính CSS khác mà bạn muốn */
 }
 .button-container-employee {
   display: flex;
   flex-direction: row-reverse;
 }
-.add-button-employee {
+.button-container-employee .add-button-employee {
   color: var(--fonts-primary-variant, #534b81);
   margin-bottom: 20px;
   border-radius: 8px;
-  background-color: #dad7ea;
+  background-color: #d8d5ec;
   font-weight: bold;
   right: 30px;
 }
-.search-container {
+.list-employee-admin .search-container {
   display: flex;
   flex-direction: row;
   position: absolute;
 }
-.search-input {
+.list-employee-admin .search-container .search-input {
   width: 400px;
   margin-left: 30px;
 }
-.delete-button {
-  background-color: red; /* Màu viền đỏ */
-  color: white; /* Màu chữ trắng */
+.info-buttons-space .delete-button {
+  background-color: red;
+  color: white;
 }
 
-.delete-button:hover {
-  background-color: darkred; /* Màu nền đỏ tối khi di chuột vào */
-  border-color: darkred; /* Màu viền đỏ tối khi di chuột vào */
+.info-buttons-space .delete-button:hover {
+  background-color: darkred;
+  border-color: darkred;
 }
-.info-button {
-  background-color: #9b96bc; /* Màu viền đỏ */
-  color: white; /* Màu chữ trắng */
+.info-buttons-space .info-button-employee {
+  background-color: #d8d5ec;
+  color: #5f588e;
 }
-/* Định dạng màu cho các nhân viên in đậm */
-/* Định dạng màu và in đậm cho tất cả tên nhân viên */
 .style-bold-name {
   font-weight: bold;
-  color: #5f588e; /* Thay đổi màu tùy ý */
+  color: #5f588e;
 }

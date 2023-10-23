@@ -2,7 +2,7 @@ import { Input, Pagination, Select } from "antd";
 import employeeData from "components/EmployeeConstant";
 import Nav from "components/Nav";
 import { useState } from "react";
-import "./ListEmployee.css";
+import "./ListEmployeeBooking.css";
 import { useNavigate } from "react-router-dom";
 
 const CustomerPick = () => {
@@ -29,8 +29,8 @@ const CustomerPick = () => {
   const filteredEmployees = selectedType
     ? employeeData.filter((item) => item.type === selectedType)
     : employeeData;
-
   // Lọc danh sách nhân viên dựa trên giá trị thanh tìm kiếm
+
   const filteredBySearch = searchText
     ? filteredEmployees.filter((item) =>
         item.name.toLowerCase().includes(searchText.toLowerCase())

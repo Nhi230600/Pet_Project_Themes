@@ -4,6 +4,7 @@ import { OrderButton } from "..";
 import "./BookingForm.css";
 import axios from "axios";
 import { toast } from "react-toastify";
+import Pet from "components/PetConstant/Type";
 
 interface Option {
   value: string;
@@ -21,6 +22,7 @@ interface BookingFormProps {
   setCheckadd: (newValue: number) => void;
   checkadd: number;
   setPopup: (newValue: boolean) => void;
+  listPet: Pet[];
 }
 
 const BookingForm: React.FC<BookingFormProps> = ({
@@ -34,6 +36,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
   setCheckadd,
   checkadd,
   setPopup,
+  listPet,
 }) => {
   const navigate = useNavigate();
   const [service, setService] = useState("");
@@ -87,6 +90,15 @@ const BookingForm: React.FC<BookingFormProps> = ({
         ))}
       </select>
       <br />
+      <h3>THÚ CƯNG CỦA BẠN:</h3>
+      <select className="choose-mypet">
+        {listPet.map((pet: Pet) => (
+          <option value={pet.name} key={pet.name}>
+            {pet.name}
+          </option>
+        ))}
+      </select>
+
       <h3>GHI CHÚ:</h3>
 
       <textarea

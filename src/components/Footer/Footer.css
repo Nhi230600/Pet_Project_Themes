@@ -32,7 +32,8 @@
 }
 .footer-information-content a {
   color: black;
-  font: 1em sans-serif;
+  font: 0.9em sans-serif;
+  text-decoration: none;
 }
 .icon-footer {
   margin-right: 10px;
