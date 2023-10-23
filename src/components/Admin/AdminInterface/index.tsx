@@ -6,7 +6,7 @@ import SideBar from "../../SideBar";
 import "./AdminInterface.css";
 import FooterDashboard from "../../FooterDashboard";
 interface AdminInterfaceProps {
-  content: React.ReactNode; // Interface này cho phép truyền bất kỳ thành phần nào vào content
+  content: React.ReactNode;
 }
 
 const AdminInterface: React.FC<AdminInterfaceProps> = ({ content }) => {

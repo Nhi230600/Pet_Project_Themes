@@ -34,12 +34,7 @@ const DrawerContent = () => {
     }
   };
   const handleLogout = () => {
-    // Clear the user's session data or authentication token here
-    // For example, to clear sessionStorage:
     sessionStorage.clear();
-
-    // Redirect to the logout URL or perform any other necessary actions
-    // For example, to redirect to a logout page:
     window.location.href = "/";
   };
   return (
@@ -55,7 +50,7 @@ const DrawerContent = () => {
           </Space>
         </div>
         <div className="drawer-user-name">
-          <span>Truong Y Nhi</span>
+          <span>Ngoc ne</span>
         </div>
       </div>
       <div className="drawer-detail">
