@@ -29,7 +29,7 @@ import {
 } from "screens";
 const Router = createBrowserRouter([
   {
-    path: "appointment/:id",
+    path: "appointment",
     element: (
       <Suspense fallback={<Loading />}>
         <CustomerViewAppointment />
