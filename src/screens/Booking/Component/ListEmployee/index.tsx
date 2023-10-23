@@ -30,6 +30,7 @@ const CustomerPick = () => {
     ? employeeData.filter((item) => item.type === selectedType)
     : employeeData;
   // Lọc danh sách nhân viên dựa trên giá trị thanh tìm kiếm
+
   const filteredBySearch = searchText
     ? filteredEmployees.filter((item) =>
         item.name.toLowerCase().includes(searchText.toLowerCase())

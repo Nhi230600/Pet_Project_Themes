@@ -2,7 +2,7 @@ import Employee from "components/EmployeeConstant/Type";
 import { useEffect, useState } from "react";
 import { BookingForm } from "../Component";
 import "./Booking.css";
-import { formConfig } from "./Constants"; // Assuming you've properly imported BookingForm
+import { formConfig } from "./Constants";
 import { petData } from "components/PetConstant";
 
 type BookProps = {

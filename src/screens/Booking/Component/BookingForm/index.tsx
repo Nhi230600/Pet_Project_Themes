@@ -5,7 +5,6 @@ import "./BookingForm.css";
 import axios from "axios";
 import { toast } from "react-toastify";
 import Pet from "components/PetConstant/Type";
-import { petData } from "components/PetConstant";
 
 interface Option {
   value: string;
@@ -91,13 +90,15 @@ const BookingForm: React.FC<BookingFormProps> = ({
         ))}
       </select>
       <br />
-      <select>
-        {listPet.map((pet: Pet) => {
-          {
-            pet.name;
-          }
-        })}
+      <h3>THÚ CƯNG CỦA BẠN:</h3>
+      <select className="choose-mypet">
+        {listPet.map((pet: Pet) => (
+          <option value={pet.name} key={pet.name}>
+            {pet.name}
+          </option>
+        ))}
       </select>
+
       <h3>GHI CHÚ:</h3>
 
       <textarea

@@ -1,21 +1,24 @@
-import { Button, Input, Space, Table, Tag, Tooltip, Typography } from "antd";
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
-import "./ListEmployeeAdmin.css";
 import {
   DeleteOutlined,
   InfoCircleOutlined,
   PlusCircleOutlined,
 } from "@ant-design/icons";
+import { Button, Input, Space, Table, Tag, Tooltip, Typography } from "antd";
 import "antd/dist/antd.css";
 import { EmployeeData } from "components";
 import Employee from "components/EmployeeConstant/Type";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import "./ListEmployeeAdmin.css";
 const EmployeeListPage = () => {
   const [employees, setEmployees] = useState(EmployeeData);
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(5);
   const navigate = useNavigate();
+  const handleClick = (value: number) => {
+    navigate(`/admin/employee/${value}`);
+  };
   const showModal = () => {
     navigate("/admin/employee/add");
   };
@@ -91,14 +94,12 @@ const EmployeeListPage = () => {
       render: (text: string, record: Employee) => (
         <Space className="info-buttons-space">
           <Tooltip title="Xem chi tiết">
-            <Link to={`${record.id}`}>
-              <Button
-                className="info-button-employee"
-                type="primary"
-                shape="circle"
-                icon={<InfoCircleOutlined />}
-              />
-            </Link>
+            <Button
+              onClick={() => handleClick(record.id)}
+              className="info-button-employee"
+              shape="circle"
+              icon={<InfoCircleOutlined />}
+            />
           </Tooltip>
           <Tooltip title="Xóa">
             <Button

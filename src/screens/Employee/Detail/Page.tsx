@@ -149,7 +149,7 @@ const EmployeeDetailPage = () => {
         </div>
         <List
           dataSource={employee.appointments.slice(startIndex, endIndex)}
-          renderItem={(appointment, index) => (
+          renderItem={(appointment) => (
             <List.Item className="appointment-item">
               <div className="date-info">
                 <Text className="date-text">{appointment.date}</Text>
