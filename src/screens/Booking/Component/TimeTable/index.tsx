@@ -23,6 +23,7 @@ interface Appointment {
 
 function TimeTable() {
   const { id: id_employee } = useParams();
+  const accountJson = sessionStorage.getItem("account");
   const [appointments, setAppointments] = useState<Appointment[]>([]);
   const [checkadd, setCheckadd] = useState<number>(1);
   const [selectedDate, setSelectedDate] = useState<Moment | null>(null);
@@ -159,23 +160,28 @@ function TimeTable() {
         end: endDateTime.toISOString(),
         id_employee: id_employee,
       };
+      if (!accountJson) {
+        toast.error("Login đã bé");
+      } else {
+        setLoading(true);
 
-      setLoading(true);
+        try {
+          // Perform API check here, replace 'your-check-api-url' with your actual check API URL
+          const checkResponse = await axios.post(
+            "https://zzzzzz-rr1t.onrender.com/api/appointment/checkslot",
+            postData
+          );
 
-      try {
-        const checkResponse = await axios.post(
-          "https://zzzzzz-rr1t.onrender.com/api/appointment/checkslot",
-          postData
-        );
-
-        if (checkResponse.data.success) {
-          setPopup(true);
-        } else {
-          toast.error(checkResponse.data.message);
+          if (checkResponse.data.success) {
+            // If the check is successful, then show the modal
+            setPopup(true);
+          } else {
+            toast.error(checkResponse.data.message);
+          }
+          setLoading(false);
+        } catch (error) {
+          toast.error("xsxs");
         }
-        setLoading(false);
-      } catch (error) {
-        toast.error("xsxs");
       }
     } else {
       toast.error("Please pick time");
