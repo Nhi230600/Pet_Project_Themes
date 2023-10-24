@@ -16,7 +16,6 @@ const EditServicePage = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    // Mô phỏng dữ liệu thông tin dịch vụ dựa trên serviceId và điền vào form
     const mockServiceData = {
       name: "Dịch vụ mô phỏng",
       description: "Mô phỏng dịch vụ cho ví dụ này.",

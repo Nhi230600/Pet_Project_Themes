@@ -31,7 +31,6 @@ const PetInfoCard = ({
 const PetDetailsPage = () => {
   const { id } = useParams<{ id: string }>();
   const [petData, setPetData] = useState<PetData | null>(null);
-
   const fetchPetData = () => {
     const exampleData: PetData = {
       petName: "Bobby",
@@ -44,11 +43,9 @@ const PetDetailsPage = () => {
     };
     setPetData(exampleData);
   };
-
   useEffect(() => {
     fetchPetData();
   }, []);
-
   return (
     <div>
       <PageHeader title="Thông tin tái khám" className="site-page-header" />

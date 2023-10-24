@@ -191,7 +191,7 @@ function TimeTable() {
   };
 
   const handleCloseTextForm = () => {
-    setPopup(false); //Đóng popup
+    setPopup(false); //Hàm đóng, tắt popup
   };
 
   const handleTextFormSubmit = (values: any) => {
