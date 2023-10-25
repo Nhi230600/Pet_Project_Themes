@@ -21,7 +21,7 @@ interface Treatment {
 
 const CustomerTreatment = () => {
   const { customerId } = useParams();
-  const [popUp, setPopUp] = useState(false); // Sử dụng state `popUp` để kiểm soát việc hiển thị Modal
+  const [popUp, setPopUp] = useState(false);
   const [selectedTreatment, setSelectedTreatment] = useState<Treatment | null>(
     null
   );
@@ -31,7 +31,7 @@ const CustomerTreatment = () => {
     sex: "Nam",
     createdDate: "10/01/2023",
   };
-  // Dữ liệu cho thú cưng
+
   const petData = {
     petName: "Bobby",
     petType: "Chóa",
@@ -51,16 +51,15 @@ const CustomerTreatment = () => {
         ketQuaDieuTri: "Cần thêm điều trị",
         ghiChu: "Có ghi chú",
       },
-      // Thêm quá trình điều trị cho thú cưng tại đây
     ],
   };
 
   const handleViewDetail = (treatment: Treatment) => {
     setSelectedTreatment(treatment);
-    setPopUp(true); // Mở Modal khi nút "Xem chi tiết" được nhấn
+    setPopUp(true);
   };
   const handleModalCancel = () => {
-    setPopUp(false); // Đóng Modal khi nút "Hủy" được nhấn
+    setPopUp(false);
   };
 
   return (
@@ -113,7 +112,7 @@ const CustomerTreatment = () => {
       <Divider />
       <Title level={3}>Lịch sử điều trị</Title>
       <List
-        dataSource={petData.treatmentHistory} // Sử dụng lịch sử điều trị cho thú cưng
+        dataSource={petData.treatmentHistory}
         renderItem={(item: Treatment) => (
           <List.Item
             actions={[
@@ -133,7 +132,7 @@ const CustomerTreatment = () => {
 
       <Modal
         title="Thông tin chi tiết điều trị"
-        visible={popUp} // Sử dụng state `popUp` để kiểm soát hiển thị Modal
+        visible={popUp}
         onCancel={handleModalCancel}
         footer={null}
       >

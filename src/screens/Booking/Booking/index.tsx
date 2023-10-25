@@ -23,7 +23,7 @@ const BookSpa: React.FC<BookProps> = (props) => {
   const [type, setType] = useState("spa");
 
   useEffect(() => {
-    setType(employeeDetail.type); // set giá trị của type
+    setType(employeeDetail.type);
   }, [employeeDetail.type]);
 
   return (

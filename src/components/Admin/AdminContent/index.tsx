@@ -9,15 +9,10 @@ interface ContentDashboardProps {
 const ContentDashboard: React.FC<ContentDashboardProps> = ({ content }) => {
   return (
     <div>
-      <Content
-        style={{
-          margin: "24px 16px 0",
-        }}
-      >
+      <Content>
         <div
           style={{
-            padding: 24,
-            minHeight: 360,
+            padding: 5,
             backgroundColor: "white",
           }}
         >

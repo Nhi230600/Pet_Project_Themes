@@ -161,30 +161,28 @@ function TimeTable() {
         id_employee: id_employee,
       };
       if (!accountJson) {
-        toast.error("Login đã bé");
+        toast.error("Vui lòng đăng nhập!!!");
       } else {
         setLoading(true);
 
         try {
-          // Perform API check here, replace 'your-check-api-url' with your actual check API URL
           const checkResponse = await axios.post(
             "https://zzzzzz-rr1t.onrender.com/api/appointment/checkslot",
             postData
           );
 
           if (checkResponse.data.success) {
-            // If the check is successful, then show the modal
             setPopup(true);
           } else {
             toast.error(checkResponse.data.message);
           }
           setLoading(false);
         } catch (error) {
-          toast.error("xsxs");
+          toast.error("Lỗi!!!");
         }
       }
     } else {
-      toast.error("Please pick time");
+      toast.error("Vui lòng chọn thời gian!!!");
     }
   };
 
@@ -193,7 +191,7 @@ function TimeTable() {
   };
 
   const handleCloseTextForm = () => {
-    setPopup(false); // Close the popup
+    setPopup(false); //Hàm đóng, tắt popup
   };
 
   const handleTextFormSubmit = (values: any) => {

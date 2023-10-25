@@ -246,8 +246,6 @@ const EmployeeDetailPage = () => {
             <Card.Meta
               className="avatar-profile-card"
               avatar={<Avatar size={150} src={employee.avatarUrl}></Avatar>}
-              title={employee.account}
-              description={employee.password}
             ></Card.Meta>
 
             <Text className="profile-text">

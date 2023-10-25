@@ -3,22 +3,8 @@ import { Avatar, Button, Card, Divider, List, Pagination, Tag } from "antd";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./ListField.css";
-
-export interface Appointment {
-  treatment: string;
-  customerName: string;
-  time: string;
-  status: number;
-  customerAvatar: string;
-}
-
-export interface FutureAppointment {
-  treatment: string;
-  customerName: string;
-  time: string;
-  customerAvatar: string;
-  date: string;
-}
+import Appointment from "components/AppointmentConstant/Type";
+import FutureAppointment from "components/FutureAppointmentConstant/Type";
 
 interface ListFieldProps {
   appointments: Appointment[];
@@ -35,8 +21,8 @@ const ListField: React.FC<ListFieldProps> = ({
   onViewDetail,
   onCancel,
 }) => {
-  const [currentPage, setCurrentPage] = useState(1); // Trang hiện tại
-  const pageSize = 4; // Số mục trên mỗi trang
+  const [currentPage, setCurrentPage] = useState(1);
+  const pageSize = 3;
 
   const handleChangePage = (page: any) => {
     setCurrentPage(page);

@@ -18,16 +18,16 @@ const ShiftsOfDay: React.FC<ShiftsOfDayProps> = ({
   onStatusChange,
   selectedDate,
 }) => {
-  // Filter shifts for the selected date
   const filteredShifts = shifts.filter((shift) => shift.date === selectedDate);
-
   return (
     <List
       dataSource={filteredShifts}
       renderItem={(shift, index) => (
         <Button
           key={index}
-          className={`shift-button ${shift.status === 1 ? "green-status" : "gray-status"}`}
+          className={`shift-button ${
+            shift.status === 1 ? "green-status" : "gray-status"
+          }`}
           onClick={() => onStatusChange(index)}
         >
           {shift.time}
