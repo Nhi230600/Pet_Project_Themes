@@ -1,6 +1,6 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import React, { lazy, Suspense } from "react";
 import { Loading } from "components";
+import { Suspense } from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import {
   AddEmployeePage,
   AddServicePage,
@@ -8,7 +8,9 @@ import {
   Contact,
   Content,
   CreateTreatmentIn,
+  CustomerPick,
   CustomerTreatment,
+  CustomerViewAppointment,
   Dashboard,
   EditServicePage,
   EmployeeAppointmentListPage,
@@ -19,13 +21,11 @@ import {
   Homepage,
   MyPet,
   PetCheckupPage,
-  UserList,
-  ViewServicePage,
-  ViewAppointmentAdmin,
   ProfileUser,
-  CustomerPick,
   TimeTable,
-  CustomerViewAppointment
+  UserList,
+  ViewAppointmentAdmin,
+  ViewServicePage,
 } from "screens";
 const Router = createBrowserRouter([
   {

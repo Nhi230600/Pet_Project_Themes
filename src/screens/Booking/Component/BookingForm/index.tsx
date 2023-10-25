@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import axios from "axios";
+import Pet from "components/PetConstant/Type";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import { OrderButton } from "..";
 import "./BookingForm.css";
-import axios from "axios";
-import { toast } from "react-toastify";
-import Pet from "components/PetConstant/Type";
 
 interface Option {
   value: string;
