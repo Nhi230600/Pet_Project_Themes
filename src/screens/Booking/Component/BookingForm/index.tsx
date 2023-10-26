@@ -24,7 +24,6 @@ interface BookingFormProps {
   setPopup: (newValue: boolean) => void;
   listPet: Pet[];
 }
-
 const BookingForm: React.FC<BookingFormProps> = ({
   title,
   options,

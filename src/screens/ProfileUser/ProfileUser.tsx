@@ -1,33 +1,59 @@
-import {
-  faEdit,
-  faUpload,
-  faUserEdit,
-} from "@fortawesome/free-solid-svg-icons";
+import { UploadOutlined } from "@ant-design/icons";
+import { faEdit, faUserEdit } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Upload, message } from "antd";
+import { Image, Modal, Upload, UploadFile } from "antd";
 import Nav from "components/Nav";
-import AvatarUser from "../../images/avatar-user.jpeg";
+import { useState } from "react";
 import "./ProfileUser.css";
 
-const props = {
-  name: "file",
-  action: "https://www.mocky.io/v2/5cc8019d300000980a055e76",
-  headers: {
-    authorization: "authorization-text",
-  },
-  onChange(info: any) {
-    if (info.file.status !== "uploading") {
-      console.log(info.file, info.fileList);
-    }
-    if (info.file.status === "done") {
-      message.success(`${info.file.name} file uploaded successfully`);
-    } else if (info.file.status === "error") {
-      message.error(`${info.file.name} file upload failed`);
-    }
-  },
-};
-
 const ProfileUser = () => {
+  const [imageUrl, setImageUrl] = useState(null);
+  const [previewOpen, setPreviewOpen] = useState(false);
+  const [previewImage, setPreviewImage] = useState("");
+  const [previewTitle, setPreviewTitle] = useState("");
+  const [fileList, setFileList] = useState<UploadFile[]>([]);
+
+  const getBase64 = (file: any) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = (error) => reject(error);
+    });
+  };
+
+  const handleCancel = () => setPreviewOpen(false);
+
+  const handlePreview = async (file: any) => {
+    if (!file.url && !file.preview) {
+      file.preview = await getBase64(file.originFileObj);
+    }
+
+    setPreviewImage(file.url || file.preview);
+    setPreviewOpen(true);
+    setPreviewTitle(
+      file.name || file.url.substring(file.url.lastIndexOf("/") + 1)
+    );
+  };
+
+  const handleChange = ({
+    fileList: newFileList,
+  }: {
+    fileList: UploadFile[];
+  }) => {
+    setFileList(newFileList);
+  };
+
+  const uploadButton = (
+    <div>
+      <UploadOutlined />
+      <div style={{ marginTop: 8 }}>Upload</div>
+    </div>
+  );
+  const uploadedImage = imageUrl ? (
+    <Image src={imageUrl} style={{ width: 200, height: 200 }} />
+  ) : null;
+
   return (
     <div>
       <Nav />
@@ -36,31 +62,22 @@ const ProfileUser = () => {
           <div className="container-profile-avatar-img">
             <div className="container-profile-avatar-upload">
               <div>
-                <img
-                  src={AvatarUser}
-                  alt="avatar"
-                  style={{
-                    width: "200px",
-                    height: "200px",
-                    borderRadius: "50%",
-                    objectFit: "cover",
-                    border: "0.3rem solid black",
-                  }}
-                />
+                <div className="container-profile-avatar-upload">
+                  {uploadedImage || (
+                    <Upload
+                      action="https://run.mocky.io/v3/435e224c-44fb-4773-9faf-380c5e6a2188"
+                      listType="picture-card"
+                      fileList={fileList}
+                      onPreview={handlePreview}
+                      onChange={handleChange}
+                    >
+                      {fileList.length >= 1 ? null : uploadButton}
+                    </Upload>
+                  )}
+                </div>
               </div>
               <div>
-                <label htmlFor="">Ngocneeee</label>
-              </div>
-              <div>
-                <Upload {...props}>
-                  <button className="container-profile-avatar-upload-button styled">
-                    <FontAwesomeIcon
-                      icon={faUpload}
-                      style={{ marginRight: "1rem" }}
-                    />
-                    Click to Upload
-                  </button>
-                </Upload>
+                <label>Nguyễn Văn Khách Hàng</label>
               </div>
             </div>
           </div>
@@ -141,6 +158,14 @@ const ProfileUser = () => {
           </div>
         </form>
       </div>
+      <Modal
+        visible={previewOpen}
+        title={previewTitle}
+        footer={null}
+        onCancel={handleCancel}
+      >
+        <img alt="example" style={{ width: "100%" }} src={previewImage} />
+      </Modal>
     </div>
   );
 };

@@ -8,7 +8,6 @@ const { TextArea } = Input;
 
 function CreateTreatmentIn() {
   const navigate = useNavigate();
-
   const [treatmentProfile, setTreatmentProfile] = useState({
     description: "",
     customerID: 0,
@@ -31,15 +30,12 @@ function CreateTreatmentIn() {
 
   useEffect(() => {
     const fetchTreatmentProfile = async () => {
-      // Mô phỏng dữ liệu từ API
       const profileData = {
         description: "Mô tả treatment của động vật",
-        customerID: 1, // ID của khách hàng
+        customerID: 1,
       };
 
       setTreatmentProfile(profileData);
-
-      // Mô phỏng dữ liệu từ API
       const customerData = {
         fullname: "Chó A",
         gender: "Nam",

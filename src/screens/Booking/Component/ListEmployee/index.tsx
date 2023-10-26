@@ -7,8 +7,8 @@ import { useNavigate } from "react-router-dom";
 
 const CustomerPick = () => {
   const [pageNumber, setPageNumber] = useState(1);
-  const [selectedType, setSelectedType] = useState<string>(""); // State để lưu loại nhân viên được chọn
-  const [searchText, setSearchText] = useState(""); // Thêm trạng thái cho thanh tìm kiếm
+  const [selectedType, setSelectedType] = useState<string>("");
+  const [searchText, setSearchText] = useState("");
   const employeesPerPage = 3;
   const navigate = useNavigate();
 
@@ -29,7 +29,6 @@ const CustomerPick = () => {
   const filteredEmployees = selectedType
     ? employeeData.filter((item) => item.type === selectedType)
     : employeeData;
-  // Lọc danh sách nhân viên dựa trên giá trị thanh tìm kiếm
 
   const filteredBySearch = searchText
     ? filteredEmployees.filter((item) =>

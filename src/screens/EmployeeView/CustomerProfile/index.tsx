@@ -29,8 +29,7 @@ const animalData = {
 const ProfilePage = () => {
   const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 3; // Số lượng mục trên mỗi trang
-
+  const itemsPerPage = 3;
   const onFinish = () => {
     navigate("/employee/customer/treatment");
   };
