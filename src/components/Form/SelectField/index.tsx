@@ -10,7 +10,7 @@ interface SelectFieldProps {
   rules: Array<any>;
   useRadio?: boolean;
   initialValue?: string;
-  onChange?: (value: any) => void; // Thêm onChange vào props
+  onChange?: (value: any) => void;
 }
 
 const SelectField: React.FC<SelectFieldProps> = ({

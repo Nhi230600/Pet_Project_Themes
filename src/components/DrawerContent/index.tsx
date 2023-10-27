@@ -64,7 +64,6 @@ const DrawerContent = () => {
             borderRadius: "0.5vw",
             padding: "1rem",
           }}
-          //   items={items}
         >
           <Menu.Item
             key="user"

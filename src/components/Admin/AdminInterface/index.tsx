@@ -38,7 +38,7 @@ const AdminInterface: React.FC<AdminInterfaceProps> = ({ content }) => {
               {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
             </button>
           </div>
-          {content} {/* Hiển thị nội dung content tại đây */}
+          {content}
           <FooterDashboard />
         </Layout>
       </div>

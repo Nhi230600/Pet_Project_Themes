@@ -56,7 +56,6 @@ const ProfileUser = () => {
     }
     setLoading(false);
   };
-  
 
   return (
     <div>

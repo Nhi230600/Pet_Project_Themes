@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Card } from 'antd';
-import "./ListField.css"
+import { Card } from "antd";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import "./ListField.css";
 interface TableRow {
   [key: string]: any;
 }
@@ -14,11 +14,17 @@ interface TableProps {
   title: string;
 }
 
-const TableList: React.FC<TableProps> = ({ fields, tableData, onDelete, onViewDetail, title }) => {
+const TableList: React.FC<TableProps> = ({
+  fields,
+  tableData,
+  onDelete,
+  onViewDetail,
+  title,
+}) => {
   const [data, setData] = useState<TableRow[]>(tableData);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const itemsPerPage: number = 5;
-  const [searchKeyword, setSearchKeyword] = useState<string>('');
+  const [searchKeyword, setSearchKeyword] = useState<string>("");
   const [showPopup, setShowPopup] = useState(false);
   const [id, setId] = useState(-1);
   useEffect(() => {
@@ -26,39 +32,54 @@ const TableList: React.FC<TableProps> = ({ fields, tableData, onDelete, onViewDe
     setCurrentPage(1);
   }, [tableData]);
 
-
   const popup = () => {
     return (
       <div className="popup-container">
         <div className="popup-content">
-          
-            <div className="flex pb-3 items-center">
-              <div className="-ml-1 text-gray-600 dark:text-gray-400">
-                <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-trash" width={32} height={32} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z" />
-                  <line x1={4} y1={7} x2={20} y2={7} />
-                  <line x1={10} y1={11} x2={10} y2={17} />
-                  <line x1={14} y1={11} x2={14} y2={17} />
-                  <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
-                  <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
-                </svg>
-              </div>
-              <p className="text-lg text-gray-800 dark:text-gray-100 font-semibold pl-2">Are you sure to delete?</p>
+          <div className="flex pb-3 items-center">
+            <div className="-ml-1 text-gray-600 dark:text-gray-400">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="icon icon-tabler icon-tabler-trash"
+                width={32}
+                height={32}
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" />
+                <line x1={4} y1={7} x2={20} y2={7} />
+                <line x1={10} y1={11} x2={10} y2={17} />
+                <line x1={14} y1={11} x2={14} y2={17} />
+                <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+              </svg>
             </div>
-            <div className='button-container'>
-            <button className="focus:outline-none bg-red-400 transition duration-150 ease-in-out hover:bg-red-500 rounded text-white px-3 py-2 text-xs" onClick={onFinish}>Delete Account</button>
+            <p className="text-lg text-gray-800 dark:text-gray-100 font-semibold pl-2">
+              Are you sure to delete?
+            </p>
+          </div>
+          <div className="button-container">
+            <button
+              className="focus:outline-none bg-red-400 transition duration-150 ease-in-out hover:bg-red-500 rounded text-white px-3 py-2 text-xs"
+              onClick={onFinish}
+            >
+              Delete Account
+            </button>
             <button
               className="focus:outline-none bg-green-400 transition duration-150 ease-in-out hover:bg-green-500 rounded text-white px-3 py-2 text-xs"
               onClick={() => setShowPopup(false)}
             >
               No
             </button>
-            </div>
           </div>
-      
+        </div>
       </div>
-    )
-  }
+    );
+  };
 
   const searchByKeyword = (keyword: string) => {
     const filteredData = tableData.filter((row) =>
@@ -84,8 +105,7 @@ const TableList: React.FC<TableProps> = ({ fields, tableData, onDelete, onViewDe
   const onFinish = () => {
     setShowPopup(false);
     onDelete && onDelete(id);
-    
-  }
+  };
 
   const handleViewDetail = (rowData: TableRow) => {
     if (onViewDetail) {
@@ -95,11 +115,8 @@ const TableList: React.FC<TableProps> = ({ fields, tableData, onDelete, onViewDe
 
   return (
     <Card title={title}>
-
-
       <div className="w-full overflow-x-scroll xl:overflow-x-hidden">
-        <div className='action'>
-
+        <div className="action">
           <div className="relative w-full max-w-md mr-2 mb-4">
             <input
               type="text"
@@ -129,8 +146,6 @@ const TableList: React.FC<TableProps> = ({ fields, tableData, onDelete, onViewDe
                 <line x1={21} y1={21} x2={15} y2={15} />
               </svg>
             </button>
-
-
           </div>
           <div className="text-white ml-4 cursor-pointer focus:outline-none border border-transparent focus:border-gray-800 focus:shadow-outline-gray bg-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 w-8 h-8 rounded flex items-center justify-center">
             <Link to="add">
@@ -156,7 +171,6 @@ const TableList: React.FC<TableProps> = ({ fields, tableData, onDelete, onViewDe
         <table className="min-w-full bg-white dark:bg-gray-800">
           <thead>
             <tr className="w-full h-16 border-gray-300 dark:border-gray-200 border-b py-8">
-
               {fields.map((field, index) => (
                 <th
                   key={index}
@@ -176,13 +190,12 @@ const TableList: React.FC<TableProps> = ({ fields, tableData, onDelete, onViewDe
                 key={rowIndex}
                 className="h-24 border-gray-300 dark:border-gray-200 border-b"
               >
-
                 {fields.map((field, index) => (
                   <td
                     key={index}
                     className="text-sm pr-6 whitespace-no-wrap text-gray-800 dark:text-gray-100 tracking-normal leading-4"
                   >
-                    {row[field.toLowerCase().replace(/\s/g, '')]}
+                    {row[field.toLowerCase().replace(/\s/g, "")]}
                   </td>
                 ))}
                 <td className="pr-8 relative">
@@ -265,7 +278,6 @@ const TableList: React.FC<TableProps> = ({ fields, tableData, onDelete, onViewDe
       </div>
       {showPopup && popup()}
     </Card>
-
   );
 };
 

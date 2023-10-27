@@ -1,118 +1,143 @@
 .mypet {
-    width: 100%;
-    height: auto;
-    display: block;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 .container-mypet {
-    width: 100%;
-    height: auto;
-    display: flex;
-    padding: 2rem;
+  width: 100%;
+  height: auto;
+  display: flex;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
 }
 .container-mypet-infor {
-    width: 60%;
-    border: 0.2vw solid rgb(245, 214, 129);
-    padding: 2rem;
-    border-radius: 0.5vw;
+  width: 70%;
+  border: 0.3vw solid rgb(245, 214, 129);
+  padding: 2rem;
+  border-radius: 5vw;
 }
 .container-mypet-infor-heading {
-    text-align: center;
-    border-bottom: 0.2vw dashed rgb(245, 214, 129);
-    margin-bottom: 2vw;
+  text-align: center;
+  border-bottom: 0.2vw dashed rgb(245, 214, 129);
+  font-weight: bold;
+  margin-bottom: 2vw;
+}
+.container-mypet-infor-heading span {
+  text-shadow: 0.1rem 0.1rem 0.1rem rgb(245, 214, 129);
+  font-size: 2rem;
 }
 .container-mypet-infor-content {
-    width: 100%;
-    height: auto;
-    display: flex;
-    border: 0.1vw solid rgb(245, 214, 129);
-    border-radius: 0.5vw;
-    padding: 1rem;
-    align-items: center;
-    margin-bottom: 2vw;
-    background-color: rgb(245, 214, 129);
+  width: 100%;
+  display: flex;
+  border-radius: 3vw;
+  padding: 1rem;
+  align-items: center;
+  margin-bottom: 2vw;
+  background-color: rgb(245, 214, 129);
+  transition: background-color 0.4s;
 }
-.container-mypet-infor-content-avata {
-    width: 10%;
+
+.container-mypet-infor-content:hover {
+  background-color: #efa365;
+  cursor: pointer;
+}
+.container-mypet-infor-content-avatar img {
+  width: 13vw;
+  height: 12vw;
+  border: 0.3vw solid rgb(8, 8, 8);
+  border-radius: 50%;
 }
 .container-mypet-infor-content-name {
-    width: 60%;
-    display: block;
-    line-height: 2.5;
-    margin-left: 2vw;
+  width: 60%;
+  line-height: 2.5;
+  margin-left: 2vw;
+  font-weight: 600;
+}
+.container-mypet-infor-content-name .name-mypet {
+  font-weight: bold;
+  font-size: 30px;
 }
 .container-mypet-infor-content-viewdetail {
-    width: 30%;
-    text-align: right;
+  text-align: right;
+  width: 20%;
 }
-.container-mypet-infor-content-viewdetail-button{
-    cursor: pointer;
-    height: 3rem;
-    border: 0;
-    line-height: 2.5;
-    padding: 0 20px;
-    font-size: 1rem;
-    text-align: center;
-    color: #fff;
-    text-shadow: 1px 1px 1px #000;
-    border-radius: 10px;
-    background-color: rgba(220, 0, 0, 1);
-    background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
-    box-shadow:
-      inset 2px 2px 3px rgba(255, 255, 255, 0.6),
-      inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+.container-mypet-infor-content-viewdetail-button {
+  cursor: pointer;
+  width: 120px;
+  height: 50px;
+  padding: auto;
+  font-weight: 600;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 20px;
+  background-color: rgba(220, 0, 0, 1);
+  background-image: linear-gradient(
+    to top left,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2) 30%,
+    rgba(0, 0, 0, 0)
+  );
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 3px rgba(0, 0, 0, 0.6);
 }
-  
+
 .container-mypet-infor-content-viewdetail-button:hover {
-    background-color: rgba(255, 0, 0, 1);
+  background-color: rgba(255, 0, 0, 1);
 }
-  
+
 .container-mypet-infor-content-viewdetail-button:active {
-    box-shadow:
-      inset -2px -2px 3px rgba(255, 255, 255, 0.6),
-      inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+    inset 2px 2px 3px rgba(0, 0, 0, 0.6);
 }
 
-
-.container-mypet-infor-add-button{
-    margin-top: 2vw;
-    width: 100%;
-    cursor: pointer;
-    height: 3rem;
-    border: 0;
-    line-height: 2.5;
-    padding: 0 20px;
-    font-size: 1rem;
-    text-align: center;
-    color: #fff;
-    text-shadow: 1px 1px 1px #000;
-    border-radius: 10px;
-    background-color: rgba(220, 0, 0, 1);
-    background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
-    box-shadow:
-      inset 2px 2px 3px rgba(255, 255, 255, 0.6),
-      inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+.container-mypet-infor-add-button {
+  margin-top: 2vw;
+  width: 100%;
+  cursor: pointer;
+  height: 3rem;
+  line-height: 2.5;
+  padding: 0 20px;
+  font-size: 1rem;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 10px;
+  background-color: rgba(220, 0, 0, 1);
+  background-image: linear-gradient(
+    to top left,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2) 30%,
+    rgba(0, 0, 0, 0)
+  );
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 3px rgba(0, 0, 0, 0.6);
 }
-  
+
 .container-mypet-infor-add-button:hover {
-    background-color: rgba(255, 0, 0, 1);
+  background-color: rgba(255, 0, 0, 1);
 }
-  
+
 .container-mypet-infor-add-button:active {
-    box-shadow:
-      inset -2px -2px 3px rgba(255, 255, 255, 0.6),
-      inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+    inset 2px 2px 3px rgba(0, 0, 0, 0.6);
 }
 
 .container-mypet-image {
-    width: 40%;
-    height: auto;
-    animation: animate alternate 0.7s linear infinite;
+  width: 40%;
+  height: auto;
+  animation: animate alternate 0.7s linear infinite;
+}
+@keyframes animate {
+  0% {
+    transform: scale(1);
   }
-  @keyframes animate {
-    0% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(1.2);
-    }
+  100% {
+    transform: scale(1.2);
   }
+}
+.pagination-mypet {
+  display: flex;
+  justify-content: center;
+}

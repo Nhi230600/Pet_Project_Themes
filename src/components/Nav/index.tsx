@@ -20,9 +20,6 @@ const Nav = () => {
   const onClose = () => {
     setOpen(false);
   };
-
-  // Dữ liệu cho dropdown "Dịch vụ"
-
   const blogMenu = (
     <Menu>
       <Menu.Item>
@@ -41,9 +38,8 @@ const Nav = () => {
     </Menu>
   );
 
-  // Hàm xử lý khi nút menu được nhấn
   const handleMenuClick = () => {
-    setMenuOpen(!menuOpen); // Đảo ngược trạng thái của menu
+    setMenuOpen(!menuOpen);
   };
 
   return (

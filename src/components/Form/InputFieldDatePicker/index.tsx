@@ -1,6 +1,6 @@
 import React from "react";
 import { Form, DatePicker } from "antd";
-import moment from "moment"; // Import the moment library
+import moment from "moment";
 
 const { RangePicker } = DatePicker;
 
@@ -10,7 +10,7 @@ interface InputFieldDatePickerProps {
   rules: Array<any>;
   initialValue?: string;
   disabled?: boolean;
-  isRangePicker?: boolean; // Add a prop to specify whether to use RangePicker
+  isRangePicker?: boolean;
 }
 
 const InputFieldDatePicker: React.FC<InputFieldDatePickerProps> = ({
@@ -19,7 +19,7 @@ const InputFieldDatePicker: React.FC<InputFieldDatePickerProps> = ({
   rules,
   initialValue,
   disabled,
-  isRangePicker = false, // Default to DatePicker
+  isRangePicker = false,
 }) => {
   return (
     <Form.Item name={name} label={label} rules={rules}>
@@ -27,15 +27,20 @@ const InputFieldDatePicker: React.FC<InputFieldDatePickerProps> = ({
         <RangePicker
           disabled={disabled}
           defaultValue={
-            initialValue ? [moment(initialValue, "YYYY-MM-DD"), moment(initialValue, "YYYY-MM-DD")] : undefined
+            initialValue
+              ? [
+                  moment(initialValue, "YYYY-MM-DD"),
+                  moment(initialValue, "YYYY-MM-DD"),
+                ]
+              : undefined
           }
-          
         />
       ) : (
         <DatePicker
           disabled={disabled}
-          defaultValue={initialValue ? moment(initialValue, "YYYY-MM-DD") : undefined}
-          
+          defaultValue={
+            initialValue ? moment(initialValue, "YYYY-MM-DD") : undefined
+          }
         />
       )}
     </Form.Item>

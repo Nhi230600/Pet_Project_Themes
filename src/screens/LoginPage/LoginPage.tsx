@@ -22,7 +22,7 @@ const LoginPage = () => {
   };
 
   const onFinishFailed = (errorInfo: any) => {
-    toast.error("Lỗi!!!");
+    toast.error("Lỗi!!! 🤔");
   };
 
   return (
