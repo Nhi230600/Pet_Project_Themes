@@ -15,7 +15,12 @@
 }
 .appointment_container {
   display: flex;
+  justify-content: center;
 }
+.Pagination{
+  text-align: center;
+}
+
 
 .container_appointment_customer .card {
   display: flex;
@@ -1778,6 +1783,9 @@
   margin-top: 2px; /* Adjust the vertical spacing as needed */
   color: #228b22; /* Color of the bullet */
 }
+.appointment-grid {
+  min-height: 400px;
+}
 .appointment-grid .appointment-item{
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
   margin: 10px;
@@ -1787,6 +1795,12 @@
   height: 200px;
   width: 500px;
 }
+.appointment-grid .no-data img{
+  height: 400px;
+  width: 500px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+}
+
 .appointment-grid .appointment-item .divider{
   width: 10px;
   background-color: #228b22;

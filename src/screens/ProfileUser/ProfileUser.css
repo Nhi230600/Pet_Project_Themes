@@ -28,6 +28,10 @@
      padding: 2vw;
      line-height: 3vw;
 }
+.daidien{
+    justify-content: center;
+    display: flex;
+}
 .container-profile-form {
     width: 60%;
     height: auto;
