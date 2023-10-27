@@ -3,7 +3,10 @@ import dayjs from "dayjs";
 import Cancel from "images/status/cancel.png";
 import Waiting from "images/status/wait.png";
 import Done from "images/status/done.png";
+import Nodata from "images/nodata.png"
 import Popup from "./Popup";
+import { toast } from "react-toastify";
+import { Pagination } from "antd";
 interface Appointment {
   id: number;
   start: string;
@@ -24,30 +27,31 @@ const AppointmentListComponent: React.FC<Props> = ({
   initialAppointments,
   chooseDate,
   onUpdateAppointments,
-  allAppointment
+  allAppointment,
 }) => {
-  const [Appointments, setAppointments] = useState<Appointment[]>(initialAppointments) ;
+  const itemsPerPage = 2;
+  const [Appointments, setAppointments] =
+    useState<Appointment[]>(initialAppointments);
   useEffect(() => {
-    setAppointments(initialAppointments);
-  }, [initialAppointments]);
-  useEffect(() => {
-    const sortedAppointments = [...Appointments].sort((a, b) => {
+    const sortedAppointments = [...initialAppointments].sort((a, b) => {
       return dayjs(a.start).isBefore(dayjs(b.start)) ? -1 : 1;
     });
-  
     setAppointments(sortedAppointments);
-  }, []);
+  }, [initialAppointments]);
+
   const [popup, setPopup] = useState(false);
   const [CurrentAppointment, setCurrentAppointment] = useState<number>(-1);
+  const [currentPage, setCurrentPage] = useState(1);
   const setShowPopup = () => {
     setPopup(false);
   };
+
   const onFinish = () => {
     // Kiểm tra xem có `currentAppointment` (là id của appointment) không
     if (CurrentAppointment) {
       // Lấy `id` của appointment từ `currentAppointment`
       const appointmentId = CurrentAppointment;
-  
+
       // Xử lý và cập nhật trạng thái của appointment với `appointmentId`
       const updatedAppointments = allAppointment.map((appointment) => {
         if (appointment.id === appointmentId) {
@@ -56,67 +60,80 @@ const AppointmentListComponent: React.FC<Props> = ({
         return appointment;
       });
       onUpdateAppointments(updatedAppointments);
-  
-      // Cập nhật danh sách `initialAppointments` với trạng thái mới
-      // setInitialAppointments(updatedAppointments);
-  
-      
+
+      toast.success("Hủy đơn thành công");
     }
   };
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const displayedAppointments = initialAppointments.slice(startIndex, endIndex);
   return (
-    <div>
-      <h1>Appointments</h1>
-      <p>Current Date: {chooseDate}</p>
+    <div className="">
       <div className="appointment-grid">
-        {Appointments.map((appointment) => (
-          <div key={appointment.id} className="appointment-item">
-            <div className="cell">
-              <div className="start-cell">
-                <h1> {dayjs(appointment.start).format("h:mm")}</h1>
-              </div>
-              <div className="am-pm-cell">
-                <h1>{dayjs(appointment.start).format("A")}</h1>
-              </div>
-            </div>
-            <div className="divider"></div>
-            <div className="contexts">
-              <div className="persons">
-                <div className="id-cell">
-                  <br />
-                  <p>Làm giá</p>
-                </div>
-
-                <div className="employee-id-cell">
-                  <br />
-                  <h1>Nhân viên A</h1>
-                </div>
-              </div>
-
-              <div className="status-cell">
-                <br />
-                {appointment.status === 1 ? (
-                  <button
-                    onClick={() => {
-                      setPopup(true);
-                      setCurrentAppointment(appointment.id);
-                    }}
-                  >
-                    <img src={Waiting} />
-                  </button>
-                ) : appointment.status === 2 ? (
-                  <button>
-                    <img src={Cancel} />
-                  </button>
-                ) : (
-                  <button>
-                    <img src={Done} />
-                  </button>
-                )}
-              </div>
-            </div>
+        {displayedAppointments.length === 0 ? (
+          <div className="no-data">
+            <img src={Nodata} alt="No Data" />
           </div>
-        ))}
+        ) : (
+          displayedAppointments.map((appointment) => (
+            <div key={appointment.id} className="appointment-item">
+              <div className="cell">
+                <div className="start-cell">
+                  <h1> {dayjs(appointment.start).format("h:mm")}</h1>
+                </div>
+                <div className="am-pm-cell">
+                  <h1>{dayjs(appointment.start).format("A")}</h1>
+                </div>
+              </div>
+              <div className="divider"></div>
+              <div className="contexts">
+                <div className="persons">
+                  <div className="id-cell">
+                    <br />
+                    <p>Làm giá</p>
+                  </div>
+
+                  <div className="employee-id-cell">
+                    <br />
+                    <h1>Nhân viên A</h1>
+                  </div>
+                </div>
+
+                <div className="status-cell">
+                  <br />
+                  {appointment.status === 1 ? (
+                    <button
+                      onClick={() => {
+                        setPopup(true);
+                        setCurrentAppointment(appointment.id);
+                      }}
+                    >
+                      <img src={Waiting} />
+                    </button>
+                  ) : appointment.status === 2 ? (
+                    <button>
+                      <img src={Cancel} />
+                    </button>
+                  ) : (
+                    <button>
+                      <img src={Done} />
+                    </button>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))
+        )}
       </div>
+      <div className="Pagination">
+        <Pagination
+          current={currentPage}
+          total={initialAppointments.length}
+          pageSize={itemsPerPage}
+          onChange={(page) => setCurrentPage(page)}
+        />
+      </div>
+
       {popup && (
         <div className="popup">
           <Popup setShowPopup={setShowPopup} onFinish={onFinish} />

@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./CustomerViewAppointment.css";
 import dayjs from "dayjs";
 import { AppointmentListComponent } from "./components";
-import { Loading } from "components";
+import { Loading , Nav} from "components";
+
 
 import axios from "axios";
 interface Appointment {
@@ -101,9 +102,11 @@ const CustomerViewAppointment: React.FC = () => {
 
   return (
     <div>
+       <Nav/>
       {loading ? (
         <Loading />
       ) : (
+       
         <div className="appointment_container">
           <div className="container_appointment_customer">
             
