@@ -4,6 +4,7 @@ import { useState } from "react";
 import AvatarUser from "../../images/avatar-user.jpeg";
 
 import "./DrawerContent.css";
+import { Link } from "react-router-dom";
 const items = [
   {
     label: <a href="">Thông tin cá nhân</a>,
@@ -75,9 +76,10 @@ const DrawerContent = () => {
             }}
             className="menu-item-user"
           >
-            <a href="/profile" style={{ color: "white" }}>
-              Thông tin cá nhân
-            </a>
+            <Link to="/profile">
+              {" "}
+              <a style={{ color: "white" }}>Thông tin cá nhân</a>
+            </Link>
           </Menu.Item>
           <Menu.Item
             key="pet"
@@ -90,9 +92,9 @@ const DrawerContent = () => {
             }}
             className="menu-item-pet"
           >
-            <a href="/mypet" style={{ color: "white" }}>
-              Thú cưng của tôi
-            </a>
+            <Link to="/mypet">
+              <a style={{ color: "white" }}>Thú cưng của tôi</a>
+            </Link>
           </Menu.Item>
           <Menu.Item
             key="logout"

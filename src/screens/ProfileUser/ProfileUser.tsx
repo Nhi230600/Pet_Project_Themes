@@ -1,171 +1,211 @@
-import { UploadOutlined } from "@ant-design/icons";
-import { faEdit, faUserEdit } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCalendarTimes,
+  faEdit,
+  faUpload,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Image, Modal, Upload, UploadFile } from "antd";
+import axios from "axios";
+import { Loading } from "components";
 import Nav from "components/Nav";
+import CustomerData from "components/UserConstant";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import "./ProfileUser.css";
 
 const ProfileUser = () => {
-  const [imageUrl, setImageUrl] = useState(null);
-  const [previewOpen, setPreviewOpen] = useState(false);
-  const [previewImage, setPreviewImage] = useState("");
-  const [previewTitle, setPreviewTitle] = useState("");
-  const [fileList, setFileList] = useState<UploadFile[]>([]);
-
-  const getBase64 = (file: any) => {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = () => resolve(reader.result);
-      reader.onerror = (error) => reject(error);
-    });
+  const [customerData, setCustomerData] = useState(CustomerData);
+  const [loading, setLoading] = useState(false);
+  const updateProfile = () => {
+    const updatedData = {
+      name: customerData.name,
+      phone: customerData.phone,
+      address: customerData.address,
+    };
+    //////////////
+    // post api //
+    //////////////
+    toast.success("sửa xong");
   };
+  const handleImageChange = async (e: any) => {
+    setLoading(true);
+    const file = e.target.files[0];
+    const cloudName = "dulapxpnp";
+    const presetKey = "ml_default";
+    if (file) {
+      const formData = new FormData();
+      formData.append("file", file);
+      formData.append("upload_preset", presetKey);
 
-  const handleCancel = () => setPreviewOpen(false);
+      try {
+        const response = await axios.post(
+          `https://api.cloudinary.com/v1_1/${cloudName}/upload`,
+          formData
+        );
+        const imageUrl = response.data.secure_url;
 
-  const handlePreview = async (file: any) => {
-    if (!file.url && !file.preview) {
-      file.preview = await getBase64(file.originFileObj);
+        // Cập nhật ảnh đã tải lên trong trạng thái hoặc làm bất kỳ xử lý nào bạn cần.
+        setCustomerData({ ...customerData, avatar: imageUrl });
+
+        // Bạn có thể thực hiện post API ở đây để cập nhật thông tin khách hàng với ảnh mới.
+
+        toast.success("Tải lên ảnh thành công");
+      } catch (error) {
+        toast.error("Lỗi tải lên ảnh");
+      }
     }
-
-    setPreviewImage(file.url || file.preview);
-    setPreviewOpen(true);
-    setPreviewTitle(
-      file.name || file.url.substring(file.url.lastIndexOf("/") + 1)
-    );
+    setLoading(false);
   };
-
-  const handleChange = ({
-    fileList: newFileList,
-  }: {
-    fileList: UploadFile[];
-  }) => {
-    setFileList(newFileList);
-  };
-
-  const uploadButton = (
-    <div>
-      <UploadOutlined />
-      <div style={{ marginTop: 8 }}>Upload</div>
-    </div>
-  );
-  const uploadedImage = imageUrl ? (
-    <Image src={imageUrl} style={{ width: 200, height: 200 }} />
-  ) : null;
 
   return (
     <div>
       <Nav />
-      <div className="container-profile">
-        <div className="container-profile-avatar">
-          <div className="container-profile-avatar-img">
-            <div className="container-profile-avatar-upload">
-              <div>
-                <div className="container-profile-avatar-upload">
-                  {uploadedImage || (
-                    <Upload
-                      action="https://run.mocky.io/v3/435e224c-44fb-4773-9faf-380c5e6a2188"
-                      listType="picture-card"
-                      fileList={fileList}
-                      onPreview={handlePreview}
-                      onChange={handleChange}
-                    >
-                      {fileList.length >= 1 ? null : uploadButton}
-                    </Upload>
-                  )}
+      {loading ? (
+        <Loading />
+      ) : (
+        <div className="container-profile">
+          <div className="container-profile-avatar">
+            <div className="container-profile-avatar-img">
+              <div className="container-profile-avatar-upload">
+                <div className="daidien">
+                  <img
+                    src={customerData.avatar}
+                    alt="avatar"
+                    style={{
+                      width: "200px",
+                      height: "200px",
+                      borderRadius: "50%",
+                      objectFit: "cover",
+                      border: "0.3rem solid black",
+                    }}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="">{customerData.name}</label>
+                </div>
+                <div>
+                  <input
+                    type="file"
+                    id="imageUpload"
+                    style={{ display: "none" }}
+                    onChange={async (e) => {
+                      await handleImageChange(e);
+                    }}
+                  />
+                  <label
+                    htmlFor="imageUpload"
+                    className="container-profile-avatar-upload-button styled"
+                  >
+                    <FontAwesomeIcon
+                      icon={faUpload}
+                      style={{ marginRight: "1rem" }}
+                    />
+                    Click to Upload
+                  </label>
                 </div>
               </div>
+            </div>
+          </div>
+          <div className="container-profile-form">
+            <div className="container-profile-form-infor">
+              <div className="container-profile-form-infor-name">
+                <div className="container-profile-form-infor-name-label">
+                  Họ tên
+                </div>
+                <div className="container-profile-form-infor-name-input">
+                  <input
+                    style={{
+                      width: "100%",
+                      borderRadius: "0.5vw",
+                      height: "3vw",
+                      border: "none",
+                    }}
+                    type="text"
+                    name="title"
+                    value={customerData.name}
+                    onChange={(e) =>
+                      setCustomerData({ ...customerData, name: e.target.value })
+                    }
+                  />
+                </div>
+              </div>
+              <div className="container-profile-form-infor-phonenumber">
+                <div className="container-profile-form-infor-phonenumber-label">
+                  Số điện thoại
+                </div>
+                <div className="container-profile-form-infor-name-input">
+                  <input
+                    style={{
+                      width: "100%",
+                      borderRadius: "0.5vw",
+                      height: "3vw",
+                      border: "none",
+                    }}
+                    type="text"
+                    name="title"
+                    value={customerData.phone}
+                    onChange={(e) =>
+                      setCustomerData({
+                        ...customerData,
+                        phone: e.target.value,
+                      })
+                    }
+                  />
+                </div>
+              </div>
+              <div className="container-profile-form-infor-address">
+                <div className="container-profile-form-infor-address-label">
+                  Địa chỉ
+                </div>
+                <div className="container-profile-form-infor-address-input">
+                  <input
+                    style={{
+                      width: "100%",
+                      borderRadius: "0.5vw",
+                      height: "3vw",
+                      border: "none",
+                    }}
+                    type="text"
+                    name="title"
+                    value={customerData.address}
+                    onChange={(e) =>
+                      setCustomerData({
+                        ...customerData,
+                        address: e.target.value,
+                      })
+                    }
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="container-profile-form-button">
               <div>
-                <label>Nguyễn Văn Khách Hàng</label>
+                <button
+                  onClick={updateProfile}
+                  className="form-button-edit styled"
+                >
+                  Sửa thông tin
+                  <FontAwesomeIcon
+                    icon={faEdit}
+                    style={{ marginLeft: "1rem" }}
+                  />
+                </button>
+              </div>
+              <div>
+                <Link to="/appointment">
+                  <button className="form-button-update styled">
+                    Xem lịch hẹn
+                    <FontAwesomeIcon
+                      icon={faCalendarTimes}
+                      style={{ marginLeft: "1rem" }}
+                    />
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
         </div>
-        <form action="" className="container-profile-form">
-          <div className="container-profile-form-infor">
-            <div className="container-profile-form-infor-name">
-              <div className="container-profile-form-infor-name-label">
-                Họ tên
-              </div>
-              <div className="container-profile-form-infor-name-input">
-                <input
-                  style={{
-                    width: "100%",
-                    borderRadius: "0.5vw",
-                    height: "3vw",
-                    border: "none",
-                  }}
-                  type="text"
-                  name="title"
-                  value="Ngocneeee"
-                />
-              </div>
-            </div>
-            <div className="container-profile-form-infor-phonenumber">
-              <div className="container-profile-form-infor-phonenumber-label">
-                Số điện thoại
-              </div>
-              <div className="container-profile-form-infor-name-input">
-                <input
-                  style={{
-                    width: "100%",
-                    borderRadius: "0.5vw",
-                    height: "3vw",
-                    border: "none",
-                  }}
-                  type="text"
-                  name="title"
-                  value="0374540896"
-                />
-              </div>
-            </div>
-            <div className="container-profile-form-infor-address">
-              <div className="container-profile-form-infor-address-label">
-                Địa chỉ
-              </div>
-              <div className="container-profile-form-infor-address-input">
-                <input
-                  style={{
-                    width: "100%",
-                    borderRadius: "0.5vw",
-                    height: "3vw",
-                    border: "none",
-                  }}
-                  type="text"
-                  name="title"
-                  value="Nhon An, An Nhon, Binh Dinh"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="container-profile-form-button">
-            <div>
-              <button type="submit" className="form-button-edit styled">
-                Sửa thông tin
-                <FontAwesomeIcon icon={faEdit} style={{ marginLeft: "1rem" }} />
-              </button>
-            </div>
-            <div>
-              <button type="submit" className="form-button-update styled">
-                Cập nhật thông tin
-                <FontAwesomeIcon
-                  icon={faUserEdit}
-                  style={{ marginLeft: "1rem" }}
-                />
-              </button>
-            </div>
-          </div>
-        </form>
-      </div>
-      <Modal
-        visible={previewOpen}
-        title={previewTitle}
-        footer={null}
-        onCancel={handleCancel}
-      >
-        <img alt="example" style={{ width: "100%" }} src={previewImage} />
-      </Modal>
+      )}
     </div>
   );
 };
