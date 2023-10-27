@@ -52,9 +52,11 @@
   width: 60%;
   line-height: 2.5;
   margin-left: 2vw;
+  font-weight: 600;
 }
-.container-mypet-infor-content-name span {
+.container-mypet-infor-content-name .name-mypet {
   font-weight: bold;
+  font-size: 30px;
 }
 .container-mypet-infor-content-viewdetail {
   text-align: right;

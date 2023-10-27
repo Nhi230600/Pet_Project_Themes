@@ -1,18 +1,59 @@
-.container_PetProfilePage{
-    display: flex;
-}
-.container_PetProfilePage_img{
-    margin-right: 20vw;
-    margin-left: 5vw;
-}
-.container_PetProfilePage_petName{
-    align-items: center;
-}
-.container_PetProfilePage_properti{
-    justify-content: space-between;
+.container_PetProfilePage {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20px 200px;
+  align-items: center;
 }
 
-.container_PetProfilePage_properti_icon{
-    display: flex;
-    font-size: 20px;
+.container_PetProfilePage_petName {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.container_PetProfilePage_petName h1 {
+  color: red;
+  font-family: cursive;
+}
+.container_PetProfilePage_properti {
+  text-align: center;
+}
+.container_PetProfilePage_properti_icon {
+  display: flex;
+  font-size: 20px;
+}
+
+.container_PetProfilePage_properti_icon .icon-petprofile {
+  font-size: 35px;
+  margin: 0 20px;
+  color: rgb(174, 5, 5);
+}
+.container_PetProfilePage_properti_icon span {
+  font-weight: bold;
+}
+.back-button-profile {
+  font-size: 30px;
+  text-align: center;
+  margin-left: 50px;
+  width: 70px;
+  height: 50px;
+  cursor: pointer;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 20px;
+  background-color: rgba(220, 0, 0, 1);
+  background-image: linear-gradient(
+    to top left,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2) 30%,
+    rgba(0, 0, 0, 0)
+  );
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+}
+.back-button-profile:hover {
+  background-color: rgba(255, 0, 0, 1);
+}
+.back-button-profile:active {
+  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+    inset 2px 2px 3px rgba(0, 0, 0, 0.6);
 }

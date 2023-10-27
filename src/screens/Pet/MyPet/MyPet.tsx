@@ -4,10 +4,10 @@ import { Pagination } from "antd";
 import "antd/dist/antd.css";
 import Nav from "components/Nav";
 import { petData } from "components/PetConstant";
+import Pet from "components/PetConstant/Type";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./MyPet.css";
-import Pet from "components/PetConstant/Type";
 
 const MyPet = () => {
   const navigate = useNavigate();
@@ -39,7 +39,7 @@ const MyPet = () => {
                 <img src={pet.image} />
               </div>
               <div className="container-mypet-infor-content-name">
-                <span>{pet.name}</span>
+                <span className="name-mypet">{pet.name}</span>
                 <div className="container-mypet-infor-content-name-age">
                   <FontAwesomeIcon
                     icon={faCakeCandles}
