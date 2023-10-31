@@ -37,7 +37,6 @@
   background-color: rgb(245, 214, 129);
   transition: background-color 0.4s;
 }
-
 .container-mypet-infor-content:hover {
   background-color: #efa365;
   cursor: pointer;
@@ -82,16 +81,13 @@
   box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
     inset -2px -2px 3px rgba(0, 0, 0, 0.6);
 }
-
 .container-mypet-infor-content-viewdetail-button:hover {
   background-color: rgba(255, 0, 0, 1);
 }
-
 .container-mypet-infor-content-viewdetail-button:active {
   box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
     inset 2px 2px 3px rgba(0, 0, 0, 0.6);
 }
-
 .container-mypet-infor-add-button {
   margin-top: 2vw;
   width: 100%;
@@ -114,16 +110,13 @@
   box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
     inset -2px -2px 3px rgba(0, 0, 0, 0.6);
 }
-
 .container-mypet-infor-add-button:hover {
   background-color: rgba(255, 0, 0, 1);
 }
-
 .container-mypet-infor-add-button:active {
   box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
     inset 2px 2px 3px rgba(0, 0, 0, 0.6);
 }
-
 .container-mypet-image {
   width: 40%;
   height: auto;

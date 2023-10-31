@@ -5,18 +5,17 @@ import "react-toastify/dist/ReactToastify.css";
 import InputField from "../../../components/Form/InputField";
 import NumberField from "../../../components/Form/NumberField";
 import SelectField from "../../../components/Form/SelectField";
-import { ERROR_MESSAGES } from "../../../components/Form/formConstants"; // Import ERROR_MESSAGES từ formConstants
+import { ERROR_MESSAGES } from "../../../components/Form/formConstants";
 import TextAreaField from "../../../components/TextAreaField";
 import "./AddServicePage.css";
 
 const AddServicePage = () => {
   const navigate = useNavigate();
   const [form] = Form.useForm();
-
   const onFinish = (values: any) => {
     console.log("Received values:", values);
     navigate("/admin/service");
-    toast.success("Thêm dịch vụ thành công", {
+    toast.success("Thêm dịch vụ thành công! 😊", {
       position: toast.POSITION.TOP_CENTER,
       autoClose: 2000,
       hideProgressBar: true,
@@ -40,33 +39,31 @@ const AddServicePage = () => {
             ]}
             rules={[
               { required: true, message: ERROR_MESSAGES.positionRequired },
-            ]} // Sử dụng thông báo lỗi từ ERROR_MESSAGES
+            ]}
             initialValue="Spa"
-            onChange={(value) => {
-              // Xử lý sự kiện onChange ở đây (nếu cần)
-            }}
+            onChange={(value) => {}}
           />
           <InputField
             name="serviceName"
             label="Tên dịch vụ"
-            rules={[{ required: true, message: ERROR_MESSAGES.nameRequired }]} // Sử dụng thông báo lỗi từ ERROR_MESSAGES
+            rules={[{ required: true, message: ERROR_MESSAGES.nameRequired }]}
           />
           <TextAreaField
             name="description"
             label="Miêu tả"
             rules={[
               { required: true, message: ERROR_MESSAGES.descriptionRequired },
-            ]} // Sử dụng thông báo lỗi từ ERROR_MESSAGES
+            ]}
           />
           <NumberField
             name="price"
             label="Giá"
             rules={[
-              { required: true, message: ERROR_MESSAGES.priceRequired }, // Sử dụng thông báo lỗi từ ERROR_MESSAGES
+              { required: true, message: ERROR_MESSAGES.priceRequired },
               {
                 type: "number",
                 min: 0,
-                message: ERROR_MESSAGES.priceNonNegative, // Sử dụng thông báo lỗi từ ERROR_MESSAGES
+                message: ERROR_MESSAGES.priceNonNegative,
               },
             ]}
           />

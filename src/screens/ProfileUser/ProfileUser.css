@@ -1,151 +1,160 @@
 .container-profile {
-    width: 100%;
-    height: auto;
-    display: flex;
-    padding: 4vw;
-    
+  width: 100%;
+  height: auto;
+  display: flex;
+  padding: 4vw;
 }
 .container-profile-avatar {
-    width: 40%;
-    height: auto;
-    border: 0.1vw solid black;
-    border-radius: 0.5vw;
-    margin-right: 1rem;
-    background-image: linear-gradient(to top left, rgba(248, 244, 244, 0.2), rgba(242, 237, 237, 0.2) 30%, rgba(237, 224, 224, 0));
-
-    box-shadow:
-      inset 2px 2px 3px rgba(255, 255, 255, 0.6),
-      inset -2px -2px 3px rgba(0, 0.6, 0.6, 0.6);
+  width: 40%;
+  height: auto;
+  border: 0.1vw solid black;
+  border-radius: 0.5vw;
+  margin-right: 1rem;
+  background-image: linear-gradient(
+    to top left,
+    rgba(248, 244, 244, 0.2),
+    rgba(242, 237, 237, 0.2) 30%,
+    rgba(237, 224, 224, 0)
+  );
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 3px rgba(0, 0.6, 0.6, 0.6);
 }
 .container-profile-avatar-img {
-    display: block;
-    width: 100%;
-    height: auto;
+  display: block;
+  width: 100%;
+  height: auto;
 }
 .container-profile-avatar-upload {
-     display: block;
-     text-align: center;
-     padding: 2vw;
-     line-height: 3vw;
+  display: block;
+  text-align: center;
+  padding: 2vw;
+  line-height: 3vw;
 }
-.daidien{
-    justify-content: center;
-    display: flex;
+.daidien {
+  justify-content: center;
+  display: flex;
+}
+.daidien-name label {
+  font-weight: bold;
+  font-size: larger;
 }
 .container-profile-form {
-    width: 60%;
-    height: auto;
-    border-radius: 0.5vw;
-    display: block;
-    background-color: white;
-    border: 0.1vw solid black;
-    background-image: linear-gradient(to top left, rgba(248, 244, 244, 0.2), rgba(242, 237, 237, 0.2) 30%, rgba(237, 224, 224, 0));
-
-    box-shadow:
-      inset 2px 2px 3px rgba(255, 255, 255, 0.6),
-      inset -2px -2px 3px rgba(0, 0.6, 0.6, 0.6);
+  width: 60%;
+  height: auto;
+  border-radius: 0.5vw;
+  display: block;
+  background-color: white;
+  border: 0.1vw solid black;
+  background-image: linear-gradient(
+    to top left,
+    rgba(248, 244, 244, 0.2),
+    rgba(242, 237, 237, 0.2) 30%,
+    rgba(237, 224, 224, 0)
+  );
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 3px rgba(0, 0.6, 0.6, 0.6);
 }
 .container-profile-form-infor {
-    display: block;
-    width: 100%;
-    height: auto;
-    padding: 1vw;
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 1vw;
 }
 .container-profile-form-infor-name {
-    display: flex;
-    width: 100%;
-    padding: 2vw;
-    font-weight: 600;
-    align-items: center;
-    border-radius: 0.5vw;
-    background-color: rgb(241, 219, 156);
-    border:0.1vw solid black;
-    margin: 1rem 0;
-    box-shadow: 0.1rem 0.1rem 0.1rem black;
+  display: flex;
+  width: 100%;
+  padding: 2vw;
+  font-weight: 600;
+  align-items: center;
+  border-radius: 0.5vw;
+  background-color: rgb(241, 219, 156);
+  border: 0.1vw solid black;
+  margin: 1rem 0;
+  box-shadow: 0.1rem 0.1rem 0.1rem black;
 }
 .container-profile-form-infor-name-label {
-    width: 30%;
+  width: 30%;
 }
 .container-profile-form-infor-name-input {
-    width: 70%;
+  width: 70%;
 }
 .container-profile-form-infor-phonenumber {
-    display: flex;
-    width: 100%;
-    padding: 2vw;
-    font-weight: 600;
-    align-items: center;
-    border-radius: 0.5vw;
-    background-color: rgb(241, 219, 156);
-    border:0.1vw solid black;
-    margin: 1rem 0;
-    box-shadow: 0.1rem 0.1rem 0.1rem black;
+  display: flex;
+  width: 100%;
+  padding: 2vw;
+  font-weight: 600;
+  align-items: center;
+  border-radius: 0.5vw;
+  background-color: rgb(241, 219, 156);
+  border: 0.1vw solid black;
+  margin: 1rem 0;
+  box-shadow: 0.1rem 0.1rem 0.1rem black;
 }
 .container-profile-form-infor-phonenumber-label {
-    width: 30%;
+  width: 30%;
 }
 .container-profile-form-infor-phonenumber-input {
-    width: 70%;
+  width: 70%;
 }
 .container-profile-form-infor-address {
-    display: flex;
-    width: 100%;
-    padding: 2vw;
-    font-weight: 600;
-    align-items: center;
-    border-radius: 0.5vw;
-    background-color: rgb(241, 219, 156);
-    border:0.1vw solid black;
-    margin: 1rem 0;
-    box-shadow: 0.1rem 0.1rem 0.1rem black;
+  display: flex;
+  width: 100%;
+  padding: 2vw;
+  font-weight: 600;
+  align-items: center;
+  border-radius: 0.5vw;
+  background-color: rgb(241, 219, 156);
+  border: 0.1vw solid black;
+  margin: 1rem 0;
+  box-shadow: 0.1rem 0.1rem 0.1rem black;
 }
 .container-profile-form-infor-address-label {
-    width: 30%;
+  width: 30%;
 }
 .container-profile-form-infor-address-input {
-    width: 70%;
+  width: 70%;
 }
 .container-profile-form-button {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content:space-between;
-    padding: 1rem;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
 }
-.form-button-edit
-{
-    margin-top: 2rem;
+.form-button-edit {
+  margin-top: 2rem;
 }
 .form-button-update {
-    margin-top: 2rem;
+  margin-top: 2rem;
 }
 .container-profile-avatar-upload-button {
-    margin-top: 2rem;
+  margin-top: 2rem;
 }
 .styled {
-    cursor: pointer;
-    border: 0;
-    line-height: 2.5;
-    padding: 0 20px;
-    font-size: 1rem;
-    text-align: center;
-    color: #fff;
-    text-shadow: 1px 1px 1px #000;
-    border-radius: 10px;
-    background-color: rgba(220, 0, 0, 1);
-    background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
-    box-shadow:
-      inset 2px 2px 3px rgba(255, 255, 255, 0.6),
-      inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  border: 0;
+  line-height: 2.5;
+  padding: 0 20px;
+  font-size: 1rem;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 10px;
+  background-color: rgba(220, 0, 0, 1);
+  background-image: linear-gradient(
+    to top left,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2) 30%,
+    rgba(0, 0, 0, 0)
+  );
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 3px rgba(0, 0, 0, 0.6);
 }
-  
 .styled:hover {
-    background-color: rgba(255, 0, 0, 1);
-}
-  
-.styled:active {
-    box-shadow:
-      inset -2px -2px 3px rgba(255, 255, 255, 0.6),
-      inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+  background-color: rgba(255, 0, 0, 1);
 }
 
+.styled:active {
+  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+    inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}

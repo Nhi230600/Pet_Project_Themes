@@ -25,7 +25,7 @@ const ProfileUser = () => {
     //////////////
     // post api //
     //////////////
-    toast.success("sửa xong");
+    toast.success("Đã cập nhật thông tin! 😊");
   };
   const handleImageChange = async (e: any) => {
     setLoading(true);
@@ -43,15 +43,10 @@ const ProfileUser = () => {
           formData
         );
         const imageUrl = response.data.secure_url;
-
-        // Cập nhật ảnh đã tải lên trong trạng thái hoặc làm bất kỳ xử lý nào bạn cần.
         setCustomerData({ ...customerData, avatar: imageUrl });
-
-        // Bạn có thể thực hiện post API ở đây để cập nhật thông tin khách hàng với ảnh mới.
-
-        toast.success("Tải lên ảnh thành công");
+        toast.success("Ảnh đã được tải lên thành công! 😊");
       } catch (error) {
-        toast.error("Lỗi tải lên ảnh");
+        toast.error("Có lỗi xảy ra khi tải lên hình ảnh! ☹️");
       }
     }
     setLoading(false);
@@ -80,8 +75,8 @@ const ProfileUser = () => {
                     }}
                   />
                 </div>
-                <div>
-                  <label htmlFor="">{customerData.name}</label>
+                <div className="daidien-name">
+                  <label>{customerData.name}</label>
                 </div>
                 <div>
                   <input
