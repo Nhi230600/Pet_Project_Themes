@@ -1,14 +1,31 @@
 .container_PetProfilePage {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  margin: 20px 200px;
+  width: 100%;
+  justify-content: space-around;
   align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
-
+.container_PetProfilePage_full {
+  display: flex;
+  flex-direction: column;
+}
+.container_PetProfilePage_img img {
+  width: 370px;
+  height: 370px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 0.3rem solid black;
+}
+.container_PetProfilePage_img label {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
 .container_PetProfilePage_petName {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 .container_PetProfilePage_petName h1 {
   color: red;
@@ -21,7 +38,6 @@
   display: flex;
   font-size: 20px;
 }
-
 .container_PetProfilePage_properti_icon .icon-petprofile {
   font-size: 35px;
   margin: 0 20px;
@@ -56,4 +72,63 @@
 .back-button-profile:active {
   box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
     inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+.container-profile-image-upload-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.button-edit-image-mypet {
+  display: flex;
+  justify-content: center;
+}
+.styled {
+  cursor: pointer;
+  line-height: 2.5;
+  padding: 0 20px;
+  font-size: 1rem;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 10px;
+  background-color: rgba(220, 0, 0, 1);
+  background-image: linear-gradient(
+    to top left,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2) 30%,
+    rgba(0, 0, 0, 0)
+  );
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+}
+.styled:hover {
+  background-color: rgba(255, 0, 0, 1);
+}
+
+.styled:active {
+  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+    inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+@media only screen and (max-width: 768px) {
+  .container_PetProfilePage {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .container_PetProfilePage_img img {
+    width: 370px;
+    height: 370px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 0.3rem solid black;
+    margin-bottom: 30px;
+  }
+  .container_PetProfilePage_petName h1 {
+    font-size: 40px;
+  }
+  .back-button-profile-container {
+    display: flex;
+    justify-content: center;
+  }
 }

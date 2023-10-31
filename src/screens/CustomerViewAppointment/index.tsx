@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./CustomerViewAppointment.css";
 import dayjs from "dayjs";
 import { AppointmentListComponent } from "./components";
-import { Loading , Nav} from "components";
-
+import { Loading, Nav } from "components";
 
 import axios from "axios";
 interface Appointment {
@@ -17,7 +16,6 @@ interface Appointment {
 
 const CustomerViewAppointment: React.FC = () => {
   const id = 1;
-  // Get the current date
   const currentDate = dayjs();
   const [chooseDate, setChooseDate] = useState(currentDate);
   const currentMonth = currentDate.format("MMMM");
@@ -102,14 +100,12 @@ const CustomerViewAppointment: React.FC = () => {
 
   return (
     <div>
-       <Nav/>
+      <Nav />
       {loading ? (
         <Loading />
       ) : (
-       
         <div className="appointment_container">
           <div className="container_appointment_customer">
-            
             <div className="calendar">
               <div className="header">
                 <h1 className="header_title">{currentMonth}</h1>
@@ -132,7 +128,7 @@ const CustomerViewAppointment: React.FC = () => {
             <AppointmentListComponent
               initialAppointments={filteredAppointments}
               onUpdateAppointments={updateAppointments}
-              allAppointment = {appointments}
+              allAppointment={appointments}
               chooseDate={chooseDate.format("YYYY-MM-DD HH:mm:ss")}
             />
           </div>
