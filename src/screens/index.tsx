@@ -9,7 +9,7 @@ const LazyDashboard = React.lazy(
 );
 const LazyEditEmp = React.lazy(() => import("./Employee/EditEmployee/EditEmp"));
 const LazyHomepage = React.lazy(() => import("./Homepage"));
-const LazyMyPet = React.lazy(() => import("./Pet/MyPet/MyPet"));
+const LazyMyPet = React.lazy(() => import("./Pet/MyPet"));
 const LazyContact = React.lazy(() => import("./Homepage/Contact"));
 const LazyProfileUser = React.lazy(() => import("./ProfileUser/ProfileUser"));
 const LazyEmployeeListPage = React.lazy(
