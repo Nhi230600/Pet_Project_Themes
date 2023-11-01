@@ -12,12 +12,13 @@ import Nav from "components/Nav";
 import { petData } from "components/PetConstant";
 import Pet from "components/PetConstant/Type";
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import "./PetProfilePage.css";
 
 const PetProfilePage = () => {
-  const { id } = useParams();
+  const { petId } = useParams();
+  const id = petId;
   const [pets, setPets] = useState<Pet[]>(petData);
   const [loading, setLoading] = useState(false);
   const [pet, setPet] = useState<Pet | null>(null);
@@ -269,16 +270,24 @@ const PetProfilePage = () => {
                   />
                 </button>
               ) : (
-                <button
-                  className="edit-button-mypet styled"
-                  onClick={handleEditButtonClick}
-                >
-                  Chỉnh sửa
-                  <FontAwesomeIcon
-                    icon={faEdit}
-                    style={{ marginLeft: "1rem" }}
-                  />
-                </button>
+                <>
+                  {" "}
+                  <button
+                    className="edit-button-mypet styled"
+                    onClick={handleEditButtonClick}
+                  >
+                    Chỉnh sửa
+                    <FontAwesomeIcon
+                      icon={faEdit}
+                      style={{ marginLeft: "1rem" }}
+                    />
+                  </button>
+                  <Link to="treatment">
+                    <button className="edit-button-mypet styled">
+                      Lịch sử
+                    </button>
+                  </Link>
+                </>
               )}
             </div>
           </div>

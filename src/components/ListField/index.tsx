@@ -8,10 +8,12 @@ interface TableRow {
 
 interface TableProps {
   fields: string[];
+  rows: string[];
   tableData: TableRow[];
   onDelete?: (id: number) => void;
   onViewDetail?: (rowData: TableRow) => void;
   title: string;
+  addAction?: () => void;
 }
 
 const TableList: React.FC<TableProps> = ({
@@ -20,6 +22,8 @@ const TableList: React.FC<TableProps> = ({
   onDelete,
   onViewDetail,
   title,
+  rows,
+  addAction,
 }) => {
   const [data, setData] = useState<TableRow[]>(tableData);
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -27,6 +31,12 @@ const TableList: React.FC<TableProps> = ({
   const [searchKeyword, setSearchKeyword] = useState<string>("");
   const [showPopup, setShowPopup] = useState(false);
   const [id, setId] = useState(-1);
+  const titleCase = (text: string) => {
+    return text
+      .split(" ")
+      .map((word) => word.charAt(0).toLowerCase() + word.slice(1))
+      .join("");
+  };
   useEffect(() => {
     setData(tableData);
     setCurrentPage(1);
@@ -40,7 +50,7 @@ const TableList: React.FC<TableProps> = ({
             <div className="-ml-1 text-gray-600 dark:text-gray-400">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="icon icon-tabler icon-tabler-trash"
+                className=" icon-tabler icon-tabler-trash"
                 width={32}
                 height={32}
                 viewBox="0 0 24 24"
@@ -131,7 +141,7 @@ const TableList: React.FC<TableProps> = ({
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="icon icon-tabler icon-tabler-search"
+                className=" icon-tabler icon-tabler-search"
                 width={20}
                 height={20}
                 viewBox="0 0 24 24"
@@ -148,10 +158,11 @@ const TableList: React.FC<TableProps> = ({
             </button>
           </div>
           <div className="text-white ml-4 cursor-pointer focus:outline-none border border-transparent focus:border-gray-800 focus:shadow-outline-gray bg-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 w-8 h-8 rounded flex items-center justify-center">
-            <Link to="add">
+            <button>
               <svg
+                onClick={addAction}
                 xmlns="http://www.w3.org/2000/svg"
-                className="icon icon-tabler icon-tabler-plus"
+                className=" icon-tabler icon-tabler-plus"
                 width={28}
                 height={28}
                 viewBox="0 0 24 24"
@@ -164,7 +175,7 @@ const TableList: React.FC<TableProps> = ({
                 <line x1={12} y1={5} x2={12} y2={19} />
                 <line x1={5} y1={12} x2={19} y2={12} />
               </svg>
-            </Link>
+            </button>
           </div>
         </div>
 
@@ -190,40 +201,43 @@ const TableList: React.FC<TableProps> = ({
                 key={rowIndex}
                 className="h-24 border-gray-300 dark:border-gray-200 border-b"
               >
-                {fields.map((field, index) => (
+                {rows.map((rows, index) => (
                   <td
                     key={index}
                     className="text-sm pr-6 whitespace-no-wrap text-gray-800 dark:text-gray-100 tracking-normal leading-4"
                   >
-                    {row[field.toLowerCase().replace(/\s/g, "")]}
+                    {row[rows]}
                   </td>
                 ))}
                 <td className="pr-8 relative">
                   <div className="flex">
-                    <button
-                      className="text-gray-500 rounded cursor-pointer border border-transparent focus:outline-none ml-2"
-                      onClick={() => handleDelete(row.id)}
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="icon icon-tabler icon-tabler-trash"
-                        width={20}
-                        height={20}
-                        viewBox="0 0 24 24"
-                        strokeWidth="1.5"
-                        stroke="currentColor"
-                        fill="none"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
+                    {onDelete && (
+                      <button
+                        className="text-gray-500 rounded cursor-pointer border border-transparent focus:outline-none ml-2"
+                        onClick={() => handleDelete(row.id)}
                       >
-                        <path stroke="none" d="M0 0h24v24H0z" />
-                        <line x1={4} y1={7} x2={20} y2={7} />
-                        <line x1={10} y1={11} x2={10} y2={17} />
-                        <line x1={14} y1={11} x2={14} y2={17} />
-                        <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
-                        <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
-                      </svg>
-                    </button>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className=" icon-tabler icon-tabler-trash"
+                          width={20}
+                          height={20}
+                          viewBox="0 0 24 24"
+                          strokeWidth="1.5"
+                          stroke="currentColor"
+                          fill="none"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" />
+                          <line x1={4} y1={7} x2={20} y2={7} />
+                          <line x1={10} y1={11} x2={10} y2={17} />
+                          <line x1={14} y1={11} x2={14} y2={17} />
+                          <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                          <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                        </svg>
+                      </button>
+                    )}
+
                     <Link to={`${row.id}`}>
                       <button
                         className="text-gray-500 rounded cursor-pointer border border-transparent focus:outline-none ml-2"
@@ -231,7 +245,7 @@ const TableList: React.FC<TableProps> = ({
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          className="icon icon-tabler icon-tabler-search"
+                          className=" icon-tabler icon-tabler-search"
                           width={20}
                           height={20}
                           viewBox="0 0 24 24"
