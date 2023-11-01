@@ -1,6 +1,6 @@
-import { faCakeCandles } from "@fortawesome/free-solid-svg-icons";
+import { faCakeCandles, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Pagination } from "antd";
+import { Button, Pagination } from "antd";
 import "antd/dist/antd.css";
 import Nav from "components/Nav";
 import { petData } from "components/PetConstant";
@@ -15,6 +15,9 @@ const MyPet = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const handleClick = (value: number) => {
     navigate(`/mypet/${value}`);
+  };
+  const showModal = () => {
+    navigate("/mypet/add");
   };
   const totalItems = petData.length;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
@@ -32,6 +35,16 @@ const MyPet = () => {
         <div className="container-mypet-infor">
           <div className="container-mypet-infor-heading">
             <span>THÚ CƯNG CỦA BẠN</span>
+          </div>
+          <div className="add-pet-list">
+            <Button
+              className="button-add-pet-list"
+              type="primary"
+              icon={<FontAwesomeIcon icon={faPlus} />}
+              onClick={showModal}
+            >
+              Thêm thú cưng
+            </Button>
           </div>
           {petsToDisplay.map((pet: Pet) => (
             <div className="container-mypet-infor-content" key={pet.id}>
