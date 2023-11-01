@@ -18,7 +18,8 @@ import "./PetProfilePage.css";
 import axios from "axios";
 
 const PetProfilePage = () => {
-  const { id } = useParams();
+  const { petId } = useParams();
+  const id = petId;
   const [pets, setPets] = useState<Pet[]>(petData);
   const [loading, setLoading] = useState(false);
   const [pet, setPet] = useState<Pet | null>(null);

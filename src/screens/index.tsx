@@ -48,6 +48,7 @@ const LazyCutomerViewAppointment = React.lazy(
   () => import("./CustomerViewAppointment")
 );
 const LazyTimetable = React.lazy(() => import("./Booking/Component/TimeTable"));
+const LazyTreatmentPet = React.lazy (() => import("./PetHistoryProfile"))
 
 export {
   LazyAddEmployeePage as AddEmployeePage,
@@ -79,4 +80,5 @@ export {
   LazyUserList as UserList,
   LazyViewAppointmentAdmin as ViewAppointmentAdmin,
   LazyViewServicePage as ViewServicePage,
+  LazyTreatmentPet as TreatmentPet,
 };
