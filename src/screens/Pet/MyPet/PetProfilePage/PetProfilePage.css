@@ -7,6 +7,19 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
+.container_PetProfilePage_information {
+  display: flex;
+  flex-direction: column;
+}
+.container_PetProfilePage_edit-form {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+.container_PetProfilePage_edit-field label {
+  font-size: larger;
+  font-weight: bold;
+}
 .container_PetProfilePage_full {
   display: flex;
   flex-direction: column;
@@ -109,7 +122,16 @@
   box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
     inset 2px 2px 3px rgba(0, 0, 0, 0.6);
 }
-
+.input-border-mypet {
+  border: 2px solid #ccc;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 8px;
+  width: 100%;
+}
+.update-button-mypet {
+  width: 30%;
+}
 @media only screen and (max-width: 768px) {
   .container_PetProfilePage {
     width: 100%;
