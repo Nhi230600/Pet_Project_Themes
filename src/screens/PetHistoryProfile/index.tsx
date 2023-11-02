@@ -47,8 +47,8 @@ const Treatments: React.FC = () => {
         <Nav/>
       <h1>Danh sách các điều trị</h1>
       <TableList
-        fields={["Tên nhân viên", "Ngày", "Tổng hóa đơn"]}
-        rows= {["employeeName", "start","bill"]}
+        fields={[ "Tên nhân viên", "Ngày", "Tổng hóa đơn"]}
+        rows= {[ "employeeName", "start","bill"]}
         tableData={treatments} 
         title="List of Treatments" 
         addAction={booking}
