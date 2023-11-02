@@ -1,16 +1,27 @@
-import { Button, DatePicker, Form, Input, Select, Upload } from "antd";
-import "./AddMyPet.css";
-import { Nav } from "components";
 import { PlusOutlined } from "@ant-design/icons";
+import { DatePicker, Form, Input, Radio, Select, Upload } from "antd";
+import { Nav } from "components";
+import { petData } from "components/PetConstant";
 import { useState } from "react";
+import "./AddMyPet.css";
+import Pet from "components/PetConstant/Type";
+import { useNavigate } from "react-router-dom";
 const { Option } = Select;
 
 function AddMyPet() {
+  const [newPet, setNewPet] = useState({});
   const [fileList, setFileList] = useState<any[]>([]);
   const [form] = Form.useForm();
-  const onFinish = (values: any) => {
+  const navigate = useNavigate();
+
+  const onFinish = (values: Pet) => {
+    setNewPet(values);
+    petData.push(values);
     console.log("Dữ liệu được gửi:", values);
+
+    navigate("/mypet");
   };
+
   const normFile = (e: any) => {
     if (Array.isArray(e)) {
       return e;
@@ -30,8 +41,18 @@ function AddMyPet() {
       <Nav />
       <div className="add-mypet-container">
         <h1>Thêm thú cưng của bạn</h1>
-        <Form name="addPetForm" onFinish={onFinish}>
+        <Form
+          name="addPetForm"
+          labelCol={{
+            span: 4,
+          }}
+          wrapperCol={{
+            span: 18,
+          }}
+          onFinish={onFinish}
+        >
           <Form.Item
+            className="input-add-mypet"
             label="Tải Ảnh"
             valuePropName="fileList"
             getValueFromEvent={normFile}
@@ -57,39 +78,39 @@ function AddMyPet() {
               {fileList.length >= 1 ? null : (
                 <div>
                   <PlusOutlined />
-                  <div style={{ marginTop: 8 }}>Upload</div>
+                  <div style={{ marginTop: 8 }}>Tải ảnh</div>
                 </div>
               )}
             </Upload>
           </Form.Item>
 
-          <Form.Item name="petName" label="Tên thú cưng">
-            <Input />
+          <Form.Item className="input-add-mypet" label="Tên thú cưng">
+            <Input className="input-add-mypet-fill" />
           </Form.Item>
 
-          <Form.Item name="petDOB" label="Ngày sinh">
-            <DatePicker />
+          <Form.Item className="input-add-mypet" label="Ngày sinh">
+            <DatePicker className="input-add-mypet-fill" />
           </Form.Item>
 
-          <Form.Item name="petOrigin" label="Nguồn gốc">
-            <Input />
+          <Form.Item className="input-add-mypet" label="Nguồn gốc">
+            <Input className="input-add-mypet-fill" />
           </Form.Item>
 
-          <Form.Item name="petCharacteristics" label="Đặc điểm">
-            <Input.TextArea />
+          <Form.Item className="input-add-mypet" label="Đặc điểm">
+            <Input.TextArea className="input-add-mypet-fill" />
           </Form.Item>
 
-          <Form.Item name="petGender" label="Giới tính">
-            <Select>
-              <Option value="male">Nam</Option>
-              <Option value="female">Nữ</Option>
-            </Select>
+          <Form.Item className="input-add-mypet" label="Giới tính">
+            <Radio.Group className="radio-mypet">
+              <Radio value="male"> Đực </Radio>
+              <Radio value="female"> Cái </Radio>
+            </Radio.Group>
           </Form.Item>
 
-          <Form.Item>
-            <Button type="primary" htmlType="submit">
-              Lưu thông tin
-            </Button>
+          <Form.Item className="button-save-mypet-container">
+            <button className="button-save-mypet" type="submit">
+              Hoàn thành
+            </button>
           </Form.Item>
         </Form>
       </div>

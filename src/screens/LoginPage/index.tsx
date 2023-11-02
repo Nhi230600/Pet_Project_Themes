@@ -17,7 +17,7 @@ const LoginPage = () => {
       sessionStorage.setItem("account", "3");
       window.location.href = "/employee";
     } else {
-      toast.error("Tài khoản không tồn tại");
+      toast.error("Tài khoản không tồn tại!!");
     }
   };
 

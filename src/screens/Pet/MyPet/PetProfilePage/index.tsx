@@ -12,7 +12,7 @@ import Nav from "components/Nav";
 import { petData } from "components/PetConstant";
 import Pet from "components/PetConstant/Type";
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import "./PetProfilePage.css";
 import axios from "axios";
@@ -158,6 +158,9 @@ const PetProfilePage = () => {
                     style={{ marginLeft: "1rem" }}
                   />
                 </button>
+                <Link to="treatment">
+                  <button className="edit-button-mypet styled">Lịch sử</button>
+                </Link>
               </div>
             </div>
           ) : (
@@ -238,14 +241,21 @@ const PetProfilePage = () => {
                   className="input-border-mypet"
                   type="number"
                   id="editedAge"
-                  value={pet.age}
-                  min="0" // Thêm thuộc tính min để đảm bảo giá trị không âm
-                  onChange={(e) =>
-                    setPet({
-                      ...pet,
-                      age: parseInt(e.target.value, 10),
-                    })
-                  }
+                  value={pet.age >= 0 ? pet.age : ""}
+                  onChange={(e) => {
+                    const age = parseInt(e.target.value);
+                    if (!isNaN(age) && age >= 0) {
+                      setPet({
+                        ...pet,
+                        age: age,
+                      });
+                    } else {
+                      setPet({
+                        ...pet,
+                        age: 0,
+                      });
+                    }
+                  }}
                 />
               </div>
               <button

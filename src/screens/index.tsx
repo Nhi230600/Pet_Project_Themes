@@ -1,9 +1,7 @@
 import React from "react";
 const LazyBookSpa = React.lazy(() => import("./Booking/Booking"));
-const LazyLoginPage = React.lazy(() => import("./LoginPage/LoginPage"));
-const LazyRegisterPage = React.lazy(
-  () => import("./RegisterPage/RegisterPage")
-);
+const LazyLoginPage = React.lazy(() => import("./LoginPage"));
+const LazyRegisterPage = React.lazy(() => import("./RegisterPage"));
 const LazyDashboard = React.lazy(
   () => import("./Admin/EmployeeManage/Dashboard")
 );
@@ -11,7 +9,7 @@ const LazyEditEmp = React.lazy(() => import("./Employee/EditEmployee/EditEmp"));
 const LazyHomepage = React.lazy(() => import("./Homepage"));
 const LazyMyPet = React.lazy(() => import("./Pet/MyPet"));
 const LazyContact = React.lazy(() => import("./Homepage/Contact"));
-const LazyProfileUser = React.lazy(() => import("./ProfileUser/ProfileUser"));
+const LazyProfileUser = React.lazy(() => import("./ProfileUser"));
 const LazyEmployeeListPage = React.lazy(
   () => import("./Employee/ListEmployee")
 );
@@ -48,7 +46,7 @@ const LazyCutomerViewAppointment = React.lazy(
   () => import("./CustomerViewAppointment")
 );
 const LazyTimetable = React.lazy(() => import("./Booking/Component/TimeTable"));
-const LazyTreatmentPet = React.lazy (() => import("./PetHistoryProfile"))
+const LazyTreatmentPet = React.lazy(() => import("./PetHistoryProfile"));
 
 export {
   LazyAddEmployeePage as AddEmployeePage,

@@ -1,14 +1,12 @@
 /* Tùy chỉnh kiểu dáng cho phần tử h1 */
 .content-1 h1 {
   display: block;
-  font-family: "Nunito", sans-serif;
   font-size: 96px;
   font-weight: 800;
   text-align: left;
   color: orange;
 }
 .align-wrap {
-  font-family: "Nunito", sans-serif;
   font-size: 16px;
   text-align: left;
   color: orange;

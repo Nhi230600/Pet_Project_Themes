@@ -5,14 +5,22 @@ import "antd/dist/antd.css";
 import Nav from "components/Nav";
 import { petData } from "components/PetConstant";
 import Pet from "components/PetConstant/Type";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./MyPet.css";
 
 const MyPet = () => {
+  const [newPet, setNewPet] = useState(null);
   const navigate = useNavigate();
   const itemsPerPage = 3;
   const [currentPage, setCurrentPage] = useState(1);
+
+  useEffect(() => {
+    if (newPet) {
+      petData.push(newPet);
+    }
+  }, [newPet]);
+
   const handleClick = (value: number) => {
     navigate(`/mypet/${value}`);
   };
@@ -27,7 +35,6 @@ const MyPet = () => {
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
   };
-
   return (
     <div className="mypet">
       <Nav />
