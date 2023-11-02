@@ -241,7 +241,7 @@ const TableList: React.FC<TableProps> = ({
                     <Link to={`${row.id}`}>
                       <button
                         className="text-gray-500 rounded cursor-pointer border border-transparent focus:outline-none ml-2"
-                        onClick={() => handleViewDetail(row)}
+                     
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"

@@ -27,6 +27,7 @@ import {
   ViewAppointmentAdmin,
   ViewServicePage,
   TreatmentPet,
+  DetailTreatment,
 } from "screens";
 import AddMyPet from "screens/Pet/MyPet/AddMyPet";
 import PetProfilePage from "screens/Pet/MyPet/PetProfilePage";
@@ -103,11 +104,24 @@ const Router = createBrowserRouter([
           },
           {
             path: "treatment",
-            element: (
-              <Suspense fallback={<Loading />}>
-                <TreatmentPet />
-              </Suspense>
-            ),
+            children: [
+              {
+                path: "",
+                element: (
+                  <Suspense fallback={<Loading />}>
+                    <TreatmentPet />
+                  </Suspense>
+                ),
+              },
+              {
+                path: ":id",
+                element: (
+                  <Suspense fallback={<Loading />}>
+                    <DetailTreatment />
+                  </Suspense>
+                ),
+              },
+            ],
           },
         ],
       },

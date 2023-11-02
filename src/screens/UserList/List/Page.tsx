@@ -38,6 +38,7 @@ const Index = () => {
     <div className="py-20">
       <TableList
         fields={fields}
+        rows={fields}
         tableData={tableData}
         onDelete={handleDelete}
         onViewDetail={handleViewDetail}
