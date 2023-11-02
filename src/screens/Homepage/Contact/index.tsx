@@ -1,8 +1,9 @@
+import { Nav } from "components";
 import "./Contact.css";
 const Contact = () => {
   return (
-    <div className="container-contact">
-      
+    <div>
+      <div className="container-contact">
         <div className="col-md-6 image-contact">
           <img
             src="https://i.pinimg.com/originals/cd/19/25/cd1925df955e7bf77548b0f6a48702f8.jpg"
@@ -62,7 +63,7 @@ const Contact = () => {
             </button>
           </form>
         </div>
-      
+      </div>
     </div>
   );
 };

@@ -21,10 +21,7 @@ const Index = () => {
       createat: "2023-09-20",
       appointment: "100",
     },
-    // Thêm dữ liệu bảng tại đây
   ]);
-
-  // Hàm xóa dòng dựa trên id
   const handleDelete = (id: any) => {
     const updatedData = tableData.filter((row) => row.id !== id);
     setTableData(updatedData);
@@ -35,10 +32,7 @@ const Index = () => {
     });
   };
 
-  // Hàm xem chi tiết dựa trên dữ liệu dòng
-  const handleViewDetail = (rowData: any) => {
-    // Thực hiện xem chi tiết, ví dụ hiển thị trong modal
-  };
+  const handleViewDetail = (rowData: any) => {};
 
   return (
     <div className="py-20">
@@ -46,9 +40,10 @@ const Index = () => {
         fields={fields}
         rows={fields}
         tableData={tableData}
-        onDelete={handleDelete} // Truyền hàm xóa
-        onViewDetail={handleViewDetail} // Truyền hàm xem chi tiết
+        onDelete={handleDelete}
+        onViewDetail={handleViewDetail}
         title={title}
+        rows={[]}
       />
     </div>
   );
