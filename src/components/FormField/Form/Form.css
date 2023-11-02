@@ -1,0 +1,23 @@
+.container-profile-form {
+    margin: 20px;
+    width: 60%;
+    height: auto;
+    border-radius: 0.5vw;
+    display: block;
+    background-color: white;
+    border: 0.1vw solid black;
+    background-image: linear-gradient(
+      to top left,
+      rgba(248, 244, 244, 0.2),
+      rgba(242, 237, 237, 0.2) 30%,
+      rgba(237, 224, 224, 0)
+    );
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+      inset -2px -2px 3px rgba(0, 0.6, 0.6, 0.6);
+  }
+  .container-profile-form-infor {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 1vw;
+  }

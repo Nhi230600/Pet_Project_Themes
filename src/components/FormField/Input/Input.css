@@ -1,0 +1,18 @@
+.container-profile-form-infor-name {
+    display: flex;
+    width: 100%;
+    padding: 2vw;
+    font-weight: 600;
+    align-items: center;
+    border-radius: 0.5vw;
+    background-color: rgb(241, 219, 156);
+    border: 0.1vw solid black;
+    margin: 1rem 0;
+    box-shadow: 0.1rem 0.1rem 0.1rem black;
+  }
+  .container-profile-form-infor-name-label {
+    width: 30%;
+  }
+  .container-profile-form-infor-name-input {
+    width: 70%;
+  }
