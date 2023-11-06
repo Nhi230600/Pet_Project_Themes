@@ -30,6 +30,8 @@ import {
   DetailTreatment
 } from "screens";
 import PetProfilePage from "screens/PetProfilePage/PetProfilePage";
+
+
 const Router = createBrowserRouter([
   {
     path: "appointment",
