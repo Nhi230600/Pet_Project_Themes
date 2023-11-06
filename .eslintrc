@@ -1,0 +1,7 @@
+{
+  "extends": ["prettier"],
+  "plugins": ["react", "prettier"],
+  "rules": {
+    "prettier/prettier": ["warn", {}]
+  }
+}

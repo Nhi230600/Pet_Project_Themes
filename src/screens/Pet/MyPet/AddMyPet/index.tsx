@@ -1,12 +1,12 @@
-import { PlusOutlined } from "@ant-design/icons";
-import { DatePicker, Form, Input, Radio, Select, Upload } from "antd";
-import { Nav } from "components";
-import { petData } from "components/PetConstant";
-import { useState } from "react";
-import "./AddMyPet.css";
-import Pet from "components/PetConstant/Type";
-import { useNavigate } from "react-router-dom";
-import { InputConponent } from "components";
+import { PlusOutlined } from '@ant-design/icons';
+import { DatePicker, Form, Input, Radio, Select, Upload } from 'antd';
+import { Nav } from 'components';
+import { petData } from 'components/PetConstant';
+import { useState } from 'react';
+import './AddMyPet.css';
+import Pet from 'components/PetConstant/Type';
+import { useNavigate } from 'react-router-dom';
+import { InputConponent } from 'components';
 const { Option } = Select;
 
 function AddMyPet() {
@@ -14,15 +14,15 @@ function AddMyPet() {
   const [fileList, setFileList] = useState<any[]>([]);
   const [form] = Form.useForm();
   const navigate = useNavigate();
-  const [petName, setPetName] = useState("");
-  const [petDOB, setPetDOB] = useState("");
+  const [petName, setPetName] = useState('');
+  const [petDOB, setPetDOB] = useState('');
 
   const onFinish = (values: Pet) => {
     setNewPet(values);
     petData.push(values);
-    console.log("Dữ liệu được gửi:", values);
+    console.log('Dữ liệu được gửi:', values);
 
-    navigate("/mypet");
+    navigate('/mypet');
   };
 
   const normFile = (e: any) => {
@@ -52,10 +52,10 @@ function AddMyPet() {
         <Form
           name="addPetForm"
           labelCol={{
-            span: 4,
+            span: 4
           }}
           wrapperCol={{
-            span: 18,
+            span: 18
           }}
           onFinish={onFinish}
         >
@@ -69,11 +69,11 @@ function AddMyPet() {
               {
                 validator: (_, value) => {
                   if (value && value.length > 1) {
-                    return Promise.reject(new Error("Chỉ được tải lên 1 ảnh"));
+                    return Promise.reject(new Error('Chỉ được tải lên 1 ảnh'));
                   }
                   return Promise.resolve();
-                },
-              },
+                }
+              }
             ]}
           >
             <Upload
@@ -92,18 +92,9 @@ function AddMyPet() {
             </Upload>
           </Form.Item>
 
-          <InputConponent
-            content="Tên thú cưng"
-            description={petName}
-            onChange={onChangePetname}
-          />
+          <InputConponent content="Tên thú cưng" description={petName} onChange={onChangePetname} />
 
-          <InputConponent
-            type="date"
-            content="Ngày sinh"
-            description={petDOB}
-            onChange={onChangePetDoB}
-          />
+          <InputConponent type="pickdate" content="Ngày sinh" description={petDOB} onChange={onChangePetDoB} />
 
           <Form.Item className="input-add-mypet" label="Nguồn gốc">
             <Input className="input-add-mypet-fill" />
