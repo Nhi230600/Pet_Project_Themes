@@ -6,6 +6,7 @@ import { useState } from "react";
 import "./AddMyPet.css";
 import Pet from "components/PetConstant/Type";
 import { useNavigate } from "react-router-dom";
+import { InputConponent } from "components";
 const { Option } = Select;
 
 function AddMyPet() {
@@ -13,6 +14,8 @@ function AddMyPet() {
   const [fileList, setFileList] = useState<any[]>([]);
   const [form] = Form.useForm();
   const navigate = useNavigate();
+  const [petName, setPetName] = useState("");
+  const [petDOB, setPetDOB] = useState("");
 
   const onFinish = (values: Pet) => {
     setNewPet(values);
@@ -35,7 +38,12 @@ function AddMyPet() {
     }
     return true;
   };
-
+  const onChangePetname = (newPetName: string) => {
+    setPetName(newPetName);
+  };
+  const onChangePetDoB = (newPetDoB: string) => {
+    setPetDOB(newPetDoB);
+  };
   return (
     <div>
       <Nav />
@@ -84,13 +92,18 @@ function AddMyPet() {
             </Upload>
           </Form.Item>
 
-          <Form.Item className="input-add-mypet" label="Tên thú cưng">
-            <Input className="input-add-mypet-fill" />
-          </Form.Item>
+          <InputConponent
+            content="Tên thú cưng"
+            description={petName}
+            onChange={onChangePetname}
+          />
 
-          <Form.Item className="input-add-mypet" label="Ngày sinh">
-            <DatePicker className="input-add-mypet-fill" />
-          </Form.Item>
+          <InputConponent
+            type="date"
+            content="Ngày sinh"
+            description={petDOB}
+            onChange={onChangePetDoB}
+          />
 
           <Form.Item className="input-add-mypet" label="Nguồn gốc">
             <Input className="input-add-mypet-fill" />

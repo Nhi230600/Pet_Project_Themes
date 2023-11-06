@@ -43,7 +43,6 @@ const Index = () => {
         onDelete={handleDelete}
         onViewDetail={handleViewDetail}
         title={title}
-        rows={[]}
       />
     </div>
   );

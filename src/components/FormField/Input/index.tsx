@@ -9,7 +9,12 @@ interface InputProps {
   onChange?: (value: string) => void;
 }
 
-const Input: React.FC<InputProps> = ({ content, description, type, onChange }) => {
+const Input: React.FC<InputProps> = ({
+  content,
+  description,
+  type,
+  onChange,
+}) => {
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = event.target.value;
     if (onChange) {
@@ -66,7 +71,9 @@ const Input: React.FC<InputProps> = ({ content, description, type, onChange }) =
   return (
     <div className="container-profile-form-infor-name">
       <div className="container-profile-form-infor-name-label">{content}</div>
-      <div className="container-profile-form-infor-name-input">{renderInput()}</div>
+      <div className="container-profile-form-infor-name-input">
+        {renderInput()}
+      </div>
     </div>
   );
 };

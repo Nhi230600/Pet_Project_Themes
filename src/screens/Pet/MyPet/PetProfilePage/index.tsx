@@ -16,6 +16,7 @@ import { useNavigate, useParams, Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import "./PetProfilePage.css";
 import axios from "axios";
+import { GlobalLink } from "components";
 
 const PetProfilePage = () => {
   const { petId } = useParams();
@@ -37,6 +38,7 @@ const PetProfilePage = () => {
   }, [id, pets]);
 
   const handleImageUpload = async (event: any) => {
+    setLoading(true);
     const file = event.target.files[0];
     const cloudName = "dulapxpnp";
     const presetKey = "ml_default";
@@ -47,7 +49,7 @@ const PetProfilePage = () => {
 
       try {
         const response = await axios.post(
-          `https://api.cloudinary.com/v1_1/${cloudName}/upload`,
+          `${GlobalLink.clouldinary}`,
           formData
         );
         const imageUrl = response.data.secure_url;
