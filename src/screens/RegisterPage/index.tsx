@@ -5,11 +5,11 @@ import "./RegisterPage.css";
 
 const RegisterPage = () => {
   const onFinish = (values: any) => {
-    toast.success("Đăng kí thành công");
+    toast.success("Đăng kí thành công ");
   };
 
   const onFinishFailed = (errorInfo: any) => {
-    toast.error("đăng kí thất bại");
+    toast.error("Đăng kí không thành công");
   };
 
   return (

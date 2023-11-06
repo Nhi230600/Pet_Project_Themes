@@ -1,0 +1,72 @@
+.add-mypet-container {
+  width: 55%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 0.4vw solid rgb(245, 214, 129);
+  border-radius: 50px;
+  text-align: center;
+}
+.add-mypet-container h1 {
+  text-align: center;
+  border-bottom: 0.2vw dashed rgb(245, 214, 129);
+  font-weight: bold;
+  margin-bottom: 2vw;
+  text-shadow: 0.1rem 0.1rem 0.1rem rgb(245, 214, 129);
+  font-size: 2rem;
+}
+.add-mypet-container .ant-input,
+.add-mypet-container .ant-select-selection-search-input,
+.add-mypet-container .ant-picker {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.button-save-mypet-container {
+  display: flex;
+  justify-content: center;
+}
+.button-save-mypet {
+  cursor: pointer;
+  width: 120px;
+  height: 50px;
+  padding: auto;
+  font-weight: 600;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 20px;
+  background-color: rgba(220, 0, 0, 1);
+  background-image: linear-gradient(
+    to top left,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2) 30%,
+    rgba(0, 0, 0, 0)
+  );
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.button-save-mypet:hover {
+  background-color: rgba(255, 0, 0, 1);
+}
+.button-save-mypet:active {
+  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+    inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+.input-add-mypet {
+  font-weight: bold;
+}
+
+.input-add-mypet-fill {
+  border: 2px solid #ccc;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 8px;
+  width: 100%;
+}
+.radio-mypet {
+  font-weight: 400;
+}

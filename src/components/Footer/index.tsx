@@ -13,8 +13,6 @@ import "./Footer.css";
 type FooterProps = {};
 
 const Footer = (props: FooterProps) => {
-  const {} = props;
-
   return (
     <>
       <footer className="footer">
