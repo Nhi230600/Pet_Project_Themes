@@ -7,9 +7,14 @@ interface InputProps {
   description: string;
   type?: string;
   onChange?: (value: string) => void;
+  select?: Choice[];
+}
+interface Choice {
+  value: string;
+  description: string;
 }
 
-const InputComponent: React.FC<InputProps> = ({ content, description, type, onChange }) => {
+const InputComponent: React.FC<InputProps> = ({ content, description, type, onChange, select }) => {
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = event.target.value;
     if (onChange) {
@@ -45,6 +50,21 @@ const InputComponent: React.FC<InputProps> = ({ content, description, type, onCh
           value={description}
           onChange={handleInputChange}
         />
+      );
+    } else if (type === 'select') {
+      return (
+        <select
+          style={{
+            width: '100%',
+            borderRadius: '0.5vw',
+            height: '3vw',
+            border: 'none'
+          }}
+        >
+          {select?.map((choice: Choice) => {
+            <option value={choice.value}>{choice.description}</option>;
+          })}
+        </select>
       );
     } else {
       return (
