@@ -1,6 +1,6 @@
 // Input.tsx
-import React from "react";
-import "./Input.css";
+import React from 'react';
+import './InputComponent.css';
 
 interface InputProps {
   content: string;
@@ -9,7 +9,7 @@ interface InputProps {
   onChange?: (value: string) => void;
 }
 
-const Input: React.FC<InputProps> = ({ content, description, type, onChange }) => {
+const InputComponent: React.FC<InputProps> = ({ content, description, type, onChange }) => {
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = event.target.value;
     if (onChange) {
@@ -18,29 +18,29 @@ const Input: React.FC<InputProps> = ({ content, description, type, onChange }) =
   };
 
   const renderInput = () => {
-    if (type === "number") {
+    if (type === 'number') {
       return (
         <input
           style={{
-            width: "100%",
-            borderRadius: "0.5vw",
-            height: "3vw",
-            border: "none",
+            width: '100%',
+            borderRadius: '0.5vw',
+            height: '3vw',
+            border: 'none'
           }}
           type="number"
           value={description}
           onChange={handleInputChange}
         />
       );
-    } else if (type === "pickdate") {
+    } else if (type === 'pickdate') {
       return (
         <input
           type="date"
           style={{
-            width: "100%",
-            borderRadius: "0.5vw",
-            height: "3vw",
-            border: "none",
+            width: '100%',
+            borderRadius: '0.5vw',
+            height: '3vw',
+            border: 'none'
           }}
           value={description}
           onChange={handleInputChange}
@@ -50,10 +50,10 @@ const Input: React.FC<InputProps> = ({ content, description, type, onChange }) =
       return (
         <input
           style={{
-            width: "100%",
-            borderRadius: "0.5vw",
-            height: "3vw",
-            border: "none",
+            width: '100%',
+            borderRadius: '0.5vw',
+            height: '3vw',
+            border: 'none'
           }}
           type="text"
           value={description}
@@ -71,4 +71,4 @@ const Input: React.FC<InputProps> = ({ content, description, type, onChange }) =
   );
 };
 
-export default Input;
+export default InputComponent;
