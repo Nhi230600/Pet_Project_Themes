@@ -8,104 +8,94 @@ import {
   InstagramOutlined,
   PlusOutlined,
   TwitterOutlined,
-  YoutubeFilled,
-} from "@ant-design/icons";
-import {
-  Avatar,
-  Button,
-  Card,
-  DatePicker,
-  List,
-  Modal,
-  Pagination,
-  Tag,
-  Typography,
-} from "antd";
-import "antd/dist/antd.css";
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { toast } from "react-toastify";
-import "./EmployeeDetailPage.css";
-import ShiftsOfDay from "./ShiftsOfDay";
-
+  YoutubeFilled
+} from '@ant-design/icons';
+import { Avatar, Button, Card, DatePicker, List, Modal, Pagination, Tag, Typography } from 'antd';
+import 'antd/dist/antd.css';
+import React, { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import './EmployeeDetailPage.css';
+import ShiftsOfDay from './ShiftsOfDay';
+import employeeData from 'components';
 const { Text } = Typography;
 
 const EmployeeDetailPage = () => {
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
-
+  const { id } = useParams();
+  useEffect;
   const [employee] = useState({
-    name: "Nguyễn Văn A",
-    type: "Bác sĩ",
-    account: "nvana",
-    password: "password123",
-    qualification: "Bác sĩ chuyên khoa nội",
+    name: 'Nguyễn Văn A',
+    type: 'Bác sĩ',
+    account: 'nvana',
+    password: 'password123',
+    qualification: 'Bác sĩ chuyên khoa nội',
     experience: 5,
-    avatarUrl:
-      "https://res.cloudinary.com/dinphlnz4/image/upload/v1694748159/Screenshot_2023-09-15_101848_ievcml.png",
+    avatarUrl: 'https://res.cloudinary.com/dinphlnz4/image/upload/v1694748159/Screenshot_2023-09-15_101848_ievcml.png',
     shifts: [
-      { date: "2023-09-10", time: "08:00 - 12:00", status: 1 },
-      { date: "2023-09-10", time: "08:00 - 12:00", status: 1 },
-      { date: "2023-09-10", time: "08:00 - 12:00", status: 1 },
-      { date: "2023-09-10", time: "08:00 - 12:00", status: 1 },
-      { date: "2023-09-10", time: "08:00 - 12:00", status: 1 },
-      { date: "2023-09-10", time: "08:00 - 12:00", status: 1 },
-      { date: "2023-09-11", time: "13:00 - 17:00", status: 2 },
-      { date: "2023-09-12", time: "09:00 - 11:00", status: 1 },
+      { date: '2023-09-10', time: '08:00 - 12:00', status: 1 },
+      { date: '2023-09-10', time: '08:00 - 12:00', status: 1 },
+      { date: '2023-09-10', time: '08:00 - 12:00', status: 1 },
+      { date: '2023-09-10', time: '08:00 - 12:00', status: 1 },
+      { date: '2023-09-10', time: '08:00 - 12:00', status: 1 },
+      { date: '2023-09-10', time: '08:00 - 12:00', status: 1 },
+      { date: '2023-09-11', time: '13:00 - 17:00', status: 2 },
+      { date: '2023-09-12', time: '09:00 - 11:00', status: 1 }
     ],
     appointments: [
       {
-        date: "2023-09-10",
-        time: "08:00 - 09:00",
+        date: '2023-09-10',
+        time: '08:00 - 09:00',
         status: 1,
-        service: "Trị bệnh ngu",
-        price: "10",
+        service: 'Trị bệnh ngu',
+        price: '10'
       },
       {
-        date: "2023-09-11",
-        time: "10:00 - 11:00",
+        date: '2023-09-11',
+        time: '10:00 - 11:00',
         status: 2,
-        service: "Khai sáng tâm hồn",
-        price: "290",
+        service: 'Khai sáng tâm hồn',
+        price: '290'
       },
       {
-        date: "2023-09-12",
-        time: "14:00 - 15:00",
+        date: '2023-09-12',
+        time: '14:00 - 15:00',
         status: 3,
-        service: "Thông não",
-        price: "150",
+        service: 'Thông não',
+        price: '150'
       },
       {
-        date: "2023-09-10",
-        time: "08:00 - 09:00",
+        date: '2023-09-10',
+        time: '08:00 - 09:00',
         status: 1,
-        service: "Trị bệnh ngu",
-        price: "10",
+        service: 'Trị bệnh ngu',
+        price: '10'
       },
       {
-        date: "2023-09-10",
-        time: "08:00 - 09:00",
+        date: '2023-09-10',
+        time: '08:00 - 09:00',
         status: 1,
-        service: "Trị bệnh ngu",
-        price: "100",
+        service: 'Trị bệnh ngu',
+        price: '100'
       },
       {
-        date: "2023-09-12",
-        time: "14:00 - 15:00",
+        date: '2023-09-12',
+        time: '14:00 - 15:00',
         status: 3,
-        service: "Thông não",
-        price: "200",
-      },
-    ],
+        service: 'Thông não',
+        price: '200'
+      }
+    ]
   });
   const tabList = [
     {
-      key: "tab1",
-      tab: "Ca làm",
+      key: 'tab1',
+      tab: 'Ca làm'
     },
     {
-      key: "tab2",
-      tab: "Buổi hẹn",
-    },
+      key: 'tab2',
+      tab: 'Buổi hẹn'
+    }
   ];
   const pageSize = 3;
   const totalItems = employee.appointments.length;
@@ -121,9 +111,9 @@ const EmployeeDetailPage = () => {
     tab1: (
       <Card title="Ca làm trong ngày " className="shift">
         <DatePicker
-          onChange={(date) => {
+          onChange={date => {
             if (date) {
-              const selectedDate = date.format("YYYY-MM-DD");
+              const selectedDate = date.format('YYYY-MM-DD');
               setSelectedDate(selectedDate);
             } else {
               setSelectedDate(null);
@@ -132,7 +122,7 @@ const EmployeeDetailPage = () => {
         />
         <ShiftsOfDay
           shifts={employee.shifts}
-          onStatusChange={(index) => handleStatusChange(index)}
+          onStatusChange={index => handleStatusChange(index)}
           selectedDate={selectedDate}
         />
         <Link to={`add-shift`}>
@@ -149,7 +139,7 @@ const EmployeeDetailPage = () => {
         </div>
         <List
           dataSource={employee.appointments.slice(startIndex, endIndex)}
-          renderItem={(appointment) => (
+          renderItem={appointment => (
             <List.Item className="appointment-item">
               <div className="date-info">
                 <Text className="date-text">{appointment.date}</Text>
@@ -193,9 +183,9 @@ const EmployeeDetailPage = () => {
           showSizeChanger={false} // Tắt tùy chọn thay đổi kích thước trang
         />
       </Card>
-    ),
+    )
   };
-  const [activeTabKey1, setActiveTabKey1] = useState<string>("tab1");
+  const [activeTabKey1, setActiveTabKey1] = useState<string>('tab1');
 
   const onTab1Change = (key: string) => {
     setActiveTabKey1(key);
@@ -204,25 +194,21 @@ const EmployeeDetailPage = () => {
   const totalAppointments = employee.appointments.length;
 
   // Tính toán số đơn hoàn thành
-  const completedAppointments = employee.appointments.filter(
-    (appointment) => appointment.status === 1
-  ).length;
+  const completedAppointments = employee.appointments.filter(appointment => appointment.status === 1).length;
 
   // Tính toán số đơn bị hủy
-  const canceledAppointments = employee.appointments.filter(
-    (appointment) => appointment.status === 2
-  ).length;
+  const canceledAppointments = employee.appointments.filter(appointment => appointment.status === 2).length;
   const handleStatusChange = (index: number) => {
     const updatedShifts = [...employee.shifts];
 
     if (updatedShifts[index].status === 1) {
       Modal.confirm({
-        title: "Xác nhận",
-        content: "Bạn có chắc chắn muốn đánh dấu hoàn thành?",
+        title: 'Xác nhận',
+        content: 'Bạn có chắc chắn muốn đánh dấu hoàn thành?',
         onOk() {
-          toast.success("Cập nhật trạng thái thành công");
+          toast.success('Cập nhật trạng thái thành công');
         },
-        onCancel() {},
+        onCancel() {}
       });
     }
   };
@@ -236,10 +222,10 @@ const EmployeeDetailPage = () => {
           <Card
             className="employee-card"
             actions={[
-              <FacebookFilled style={{ color: "blue" }} />,
-              <TwitterOutlined style={{ color: "skyblue" }} />,
-              <InstagramOutlined style={{ color: "skyblue" }} />,
-              <YoutubeFilled style={{ color: "red" }} />,
+              <FacebookFilled style={{ color: 'blue' }} />,
+              <TwitterOutlined style={{ color: 'skyblue' }} />,
+              <InstagramOutlined style={{ color: 'skyblue' }} />,
+              <YoutubeFilled style={{ color: 'red' }} />
             ]}
             cover={<div className="color-background"> {employee.name}</div>}
           >
@@ -274,9 +260,7 @@ const EmployeeDetailPage = () => {
                 <div className="appointment-card-in">
                   <Text>Tổng số đơn hẹn</Text>
                   <br />
-                  <Text className="appointment-card-number">
-                    {totalAppointments}
-                  </Text>
+                  <Text className="appointment-card-number">{totalAppointments}</Text>
                 </div>
               </div>
             </Card>
@@ -287,9 +271,7 @@ const EmployeeDetailPage = () => {
                 <div className="appointment-card-in">
                   <Text>Đơn hoàn thành</Text>
                   <br />
-                  <Text className="appointment-card-number">
-                    {completedAppointments}
-                  </Text>
+                  <Text className="appointment-card-number">{completedAppointments}</Text>
                 </div>
               </div>
             </Card>
@@ -300,18 +282,11 @@ const EmployeeDetailPage = () => {
                 <div className="appointment-card-in">
                   <Text>Số đơn bị hủy</Text>
                   <br />
-                  <Text className="appointment-card-number">
-                    {canceledAppointments}
-                  </Text>
+                  <Text className="appointment-card-number">{canceledAppointments}</Text>
                 </div>
               </div>
             </Card>
-            <Card
-              className="appointment-tab"
-              tabList={tabList}
-              activeTabKey={activeTabKey1}
-              onTabChange={onTab1Change}
-            >
+            <Card className="appointment-tab" tabList={tabList} activeTabKey={activeTabKey1} onTabChange={onTab1Change}>
               {contentList[activeTabKey1]}
             </Card>
           </div>
