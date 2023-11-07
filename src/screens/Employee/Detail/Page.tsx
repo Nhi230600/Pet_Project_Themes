@@ -17,7 +17,7 @@ import { Link, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import './EmployeeDetailPage.css';
 import ShiftsOfDay from './ShiftsOfDay';
-import employeeData from 'components';
+
 const { Text } = Typography;
 
 const EmployeeDetailPage = () => {
