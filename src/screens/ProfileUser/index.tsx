@@ -5,7 +5,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
-import { Loading } from "components";
+import { Loading, GlobalLink } from "components";
 import Nav from "components/Nav";
 import CustomerData from "components/UserConstant";
 import { useState } from "react";
@@ -39,7 +39,7 @@ const ProfileUser = () => {
 
       try {
         const response = await axios.post(
-          `https://api.cloudinary.com/v1_1/${cloudName}/upload`,
+          `${GlobalLink.clouldinary}`,
           formData
         );
         const imageUrl = response.data.secure_url;

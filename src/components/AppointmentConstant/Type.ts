@@ -1,4 +1,4 @@
-interface Appointment {
+export interface Appointment {
   treatment: string;
   customerName: string;
   time: string;

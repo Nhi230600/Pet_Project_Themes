@@ -1,6 +1,6 @@
 // Input.tsx
-import React from 'react';
-import './InputComponent.css';
+import React from "react";
+import "./InputComponent.css";
 
 interface InputProps {
   content: string;
@@ -14,7 +14,13 @@ interface Choice {
   description: string;
 }
 
-const InputComponent: React.FC<InputProps> = ({ content, description, type, onChange, select }) => {
+const InputComponent: React.FC<InputProps> = ({
+  content,
+  description,
+  type,
+  onChange,
+  select,
+}) => {
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = event.target.value;
     if (onChange) {
@@ -23,59 +29,62 @@ const InputComponent: React.FC<InputProps> = ({ content, description, type, onCh
   };
 
   const renderInput = () => {
-    if (type === 'number') {
+    if (type === "number") {
       return (
         <input
           style={{
-            width: '100%',
-            borderRadius: '0.5vw',
-            height: '3vw',
-            border: 'none'
+            width: "100%",
+            borderRadius: "0.5vw",
+            height: "3vw",
+            border: "none",
           }}
           type="number"
           value={description}
           onChange={handleInputChange}
         />
       );
-    } else if (type === 'pickdate') {
+    } else if (type === "pickdate") {
       return (
         <input
           type="date"
           style={{
-            width: '100%',
-            borderRadius: '0.5vw',
-            height: '3vw',
-            border: 'none'
+            width: "100%",
+            borderRadius: "0.5vw",
+            height: "3vw",
+            border: "none",
           }}
           value={description}
           onChange={handleInputChange}
         />
       );
-    } else if (type === 'select') {
+    } else if (type === "select") {
+      console.log(select);
       return (
         <select
           style={{
-            width: '100%',
-            borderRadius: '0.5vw',
-            height: '3vw',
-            border: 'none'
+            width: "100%",
+            borderRadius: "0.5vw",
+            height: "3vw",
+            border: "none",
           }}
         >
-          {select?.map((choice: Choice) => {
-            <option value={choice.value}>{choice.description}</option>;
-          })}
+          {select?.map((choice) => (
+            <option key={choice.value} value={choice.value}>
+              {choice.description}
+            </option>
+          ))}
         </select>
       );
     } else {
       return (
         <input
-          style={{
-            width: '100%',
-            borderRadius: '0.5vw',
-            height: '3vw',
-            border: 'none'
-          }}
           type="text"
+          style={{
+            width: "100%",
+            borderRadius: "0.5vw",
+            height: "3vw",
+            border: "none",
+          }}
           value={description}
           onChange={handleInputChange}
         />
@@ -86,7 +95,9 @@ const InputComponent: React.FC<InputProps> = ({ content, description, type, onCh
   return (
     <div className="container-profile-form-infor-name">
       <div className="container-profile-form-infor-name-label">{content}</div>
-      <div className="container-profile-form-infor-name-input">{renderInput()}</div>
+      <div className="container-profile-form-infor-name-input">
+        {renderInput()}
+      </div>
     </div>
   );
 };
