@@ -40,7 +40,6 @@ const PetProfilePage = () => {
   const handleImageUpload = async (event: any) => {
     setLoading(true);
     const file = event.target.files[0];
-    const cloudName = "dulapxpnp";
     const presetKey = "ml_default";
     if (file && pet) {
       const formData = new FormData();
@@ -50,7 +49,7 @@ const PetProfilePage = () => {
       try {
         const response = await axios.post(
           `${GlobalLink.clouldinary}`,
-          formData
+          formData,
         );
         const imageUrl = response.data.secure_url;
         setPet({ ...pet, image: imageUrl });
