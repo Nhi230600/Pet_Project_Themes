@@ -17,3 +17,5 @@ export { default as InputConponent } from "./FormField/Input";
 export { default as GlobalLink } from "./GlobalLink";
 export { default as initialAppointments } from "./AppointmentConstant";
 export type { Appointment } from "./AppointmentConstant/Type";
+export { default as CustomerData } from "./CustomerConstant";
+export type { Customer } from "./CustomerConstant/Type";

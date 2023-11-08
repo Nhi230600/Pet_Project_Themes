@@ -1,17 +1,13 @@
-import { PlusOutlined } from "@ant-design/icons";
-import { DatePicker, Form, Input, Radio, Select, Upload } from "antd";
-import { Nav } from "components";
-import { petData } from "components/PetConstant";
-import { useState } from "react";
-import "./AddMyPet.css";
-import Pet from "components/PetConstant/Type";
-import { useNavigate } from "react-router-dom";
-import { InputConponent } from "components";
-import { GlobalLink } from "components";
-import axios from "axios";
-import { toast } from "react-toastify";
 import { faUpload } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Form, Upload } from "antd";
+import { InputConponent, Nav } from "components";
+import { petData } from "components/PetConstant";
+import Pet from "components/PetConstant/Type";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import "./AddMyPet.css";
 
 interface Choice {
   value: string;
