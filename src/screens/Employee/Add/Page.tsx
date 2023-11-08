@@ -1,13 +1,14 @@
 import { PlusOutlined } from "@ant-design/icons";
 import { Button, Card, Form, Upload } from "antd";
 import "antd/dist/antd.css";
-import { EmployeeData, Employee } from "components";
+import { EmployeeData, Employee, InputConponent } from "components";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "./AddEmployeePage.css";
-import { InputConponent } from "components";
 import { useForm } from "react-hook-form";
+import { faUpload } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const optionsPosition = [
   { value: "Spa", description: "Spa" },
@@ -116,6 +117,8 @@ const AddEmployeePage = () => {
       EmployeeData.push(newEmployee);
       toast.success("Thêm thành công");
       navigate("/admin/employee");
+    } else {
+      toast.error("Tải ảnh lên");
     }
   };
   const inputInfo: InputInfo[] = [
@@ -177,20 +180,39 @@ const AddEmployeePage = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <Form.Item label="Tải ảnh" name="upload" valuePropName="fileList">
           {uploadedImage ? (
-            <div>
-              {" "}
-              <img
-                src={URL.createObjectURL(uploadedImage)}
-                alt="Uploaded"
-                style={{ width: "100px" }}
-              />
-              <button onClick={deleteImage}>Xóa ảnh</button>
-            </div>
+            <>
+              <div className="image-avatar">
+                {" "}
+                <img
+                  style={{
+                    width: "200px",
+                    height: "200px",
+                    borderRadius: "50%",
+                    objectFit: "cover",
+                    border: "0.3rem solid black",
+                  }}
+                  src={uploadedImage ? URL.createObjectURL(uploadedImage) : ""}
+                  alt="Uploaded"
+                />
+              </div>
+              <div className="image-avatar">
+                {" "}
+                <Button onClick={deleteImage}>Xóa ảnh</Button>
+              </div>
+            </>
           ) : (
             <Upload {...uploadProps}>
               <div>
-                <PlusOutlined />
-                <div style={{ marginTop: 8 }}>Tải ảnh</div>
+                <label
+                  htmlFor="imageUpload"
+                  className="container-profile-avatar-upload-button styled"
+                >
+                  <FontAwesomeIcon
+                    icon={faUpload}
+                    style={{ marginRight: "1rem" }}
+                  />
+                  Click to Upload
+                </label>
               </div>
             </Upload>
           )}

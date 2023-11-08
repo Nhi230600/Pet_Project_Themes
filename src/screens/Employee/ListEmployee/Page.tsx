@@ -30,11 +30,10 @@ const EmployeeListPage = () => {
 
   const handleDeleteEmployee = (record: Employee) => {
     const updatedEmployees = employees.filter(
-      (employee) => employee !== record
+      (employee) => employee !== record,
     );
     setEmployees(updatedEmployees);
     toast.success("Xóa thành công", {
-      position: toast.POSITION.TOP_CENTER,
       autoClose: 2000,
       hideProgressBar: true,
     });

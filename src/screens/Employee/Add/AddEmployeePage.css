@@ -1,17 +1,16 @@
-/* Định dạng cho Card bao quanh Form */
 .add-employee-card {
-  width: 500px; /* Độ rộng của Card */
-  margin: 0 auto; /* Để căn giữa theo chiều ngang */
+  width: 70%;
+  margin: 0 auto;
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Hiệu ứng bóng đổ */
-  background-color: #fff; /* Màu nền thẻ Card */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hiển thị đường viền */
-  border-radius: 8px; /* Bo tròn góc thẻ Card */
-  color: #6e6893; /* Màu chữ trên thẻ Card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  color: #6e6893;
 }
 
 .add-employee-button {
-  margin-top: 10px; /* Khoảng cách từ nút Submit đến các trường trước đó */
+  margin-top: 10px;
 }
 .ant-form-item-label {
   font-weight: bold;
@@ -23,24 +22,23 @@
 }
 .ant-select {
   width: 100%;
-  /* Chiếm toàn bộ chiều rộng của trường dữ liệu */
 }
 
 .ant-form-item-explain-error {
-  color: #f5222d; /* Màu thông báo lỗi */
+  color: #f5222d;
 }
 .ant-upload.ant-upload-select-picture-card {
-  width: 100px; /* Kích thước ô tải ảnh */
-  height: 100px; /* Kích thước ô tải ảnh */
-  border: 2px dashed #6e6893; /* Đường viền ô tải ảnh */
-  border-radius: 8px; /* Bo tròn góc ô tải ảnh */
+  width: 100px;
+  height: 100px;
+  border: 2px dashed #6e6893;
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 .add-employee-card .ant-card-head-title {
-  font-size: 24px; /* Kích thước chữ tiêu đề */
+  font-size: 24px;
   color: var(--fonts-primary-variant, #6e6893);
 }
 .add-Button {
@@ -49,4 +47,12 @@
   border-radius: 8px;
   background-color: #dad7ea;
   font-style: bold;
+}
+.add-Button-container {
+  display: flex;
+  justify-content: center;
+}
+.image-avatar {
+  justify-content: center;
+  display: flex;
 }
