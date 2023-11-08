@@ -21,7 +21,9 @@ const InputComponent: React.FC<InputProps> = ({
   onChange,
   select,
 }) => {
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
+  ) => {
     const newValue = event.target.value;
     if (onChange) {
       onChange(newValue);
@@ -58,7 +60,6 @@ const InputComponent: React.FC<InputProps> = ({
         />
       );
     } else if (type === "select") {
-      console.log(select);
       return (
         <select
           style={{
@@ -67,6 +68,8 @@ const InputComponent: React.FC<InputProps> = ({
             height: "3vw",
             border: "none",
           }}
+          value={description}
+          onChange={handleInputChange}
         >
           {select?.map((choice) => (
             <option key={choice.value} value={choice.value}>
