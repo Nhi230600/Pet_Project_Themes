@@ -37,7 +37,7 @@ const SideBar = () => {
           },
           {
             label: "Danh sách dịch vụ",
-            key: "admin/service",
+            key: "/admin/service",
             icon: <UserOutlined />,
           },
         ]}
