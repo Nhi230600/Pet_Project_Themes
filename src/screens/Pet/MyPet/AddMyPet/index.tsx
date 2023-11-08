@@ -10,6 +10,8 @@ import { InputConponent } from "components";
 import { GlobalLink } from "components";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { faUpload } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface Choice {
   value: string;
@@ -135,20 +137,39 @@ function AddMyPet() {
             getValueFromEvent={normFile}
           >
             {uploadedImage ? (
-              <div>
+              <>
                 {" "}
-                <img
-                  src={URL.createObjectURL(uploadedImage)}
-                  alt="Uploaded"
-                  style={{ width: "100px" }}
-                />
+                <div className="image-avatar">
+                  {" "}
+                  <img
+                    style={{
+                      width: "200px",
+                      height: "200px",
+                      borderRadius: "50%",
+                      objectFit: "cover",
+                      border: "0.3rem solid black",
+                    }}
+                    src={
+                      uploadedImage ? URL.createObjectURL(uploadedImage) : ""
+                    }
+                    alt="Uploaded"
+                  />
+                </div>
                 <button onClick={deleteImage}>Xóa ảnh</button>
-              </div>
+              </>
             ) : (
               <Upload {...uploadProps}>
                 <div>
-                  <PlusOutlined />
-                  <div style={{ marginTop: 8 }}>Tải ảnh</div>
+                  <label
+                    htmlFor="imageUpload"
+                    className="container-profile-avatar-upload-button styled"
+                  >
+                    <FontAwesomeIcon
+                      icon={faUpload}
+                      style={{ marginRight: "1rem" }}
+                    />
+                    Click to Upload
+                  </label>
                 </div>
               </Upload>
             )}

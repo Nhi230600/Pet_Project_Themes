@@ -94,7 +94,9 @@ const EditEmployeePage = () => {
           exp: employee.exp,
           type: type,
           gender: employee.gender,
-          avatar: employee.avatar,
+          avatar: uploadedImage
+            ? URL.createObjectURL(uploadedImage)
+            : employee.avatar,
           description: employee.description,
         };
       }
@@ -176,12 +178,6 @@ const EditEmployeePage = () => {
   const handleImageChange = (info: any) => {
     if (info.file.status === "done") {
       setUploadedImage(info.file.originFileObj);
-      if (uploadedImage) {
-        setEmployee((prevEmployee) => ({
-          ...prevEmployee,
-          avatar: URL.createObjectURL(uploadedImage),
-        }));
-      }
     }
     setLoading(false);
   };
