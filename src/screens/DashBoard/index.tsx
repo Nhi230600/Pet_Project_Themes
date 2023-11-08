@@ -3,17 +3,7 @@ import { Card, Col, Row, Statistic, Table } from "antd";
 import "antd/dist/antd.css";
 import { useEffect, useState } from "react";
 import "./DashboardPage.css";
-
-interface Employee {
-  name: string;
-  appointments: number;
-  category: string;
-}
-
-interface Customer {
-  name: string;
-  appointments: number;
-}
+import { Employee, EmployeeData, CustomerData, Customer } from "components";
 
 const DashboardPage = () => {
   const [data, setData] = useState<{
@@ -38,45 +28,26 @@ const DashboardPage = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      const employees: Employee[] = [
-        { name: "Spa Employee 1", appointments: 15, category: "Spa" },
-        { name: "Spa Employee 2", appointments: 12, category: "Spa" },
-        { name: "Doctor Employee 1", appointments: 18, category: "Bác sĩ" },
-        { name: "Doctor Employee 2", appointments: 14, category: "Bác sĩ" },
-        {
-          name: "Trainer Employee 1",
-          appointments: 20,
-          category: "Huấn luyện viên",
-        },
-        {
-          name: "Trainer Employee 2",
-          appointments: 16,
-          category: "Huấn luyện viên",
-        },
-      ];
+      const employees = EmployeeData;
 
-      const customers: Customer[] = [
-        { name: "Customer 1", appointments: 8 },
-        { name: "Customer 2", appointments: 6 },
-        { name: "Customer 3", appointments: 5 },
-        { name: "Customer 4", appointments: 7 },
-      ];
+      const customers = CustomerData;
 
       setData({
         appointmentsToday: 10,
         revenueToday: 1000,
-        totalCustomers: 50,
-        totalEmployees: 20,
-        topEmployeesSpa: employees.filter(
-          (employee) => employee.category === "Spa"
-        ),
-        topEmployeesDoctor: employees.filter(
-          (employee) => employee.category === "Bác sĩ"
-        ),
-        topEmployeesTrainer: employees.filter(
-          (employee) => employee.category === "Huấn luyện viên"
-        ),
-        topCustomers: customers,
+        totalCustomers: customers.length,
+        totalEmployees: employees.length,
+        topEmployeesSpa: employees
+          .filter((employee) => employee.position === "Spa")
+          .sort((a, b) => b.appointment - a.appointment),
+
+        topEmployeesDoctor: employees
+          .filter((employee) => employee.position === "Bác sĩ")
+          .sort((a, b) => b.appointment - a.appointment),
+        topEmployeesTrainer: employees
+          .filter((employee) => employee.position === "Huấn luyện viên")
+          .sort((a, b) => b.appointment - a.appointment),
+        topCustomers: customers.sort((a, b) => b.appointments - a.appointments),
       });
     }, 1000);
   }, []);
@@ -122,8 +93,9 @@ const DashboardPage = () => {
       <Card title="Top nhân viên">
         <Row gutter={16}>
           <Col span={8}>
+            Nhân viên chăm sóc
             <Table
-              dataSource={data.topEmployeesSpa}
+              dataSource={data.topEmployeesSpa.slice(0, 3)}
               columns={[
                 {
                   title: "Nhân viên",
@@ -132,15 +104,17 @@ const DashboardPage = () => {
                 },
                 {
                   title: "Số đơn đặt lịch",
-                  dataIndex: "appointments",
+                  dataIndex: "appointment",
                   key: "appointments",
                 },
               ]}
+              pagination={false}
             />
           </Col>
           <Col span={8}>
+            Bác Xĩ
             <Table
-              dataSource={data.topEmployeesDoctor}
+              dataSource={data.topEmployeesDoctor.slice(0, 3)}
               columns={[
                 {
                   title: "Nhân viên",
@@ -149,15 +123,17 @@ const DashboardPage = () => {
                 },
                 {
                   title: "Số đơn đặt lịch",
-                  dataIndex: "appointments",
+                  dataIndex: "appointment",
                   key: "appointments",
                 },
               ]}
+              pagination={false}
             />
           </Col>
           <Col span={8}>
+            Huấn luyện
             <Table
-              dataSource={data.topEmployeesTrainer}
+              dataSource={data.topEmployeesTrainer.slice(0, 3)}
               columns={[
                 {
                   title: "Nhân viên",
@@ -166,10 +142,11 @@ const DashboardPage = () => {
                 },
                 {
                   title: "Số đơn đặt lịch",
-                  dataIndex: "appointments",
+                  dataIndex: "appointment",
                   key: "appointments",
                 },
               ]}
+              pagination={false}
             />
           </Col>
         </Row>
@@ -177,7 +154,7 @@ const DashboardPage = () => {
 
       <Card title="Top khách hàng có số đơn đặt lịch nhiều nhất">
         <Table
-          dataSource={data.topCustomers}
+          dataSource={data.topCustomers.slice(0, 3)}
           columns={[
             {
               title: "Khách hàng",
@@ -190,6 +167,7 @@ const DashboardPage = () => {
               key: "appointments",
             },
           ]}
+          pagination={false}
         />
       </Card>
     </div>
