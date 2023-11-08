@@ -85,7 +85,6 @@ const EditEmployeePage = () => {
         (employee) => employee.id.toString() === id,
       );
       if (updatedEmployeeIndex !== -1) {
-        // Update the employee's properties
         EmployeeData[updatedEmployeeIndex] = {
           ...EmployeeData[updatedEmployeeIndex],
           name: employee.name,
@@ -101,14 +100,12 @@ const EditEmployeePage = () => {
       }
 
       toast.success("Sửa thành công", {
-        position: toast.POSITION.TOP_CENTER,
         autoClose: 2000,
         hideProgressBar: true,
       });
       navigate(`/admin/employee/${id}`);
     } else {
       toast.error("Không để trống", {
-        position: toast.POSITION.TOP_CENTER,
         autoClose: 2000,
         hideProgressBar: true,
       });
@@ -252,9 +249,6 @@ const EditEmployeePage = () => {
           description={employee.name}
           onChange={onChangeName}
         />
-
-        {/* Sử dụng SelectField */}
-
         <InputConponent
           content="Chức vụ"
           description={employee.position}
@@ -262,29 +256,27 @@ const EditEmployeePage = () => {
           type="select"
           onChange={onChangePosition}
         />
-
-        {/* Sử dụng InputField */}
         <InputConponent
           content="Tài khoản"
           description={employee.account}
           onChange={onChangeAccount}
         />
-
-        {/* Sử dụng InputField với kiểu Password */}
         <InputConponent
           content="Mật khẩu"
           description={employee.password}
           onChange={onChangePassword}
         />
-
-        {/* Sử dụng NumberField */}
         <InputConponent
           content="Kinh nghiệm(năm)"
           description={employee.exp.toString()}
           type="number"
           onChange={onChangeExp}
         />
-        <InputConponent content="Mô tả" description={employee.description} />
+        <InputConponent
+          content="Mô tả"
+          description={employee.description}
+          onChange={onChangeDescription}
+        />
         <InputConponent
           content="Giới tính"
           description={employee.gender}
@@ -292,10 +284,15 @@ const EditEmployeePage = () => {
           type="select"
           onChange={onChangeGender}
         />
-
-        <Button className="edit-Button" block type="primary" onClick={submit}>
-          Lưu
-        </Button>
+        <div className="edit-Button-employee-container">
+          <Button
+            className="edit-Button-employee"
+            type="primary"
+            onClick={submit}
+          >
+            Lưu
+          </Button>
+        </div>
       </Card>
     </div>
   );

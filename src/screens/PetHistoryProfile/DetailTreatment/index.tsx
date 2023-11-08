@@ -13,14 +13,14 @@ interface Input {
 }
 
 const DetailTreatment: React.FC = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const { id, petId } = useParams<{ id: string; petId: string }>();
   if (!id || !petId) {
     return <div>Thiếu thông tin ID hoặc Pet ID.</div>;
   }
 
   const treatment: Treatment | undefined = data.find(
-    (item) => item.id === parseInt(id, 10)
+    (item) => item.id === parseInt(id, 10),
   );
 
   if (!treatment) {
@@ -37,7 +37,7 @@ const DetailTreatment: React.FC = () => {
   });
   treatmentshow.push({
     content: "Ngày",
-    
+
     description: format(new Date(treatment.start), "MMMM d, yyyy, HH:mm a"),
   });
   treatmentshow.push({
@@ -50,6 +50,7 @@ const DetailTreatment: React.FC = () => {
   return (
     <div>
       <Nav />
+      <h1>Lịch sử điều trị</h1>
       <div className="treatment-container">
         <Form input={treatmentshow} />
         <Form input={service} />
