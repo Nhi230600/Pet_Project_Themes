@@ -1,5 +1,5 @@
 .edit-employee-card {
-  width: 500px; /* Độ rộng của Card */
+  width: 1000px; /* Độ rộng của Card */
   margin: 0 auto; /* Để căn giữa theo chiều ngang */
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Hiệu ứng bóng đổ */
@@ -8,7 +8,10 @@
   border-radius: 8px; /* Bo tròn góc thẻ Card */
   color: #6e6893; /* Màu chữ trên thẻ Card */
 }
-
+.image-avatar {
+  justify-content: center;
+  display: flex;
+}
 .edit-employee-button {
   margin-top: 10px; /* Khoảng cách từ nút Submit đến các trường trước đó */
 }

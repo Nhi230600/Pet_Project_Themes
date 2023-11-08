@@ -1,6 +1,7 @@
-import { Loading } from 'components';
-import { Suspense } from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { Loading } from "components";
+import { Suspense } from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
 import {
   AddEmployeePage,
   AddServicePage,
@@ -27,288 +28,288 @@ import {
   ViewAppointmentAdmin,
   ViewServicePage,
   TreatmentPet,
-  DetailTreatment
-} from 'screens';
+  DetailTreatment,
+} from "screens";
 
-import AddMyPet from 'screens/Pet/MyPet/AddMyPet';
-import PetProfilePage from 'screens/Pet/MyPet/PetProfilePage';
+import AddMyPet from "screens/Pet/MyPet/AddMyPet";
+import PetProfilePage from "screens/Pet/MyPet/PetProfilePage";
 
 const Router = createBrowserRouter([
   {
-    path: 'appointment',
+    path: "appointment",
     element: (
       <Suspense fallback={<Loading />}>
         <CustomerViewAppointment />
       </Suspense>
-    )
+    ),
   },
   {
-    path: 'booking',
+    path: "booking",
     element: (
       <Suspense fallback={<Loading />}>
         <CustomerPick />
       </Suspense>
-    )
+    ),
   },
   {
-    path: 'timetable/:id',
+    path: "timetable/:id",
     element: (
       <Suspense fallback={<Loading />}>
         <TimeTable />
       </Suspense>
-    )
+    ),
   },
   {
-    path: 'content',
+    path: "content",
     element: (
       <Suspense fallback={<Loading />}>
         <Content />
       </Suspense>
-    )
+    ),
   },
   {
-    path: '',
+    path: "",
     element: (
       <Suspense fallback={<Loading />}>
         <Homepage />
       </Suspense>
-    )
+    ),
   },
   {
-    path: 'mypet',
+    path: "mypet",
     children: [
       {
-        path: '',
+        path: "",
         element: (
           <Suspense fallback={<Loading />}>
             <MyPet />
           </Suspense>
-        )
+        ),
       },
       {
-        path: 'add',
+        path: "add",
         element: (
           <Suspense fallback={<Loading />}>
             <AddMyPet />
           </Suspense>
-        )
+        ),
       },
       {
-        path: ':petId',
+        path: ":petId",
         children: [
           {
-            path: '',
+            path: "",
             element: (
               <Suspense fallback={<Loading />}>
                 <PetProfilePage />
               </Suspense>
-            )
+            ),
           },
           {
-            path: 'treatment',
+            path: "treatment",
             children: [
               {
-                path: '',
+                path: "",
                 element: (
                   <Suspense fallback={<Loading />}>
                     <TreatmentPet />
                   </Suspense>
-                )
+                ),
               },
               {
-                path: ':id',
+                path: ":id",
                 element: (
                   <Suspense fallback={<Loading />}>
                     <DetailTreatment />
                   </Suspense>
-                )
-              }
-            ]
-          }
-        ]
-      }
-    ]
+                ),
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
 
   {
-    path: 'admin',
+    path: "admin",
     children: [
       {
-        path: '',
+        path: "",
         element: (
           <Suspense fallback={<Loading />}>
             <Dashboard />
           </Suspense>
-        )
+        ),
       },
       {
-        path: 'customer',
+        path: "customer",
         element: (
           <Suspense fallback={<Loading />}>
             <UserList />
           </Suspense>
-        )
+        ),
       },
       {
-        path: 'service',
+        path: "service",
         children: [
           {
-            path: '',
+            path: "",
             element: (
               <Suspense fallback={<Loading />}>
                 <ViewServicePage />
               </Suspense>
-            )
+            ),
           },
           {
-            path: 'add',
+            path: "add",
             element: (
               <Suspense fallback={<Loading />}>
                 <AddServicePage />
               </Suspense>
-            )
+            ),
           },
           {
-            path: 'edit',
+            path: "edit",
             element: (
               <Suspense fallback={<Loading />}>
                 <EditServicePage />
               </Suspense>
-            )
-          }
-        ]
+            ),
+          },
+        ],
       },
       {
-        path: 'appointment',
+        path: "appointment",
         element: (
           <Suspense fallback={<Loading />}>
             <ViewAppointmentAdmin />
           </Suspense>
-        )
+        ),
       },
       {
-        path: 'employee',
+        path: "employee",
         children: [
           {
-            path: '',
+            path: "",
             element: (
               <Suspense fallback={<Loading />}>
                 <EmployeeListPage />
               </Suspense>
-            )
+            ),
           },
           {
-            path: 'add',
+            path: "add",
             element: (
               <Suspense fallback={<Loading />}>
                 <AddEmployeePage />
               </Suspense>
-            )
+            ),
           },
           {
-            path: ':id',
+            path: ":id",
             children: [
               {
-                path: '',
+                path: "",
                 element: (
                   <Suspense fallback={<Loading />}>
                     <EmployeeDetailPage />
                   </Suspense>
-                )
+                ),
               },
               {
-                path: 'edit',
+                path: "edit",
                 element: (
                   <Suspense fallback={<Loading />}>
                     <EmployeeEditPage />
                   </Suspense>
-                )
+                ),
               },
               {
-                path: 'add-shift',
+                path: "add-shift",
                 element: (
                   <Suspense fallback={<Loading />}>
                     <AddShiftPage />
                   </Suspense>
-                )
-              }
-            ]
-          }
-        ]
-      }
-    ]
+                ),
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
-    path: 'contact',
+    path: "contact",
     element: (
       <Suspense fallback={<Loading />}>
         <Contact />
       </Suspense>
-    )
+    ),
   },
   {
-    path: 'profile',
+    path: "profile",
     element: (
       <Suspense fallback={<Loading />}>
         <ProfileUser />
       </Suspense>
-    )
+    ),
   },
   {
-    path: 'employee',
+    path: "employee",
     children: [
       {
-        path: '',
+        path: "",
         element: (
           <Suspense fallback={<Loading />}>
             <EmployeeAppointmentListPage />
           </Suspense>
-        )
+        ),
       },
       {
-        path: ':idCustomer',
+        path: ":idCustomer",
         children: [
           {
-            path: '',
+            path: "",
             element: (
               <Suspense fallback={<Loading />}>
                 <EmployeeeCustomerProfile />
               </Suspense>
-            )
+            ),
           },
           {
-            path: ':idTreatment',
+            path: ":idTreatment",
             children: [
               {
-                path: '',
+                path: "",
                 element: (
                   <Suspense fallback={<Loading />}>
                     <CustomerTreatment />
                   </Suspense>
-                )
+                ),
               },
               {
-                path: 'createtreatmentin',
+                path: "createtreatmentin",
                 element: (
                   <Suspense fallback={<Loading />}>
                     <CreateTreatmentIn />
                   </Suspense>
-                )
-              }
-            ]
+                ),
+              },
+            ],
           },
           {
-            path: 'rebook',
+            path: "rebook",
             element: (
               <Suspense fallback={<Loading />}>
                 <PetCheckupPage />
               </Suspense>
-            )
-          }
-        ]
-      }
-    ]
-  }
+            ),
+          },
+        ],
+      },
+    ],
+  },
 ]);
 
 export default function AppRouter() {
