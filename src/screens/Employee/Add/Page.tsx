@@ -1,119 +1,220 @@
 import { PlusOutlined } from "@ant-design/icons";
 import { Button, Card, Form, Upload } from "antd";
 import "antd/dist/antd.css";
-import InputField from "components/Form/InputField";
-import NumberField from "components/Form/NumberField";
-import SelectField from "components/Form/SelectField";
-import { ERROR_MESSAGES } from "components/Form/formConstants";
+import { EmployeeData, Employee } from "components";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "./AddEmployeePage.css";
+import { InputConponent } from "components";
+import { useForm } from "react-hook-form";
 
-const options = [
-  { value: "Spa", label: "Spa" },
-  { value: "Huấn luyện viên", label: "Huấn luyện viên" },
-  { value: "Bác sĩ", label: "Bác sĩ" },
+const optionsPosition = [
+  { value: "Spa", description: "Spa" },
+  { value: "Huấn luyện viên", description: "Huấn luyện viên" },
+  { value: "Bác sĩ", description: "Bác sĩ" },
 ];
-
+const optionsGender = [
+  { value: "Nam", description: "Nam" },
+  { value: "Nữ", description: "Nữ" },
+];
+interface InputInfo {
+  content: string;
+  description: string;
+  type: string;
+  field: string;
+  select?: Choice[];
+  onChange: (value: string) => void;
+}
+interface Choice {
+  value: string;
+  description: string;
+}
 const AddEmployeePage = () => {
+  const { register, handleSubmit } = useForm();
   const [fileList, setFileList] = useState<any[]>([]);
   const [form] = Form.useForm();
   const navigate = useNavigate();
-  const onFinish = (values: any) => {
-    toast.success("Thêm nhân viên thành công");
-    navigate("/admin/employee");
-  };
 
-  const normFile = (e: any) => {
-    if (Array.isArray(e)) {
-      return e;
-    }
-    return e && e.fileList;
-  };
+  const [name, setName] = useState("");
+  const [account, setAccount] = useState("");
+  const [password, setPassword] = useState("");
+  const [position, setPosition] = useState("Bác sĩ");
+  const [exp, setExp] = useState<number | null>(null);
+  const [description, setDescription] = useState("");
+  const [gender, setGender] = useState("Nam");
+  const [uploadedImage, setUploadedImage] = useState<File | null>(null);
 
-  const checkFile = (file: any) => {
-    if (fileList.length >= 1) {
-      return false;
+  const handleImageChange = (info: any) => {
+    if (info.file.status === "done") {
+      setUploadedImage(info.file.originFileObj);
     }
-    return true;
   };
+  const customRequest = ({ file, onSuccess }: any) => {
+    setTimeout(() => {
+      onSuccess("ok");
+    }, 0);
+  };
+  const uploadProps = {
+    customRequest,
+    showUploadList: false,
+    onChange: handleImageChange,
+  };
+  const handleInputName = (value: string) => {
+    setName(value);
+  };
+  const handleInputAccount = (value: string) => {
+    setAccount(value);
+  };
+  const handleInputPassword = (value: string) => {
+    setPassword(value);
+  };
+  const handleInputExp = (value: number | string) => {
+    if (typeof value === "number") {
+      setExp(value);
+    } else if (typeof value === "string") {
+      const parsedValue = parseFloat(value);
+      if (!isNaN(parsedValue)) {
+        setExp(parsedValue);
+      }
+    }
+  };
+  const handleInputDesciption = (value: string) => {
+    setDescription(value);
+  };
+  const handleInputGender = (value: string) => {
+    setGender(value);
+  };
+  const handleInputPosition = (value: string) => {
+    setPosition(value);
+  };
+  const deleteImage = () => {
+    setUploadedImage(null);
+  };
+  const onSubmit = (data: any) => {
+    let type = "";
+    if (position === "Spa") type = "spa";
+    else if (position === "Huấn luyện viên") type = "trainer";
+    else type = "care";
+    if (uploadedImage) {
+      const lastEmployee = EmployeeData[EmployeeData.length - 1];
+      const lastEmployeeId = lastEmployee ? lastEmployee.id : 0;
+      const newEmployeeId = lastEmployeeId + 1;
+      const newEmployee: Employee = {
+        account: data.account,
+        appointment: 0,
+        avatar: URL.createObjectURL(uploadedImage),
+        description: data.description,
+        exp: data.exp,
+        gender: data.gender,
+        name: data.name,
+        password: data.password,
+        position: data.position,
+        type: type,
+        id: newEmployeeId,
+      };
+      EmployeeData.push(newEmployee);
+      toast.success("Thêm thành công");
+      navigate("/admin/employee");
+    }
+  };
+  const inputInfo: InputInfo[] = [
+    {
+      content: "Họ tên",
+      description: name,
+      type: "text",
+      field: "name",
+      onChange: handleInputName,
+    },
+    {
+      content: "Tài khoản",
+      description: account,
+      type: "text",
+      field: "account",
+      onChange: handleInputAccount,
+    },
+    {
+      content: "Mật khẩu",
+      description: password,
+      type: "text",
+      field: "password",
+      onChange: handleInputPassword,
+    },
+    {
+      content: "Chức vụ",
+      description: position,
+      type: "select",
+      field: "position",
+      select: optionsPosition,
+      onChange: handleInputGender,
+    },
+    {
+      content: "Kinh Nghiệm",
+      description: exp !== null ? exp.toString() : "",
+      type: "number",
+      field: "exp",
+      onChange: handleInputExp,
+    },
+    {
+      content: "Mô tả",
+      description: description,
+      type: "text",
+      field: "description",
+      onChange: handleInputDesciption,
+    },
+    {
+      content: "Giới tính",
+      description: gender,
+      type: "select",
+      field: "gender",
+      select: optionsGender,
+      onChange: handleInputGender,
+    },
+  ];
 
   return (
     <Card className="add-employee-card" title="Thêm nhân viên">
-      <Form name="addEmployeeForm" onFinish={onFinish} form={form}>
-        <Form.Item
-          label="Tải Ảnh"
-          valuePropName="fileList"
-          getValueFromEvent={normFile}
-          name="upload"
-          rules={[
-            {
-              validator: (_, value) => {
-                if (value && value.length > 1) {
-                  return Promise.reject(new Error("Chỉ được tải lên 1 ảnh"));
-                }
-                return Promise.resolve();
-              },
-            },
-          ]}
-        >
-          <Upload
-            action="/upload.do"
-            listType="picture-card"
-            fileList={fileList}
-            beforeUpload={checkFile}
-            onRemove={() => setFileList([])}
-          >
-            {fileList.length >= 1 ? null : (
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <Form.Item label="Tải ảnh" name="upload" valuePropName="fileList">
+          {uploadedImage ? (
+            <div>
+              {" "}
+              <img
+                src={URL.createObjectURL(uploadedImage)}
+                alt="Uploaded"
+                style={{ width: "100px" }}
+              />
+              <button onClick={deleteImage}>Xóa ảnh</button>
+            </div>
+          ) : (
+            <Upload {...uploadProps}>
               <div>
                 <PlusOutlined />
-                <div style={{ marginTop: 8 }}>Upload</div>
+                <div style={{ marginTop: 8 }}>Tải ảnh</div>
               </div>
-            )}
-          </Upload>
+            </Upload>
+          )}
         </Form.Item>
-
-        <InputField
-          name="name"
-          label="Họ và tên"
-          rules={[{ required: true, message: ERROR_MESSAGES.nameRequired }]}
-        />
-
-        <SelectField
-          name="position"
-          label="Chức vụ"
-          options={options}
-          rules={[{ required: true, message: ERROR_MESSAGES.positionRequired }]}
-        />
-
-        <InputField
-          name="qualification"
-          label="Bằng cấp"
-          rules={[
-            { required: true, message: ERROR_MESSAGES.qualificationRequired },
-          ]}
-        />
-
-        <NumberField
-          name="experience"
-          label="Kinh nghiệm (năm)"
-          rules={[
-            { required: true, message: ERROR_MESSAGES.experienceRequired },
-            {
-              type: "number",
-              min: 0,
-              message: ERROR_MESSAGES.experienceNonNegative,
-            },
-          ]}
-        />
-
-        <Form.Item>
-          <Button className="add-Button" block type="primary" htmlType="submit">
-            Thêm nhân viên
-          </Button>
-        </Form.Item>
-      </Form>
+        {inputInfo.map((input, index) => (
+          <InputConponent
+            key={index}
+            content={input.content}
+            description={input.description}
+            type={input.type}
+            register={register}
+            field={input.field}
+            select={input.select}
+            validationRules={{
+              required: true,
+              maxLength: 100,
+            }}
+            onChange={input.onChange}
+          />
+        ))}
+        <Button className="add-Button" block type="primary" htmlType="submit">
+          Thêm nhân viên
+        </Button>
+      </form>
     </Card>
   );
 };
