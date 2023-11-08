@@ -40,7 +40,7 @@ const ProfileUser = () => {
       try {
         const response = await axios.post(
           `${GlobalLink.clouldinary}`,
-          formData
+          formData,
         );
         const imageUrl = response.data.secure_url;
         setCustomerData({ ...customerData, avatar: imageUrl });

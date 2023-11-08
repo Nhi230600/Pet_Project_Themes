@@ -1,38 +1,120 @@
-import { PlusOutlined } from "@ant-design/icons";
+import { faUpload } from "@fortawesome/free-solid-svg-icons";
 import { Button, Card, Form, Upload } from "antd";
 import "antd/dist/antd.css";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import InputField from "../../../components/Form/InputField"; // Import InputField component
-import NumberField from "../../../components/Form/NumberField"; // Import NumberField component
-import SelectField from "../../../components/Form/SelectField"; // Import SelectField component
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./EditEmployeePage.css";
-
+import { EmployeeData, Employee, InputConponent, Loading } from "components";
+interface Choice {
+  value: string;
+  description: string;
+}
 const EditEmployeePage = () => {
-  const [fileList, setFileList] = useState<any[]>([]);
+  const { id } = useParams();
   const navigate = useNavigate();
   const [form] = Form.useForm();
-
-  // Giả sử có một đối tượng nhân viên mẫu để chỉnh sửa
-  const exampleEmployee = {
-    name: "Nguyễn Văn A",
-    type: "Bác sĩ",
-    account: "nvana",
-    password: "password123",
-    qualification: "Bác sĩ chuyên khoa nội",
-    experience: 5,
+  const [loading, setLoading] = useState(false);
+  const [employee, setEmployee] = useState<Employee>({
+    account: "",
+    appointment: 0,
     avatar: "",
-  };
+    description: "",
+    exp: 0,
+    gender: "",
+    id: 0,
+    name: "",
+    password: "",
+    position: "",
+    type: "",
+  });
+  const choiceGender: Choice[] = [
+    {
+      value: "Nam",
+      description: "Nam",
+    },
+    {
+      value: "Nữ",
+      description: "Nữ",
+    },
+  ];
+  const choice: Choice[] = [
+    {
+      value: "Bác sĩ",
+      description: "Bác sĩ",
+    },
+    {
+      value: "Spa",
+      description: "Spa",
+    },
+    {
+      value: "Huấn luyện viên",
+      description: "Huấn luyện viên",
+    },
+  ];
+  const [uploadedImage, setUploadedImage] = useState<File | null>(null);
+  const [type, setType] = useState("");
+  useEffect(() => {
+    const selectedEmployee = EmployeeData.find(
+      (emp) => emp.id.toString() === id,
+    );
+    if (selectedEmployee) {
+      setEmployee(selectedEmployee);
+    } else {
+      toast.error("Không tìm thấy nhân viên");
+    }
+  }, []);
 
-  const onFinish = (values: any) => {
-    toast.success("Sửa thành công", {
-      position: toast.POSITION.TOP_CENTER,
-      autoClose: 2000,
-      hideProgressBar: true,
-    });
-    navigate("/employee/detail");
+  const submit = (value: any) => {
+    setLoading(true);
+    if (
+      employee.name !== "" &&
+      employee.position !== "" &&
+      employee.account !== "" &&
+      employee.password !== "" &&
+      employee.exp !== 0 &&
+      employee.description !== ""
+    ) {
+      if (employee.position === "Huấn luyện viên") setType("trainer");
+      else if (employee.position === "Spa") setType("Spa");
+      else setType("Doctor");
+      setLoading(false);
+      const updatedEmployeeIndex = EmployeeData.findIndex(
+        (employee) => employee.id.toString() === id,
+      );
+      if (updatedEmployeeIndex !== -1) {
+        // Update the employee's properties
+        EmployeeData[updatedEmployeeIndex] = {
+          ...EmployeeData[updatedEmployeeIndex],
+          name: employee.name,
+          position: employee.position,
+          account: employee.account,
+          password: employee.password,
+          exp: employee.exp,
+          type: type,
+          gender: employee.gender,
+          avatar: employee.avatar,
+          description: employee.description,
+        };
+      }
+
+      toast.success("Sửa thành công", {
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 2000,
+        hideProgressBar: true,
+      });
+      navigate(`/admin/employee/${id}`);
+    } else {
+      toast.error("Không để trống", {
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 2000,
+        hideProgressBar: true,
+      });
+      setLoading(false);
+    }
+    setLoading(false);
   };
 
   const normFile = (e: any) => {
@@ -41,125 +123,179 @@ const EditEmployeePage = () => {
     }
     return e && e.fileList;
   };
-
-  const checkFile = (file: any) => {
-    if (fileList.length >= 1) {
-      // Đã có tệp được tải lên, không cho phép tải lên thêm
-      return false;
+  const onChangeName = (newValue: string) => {
+    setEmployee((prevEmployee) => ({
+      ...prevEmployee,
+      name: newValue,
+    }));
+  };
+  const onChangePosition = (newValue: string) => {
+    setEmployee((prevEmployee) => ({
+      ...prevEmployee,
+      position: newValue,
+    }));
+  };
+  const onChangeAccount = (newValue: string) => {
+    setEmployee((prevEmployee) => ({
+      ...prevEmployee,
+      account: newValue,
+    }));
+  };
+  const onChangePassword = (newValue: string) => {
+    setEmployee((prevEmployee) => ({
+      ...prevEmployee,
+      password: newValue,
+    }));
+  };
+  const onChangeExp = (newValue: number | string) => {
+    if (typeof newValue === "number") {
+      setEmployee((prevEmployee) => ({
+        ...prevEmployee,
+        exp: newValue,
+      }));
+    } else if (typeof newValue === "string") {
+      const parsedValue = parseFloat(newValue);
+      if (!isNaN(parsedValue)) {
+        setEmployee((prevEmployee) => ({
+          ...prevEmployee,
+          exp: parsedValue,
+        }));
+      }
     }
-    return true;
+  };
+  const onChangeDescription = (newValue: string) => {
+    setEmployee((prevEmployee) => ({
+      ...prevEmployee,
+      description: newValue,
+    }));
+  };
+  const onChangeGender = (newValue: string) => {
+    setEmployee((prevEmployee) => ({
+      ...prevEmployee,
+      gender: newValue,
+    }));
+  };
+
+  const handleImageChange = (info: any) => {
+    if (info.file.status === "done") {
+      setUploadedImage(info.file.originFileObj);
+      if (uploadedImage) {
+        setEmployee((prevEmployee) => ({
+          ...prevEmployee,
+          avatar: URL.createObjectURL(uploadedImage),
+        }));
+      }
+    }
+    setLoading(false);
+  };
+  const customRequest = ({ file, onSuccess }: any) => {
+    setLoading(true);
+    setTimeout(() => {
+      onSuccess("ok");
+    }, 0);
+  };
+  const uploadProps = {
+    customRequest,
+    showUploadList: false,
+    onChange: handleImageChange,
   };
 
   return (
     <div>
-      <ToastContainer />
+      {loading && <Loading />}
       <Card
-        title="Chỉnh sửa thông tin nhân viên"
+        title={` Chỉnh sửa thông tin nhân viên ${id}`}
         className="edit-employee-card"
       >
-        <Form
-          form={form}
-          name="editEmployeeForm"
-          onFinish={onFinish}
-          initialValues={exampleEmployee}
+        <Form.Item
+          name="upload"
+          valuePropName="fileList"
+          getValueFromEvent={normFile}
         >
-          <Form.Item
-            label="Tải ảnh"
-            valuePropName="fileList"
-            getValueFromEvent={normFile}
-            name="upload"
-            rules={[
-              {
-                validator: (_, value) => {
-                  if (value && value.length > 1) {
-                    return Promise.reject(new Error("Chỉ được tải lên 1 ảnh"));
-                  }
-                  return Promise.resolve();
-                },
-              },
-            ]}
-          >
-            <Upload
-              action="/upload.do"
-              listType="picture-card"
-              fileList={fileList}
-              beforeUpload={checkFile}
-              onRemove={() => setFileList([])} // Xóa tệp khi bấm nút xóa
-            >
-              {fileList.length >= 1 ? null : (
-                <div>
-                  <PlusOutlined />
-                  <div style={{ marginTop: 8 }}>Upload</div>
-                </div>
-              )}
+          <div className="image-avatar">
+            {" "}
+            <img
+              style={{
+                width: "200px",
+                height: "200px",
+                borderRadius: "50%",
+                objectFit: "cover",
+                border: "0.3rem solid black",
+              }}
+              src={
+                uploadedImage
+                  ? URL.createObjectURL(uploadedImage)
+                  : employee.avatar
+              }
+              alt="Uploaded"
+            />
+          </div>
+          <div className="image-avatar">
+            <Upload {...uploadProps}>
+              <label
+                htmlFor="imageUpload"
+                className="container-profile-avatar-upload-button styled"
+              >
+                <FontAwesomeIcon
+                  icon={faUpload}
+                  style={{ marginRight: "1rem" }}
+                />
+                Click to Upload
+              </label>
             </Upload>
-          </Form.Item>
+          </div>
+        </Form.Item>
 
-          {/* Sử dụng InputField */}
-          <InputField
-            name="name"
-            label="Họ và tên"
-            rules={[{ required: true, message: "Vui lòng nhập họ tên!" }]}
-          />
+        {/* Sử dụng InputField */}
+        <InputConponent
+          content="Họ và tên"
+          description={employee.name}
+          onChange={onChangeName}
+        />
 
-          {/* Sử dụng SelectField */}
-          <SelectField
-            name="type"
-            label="Chức vụ"
-            options={[
-              { value: "Spa", label: "Spa" },
-              { value: "Huấn luyện viên", label: "Huấn luyện viên" },
-              { value: "Bác sĩ", label: "Bác sĩ" },
-            ]}
-            rules={[{ required: true, message: "Vui lòng chọn chức vụ!" }]}
-          />
+        {/* Sử dụng SelectField */}
 
-          {/* Sử dụng InputField */}
-          <InputField
-            name="account"
-            label="Tài khoản"
-            rules={[{ required: true, message: "Vui lòng nhập tài khoản!" }]}
-          />
+        <InputConponent
+          content="Chức vụ"
+          description={employee.position}
+          select={choice}
+          type="select"
+          onChange={onChangePosition}
+        />
 
-          {/* Sử dụng InputField với kiểu Password */}
-          <InputField
-            name="password"
-            label="Mật khẩu"
-            rules={[{ required: true, message: "Vui lòng nhập mật khẩu!" }]}
-          />
+        {/* Sử dụng InputField */}
+        <InputConponent
+          content="Tài khoản"
+          description={employee.account}
+          onChange={onChangeAccount}
+        />
 
-          {/* Sử dụng InputField */}
-          <InputField
-            name="qualification"
-            label="Bằng cấp"
-            rules={[{ required: true, message: "Vui lòng nhập bằng cấp!" }]}
-          />
+        {/* Sử dụng InputField với kiểu Password */}
+        <InputConponent
+          content="Mật khẩu"
+          description={employee.password}
+          onChange={onChangePassword}
+        />
 
-          {/* Sử dụng NumberField */}
-          <NumberField
-            name="experience"
-            label="Kinh nghiệm (năm)"
-            rules={[
-              { required: true, message: "Vui lòng nhập kinh nghiệm!" },
-              {
-                type: "number",
-                min: 0,
-                message: "Kinh nghiệm phải là số không âm!",
-              },
-            ]}
-          />
+        {/* Sử dụng NumberField */}
+        <InputConponent
+          content="Kinh nghiệm(năm)"
+          description={employee.exp.toString()}
+          type="number"
+          onChange={onChangeExp}
+        />
+        <InputConponent content="Mô tả" description={employee.description} />
+        <InputConponent
+          content="Giới tính"
+          description={employee.gender}
+          select={choiceGender}
+          type="select"
+          onChange={onChangeGender}
+        />
 
-          <Form.Item>
-            <Button
-              className="edit-Button"
-              block
-              type="primary"
-              htmlType="submit"
-            >
-              Lưu
-            </Button>
-          </Form.Item>
-        </Form>
+        <Button className="edit-Button" block type="primary" onClick={submit}>
+          Lưu
+        </Button>
       </Card>
     </div>
   );
