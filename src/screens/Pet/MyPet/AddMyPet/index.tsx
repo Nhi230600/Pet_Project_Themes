@@ -16,17 +16,13 @@ interface Choice {
   description: string;
 }
 function AddMyPet() {
-  const [newPet, setNewPet] = useState({});
-  const [fileList, setFileList] = useState<any[]>([]);
   const [form] = Form.useForm();
   const navigate = useNavigate();
   const [petName, setPetName] = useState("");
   const [PetAge, setPetAge] = useState<number | null>(null);
-
   const [petBreed, setPetBreed] = useState("");
   const [petDescription, setPetDescription] = useState("");
   const [petGender, setPetGender] = useState("male");
-  const [petAvatar, setPetAvatar] = useState("");
   const [uploadedImage, setUploadedImage] = useState<File | null>(null);
   const choice: Choice[] = [
     {

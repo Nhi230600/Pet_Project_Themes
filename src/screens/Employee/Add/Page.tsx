@@ -41,7 +41,17 @@ const AddEmployeePage = () => {
 
   return (
     <Card className="add-employee-card" title="Thêm nhân viên">
-      <Form name="addEmployeeForm" onFinish={onFinish} form={form}>
+      <Form
+        name="addEmployeeForm"
+        labelCol={{
+          span: 5,
+        }}
+        wrapperCol={{
+          span: 17,
+        }}
+        onFinish={onFinish}
+        form={form}
+      >
         <Form.Item
           label="Tải Ảnh"
           valuePropName="fileList"
@@ -107,9 +117,8 @@ const AddEmployeePage = () => {
             },
           ]}
         />
-
-        <Form.Item>
-          <Button className="add-Button" block type="primary" htmlType="submit">
+        <Form.Item className="add-Button-container">
+          <Button className="add-Button" type="primary" htmlType="submit">
             Thêm nhân viên
           </Button>
         </Form.Item>
