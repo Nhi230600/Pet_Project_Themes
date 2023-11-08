@@ -2,11 +2,9 @@ import {
   CalendarOutlined,
   CheckCircleOutlined,
   CloseCircleOutlined,
-  DollarOutlined,
   EditOutlined,
   FacebookFilled,
   InstagramOutlined,
-  PlusOutlined,
   TwitterOutlined,
   YoutubeFilled,
 } from "@ant-design/icons";
@@ -16,29 +14,32 @@ import {
   Card,
   DatePicker,
   List,
-  Modal,
   Pagination,
   Tag,
   Typography,
 } from "antd";
 import "antd/dist/antd.css";
-import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import { toast } from "react-toastify";
-import "./EmployeeDetailPage.css";
-import ShiftsOfDay from "./ShiftsOfDay";
 import {
-  EmployeeData,
-  Employee,
   Appointment,
+  Employee,
+  EmployeeData,
   initialAppointments,
 } from "components";
+import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
+import moment from "moment";
+import "./EmployeeDetailPage.css";
 
 const { Text } = Typography;
 
 const EmployeeDetailPage = () => {
-  const [selectedDate, setSelectedDate] = useState<string | null>(null);
+  const [selectedDate, setSelectedDate] = useState<moment.Moment | null>(null);
+  const handleDateChange = (date: moment.Moment | null) => {
+    setSelectedDate(date);
+  };
   const { id } = useParams();
+  const [showCalendar, setShowCalendar] = useState(false);
   const [employee, setEmployee] = useState<Employee>({
     account: "",
     appointment: 0,
@@ -70,28 +71,24 @@ const EmployeeDetailPage = () => {
     }
   }, []);
 
-  const pageSize = 3;
+  const itemsPerPage = 3;
   const totalItems = appointments.length;
-
   const [currentPage, setCurrentPage] = useState(1);
-
-  const handlePageChange = (page: any) => {
-    setCurrentPage(page);
-  };
-  const startIndex = (currentPage - 1) * pageSize;
-  const endIndex = startIndex + pageSize;
-
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = Math.min(currentPage * itemsPerPage, totalItems);
   const totalAppointments = appointments.length;
-
-  // Tính toán số đơn hoàn thành
+  const appointmentToDisplay = appointments.slice(startIndex, endIndex);
   const completedAppointments = appointments.filter(
     (appointment) => appointment.status === 1,
   ).length;
 
-  // Tính toán số đơn bị hủy
   const canceledAppointments = appointments.filter(
     (appointment) => appointment.status === 2,
   ).length;
+
+  const handlePageChange = (page: any) => {
+    setCurrentPage(page);
+  };
 
   return (
     <div className="employee-detail-page">
@@ -172,10 +169,27 @@ const EmployeeDetailPage = () => {
             <Card className="appointment-tab">
               <Card title="Thông tin buổi hẹn" className="shift">
                 <div className="status-icon">
-                  <CalendarOutlined />
+                  <CalendarOutlined onClick={() => setShowCalendar(true)} />
                 </div>
+                {showCalendar && (
+                  <DatePicker
+                    value={selectedDate}
+                    onChange={(date) => {
+                      setSelectedDate(date);
+                      setShowCalendar(false);
+                    }}
+                  />
+                )}
                 <List
-                  dataSource={appointments.slice(startIndex, endIndex)}
+                  dataSource={appointmentToDisplay.filter((appointment) => {
+                    if (selectedDate) {
+                      const appointmentDate = appointment.time.split(" ")[0];
+                      return (
+                        appointmentDate === selectedDate.format("YYYY-MM-DD")
+                      );
+                    }
+                    return true;
+                  })}
                   renderItem={(appointment) => (
                     <List.Item className="appointment-item">
                       <div className="date-info">
@@ -207,12 +221,13 @@ const EmployeeDetailPage = () => {
                     </List.Item>
                   )}
                 />
+
                 <Pagination
                   current={currentPage}
                   onChange={handlePageChange}
-                  pageSize={pageSize}
+                  pageSize={itemsPerPage}
                   total={totalItems}
-                  showSizeChanger={false} // Tắt tùy chọn thay đổi kích thước trang
+                  showSizeChanger={false}
                 />
               </Card>
             </Card>
