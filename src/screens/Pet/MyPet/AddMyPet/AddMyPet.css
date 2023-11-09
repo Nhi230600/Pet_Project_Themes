@@ -76,3 +76,22 @@
   justify-content: center;
   display: flex;
 }
+.button-delete-image-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.button-delete-image {
+  display: flex;
+  align-items: center;
+  background-color: #e74c3c;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.button-delete-image:hover {
+  background-color: #c0392b;
+}

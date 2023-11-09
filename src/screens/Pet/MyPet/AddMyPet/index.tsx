@@ -1,7 +1,7 @@
-import { faUpload } from "@fortawesome/free-solid-svg-icons";
+import { faTrash, faUpload } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Form, Upload } from "antd";
-import { InputConponent, Nav } from "components";
+import { InputComponent, Nav } from "components";
 import { petData } from "components/PetConstant";
 import Pet from "components/PetConstant/Type";
 import { useState } from "react";
@@ -69,7 +69,7 @@ function AddMyPet() {
 
       navigate("/mypet");
     } else {
-      toast.error("Đủ thông tin vào");
+      toast.error("Chưa điền hết kìa má!");
     }
   };
 
@@ -92,11 +92,6 @@ function AddMyPet() {
         setPetAge(parsedValue);
       }
     }
-  };
-
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const newValue = event.target.value;
-    onChangePetAge(newValue);
   };
 
   const onChangePetBreed = (newPetBreed: string) => {
@@ -128,6 +123,7 @@ function AddMyPet() {
         >
           <Form.Item
             label="Tải ảnh"
+            style={{ fontWeight: "bold" }}
             name="upload"
             valuePropName="fileList"
             getValueFromEvent={normFile}
@@ -151,7 +147,15 @@ function AddMyPet() {
                     alt="Uploaded"
                   />
                 </div>
-                <button onClick={deleteImage}>Xóa ảnh</button>
+                <div className="button-delete-image-container">
+                  <button onClick={deleteImage} className="button-delete-image">
+                    <FontAwesomeIcon
+                      icon={faTrash}
+                      style={{ marginRight: "0.5rem" }}
+                    />
+                    Xóa ảnh
+                  </button>
+                </div>
               </>
             ) : (
               <Upload {...uploadProps}>
@@ -170,32 +174,32 @@ function AddMyPet() {
               </Upload>
             )}
           </Form.Item>
-          <InputConponent
+          <InputComponent
             content="Tên thú cưng"
             description={petName}
             onChange={onChangePetname}
           />
 
-          <InputConponent
+          <InputComponent
             type="number"
             content="Tuổi"
             description={PetAge !== null ? PetAge.toString() : ""}
             onChange={onChangePetAge}
           />
 
-          <InputConponent
+          <InputComponent
             content="Nguồn gốc"
             description={petBreed}
             onChange={onChangePetBreed}
           />
 
-          <InputConponent
+          <InputComponent
             content="Đặc điểm"
             description={petDescription}
             onChange={onChangePetDescription}
           />
 
-          <InputConponent
+          <InputComponent
             content="Giới tính"
             description="male"
             onChange={onChangePetGender}
