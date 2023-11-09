@@ -11,7 +11,7 @@ const employeeData = [
     avatar: "https://source.unsplash.com/random/200x200",
     description:
       "Tôi có 5 năm kinh nghiệm trong việc chữa trị và chăm sóc sức khỏe cho thú cưng, đồng thời cũng gắn bó với PetsLove trong suốt thời gian vừa qua cùng với, Phương châm: Vui lòng khách đến, vừa lòng pet đi ",
-    appointment: 35,
+    appointment: 99,
   },
   {
     id: 2,

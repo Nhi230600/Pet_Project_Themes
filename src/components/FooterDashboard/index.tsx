@@ -1,5 +1,5 @@
 import { Footer } from "antd/lib/layout/layout";
-import Logo from "../../images/logo.png";
+import { LogoHeader } from "components";
 
 const FooterDashboard = () => {
   return (
@@ -10,7 +10,7 @@ const FooterDashboard = () => {
         width: "100%",
       }}
     >
-      <img src={Logo} alt="logo" style={{ width: "20vw", height: "auto" }} />
+      <LogoHeader />
       PetsLove ©2023 Created by PetsLove
     </Footer>
   );

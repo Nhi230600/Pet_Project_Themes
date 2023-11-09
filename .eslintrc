@@ -2,7 +2,8 @@
   "extends": ["prettier"],
   "plugins": ["react", "prettier"],
   "rules": {
-    // "prettier/prettier":"off" [
+    "prettier/prettier": "off"
+    // [
     //   "warn",
     //   {
     //     "arrowParens": "avoid",

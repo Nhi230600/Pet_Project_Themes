@@ -12,7 +12,7 @@ export { default as Nav } from "./Nav";
 export { default as ButtonDog } from "./ButtonBooking";
 export { default as TableList } from "./ListField";
 export { default as Form } from "./FormField/Form";
-export { default as InputConponent } from "./FormField/Input";
+export { default as InputComponent } from "./FormField/Input";
 export { default as GlobalLink } from "./GlobalLink";
 export { default as initialAppointments } from "./AppointmentConstant";
 export type { Appointment } from "./AppointmentConstant/Type";

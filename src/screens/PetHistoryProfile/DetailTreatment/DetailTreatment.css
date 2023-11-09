@@ -1,6 +1,13 @@
-.treatment-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.treatment-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.pet-history-tilte {
+  display: flex;
+  justify-content: center;
+}
+.pet-history-tilte h1 {
+  margin-top: 20px;
 }

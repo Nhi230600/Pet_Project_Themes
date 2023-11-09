@@ -1,11 +1,11 @@
-import React from "react";
-import data from "../interface/data";
-import { useParams, useNavigate } from "react-router-dom";
-import Treatment from "../interface/Treatment";
-import Service from "../interface/Service";
 import { Form, Nav } from "components";
-import "./DetailTreatment.css";
 import { format } from "date-fns";
+import React from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import Service from "../interface/Service";
+import Treatment from "../interface/Treatment";
+import data from "../interface/data";
+import "./DetailTreatment.css";
 
 interface Input {
   content: string;
@@ -50,7 +50,9 @@ const DetailTreatment: React.FC = () => {
   return (
     <div>
       <Nav />
-      <h1>Lịch sử điều trị</h1>
+      <div className="pet-history-tilte">
+        <h1>Lịch sử điều trị</h1>
+      </div>
       <div className="treatment-container">
         <Form input={treatmentshow} />
         <Form input={service} />
