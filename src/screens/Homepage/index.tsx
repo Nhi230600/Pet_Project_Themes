@@ -1,9 +1,8 @@
-import "./Homepage.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Loading from "components/Loading";
 import Nav from "components/Nav";
 import { Suspense, lazy } from "react";
-import transition from "trasition";
+import "./Homepage.css";
 const LazyService = lazy(() => import("screens/Homepage/ServiceHomePage"));
 const LazyTrainerList = lazy(() => import("screens/Homepage/TrainerList"));
 const LazyAchievement = lazy(() => import("screens/Homepage/Achievements"));

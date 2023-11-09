@@ -7,7 +7,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./EditEmployeePage.css";
-import { EmployeeData, Employee, InputConponent, Loading } from "components";
+import { EmployeeData, Employee, InputComponent, Loading } from "components";
 interface Choice {
   value: string;
   description: string;
@@ -239,41 +239,40 @@ const EditEmployeePage = () => {
           </div>
         </Form.Item>
 
-        {/* Sử dụng InputField */}
-        <InputConponent
+        <InputComponent
           content="Họ và tên"
           description={employee.name}
           onChange={onChangeName}
         />
-        <InputConponent
+        <InputComponent
           content="Chức vụ"
           description={employee.position}
           select={choice}
           type="select"
           onChange={onChangePosition}
         />
-        <InputConponent
+        <InputComponent
           content="Tài khoản"
           description={employee.account}
           onChange={onChangeAccount}
         />
-        <InputConponent
+        <InputComponent
           content="Mật khẩu"
           description={employee.password}
           onChange={onChangePassword}
         />
-        <InputConponent
+        <InputComponent
           content="Kinh nghiệm(năm)"
           description={employee.exp.toString()}
           type="number"
           onChange={onChangeExp}
         />
-        <InputConponent
+        <InputComponent
           content="Mô tả"
           description={employee.description}
           onChange={onChangeDescription}
         />
-        <InputConponent
+        <InputComponent
           content="Giới tính"
           description={employee.gender}
           select={choiceGender}

@@ -1,8 +1,44 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-.mbr-section-title {
-  font-size: 50px;
+.content-service {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+}
+.tag-service-container {
+  display: flex;
+  justify-content: center;
+}
+.tag-service-container > h1 {
+  position: relative;
+  text-align: center;
+  font-weight: 700;
+  font-size: 3rem;
+  max-width: 100%;
+  text-shadow: 4px 2px 0px rgba(110, 193, 228, 0.3);
+}
+.service-container-card {
+  width: 400px;
+  height: 720px;
+  background: #f2f2f4;
+  border-radius: 0 70px 70px 70px;
+}
+.service-card-image {
+  width: 350px;
+  height: 350px;
+  margin: 10px 10px;
+}
+.service-content-card div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
   font-weight: bold;
+  font-size: x-large;
+}
+.service-content-card p {
+  height: 90px;
+  margin: 30px 20px;
+}
+.service-card-button {
+  display: flex;
+  justify-content: center;
 }

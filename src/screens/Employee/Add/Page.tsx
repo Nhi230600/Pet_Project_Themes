@@ -2,7 +2,7 @@ import { faUpload } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button, Card, Form, Upload } from "antd";
 import "antd/dist/antd.css";
-import { Employee, EmployeeData, InputConponent } from "components";
+import { Employee, EmployeeData, InputComponent } from "components";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
@@ -47,7 +47,6 @@ const AddEmployeePage = () => {
       setUploadedImage(info.file.originFileObj);
     }
   };
-
   const customRequest = ({ file, onSuccess }: any) => {
     setTimeout(() => {
       onSuccess("ok");
@@ -83,9 +82,7 @@ const AddEmployeePage = () => {
   const handleInputGender = (value: string) => {
     setGender(value);
   };
-  const handleInputPosition = (value: string) => {
-    setPosition(value);
-  };
+
   const deleteImage = () => {
     setUploadedImage(null);
   };
@@ -216,7 +213,7 @@ const AddEmployeePage = () => {
           )}
         </Form.Item>
         {inputInfo.map((input, index) => (
-          <InputConponent
+          <InputComponent
             key={index}
             content={input.content}
             description={input.description}
