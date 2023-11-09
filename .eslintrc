@@ -2,19 +2,19 @@
   "extends": ["prettier"],
   "plugins": ["react", "prettier"],
   "rules": {
-    "prettier/prettier": [
-      "warn",
-      {
-        "arrowParens": "avoid",
-        "semi": false,
-        "trailingComma": "none",
-        "endOfLine": "lf",
-        "tabWidth": 2,
-        "useTabs": false,
-        "singleQuote": true,
-        "printWidth": 120,
-        "jsxSingleQuote": false
-      }
-    ]
+    // "prettier/prettier":"off" [
+    //   "warn",
+    //   {
+    //     "arrowParens": "avoid",
+    //     "semi": false,
+    //     "trailingComma": "none",
+    //     "endOfLine": "auto",
+    //     "tabWidth": 2,
+    //     "useTabs": false,
+    //     "singleQuote": true,
+    //     "printWidth": 120,
+    //     "jsxSingleQuote": false
+    //   }
+    // ]
   }
 }

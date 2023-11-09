@@ -1,15 +1,15 @@
 import { Carousel, Card } from "antd";
-import ImagesComponent from "components/Banner"
+import ImagesComponent from "components/Banner";
 import slidersData from "./slidersData";
 import "./Carousel.css";
 const Sliders = slidersData;
 const App = () => {
   return (
-    <div className="slider" data-aos="zoom-out-down" >
+    <div className="slider" data-aos="zoom-out-down">
       <Carousel autoplay>
         {Sliders.map((Slider, index) => (
           <Card>
-            <div className="banner">
+            <div className="container banner">
               <div className="row main">
                 <div className="col-md-7 carousel-content">
                   {Slider.content}

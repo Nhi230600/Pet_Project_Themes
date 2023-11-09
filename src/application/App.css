@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 .page-entering {
   background-color: rgba(255, 255, 255, 0.1);
 }

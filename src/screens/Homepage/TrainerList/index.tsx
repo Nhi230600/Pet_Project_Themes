@@ -32,22 +32,16 @@ const TrainerList = () => {
         <span className="trainerlist-container-title-1">Our Trainer</span>
       </div>
 
-      <div className="trainerlist-container-content">
+      <div className="content">
         {trainerdata.map((data) => (
-          <div className="trainerlist-container-content-detail">
-            <div className="trainerlist-container-content-detail-img">
-              <img className="trainer-img" src={data.img} alt="" />
+          <div className="detail">
+            <div className="trainer-img">
+              <img src={data.img} alt="" />
             </div>
-            <div className="trainerlist-container-content-detail-name">
-              <h1 className="trainerlist-container-content-detail-name-1">
-                {data.name}
-              </h1>
-              <p className="trainerlist-container-content-detail-name-2 text-yellow-600">
-                {data.position}
-              </p>
-              <p className="trainerlist-container-content-detail-name-2">
-                {data.exp}
-              </p>
+            <div className="name">
+              <h1 className="name-1">{data.name}</h1>
+              <p className="name-2 text-yellow-600">{data.position}</p>
+              <p className="name-2">{data.exp}</p>
 
               <Button btnName="VIEW MORE" btnWidth="40" btnHeight="15" />
             </div>

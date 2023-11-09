@@ -1,3 +1,4 @@
+import "./Popup.css";
 interface Props {
   setShowPopup: () => void;
   onFinish: () => void;
@@ -34,19 +35,15 @@ const Popup: React.FC<Props> = ({ setShowPopup, onFinish }) => {
         </div>
         <div className="">
           <button
-            className="focus:outline-none bg-red-400 transition duration-150 ease-in-out hover:bg-red-500 rounded text-white px-3 py-2 text-xs"
-            onClick={()=>{
-                onFinish();
-                setShowPopup();
-
+            className="button-confirm"
+            onClick={() => {
+              onFinish();
+              setShowPopup();
             }}
           >
             Có
           </button>
-          <button
-            className="focus:outline-none bg-green-400 transition duration-150 ease-in-out hover:bg-green-500 rounded text-white px-3 py-2 text-xs"
-            onClick={setShowPopup}
-          >
+          <button className="button-cancel" onClick={() => setShowPopup()}>
             Dell
           </button>
         </div>

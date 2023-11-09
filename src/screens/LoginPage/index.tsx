@@ -3,19 +3,20 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./LoginPage.css";
 import LogoNav from "components/LogoHeader";
-
+import { useNavigate } from "react-router-dom";
 const LoginPage = () => {
+  const navigate = useNavigate();
   const onFinish = async (values: any) => {
     const { account } = values;
     if (account === "1") {
       sessionStorage.setItem("account", "1");
-      window.location.href = "/";
+      navigate("/profile");
     } else if (account === "2") {
       sessionStorage.setItem("account", "2");
-      window.location.href = "/admin";
+      navigate("/admin");
     } else if (account === "3") {
       sessionStorage.setItem("account", "3");
-      window.location.href = "/employee";
+      navigate("/employee");
     } else {
       toast.error("Tài khoản không tồn tại!!");
     }

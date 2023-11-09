@@ -94,8 +94,8 @@ const TableList: React.FC<TableProps> = ({
   const searchByKeyword = (keyword: string) => {
     const filteredData = tableData.filter((row) =>
       Object.values(row).some((value) =>
-        String(value).toLowerCase().includes(keyword.toLowerCase())
-      )
+        String(value).toLowerCase().includes(keyword.toLowerCase()),
+      ),
     );
     setData(filteredData);
   };
@@ -115,12 +115,6 @@ const TableList: React.FC<TableProps> = ({
   const onFinish = () => {
     setShowPopup(false);
     onDelete && onDelete(id);
-  };
-
-  const handleViewDetail = (rowData: TableRow) => {
-    if (onViewDetail) {
-      onViewDetail(rowData);
-    }
   };
 
   return (
@@ -179,94 +173,74 @@ const TableList: React.FC<TableProps> = ({
           </div>
         </div>
 
-        <table className="min-w-full bg-white dark:bg-gray-800">
+        <table className="custom-table">
           <thead>
-            <tr className="w-full h-16 border-gray-300 dark:border-gray-200 border-b py-8">
+            <tr className="table-header">
               {fields.map((field, index) => (
-                <th
-                  key={index}
-                  className="text-gray-600 dark:text-gray-400 font-normal pr-6 text-left text-sm tracking-normal leading-4"
-                >
-                  {field}
-                </th>
+                <th key={index}>{field}</th>
               ))}
-              <th className="text-gray-600 dark:text-gray-400 font-normal pr-8 text-left text-sm tracking-normal leading-4">
-                Actions
-              </th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
             {currentData.map((row, rowIndex) => (
-              <tr
-                key={rowIndex}
-                className="h-24 border-gray-300 dark:border-gray-200 border-b"
-              >
-                {rows.map((rows, index) => (
-                  <td
-                    key={index}
-                    className="text-sm pr-6 whitespace-no-wrap text-gray-800 dark:text-gray-100 tracking-normal leading-4"
-                  >
-                    {row[rows]}
-                  </td>
+              <tr key={rowIndex}>
+                {rows.map((rowKey, index) => (
+                  <td key={index}>{row[rowKey]}</td>
                 ))}
-                <td className="pr-8 relative">
-                  <div className="flex">
-                    {onDelete && (
-                      <button
-                        className="text-gray-500 rounded cursor-pointer border border-transparent focus:outline-none ml-2"
-                        onClick={() => handleDelete(row.id)}
+                <td>
+                  {onDelete && (
+                    <button
+                      className="action-button"
+                      onClick={() => handleDelete(row.id)}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="icon-trash"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        strokeWidth="1.5"
+                        stroke="currentColor"
+                        fill="none"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className=" icon-tabler icon-tabler-trash"
-                          width={20}
-                          height={20}
-                          viewBox="0 0 24 24"
-                          strokeWidth="1.5"
-                          stroke="currentColor"
-                          fill="none"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <path stroke="none" d="M0 0h24v24H0z" />
-                          <line x1={4} y1={7} x2={20} y2={7} />
-                          <line x1={10} y1={11} x2={10} y2={17} />
-                          <line x1={14} y1={11} x2={14} y2={17} />
-                          <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
-                          <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
-                        </svg>
-                      </button>
-                    )}
-
-                    <Link to={`${row.id}`}>
-                      <button
-                        className="text-gray-500 rounded cursor-pointer border border-transparent focus:outline-none ml-2"
-                     
+                        <path stroke="none" d="M0 0h24v24H0z" />
+                        <line x1="4" y1="7" x2="20" y2="7" />
+                        <line x1="10" y1="11" x2="10" y2="17" />
+                        <line x1="14" y1="11" x2="14" y2="17" />
+                        <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                        <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                      </svg>
+                    </button>
+                  )}
+                  <Link to={`${row.id}`}>
+                    <button className="action-button">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="icon-search"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        strokeWidth="1.5"
+                        stroke="currentColor"
+                        fill="none"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className=" icon-tabler icon-tabler-search"
-                          width={20}
-                          height={20}
-                          viewBox="0 0 24 24"
-                          strokeWidth="1.5"
-                          stroke="currentColor"
-                          fill="none"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <path stroke="none" d="M0 0h24v24H0z" />
-                          <circle cx={10} cy={10} r={7} />
-                          <line x1={21} y1={21} x2={15} y2={15} />
-                        </svg>
-                      </button>
-                    </Link>
-                  </div>
+                        <path stroke="none" d="M0 0h24v24H0z" />
+                        <circle cx="10" cy="10" r="7" />
+                        <line x1="21" y1="21" x2="15" y2="15" />
+                      </svg>
+                    </button>
+                  </Link>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
+
         <div className="flex justify-center mt-4">
           <button
             className="mr-2 px-3 py-1 border rounded"
