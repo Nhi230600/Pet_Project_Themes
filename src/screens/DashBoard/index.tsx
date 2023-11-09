@@ -27,29 +27,27 @@ const DashboardPage = () => {
   });
 
   useEffect(() => {
-    setTimeout(() => {
-      const employees = EmployeeData;
+    const employees = EmployeeData;
 
-      const customers = CustomerData;
+    const customers = CustomerData;
 
-      setData({
-        appointmentsToday: 10,
-        revenueToday: 1000,
-        totalCustomers: customers.length,
-        totalEmployees: employees.length,
-        topEmployeesSpa: employees
-          .filter((employee) => employee.position === "Spa")
-          .sort((a, b) => b.appointment - a.appointment),
+    setData({
+      appointmentsToday: 10,
+      revenueToday: 1000,
+      totalCustomers: customers.length,
+      totalEmployees: employees.length,
+      topEmployeesSpa: employees
+        .filter((employee) => employee.position === "Spa")
+        .sort((a, b) => b.appointment - a.appointment),
 
-        topEmployeesDoctor: employees
-          .filter((employee) => employee.position === "Bác sĩ")
-          .sort((a, b) => b.appointment - a.appointment),
-        topEmployeesTrainer: employees
-          .filter((employee) => employee.position === "Huấn luyện viên")
-          .sort((a, b) => b.appointment - a.appointment),
-        topCustomers: customers.sort((a, b) => b.appointments - a.appointments),
-      });
-    }, 1000);
+      topEmployeesDoctor: employees
+        .filter((employee) => employee.position === "Bác sĩ")
+        .sort((a, b) => b.appointment - a.appointment),
+      topEmployeesTrainer: employees
+        .filter((employee) => employee.position === "Huấn luyện viên")
+        .sort((a, b) => b.appointment - a.appointment),
+      topCustomers: customers.sort((a, b) => b.appointments - a.appointments),
+    });
   }, []);
 
   return (
