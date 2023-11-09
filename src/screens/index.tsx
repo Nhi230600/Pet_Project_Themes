@@ -17,7 +17,7 @@ const LazyAddEmployeePage = React.lazy(() => import("./Employee/Add"));
 const LazyEmployeeDetailPage = React.lazy(() => import("./Employee/Detail"));
 const LazyEmployeeEditPage = React.lazy(() => import("./Employee/Edit"));
 const LazyViewServicePage = React.lazy(() => import("./Service/View"));
-const LazyAddServicePage = React.lazy(() => import("./Service/Add"));
+const LazyAddServicePage = React.lazy(() => import("./Service/Add/Page"));
 const LazyEditServicePage = React.lazy(() => import("./Service/Edit"));
 const LazyAddShiftPage = React.lazy(() => import("./Employee/Add-Shift"));
 const LazyViewAppointmentAdmin = React.lazy(

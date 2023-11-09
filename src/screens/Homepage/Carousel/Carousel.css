@@ -1,9 +1,9 @@
-.banner{
-    height: 700px;
+.banner {
+  height: 700px;
 }
+
 @media screen and (max-width: 600px) {
-    .banner{
-        height: 1000px;
-    }
-   
+  .banner {
+    height: 1000px;
+  }
 }

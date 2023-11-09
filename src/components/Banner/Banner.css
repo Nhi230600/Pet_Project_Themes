@@ -1,39 +1,38 @@
-.chip-mark {
-    /* Đường dẫn đến tệp hình ảnh nền */
-    background-image: url(images/background.png);
-    /* Kích thước cố định cho background */
-    max-width: 1000px; /* Điều chỉnh kích thước chiều rộng theo ý muốn */
-    height: auto; /* Điều chỉnh kích thước chiều cao theo ý muốn */
-    /* Đặt mask image */
-    mask-image: url(images/background.png);
-    /* Điều chỉnh kích thước của mask */
-    mask-size: 100% 100%; /* Mask sẽ được phóng to 100% kích thước của background */
-    /* Hiệu ứng blending mode */
-    mask-composite: source-over;
-    /* Điều chỉnh vị trí mask */
-    mask-position: center;
+.image-container img {
+  /* Đường dẫn đến tệp hình ảnh nền */
+
+  /* Kích thước cố định cho background */
+  max-width: 1000px; /* Điều chỉnh kích thước chiều rộng theo ý muốn */
+  height: 600px; /* Điều chỉnh kích thước chiều cao theo ý muốn */
+  /* Đặt mask image */
+  -webkit-mask-image: url(images/background.png);
+  /* Điều chỉnh kích thước của mask */
+
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  position: relative;
+}
+.image-container .iframe-chip-mark {
+  /* Đường dẫn đến tệp hình ảnh nền */
+  background-image: url(images/background.png);
+  /* Kích thước cố định cho background */
+  min-width: 1000px; /* Điều chỉnh kích thước chiều rộng theo ý muốn */
+  height: 600px; /* Điều chỉnh kích thước chiều cao theo ý muốn */
+  /* Đặt mask image */
+  -webkit-mask-image: url(images/background.png);
+  /* Điều chỉnh kích thước của mask */
+  mask-size: 100% 100%; /* Mask sẽ được phóng to 100% kích thước của background */
+  /* Hiệu ứng blending mode */
+  mask-composite: source-over;
+  /* Điều chỉnh vị trí mask */
+  mask-position: center;
+}
+@media screen and (max-width: 600px) {
+  .image-container .chip-mark {
+    width: 500px;
   }
-  .iframe-chip-mark{
-     /* Đường dẫn đến tệp hình ảnh nền */
-     background-image: url(images/background.png);
-     /* Kích thước cố định cho background */
-     min-width: 1000px; /* Điều chỉnh kích thước chiều rộng theo ý muốn */
-     height: 600px; /* Điều chỉnh kích thước chiều cao theo ý muốn */
-     /* Đặt mask image */
-     mask-image: url(images/background.png);
-     /* Điều chỉnh kích thước của mask */
-     mask-size: 100% 100%; /* Mask sẽ được phóng to 100% kích thước của background */
-     /* Hiệu ứng blending mode */
-     mask-composite: source-over;
-     /* Điều chỉnh vị trí mask */
-     mask-position: center;
+  .image-container .iframe-chip-mark {
+    min-width: 500px;
+    height: 300px;
   }
-  @media screen and (max-width: 600px) {
-   .chip-mark{
-      width: 500px;
-   }
-   .iframe-chip-mark{
-      min-width: 500px;
-      height: 300px;
-   }
- }
+}

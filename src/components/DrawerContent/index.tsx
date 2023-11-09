@@ -4,7 +4,7 @@ import { useState } from "react";
 import AvatarUser from "../../images/avatar-user.jpeg";
 
 import "./DrawerContent.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const items = [
   {
     label: <a href="">Thông tin cá nhân</a>,
@@ -25,6 +25,7 @@ const items = [
 
 const rootSubmenuKeys = ["user", "pet"];
 const DrawerContent = () => {
+  const navigate = useNavigate();
   const [openKeys, setOpenKeys] = useState(["sub1"]);
   const onOpenChange = (keys: any) => {
     const latestOpenKey = keys.find((key: any) => openKeys.indexOf(key) === -1);
@@ -36,7 +37,7 @@ const DrawerContent = () => {
   };
   const handleLogout = () => {
     sessionStorage.clear();
-    window.location.href = "/";
+    navigate("/");
   };
   return (
     <div className="drawer">

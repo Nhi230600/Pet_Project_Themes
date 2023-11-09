@@ -1,0 +1,31 @@
+/* CSS cho nút "Có" */
+.button-confirm {
+  background-color: #ff5555;
+  transition: background-color 0.3s ease-in-out;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.button-confirm:hover {
+  background-color: #ff6b6b;
+}
+
+/* CSS cho nút "Dell" */
+.button-cancel {
+  background-color: #66bb6a;
+  transition: background-color 0.3s ease-in-out;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.button-cancel:hover {
+  background-color: #77c57d;
+}
