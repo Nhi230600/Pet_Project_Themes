@@ -76,6 +76,13 @@
   justify-content: center;
   display: flex;
 }
+.image-avatar img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 0.3rem solid black;
+}
 .button-delete-image-container {
   display: flex;
   justify-content: center;

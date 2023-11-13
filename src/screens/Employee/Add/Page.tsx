@@ -1,4 +1,4 @@
-import { faUpload } from "@fortawesome/free-solid-svg-icons";
+import { faTrash, faUpload } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button, Card, Form, Upload } from "antd";
 import "antd/dist/antd.css";
@@ -190,9 +190,18 @@ const AddEmployeePage = () => {
                   alt="Uploaded"
                 />
               </div>
-              <div className="image-avatar">
-                {" "}
-                <Button onClick={deleteImage}>Xóa ảnh</Button>
+
+              <div className="image-avatar-button-container">
+                <button
+                  onClick={deleteImage}
+                  className="button-delete-image-employee"
+                >
+                  <FontAwesomeIcon
+                    icon={faTrash}
+                    style={{ marginRight: "0.5rem" }}
+                  />
+                  Xóa ảnh
+                </button>
               </div>
             </>
           ) : (

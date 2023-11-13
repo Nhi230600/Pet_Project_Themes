@@ -130,17 +130,8 @@ function AddMyPet() {
           >
             {uploadedImage ? (
               <>
-                {" "}
                 <div className="image-avatar">
-                  {" "}
                   <img
-                    style={{
-                      width: "200px",
-                      height: "200px",
-                      borderRadius: "50%",
-                      objectFit: "cover",
-                      border: "0.3rem solid black",
-                    }}
                     src={
                       uploadedImage ? URL.createObjectURL(uploadedImage) : ""
                     }
