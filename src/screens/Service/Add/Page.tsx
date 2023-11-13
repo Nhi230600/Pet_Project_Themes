@@ -1,79 +1,126 @@
-import { Button, Card, Form } from "antd";
+import { Button, Card } from "antd";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import InputField from "../../../components/Form/InputField";
-import NumberField from "../../../components/Form/NumberField";
-import SelectField from "../../../components/Form/SelectField";
-import { ERROR_MESSAGES } from "../../../components/Form/formConstants";
-import TextAreaField from "../../../components/TextAreaField";
+import { InputComponent, Service, serviceData } from "components";
 import "./AddServicePage.css";
+import { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
 
 const AddServicePage = () => {
+  const { register, handleSubmit } = useForm();
   const navigate = useNavigate();
-  const [form] = Form.useForm();
-  const onFinish = (values: any) => {
-    console.log("Received values:", values);
-    navigate("/admin/service");
-    toast.success("Thêm dịch vụ thành công! 😊", {
-      position: toast.POSITION.TOP_CENTER,
-      autoClose: 2000,
-      hideProgressBar: true,
-    });
+  const [service, setService] = useState<Service>({
+    description: "",
+    id: 0,
+    name: "",
+    price: 0,
+    type: "Spa",
+  });
+  const onChangeType = (newValue: string) => {
+    setService((prevService) => ({
+      ...prevService,
+      type: newValue,
+    }));
   };
+  const onChangeName = (newValue: string) => {
+    setService((prevService) => ({
+      ...prevService,
+      name: newValue,
+    }));
+  };
+  const onChangeDescription = (newValue: string) => {
+    setService((prevService) => ({
+      ...prevService,
+      description: newValue,
+    }));
+  };
+  const onChangePrice = (newValue: number | string) => {
+    if (typeof newValue === "number") {
+      setService((prevService) => ({
+        ...prevService,
+        exp: newValue,
+      }));
+    } else if (typeof newValue === "string") {
+      const parsedValue = parseFloat(newValue);
+      if (!isNaN(parsedValue)) {
+        setService((prevService) => ({
+          ...prevService,
+          price: parsedValue,
+        }));
+      }
+    }
+  };
+  const onSubmit = () => {
+    if (service.name === "") {
+      toast.error("Không để trống tên");
+    } else if (service.price < 0) {
+      toast.error("Giá không được để âm");
+    } else if (service.description === "") {
+      toast.error("Không để trống mô tả");
+    } else {
+      serviceData.push(service);
+      toast.success("Thêm thành công");
+      navigate("/admin/service");
+    }
+  };
+  const select = [
+    {
+      value: "Huấn luyện",
+      description: "Huấn luyện",
+    },
+    {
+      value: "Spa",
+      description: "Spa",
+    },
+    {
+      value: "Chăm sóc sức khỏe thú cưng",
+      description: "Chăm sóc sức khỏe thú cưng",
+    },
+  ];
+  const inputFields = [
+    {
+      content: "Dịch vụ",
+      description: service.type,
+      select: select,
+      type: "select",
+      onChange: onChangeType,
+    },
+    {
+      content: "Tên dịch vụ",
+      description: service.name,
+      onChange: onChangeName,
+    },
+    {
+      content: "Mô tả",
+      description: service.description,
+      onChange: onChangeDescription,
+    },
+    {
+      content: "Giá",
+      description: service.price.toString(),
+      onChange: onChangePrice,
+    },
+  ];
 
   return (
     <div>
       <Card title="Thêm dịch vụ" className="add-service-page">
-        <Form form={form} name="addServiceForm" onFinish={onFinish}>
-          <SelectField
-            name="serviceType"
-            label="Chọn loại dịch vụ"
-            options={[
-              { value: "Spa", label: "Spa" },
-              { value: "Huấn luyện", label: "Huấn luyện" },
-              {
-                value: "Chăm sóc sức khỏe thú cưng",
-                label: "Chăm sóc sức khỏe thú cưng",
-              },
-            ]}
-            rules={[
-              { required: true, message: ERROR_MESSAGES.positionRequired },
-            ]}
-            initialValue="Spa"
-            onChange={(value) => {}}
-          />
-          <InputField
-            name="serviceName"
-            label="Tên dịch vụ"
-            rules={[{ required: true, message: ERROR_MESSAGES.nameRequired }]}
-          />
-          <TextAreaField
-            name="description"
-            label="Miêu tả"
-            rules={[
-              { required: true, message: ERROR_MESSAGES.descriptionRequired },
-            ]}
-          />
-          <NumberField
-            name="price"
-            label="Giá"
-            rules={[
-              { required: true, message: ERROR_MESSAGES.priceRequired },
-              {
-                type: "number",
-                min: 0,
-                message: ERROR_MESSAGES.priceNonNegative,
-              },
-            ]}
-          />
-          <Form.Item>
-            <Button block type="primary" htmlType="submit">
-              Thêm dịch vụ
-            </Button>
-          </Form.Item>
-        </Form>
-        <ToastContainer />
+        <form onSubmit={handleSubmit(onSubmit)}>
+          {inputFields.map((field, index) => (
+            <InputComponent
+              key={index}
+              content={field.content}
+              description={field.description}
+              select={field.select}
+              type={field.type}
+              onChange={field.onChange}
+            />
+          ))}
+          <Button block type="primary" htmlType="submit">
+            Thêm mới
+          </Button>
+        </form>
       </Card>
     </div>
   );

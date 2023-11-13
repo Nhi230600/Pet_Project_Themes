@@ -40,6 +40,11 @@ const SideBar = () => {
             key: "/admin/service",
             icon: <UserOutlined />,
           },
+          {
+            label: "Danh sách khách hàng",
+            key: "/admin/customer",
+            icon: <UserOutlined />,
+          },
         ]}
       ></Menu>
     </div>

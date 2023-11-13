@@ -1,38 +1,12 @@
 /* AddServicePage.css */
 
 .add-service-page {
-  width: 500px; /* Độ rộng của Card */
+  width: 100%; /* Độ rộng của Card */
   margin: 0 auto; /* Để căn giữa theo chiều ngang */
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Hiệu ứng bóng đổ */
-  background-color: #fff; /* Màu nền thẻ Card */  
+  background-color: #fff; /* Màu nền thẻ Card */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hiển thị đường viền */
   border-radius: 8px; /* Bo tròn góc thẻ Card */
   color: #333; /* Màu chữ trên thẻ Card */
-  }
-  .add-service-page .ant-card-head-title {
-    font-size: 24px; /* Kích thước chữ tiêu đề */
-  }
-  
-  .add-service-page form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .add-service-page .ant-form-item-label {
-    text-align: left;
-    font-weight: bold;
-    margin-bottom: 8px;
-  }
-  
-  .add-service-page .ant-select {
-    width: 100%;
-  }
-  
-  .add-service-page .ant-input,
-  .add-service-page .ant-input-number,
-  .add-service-page .ant-select-selector,
-  .add-service-page .ant-btn {
-    margin-bottom: 16px;
-  }
-  
+}

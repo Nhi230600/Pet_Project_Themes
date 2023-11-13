@@ -107,7 +107,7 @@ const ViewServicePage = () => {
                   </p>
 
                   <div className="service-buttons">
-                    <Link to="/admin/service/edit">
+                    <Link to={`/admin/service/${subService.id}`}>
                       <Button icon={<EditOutlined />} type="primary">
                         Chỉnh sửa
                       </Button>
