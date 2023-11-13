@@ -5,7 +5,7 @@ import "antd/dist/antd.css";
 import Nav from "components/Nav";
 import { petData } from "components/PetConstant";
 import Pet from "components/PetConstant/Type";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./MyPet.css";
 

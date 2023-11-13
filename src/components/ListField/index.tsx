@@ -95,6 +95,7 @@ const TableList: React.FC<TableProps> = ({
       ),
     );
     setData(filteredData);
+    setCurrentPage(1);
   };
 
   const startIndex = (currentPage - 1) * itemsPerPage;

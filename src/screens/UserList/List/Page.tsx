@@ -1,8 +1,7 @@
+import { CustomerData } from "components";
 import TableList from "components/ListField";
-import { useState } from "react";
-import { toast } from "react-toastify";
-import { CustomerData, Customer } from "components";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 const Index = () => {
   const navigate = useNavigate();
   const fields = ["Tên", "Tài khoản", "Mật khẩu", "Số buổi hẹn"];

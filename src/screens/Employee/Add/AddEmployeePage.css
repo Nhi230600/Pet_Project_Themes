@@ -52,7 +52,22 @@
   display: flex;
   justify-content: center;
 }
-.image-avatar {
+.image-avatar-button-container {
   justify-content: center;
   display: flex;
+  margin-top: 10px;
+}
+.button-delete-image-employee {
+  display: flex;
+  align-items: center;
+  background-color: #e74c3c;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.button-delete-image-employee:hover {
+  background-color: #c0392b;
 }

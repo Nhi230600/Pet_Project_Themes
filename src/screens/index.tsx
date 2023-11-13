@@ -39,6 +39,10 @@ const LazyCreateTreatmentIn = React.lazy(
 const LazyContent = React.lazy(() => import("./Homepage/Content/1"));
 const LazySales = React.lazy(() => import("./Homepage/Sales"));
 const LazyUserList = React.lazy(() => import("./UserList/List"));
+const LazyAddCustomer = React.lazy(() => import("./UserList/List/AddCustomer"));
+const LazyDetailCustomer = React.lazy(
+  () => import("./UserList/List/DetailCustomer"),
+);
 const LazyCustomerPick = React.lazy(
   () => import("./Booking/Component/ListEmployee"),
 );
@@ -82,4 +86,6 @@ export {
   LazyViewServicePage as ViewServicePage,
   LazyTreatmentPet as TreatmentPet,
   LazyDetailTreatment as DetailTreatment,
+  LazyAddCustomer as AddCustomer,
+  LazyDetailCustomer as DetailCustomer,
 };
