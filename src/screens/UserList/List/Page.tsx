@@ -11,6 +11,12 @@ const Index = () => {
 
   const tableData = CustomerData;
   const handleDelete = (id: any) => {
+    const indexToRemove = CustomerData.findIndex(
+      (customer) => customer.id === id,
+    );
+    if (indexToRemove !== -1) {
+      CustomerData.splice(indexToRemove, 1);
+    }
     toast.success("Xóa thành công", {
       position: toast.POSITION.TOP_CENTER,
       autoClose: 2000,

@@ -50,7 +50,7 @@ const TableList: React.FC<TableProps> = ({
             <div className="-ml-1 text-gray-600 dark:text-gray-400">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className=" icon-tabler icon-tabler-trash"
+                className="icon icon-tabler icon-tabler-trash"
                 width={32}
                 height={32}
                 viewBox="0 0 24 24"
@@ -69,18 +69,15 @@ const TableList: React.FC<TableProps> = ({
               </svg>
             </div>
             <p className="text-lg text-gray-800 dark:text-gray-100 font-semibold pl-2">
-              Are you sure to delete?
+              Bạn có chắc xóa tài khoản này?
             </p>
           </div>
-          <div className="button-container">
-            <button
-              className="focus:outline-none bg-red-400 transition duration-150 ease-in-out hover:bg-red-500 rounded text-white px-3 py-2 text-xs"
-              onClick={onFinish}
-            >
+          <div>
+            <button className="button-confirm" onClick={onFinish}>
               Delete Account
             </button>
             <button
-              className="focus:outline-none bg-green-400 transition duration-150 ease-in-out hover:bg-green-500 rounded text-white px-3 py-2 text-xs"
+              className="button-cancel"
               onClick={() => setShowPopup(false)}
             >
               No

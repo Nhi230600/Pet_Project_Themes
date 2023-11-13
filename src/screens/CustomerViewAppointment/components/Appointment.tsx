@@ -3,7 +3,7 @@ import dayjs from "dayjs";
 import Cancel from "images/status/cancel.png";
 import Waiting from "images/status/wait.png";
 import Done from "images/status/done.png";
-import Nodata from "images/nodata.png"
+import Nodata from "images/nodata.png";
 import Popup from "./Popup";
 import { toast } from "react-toastify";
 import { Pagination } from "antd";
