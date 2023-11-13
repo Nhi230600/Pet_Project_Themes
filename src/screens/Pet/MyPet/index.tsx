@@ -15,12 +15,6 @@ const MyPet = () => {
   const itemsPerPage = 3;
   const [currentPage, setCurrentPage] = useState(1);
 
-  useEffect(() => {
-    if (newPet) {
-      petData.push(newPet);
-    }
-  }, [newPet]);
-
   const handleClick = (value: number) => {
     navigate(`/mypet/${value}`);
   };

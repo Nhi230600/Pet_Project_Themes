@@ -170,7 +170,7 @@ const Router = createBrowserRouter([
             ),
           },
           {
-            path: "edit",
+            path: ":id",
             element: (
               <Suspense fallback={<Loading />}>
                 <EditServicePage />
