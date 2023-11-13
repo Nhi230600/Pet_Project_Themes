@@ -110,6 +110,27 @@ const InputComponent: React.FC<InputProps> = ({
           ))}
         </select>
       );
+    } else if (type === "password") {
+      return (
+        <input
+          {...(register &&
+            field && {
+              ...register(field, {
+                required: validationRules?.required || false,
+                maxLength: validationRules?.maxLength || undefined,
+              }),
+            })}
+          type="password"
+          style={{
+            width: "100%",
+            borderRadius: "0.5vw",
+            height: "3vw",
+            border: "none",
+          }}
+          value={description}
+          onChange={handleInputChange}
+        />
+      );
     } else {
       return (
         <input

@@ -33,6 +33,8 @@ import {
 
 import AddMyPet from "screens/Pet/MyPet/AddMyPet";
 import PetProfilePage from "screens/Pet/MyPet/PetProfilePage";
+import AddCustomer from "screens/UserList/List/AddCustomer";
+import DetailCustomer from "screens/UserList/List/DetailCustomer";
 
 const Router = createBrowserRouter([
   {
@@ -144,12 +146,34 @@ const Router = createBrowserRouter([
       },
       {
         path: "customer",
-        element: (
-          <Suspense fallback={<Loading />}>
-            <UserList />
-          </Suspense>
-        ),
+        children: [
+          {
+            path: "",
+            element: (
+              <Suspense fallback={<Loading />}>
+                <UserList />
+              </Suspense>
+            ),
+          },
+          {
+            path: "add",
+            element: (
+              <Suspense fallback={<Loading />}>
+                <AddCustomer />
+              </Suspense>
+            ),
+          },
+          {
+            path: ":CustomerId",
+            element: (
+              <Suspense fallback={<Loading />}>
+                <DetailCustomer />
+              </Suspense>
+            ),
+          },
+        ],
       },
+
       {
         path: "service",
         children: [
