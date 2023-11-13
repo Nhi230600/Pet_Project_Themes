@@ -2,33 +2,34 @@ import TableList from "components/ListField";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import { CustomerData, Customer } from "components";
-
+import { useNavigate } from "react-router-dom";
 const Index = () => {
-  const fields = ["Name", "Phone", "Create At", "Appointment"];
+  const navigate = useNavigate();
+  const fields = ["Tên", "Tài khoản", "Mật khẩu", "Số buổi hẹn"];
+  const rows = ["name", "account", "password", "appointments"];
   const title = "Danh sách người dùng";
 
   const tableData = CustomerData;
   const handleDelete = (id: any) => {
-    const updatedData = tableData.filter((row) => row.id !== id);
-
     toast.success("Xóa thành công", {
       position: toast.POSITION.TOP_CENTER,
       autoClose: 2000,
       hideProgressBar: true,
     });
   };
-
-  const handleViewDetail = (rowData: any) => {};
+  const addCustomer = () => {
+    navigate("/admin/customer/add");
+  };
 
   return (
     <div className="py-20">
       <TableList
         fields={fields}
-        rows={fields}
+        rows={rows}
         tableData={tableData}
         onDelete={handleDelete}
-        onViewDetail={handleViewDetail}
         title={title}
+        addAction={addCustomer}
       />
     </div>
   );
