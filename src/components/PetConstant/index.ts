@@ -6,7 +6,9 @@ export const petData = [
     breed: "Golden Retriever",
     description: "Thân thiện và năng động, thích chơi fetch.",
     gender: "Đực",
-    image: "https://images.pexels.com/photos/4587987/pexels-photo-4587987.jpeg?auto=compress&cs=tinysrgb&w=600",
+    image:
+      "https://images.pexels.com/photos/4587987/pexels-photo-4587987.jpeg?auto=compress&cs=tinysrgb&w=600",
+    idCustomer: 1,
   },
   {
     id: 2,
@@ -15,7 +17,9 @@ export const petData = [
     breed: "Poodle",
     description: "Dễ dị ứng và nghịch ngợm, thích được chải chuốt.",
     gender: "Cái",
-    image: "https://images.pexels.com/photos/1851164/pexels-photo-1851164.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    image:
+      "https://images.pexels.com/photos/1851164/pexels-photo-1851164.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    idCustomer: 1,
   },
   {
     id: 3,
@@ -24,7 +28,9 @@ export const petData = [
     breed: "Mèo ba tư",
     description: "Độc lập và đáng yêu, thích nằm lang thang.",
     gender: "Đực",
-    image: "https://images.pexels.com/photos/1170986/pexels-photo-1170986.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    image:
+      "https://images.pexels.com/photos/1170986/pexels-photo-1170986.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    idCustomer: 1,
   },
   {
     id: 4,
@@ -33,7 +39,9 @@ export const petData = [
     breed: "Bulldog",
     description: "Trung thành và hiền lành, tốt với trẻ em.",
     gender: "Cái",
-    image: "https://images.pexels.com/photos/220938/pexels-photo-220938.jpeg?auto=compress&cs=tinysrgb&w=600",
+    image:
+      "https://images.pexels.com/photos/220938/pexels-photo-220938.jpeg?auto=compress&cs=tinysrgb&w=600",
+    idCustomer: 1,
   },
   {
     id: 5,
@@ -42,7 +50,9 @@ export const petData = [
     breed: "German Shepherd",
     description: "Thông minh và bảo vệ, thú cưng bảo vệ xuất sắc.",
     gender: "Đực",
-    image: "https://images.pexels.com/photos/1495548/pexels-photo-1495548.jpeg?auto=compress&cs=tinysrgb&w=600",
+    image:
+      "https://images.pexels.com/photos/1495548/pexels-photo-1495548.jpeg?auto=compress&cs=tinysrgb&w=600",
+    idCustomer: 1,
   },
   {
     id: 6,
@@ -51,7 +61,9 @@ export const petData = [
     breed: "Dachshund",
     description: "Tò mò và nghịch ngợm, thích đào hang.",
     gender: "Cái",
-    image: "https://images.pexels.com/photos/220938/pexels-photo-220938.jpeg?auto=compress&cs=tinysrgb&w=600",
+    image:
+      "https://images.pexels.com/photos/220938/pexels-photo-220938.jpeg?auto=compress&cs=tinysrgb&w=600",
+    idCustomer: 1,
   },
   {
     id: 7,
@@ -60,7 +72,9 @@ export const petData = [
     breed: "Boxer",
     description: "Sống động và đáng yêu, tốt với gia đình.",
     gender: "Đực",
-    image: "https://images.pexels.com/photos/220938/pexels-photo-220938.jpeg?auto=compress&cs=tinysrgb&w=600",
+    image:
+      "https://images.pexels.com/photos/220938/pexels-photo-220938.jpeg?auto=compress&cs=tinysrgb&w=600",
+    idCustomer: 1,
   },
   {
     id: 8,
@@ -69,7 +83,9 @@ export const petData = [
     breed: "Husky",
     description: "Thích phiêu lưu và độc lập, thích thiên nhiên.",
     gender: "Cái",
-    image: "https://images.pexels.com/photos/220938/pexels-photo-220938.jpeg?auto=compress&cs=tinysrgb&w=600",
+    image:
+      "https://images.pexels.com/photos/220938/pexels-photo-220938.jpeg?auto=compress&cs=tinysrgb&w=600",
+    idCustomer: 1,
   },
   {
     id: 9,
@@ -78,7 +94,9 @@ export const petData = [
     breed: "Cavalier King Charles Spaniel",
     description: "Thân thiện và đáng yêu, một chú chó đặt lòng.",
     gender: "Đực",
-    image: "https://images.pexels.com/photos/220938/pexels-photo-220938.jpeg?auto=compress&cs=tinysrgb&w=600",
+    image:
+      "https://images.pexels.com/photos/220938/pexels-photo-220938.jpeg?auto=compress&cs=tinysrgb&w=600",
+    idCustomer: 1,
   },
   {
     id: 10,
@@ -87,7 +105,9 @@ export const petData = [
     breed: "Yorkshire Terrier",
     description: "Năng lượng và nhỏ nhắn, một người bạn tuyệt vời.",
     gender: "Cái",
-    image: "https://images.pexels.com/photos/220938/pexels-photo-220938.jpeg?auto=compress&cs=tinysrgb&w=600",
+    image:
+      "https://images.pexels.com/photos/220938/pexels-photo-220938.jpeg?auto=compress&cs=tinysrgb&w=600",
+    idCustomer: 1,
   },
   {
     id: 11,
@@ -96,7 +116,9 @@ export const petData = [
     breed: "Gâu đần",
     description: "Con báo, quậy banh nhà, thích ke đầu, lộn mèo",
     gender: "Đực",
-    image: "https://sohanews.sohacdn.com/thumb_w/1000/160588918557773824/2023/8/8/photo-5-1691492506862761842416.jpg",
+    image:
+      "https://sohanews.sohacdn.com/thumb_w/1000/160588918557773824/2023/8/8/photo-5-1691492506862761842416.jpg",
+    idCustomer: 1,
   },
   {
     id: 12,
@@ -105,7 +127,9 @@ export const petData = [
     breed: "Gâu đần",
     description: "Con báo, quậy banh nhà, thích ke đầu, lộn mèo",
     gender: "Đực",
-    image: "https://sohanews.sohacdn.com/thumb_w/1000/160588918557773824/2023/8/8/photo-5-1691492506862761842416.jpg",
+    image:
+      "https://sohanews.sohacdn.com/thumb_w/1000/160588918557773824/2023/8/8/photo-5-1691492506862761842416.jpg",
+    idCustomer: 1,
   },
   {
     id: 13,
@@ -114,7 +138,9 @@ export const petData = [
     breed: "Gâu đần",
     description: "Con báo, quậy banh nhà, thích ke đầu, lộn mèo",
     gender: "Đực",
-    image: "https://sohanews.sohacdn.com/thumb_w/1000/160588918557773824/2023/8/8/photo-5-1691492506862761842416.jpg",
+    image:
+      "https://sohanews.sohacdn.com/thumb_w/1000/160588918557773824/2023/8/8/photo-5-1691492506862761842416.jpg",
+    idCustomer: 1,
   },
   {
     id: 14,
@@ -124,5 +150,7 @@ export const petData = [
     description: "Đáng iu, cute hột me, phô mai que",
     gender: "Đực",
     image: "https://nguoinoitieng.tv/images/nnt/97/0/bb39.jpg",
+    idCustomer: 1,
   },
 ];
+export default petData;

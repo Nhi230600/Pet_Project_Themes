@@ -64,6 +64,7 @@ function AddMyPet() {
         name: petName,
         id: petDataLength + 1,
         image: URL.createObjectURL(uploadedImage),
+        idCustomer: 1,
       };
       petData.push(newPet);
 

@@ -170,6 +170,11 @@ const DetailCustomer = () => {
                     Lịch sử
                   </button>
                 </Link>
+                <Link to="pet">
+                  <button className="edit-button-detail-customer styled">
+                    Thú cưng
+                  </button>
+                </Link>
               </div>
             </div>
           ) : (

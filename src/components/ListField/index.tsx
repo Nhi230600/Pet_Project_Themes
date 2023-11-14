@@ -69,12 +69,12 @@ const TableList: React.FC<TableProps> = ({
               </svg>
             </div>
             <p className="text-lg text-gray-800 dark:text-gray-100 font-semibold pl-2">
-              Bạn có chắc xóa tài khoản này?
+              Are u sure about that?
             </p>
           </div>
           <div>
             <button className="button-confirm" onClick={onFinish}>
-              Delete Account
+              Yes Sir
             </button>
             <button
               className="button-cancel"

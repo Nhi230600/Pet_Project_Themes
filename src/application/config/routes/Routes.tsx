@@ -29,6 +29,7 @@ import {
   ViewServicePage,
   TreatmentPet,
   DetailTreatment,
+  ListPetCustomer,
 } from "screens";
 
 import AddMyPet from "screens/Pet/MyPet/AddMyPet";
@@ -165,11 +166,24 @@ const Router = createBrowserRouter([
           },
           {
             path: ":CustomerId",
-            element: (
-              <Suspense fallback={<Loading />}>
-                <DetailCustomer />
-              </Suspense>
-            ),
+            children: [
+              {
+                path: "",
+                element: (
+                  <Suspense fallback={<Loading />}>
+                    <DetailCustomer />
+                  </Suspense>
+                ),
+              },
+              {
+                path: "pet",
+                element: (
+                  <Suspense fallback={<Loading />}>
+                    <ListPetCustomer />
+                  </Suspense>
+                ),
+              },
+            ],
           },
         ],
       },
