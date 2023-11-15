@@ -24,11 +24,11 @@ function AddMyPet() {
   const [uploadedImage, setUploadedImage] = useState<File | null>(null);
   const choice: Choice[] = [
     {
-      value: "male",
+      value: "Đực",
       description: "Đực",
     },
     {
-      value: "female",
+      value: "Cái",
       description: "Cái",
     },
   ];
@@ -55,14 +55,16 @@ function AddMyPet() {
       petDescription !== "" &&
       petName !== ""
     ) {
-      let petDataLength = petData.length;
+      const lastPet = petData[petData.length - 1];
+      const lastPetId = lastPet ? lastPet.id : 0;
+      const newPetId = lastPetId + 1;
       const newPet: Pet = {
         age: PetAge ?? 0,
         breed: petBreed,
         description: petDescription,
         gender: petGender,
         name: petName,
-        id: petDataLength + 1,
+        id: newPetId,
         image: URL.createObjectURL(uploadedImage),
         idCustomer: 1,
       };

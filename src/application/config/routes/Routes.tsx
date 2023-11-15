@@ -30,6 +30,8 @@ import {
   TreatmentPet,
   DetailTreatment,
   ListPetCustomer,
+  AddPetCustomer,
+  DetailPetCustomer,
 } from "screens";
 
 import AddMyPet from "screens/Pet/MyPet/AddMyPet";
@@ -177,11 +179,32 @@ const Router = createBrowserRouter([
               },
               {
                 path: "pet",
-                element: (
-                  <Suspense fallback={<Loading />}>
-                    <ListPetCustomer />
-                  </Suspense>
-                ),
+                children: [
+                  {
+                    path: "",
+                    element: (
+                      <Suspense fallback={<Loading />}>
+                        <ListPetCustomer />
+                      </Suspense>
+                    ),
+                  },
+                  {
+                    path: "add",
+                    element: (
+                      <Suspense fallback={<Loading />}>
+                        <AddPetCustomer />
+                      </Suspense>
+                    ),
+                  },
+                  {
+                    path: ":petId",
+                    element: (
+                      <Suspense fallback={<Loading />}>
+                        <DetailPetCustomer />
+                      </Suspense>
+                    ),
+                  },
+                ],
               },
             ],
           },

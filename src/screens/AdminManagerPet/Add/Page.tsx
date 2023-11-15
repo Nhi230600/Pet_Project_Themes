@@ -1,44 +1,56 @@
 import { faTrash, faUpload } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Form, Upload } from "antd";
-import { Customer, CustomerData, InputComponent } from "components";
+import { Pet, petData, InputComponent } from "components";
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
-import "./AddCustomer.css";
-const AddCustomer: React.FC = () => {
+
+const AddPet: React.FC = () => {
+  const { CustomerId } = useParams();
   const navigate = useNavigate();
   const [uploadedAvatar, setUploadedAvatar] = useState<File | null>(null);
-  const [customerName, setCustomerName] = useState("");
-  const [customerAccount, setCustomerAccount] = useState("");
-  const [customerPassword, setCustomerPassword] = useState("");
-  const [customerPhone, setCustomerPhone] = useState("");
-  const [customerAddress, setCustomerAddress] = useState("");
+  const [name, setname] = useState("");
+  const [breed, setbreed] = useState("");
+  const [description, setdescription] = useState("");
+  const [gender, setgender] = useState("Đực");
+  const [age, setAge] = useState<number | null>(null);
+  const selectGender = [
+    {
+      value: "Đực",
+      description: "Đực",
+    },
+    {
+      value: "Cái",
+      description: "Cái",
+    },
+  ];
   const onFinish = async (values: any) => {
     if (
       uploadedAvatar &&
-      customerName !== "" &&
-      customerAccount !== "" &&
-      customerPassword !== "" &&
-      customerPhone !== "" &&
-      customerAddress !== ""
+      name !== "" &&
+      breed !== "" &&
+      description !== "" &&
+      gender !== "" &&
+      age &&
+      CustomerId
     ) {
-      const lastCustomer = CustomerData[CustomerData.length - 1];
-      const lastCustomerId = lastCustomer ? lastCustomer.id : 0;
-      const newCustomerId = lastCustomerId + 1;
-      const newCustomer: Customer = {
-        name: customerName,
-        account: customerAccount,
-        password: customerPassword,
-        phone: customerPhone,
-        address: customerAddress,
-        id: newCustomerId + 1,
-        avatar: URL.createObjectURL(uploadedAvatar),
-        appointments: 0,
+      const lastPet = petData[petData.length - 1];
+      const lastPetId = lastPet ? lastPet.id : 0;
+      const newPetId = lastPetId + 1;
+      const newPet: Pet = {
+        name: name,
+        breed: breed,
+        description: description,
+        gender: gender,
+        age: age,
+        id: newPetId,
+        image: URL.createObjectURL(uploadedAvatar),
+        idCustomer: parseInt(CustomerId, 10),
       };
-      CustomerData.push(newCustomer);
+      petData.push(newPet);
       toast.success("Tạo thành công");
-      navigate("/admin/customer");
+      navigate(`/admin/customer/${CustomerId}/pet`);
     } else {
       toast.error("Chưa điền hết kìa má!");
     }
@@ -72,27 +84,34 @@ const AddCustomer: React.FC = () => {
     setUploadedAvatar(null);
   };
 
-  const onChangeCustomerName = (newCustomerName: string) => {
-    setCustomerName(newCustomerName);
+  const onChangename = (newname: string) => {
+    setname(newname);
   };
-  const onChangeCustomerAccount = (newCustomerAccount: string) => {
-    setCustomerAccount(newCustomerAccount);
+  const onChangebreed = (newbreed: string) => {
+    setbreed(newbreed);
   };
-  const onChangeCustomerPassword = (newCustomerPassword: string) => {
-    setCustomerPassword(newCustomerPassword);
+  const onChangedescription = (newdescription: string) => {
+    setdescription(newdescription);
   };
-  const onChangeCustomerPhone = (newCustomerPhone: string) => {
-    setCustomerPhone(newCustomerPhone);
+  const onChangegender = (newgender: string) => {
+    setgender(newgender);
   };
-  const onChangeCustomerAddress = (newCustomerAddress: string) => {
-    setCustomerAddress(newCustomerAddress);
+  const onChangePetAge = (petage: number | string) => {
+    if (typeof petage === "number") {
+      setAge(petage);
+    } else if (typeof petage === "string") {
+      const parsedValue = parseFloat(petage);
+      if (!isNaN(parsedValue)) {
+        setAge(parsedValue);
+      }
+    }
   };
   return (
     <div>
-      <div className="add-customer-container">
+      <div className="add-Pet-container">
         <h1>Thêm khách hàng</h1>
         <Form
-          name="customerForm"
+          name="PetForm"
           onFinish={onFinish}
           onFinishFailed={onFinishFailed}
           labelCol={{ span: 6 }}
@@ -107,7 +126,7 @@ const AddCustomer: React.FC = () => {
           >
             {uploadedAvatar ? (
               <>
-                <div className="image-avatar-customer">
+                <div className="image-avatar-Pet">
                   <img
                     src={
                       uploadedAvatar ? URL.createObjectURL(uploadedAvatar) : ""
@@ -147,35 +166,38 @@ const AddCustomer: React.FC = () => {
           </Form.Item>
 
           <InputComponent
-            content="Tên Khách Hàng"
-            description={customerName}
-            onChange={onChangeCustomerName}
+            content="Tên"
+            description={name}
+            onChange={onChangename}
           />
 
           <InputComponent
-            content="Tài Khoản"
-            description={customerAccount}
-            onChange={onChangeCustomerAccount}
+            content="Nguồn gốc"
+            description={breed}
+            onChange={onChangebreed}
           />
           <InputComponent
-            content="Mật khẩu"
-            description={customerPassword}
-            onChange={onChangeCustomerPassword}
+            content="Mô tả"
+            description={description}
+            onChange={onChangedescription}
           />
 
           <InputComponent
-            content="Số điện thoại"
-            description={customerPhone}
-            onChange={onChangeCustomerPhone}
+            content="Giới tính"
+            description={gender}
+            type="select"
+            select={selectGender}
+            onChange={onChangegender}
           />
           <InputComponent
-            content="Địa chỉ"
-            description={customerAddress}
-            onChange={onChangeCustomerAddress}
+            content="Tuổi"
+            type="number"
+            description={age ? age.toString() : ""}
+            onChange={onChangePetAge}
           />
 
-          <Form.Item className="button-save-customer-container">
-            <button className="button-save-customer" type="submit">
+          <Form.Item className="button-save-Pet-container">
+            <button className="button-save-Pet" type="submit">
               Thêm khách hàng
             </button>
           </Form.Item>
@@ -185,4 +207,4 @@ const AddCustomer: React.FC = () => {
   );
 };
 
-export default AddCustomer;
+export default AddPet;
