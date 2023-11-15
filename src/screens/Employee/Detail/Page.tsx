@@ -96,7 +96,7 @@ const EmployeeDetailPage = () => {
 
       <div className="block">
         <div className="block-1">
-          <Card
+          <Card 
             className="employee-card"
             actions={[
               <FacebookFilled style={{ color: "blue" }} />,
