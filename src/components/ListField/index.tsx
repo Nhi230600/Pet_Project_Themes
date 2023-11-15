@@ -1,7 +1,8 @@
-import { Card } from "antd";
+import { Card, CardProps, Empty } from "antd";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./ListField.css";
+
 interface TableRow {
   [key: string]: any;
 }
@@ -69,12 +70,12 @@ const TableList: React.FC<TableProps> = ({
               </svg>
             </div>
             <p className="text-lg text-gray-800 dark:text-gray-100 font-semibold pl-2">
-              Bạn có chắc xóa tài khoản này?
+              Are u sure about that?
             </p>
           </div>
           <div>
             <button className="button-confirm" onClick={onFinish}>
-              Delete Account
+              Yes Sir
             </button>
             <button
               className="button-cancel"
@@ -180,6 +181,7 @@ const TableList: React.FC<TableProps> = ({
               <th>Actions</th>
             </tr>
           </thead>
+
           <tbody>
             {currentData.map((row, rowIndex) => (
               <tr key={rowIndex}>
@@ -238,6 +240,10 @@ const TableList: React.FC<TableProps> = ({
             ))}
           </tbody>
         </table>
+        {data.length === 0 && (
+          // Show placeholder or logo icon when there is no data
+          <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />
+        )}
 
         <div className="flex justify-center mt-4">
           <button

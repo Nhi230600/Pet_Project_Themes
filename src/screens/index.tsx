@@ -54,6 +54,13 @@ const LazyTreatmentPet = React.lazy(() => import("./PetHistoryProfile"));
 const LazyDetailTreatment = React.lazy(
   () => import("./PetHistoryProfile/DetailTreatment"),
 );
+const LazyListPetCustomer = React.lazy(
+  () => import("./AdminManagerPet/PetList"),
+);
+const LazyAddPetCustomer = React.lazy(() => import("./AdminManagerPet/Add"));
+const LazyDetailPetCustomer = React.lazy(
+  () => import("./AdminManagerPet/Detail"),
+);
 export {
   LazyAddEmployeePage as AddEmployeePage,
   LazyAddServicePage as AddServicePage,
@@ -88,4 +95,7 @@ export {
   LazyDetailTreatment as DetailTreatment,
   LazyAddCustomer as AddCustomer,
   LazyDetailCustomer as DetailCustomer,
+  LazyListPetCustomer as ListPetCustomer,
+  LazyAddPetCustomer as AddPetCustomer,
+  LazyDetailPetCustomer as DetailPetCustomer,
 };

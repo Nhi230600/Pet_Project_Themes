@@ -165,9 +165,14 @@ const DetailCustomer = () => {
                     style={{ marginLeft: "1rem" }}
                   />
                 </button>
-                <Link to="treatment">
+                <Link to="appointment">
                   <button className="edit-button-detail-customer styled">
-                    Lịch sử
+                    Lịch hẹn
+                  </button>
+                </Link>
+                <Link to="pet">
+                  <button className="edit-button-detail-customer styled">
+                    Thú cưng
                   </button>
                 </Link>
               </div>

@@ -20,3 +20,5 @@ export { default as CustomerData } from "./CustomerConstant";
 export type { Customer } from "./CustomerConstant/Type";
 export { default as serviceData } from "./ServiceConstant";
 export type { Service } from "./ServiceConstant/Type";
+export { default as petData } from "./PetConstant";
+export type { Pet } from "./PetConstant/Type";
