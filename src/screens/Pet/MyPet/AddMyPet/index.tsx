@@ -69,7 +69,7 @@ function AddMyPet() {
 
       navigate("/mypet");
     } else {
-      toast.error("Chưa điền hết kìa má!");
+      toast.error("Bạn chưa nhập đủ thông tin!");
     }
   };
 
