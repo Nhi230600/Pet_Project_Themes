@@ -32,6 +32,7 @@ import {
   ListPetCustomer,
   AddPetCustomer,
   DetailPetCustomer,
+  OrderAppointment,
 } from "screens";
 
 import AddMyPet from "screens/Pet/MyPet/AddMyPet";
@@ -177,6 +178,15 @@ const Router = createBrowserRouter([
                   </Suspense>
                 ),
               },
+              {
+                path: "appointment",
+                element: (
+                  <Suspense fallback={<Loading />}>
+                    <OrderAppointment />
+                  </Suspense>
+                ),
+              },
+
               {
                 path: "pet",
                 children: [

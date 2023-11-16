@@ -47,15 +47,12 @@ const AppointmentListComponent: React.FC<Props> = ({
   };
 
   const onFinish = () => {
-    // Kiểm tra xem có `currentAppointment` (là id của appointment) không
     if (CurrentAppointment) {
-      // Lấy `id` của appointment từ `currentAppointment`
       const appointmentId = CurrentAppointment;
 
-      // Xử lý và cập nhật trạng thái của appointment với `appointmentId`
       const updatedAppointments = allAppointment.map((appointment) => {
         if (appointment.id === appointmentId) {
-          return { ...appointment, status: 2 }; // Đánh dấu hoàn thành (trạng thái 2)
+          return { ...appointment, status: 2 };
         }
         return appointment;
       });

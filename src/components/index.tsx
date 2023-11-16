@@ -22,3 +22,4 @@ export { default as serviceData } from "./ServiceConstant";
 export type { Service } from "./ServiceConstant/Type";
 export { default as petData } from "./PetConstant";
 export type { Pet } from "./PetConstant/Type";
+export { default as Popup } from "./Popup";
