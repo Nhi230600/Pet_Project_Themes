@@ -37,14 +37,14 @@ const CustomerViewAppointment: React.FC = () => {
       try {
         setLoading(true);
         const response = await axios.get(
-          `https://zzzzzz-rr1t.onrender.com/api/appointment/getByCustomer/${id}`
+          `https://zzzzzz-rr1t.onrender.com/api/appointment/getByCustomer/${id}`,
         );
         const appointmentsWithIndochinaTime: Appointment[] = response.data.map(
           (appointment: Appointment) => {
             const start = dayjs(appointment.start).subtract(7, "hour").format(); // Subtract 7 hours from start
             const end = dayjs(appointment.end).subtract(7, "hour").format(); // Subtract 7 hours from end
             return { ...appointment, start, end };
-          }
+          },
         );
 
         setAppointments(appointmentsWithIndochinaTime); // Update the state with the fetched appointments
@@ -60,7 +60,6 @@ const CustomerViewAppointment: React.FC = () => {
     setChooseDate(clickedDate);
   };
   useEffect(() => {
-    // Filter appointments for the current date based on "chooseDate"
     const filteredAppointments = appointments.filter((appointment) => {
       const appointmentDate = dayjs(appointment.start);
       return appointmentDate.isSame(chooseDate, "day");
@@ -73,16 +72,14 @@ const CustomerViewAppointment: React.FC = () => {
     const day = firstDay.add(i, "day");
     daysInMonth.push(day);
   }
-
-  // Generate the calendar structure
   const appointmentDates = appointments.map((appointment) =>
-    dayjs(appointment.start)
+    dayjs(appointment.start),
   );
   const calendar = daysInMonth.map((day, index) => {
     const isCurrentDate = day.isSame(currentDate, "day");
     const isDifferentMonth = day.month() !== currentDate.month();
     const hasAppointment = appointmentDates.some((appointmentDate) =>
-      day.isSame(appointmentDate, "day")
+      day.isSame(appointmentDate, "day"),
     );
 
     const classNames = `day-number ${
@@ -117,7 +114,7 @@ const CustomerViewAppointment: React.FC = () => {
                     <p key={index} className="day-name">
                       {day}
                     </p>
-                  )
+                  ),
                 )}
               </div>
               <div className="days">{calendar}</div>

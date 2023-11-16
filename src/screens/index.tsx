@@ -61,6 +61,7 @@ const LazyAddPetCustomer = React.lazy(() => import("./AdminManagerPet/Add"));
 const LazyDetailPetCustomer = React.lazy(
   () => import("./AdminManagerPet/Detail"),
 );
+const LazyOrderAppointment = React.lazy(() => import("./OrderAppointment"));
 export {
   LazyAddEmployeePage as AddEmployeePage,
   LazyAddServicePage as AddServicePage,
@@ -98,4 +99,5 @@ export {
   LazyListPetCustomer as ListPetCustomer,
   LazyAddPetCustomer as AddPetCustomer,
   LazyDetailPetCustomer as DetailPetCustomer,
+  LazyOrderAppointment as OrderAppointment,
 };
