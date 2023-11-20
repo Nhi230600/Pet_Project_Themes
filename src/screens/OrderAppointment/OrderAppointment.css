@@ -1,20 +1,19 @@
 /* OrderAppointment.css */
-
-.order-appointment-container {
+.order-appointment-title {
   padding: 20px;
 }
+.order-appointment-title h1 {
+  font-size: xx-large;
+}
+.order-appointment-container {
+  padding: 50px;
+}
 
-.custom-card {
-  width: 300px;
-}
-.custom-card .ant-card-meta-title {
-  font-weight: bold;
-}
-
-.custom-card .ant-card-meta-description {
-  color: #333;
-}
 .status-cell-appointment img {
   width: 30px;
   height: 30px;
+}
+.pagination-order-appointment {
+  display: flex;
+  justify-content: center;
 }
