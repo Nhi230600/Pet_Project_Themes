@@ -1,4 +1,9 @@
-import { LogoutOutlined, QqOutlined, UserOutlined } from "@ant-design/icons";
+import {
+  LogoutOutlined,
+  QqOutlined,
+  UserOutlined,
+  ControlOutlined,
+} from "@ant-design/icons";
 import { Avatar, Menu, Space } from "antd";
 import { useState } from "react";
 import AvatarUser from "../../images/avatar-user.jpeg";
@@ -25,6 +30,7 @@ const items = [
 
 const rootSubmenuKeys = ["user", "pet"];
 const DrawerContent = () => {
+  const accountJson = sessionStorage.getItem("account");
   const navigate = useNavigate();
   const [openKeys, setOpenKeys] = useState(["sub1"]);
   const onOpenChange = (keys: any) => {
@@ -97,6 +103,23 @@ const DrawerContent = () => {
               <a style={{ color: "white" }}>Thú cưng của tôi</a>
             </Link>
           </Menu.Item>
+          {accountJson && accountJson === "2" && (
+            <Menu.Item
+              key="pet"
+              icon={<ControlOutlined />}
+              title="Admin Panel"
+              style={{
+                borderBottom: "0.1vw solid black",
+                border: "0.1vw solid black",
+                borderRadius: "0.5vw",
+              }}
+              className="menu-item-pet"
+            >
+              <Link to="/admin">
+                <a style={{ color: "white" }}>Admin Panel</a>
+              </Link>
+            </Menu.Item>
+          )}
           <Menu.Item
             key="logout"
             icon={<LogoutOutlined />}
