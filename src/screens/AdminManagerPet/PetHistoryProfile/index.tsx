@@ -1,4 +1,4 @@
-import AdminInterface from "../../components/Admin/AdminInterface"; // Import AdminInterface
+import AdminInterface from "../../../components/Admin/AdminInterface"; // Import AdminInterface
 import Content from "./Content";
 
 const App = () => {
