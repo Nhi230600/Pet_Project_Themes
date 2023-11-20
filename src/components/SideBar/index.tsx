@@ -1,4 +1,8 @@
-import { AppstoreOutlined, UserOutlined } from "@ant-design/icons";
+import {
+  AppstoreOutlined,
+  UserOutlined,
+  LogoutOutlined,
+} from "@ant-design/icons";
 import { Menu } from "antd";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -44,6 +48,11 @@ const SideBar = () => {
             label: "Danh sách khách hàng",
             key: "/admin/customer",
             icon: <UserOutlined />,
+          },
+          {
+            label: "Home",
+            key: "/",
+            icon: <LogoutOutlined />,
           },
         ]}
       ></Menu>
