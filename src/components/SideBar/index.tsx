@@ -18,44 +18,69 @@ const SideBar = () => {
   }, [location.pathname]);
 
   const navigate = useNavigate();
+  const accountJson = sessionStorage.getItem("account");
   return (
     <div className="sidebar">
-      <Menu
-        className="SideMenuVertical"
-        mode="vertical"
-        onClick={(item) => {
-          //item.key
-          navigate(item.key);
-        }}
-        selectedKeys={[selectedKeys]}
-        items={[
-          {
-            label: "Dashboard",
-            icon: <AppstoreOutlined />,
-            key: "/admin",
-          },
-          {
-            label: "Danh sách nhân viên",
-            key: "/admin/employee",
-            icon: <UserOutlined />,
-          },
-          {
-            label: "Danh sách dịch vụ",
-            key: "/admin/service",
-            icon: <UserOutlined />,
-          },
-          {
-            label: "Danh sách khách hàng",
-            key: "/admin/customer",
-            icon: <UserOutlined />,
-          },
-          {
-            label: "Home",
-            key: "/",
-            icon: <LogoutOutlined />,
-          },
-        ]}
-      ></Menu>
+      {accountJson === "2" ? (
+        <Menu
+          className="SideMenuVertical"
+          mode="vertical"
+          onClick={(item) => {
+            //item.key
+            navigate(item.key);
+          }}
+          selectedKeys={[selectedKeys]}
+          items={[
+            {
+              label: "Dashboard",
+              icon: <AppstoreOutlined />,
+              key: "/admin",
+            },
+            {
+              label: "Danh sách nhân viên",
+              key: "/admin/employee",
+              icon: <UserOutlined />,
+            },
+            {
+              label: "Danh sách dịch vụ",
+              key: "/admin/service",
+              icon: <UserOutlined />,
+            },
+            {
+              label: "Danh sách khách hàng",
+              key: "/admin/customer",
+              icon: <UserOutlined />,
+            },
+            {
+              label: "Home",
+              key: "/",
+              icon: <LogoutOutlined />,
+            },
+          ]}
+        ></Menu>
+      ) : (
+        <Menu
+          className="SideMenuVertical"
+          mode="vertical"
+          onClick={(item) => {
+            //item.key
+            navigate(item.key);
+          }}
+          selectedKeys={[selectedKeys]}
+          items={[
+            {
+              label: "Dashboard",
+              icon: <AppstoreOutlined />,
+              key: "/employee",
+            },
+            {
+              label: "Home",
+              key: "/",
+              icon: <LogoutOutlined />,
+            },
+          ]}
+        ></Menu>
+      )}
     </div>
   );
 };

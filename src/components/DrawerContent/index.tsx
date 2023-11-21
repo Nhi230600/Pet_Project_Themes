@@ -120,6 +120,23 @@ const DrawerContent = () => {
               </Link>
             </Menu.Item>
           )}
+          {accountJson && accountJson === "3" && (
+            <Menu.Item
+              key="pet"
+              icon={<ControlOutlined />}
+              title="Admin Panel"
+              style={{
+                borderBottom: "0.1vw solid black",
+                border: "0.1vw solid black",
+                borderRadius: "0.5vw",
+              }}
+              className="menu-item-pet"
+            >
+              <Link to="/employee">
+                <a style={{ color: "white" }}>Employee Panel</a>
+              </Link>
+            </Menu.Item>
+          )}
           <Menu.Item
             key="logout"
             icon={<LogoutOutlined />}
