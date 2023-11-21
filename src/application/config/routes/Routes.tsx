@@ -377,7 +377,7 @@ const Router = createBrowserRouter([
             ),
           },
           {
-            path: ":idTreatment",
+            path: "aaaa",
             children: [
               {
                 path: "",

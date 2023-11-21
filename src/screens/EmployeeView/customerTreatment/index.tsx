@@ -20,10 +20,10 @@ interface Treatment {
 }
 
 const CustomerTreatment = () => {
-  const { customerId } = useParams();
+  const { idPet } = useParams();
   const [popUp, setPopUp] = useState(false);
   const [selectedTreatment, setSelectedTreatment] = useState<Treatment | null>(
-    null
+    null,
   );
   const ownerData = {
     name: "Nguyễn Văn A",
