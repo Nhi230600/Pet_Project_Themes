@@ -1,10 +1,9 @@
-import AdminContent from "../../components/Admin/AdminContent"; // Import AdminInterface
+import AdminContent from "../../components/Admin/AdminContent";
 import Page from "./Page";
 
 const App = () => {
   return (
     <div>
-      {/* Sử dụng AdminInterface và truyền ContentDashboard vào prop content */}
       <AdminContent content={<Page />} />
     </div>
   );
