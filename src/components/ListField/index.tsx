@@ -12,7 +12,7 @@ interface TableProps {
   rows: string[];
   tableData: TableRow[];
   onDelete?: (id: number) => void;
-  onViewDetail?: (rowData: TableRow) => void;
+  onViewDetail?: () => void;
   title: string;
   addAction?: () => void;
 }
@@ -215,8 +215,29 @@ const TableList: React.FC<TableProps> = ({
                       </svg>
                     </button>
                   )}
-                  <Link to={`${row.id}`}>
-                    <button className="action-button">
+                  {!onViewDetail ? (
+                    <Link to={`${row.id}`}>
+                      <button className="action-button">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="icon-search"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          strokeWidth="1.5"
+                          stroke="currentColor"
+                          fill="none"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" />
+                          <circle cx="10" cy="10" r="7" />
+                          <line x1="21" y1="21" x2="15" y2="15" />
+                        </svg>
+                      </button>
+                    </Link>
+                  ) : (
+                    <button className="action-button" onClick={onViewDetail}>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="icon-search"
@@ -234,7 +255,7 @@ const TableList: React.FC<TableProps> = ({
                         <line x1="21" y1="21" x2="15" y2="15" />
                       </svg>
                     </button>
-                  </Link>
+                  )}
                 </td>
               </tr>
             ))}
