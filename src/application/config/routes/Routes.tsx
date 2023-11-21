@@ -366,7 +366,7 @@ const Router = createBrowserRouter([
         ),
       },
       {
-        path: ":idCustomer",
+        path: ":idAppointment",
         children: [
           {
             path: "",
