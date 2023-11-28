@@ -1,22 +1,21 @@
-import { Avatar, Card, List, Pagination, Typography } from "antd";
+import { Avatar, Card, Typography } from "antd";
+import {
+  Appointment,
+  Form,
+  Loading,
+  Pet,
+  TableList,
+  initialAppointments,
+  petData,
+} from "components";
+import { format } from "date-fns";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
-import { format } from "date-fns";
-import {
-  InputComponent,
-  petData,
-  Pet,
-  Appointment,
-  initialAppointments,
-  Loading,
-  TableList,
-  Form,
-} from "components";
-import "./CustomerProfile.css";
 import { useParams } from "react-router-dom";
+import "./CustomerProfile.css";
 import Service from "./interface/Service";
-import data from "./interface/data";
 import Treatment from "./interface/Treatment";
+import data from "./interface/data";
 const { Title, Text } = Typography;
 interface Input {
   content: string;
@@ -82,7 +81,7 @@ const ProfilePage = () => {
   }
 
   const writeTreatment = () => {
-    navigate(`/employee/createtreatmentin/${pet.id}`);
+    navigate(`/employee/${pet.id}/createtreatmentin`);
   };
   const showPopup = () => {
     setPopup(true);
@@ -109,7 +108,7 @@ const ProfilePage = () => {
   });
   treatmentshow.push({
     content: "Thú cưng",
-    description: treatment.name,
+    description: treatment.petName,
   });
   const DetailPopup = () => {
     return (

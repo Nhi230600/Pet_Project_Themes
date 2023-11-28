@@ -1,200 +1,121 @@
-import { Button, Input, Modal } from "antd";
-import moment from "moment-timezone";
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Form, Button } from "antd";
+import { InputComponent, Pet } from "components";
+import { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
+import Treatment from "../CustomerProfile/interface/Treatment";
+import treatmentData from "../CustomerProfile/interface/data";
 import "./CreateTreatmentIn.css";
-const { TextArea } = Input;
 
 function CreateTreatmentIn() {
   const navigate = useNavigate();
-  const [treatmentProfile, setTreatmentProfile] = useState({
-    description: "",
-    customerID: 0,
-  });
-  const [customer, setCustomer] = useState({
-    fullname: "",
-    gender: "",
-    age: "",
-  });
-  const [treatmentIn, setTreatmentIn] = useState({
-    process: "",
-    result: "",
-    note: "",
-  });
-  const [showConfirmationComplete, setShowConfirmationComplete] =
-    useState(false);
-  const [showConfirmationReappoint, setShowConfirmationReappoint] =
-    useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+  const { idPet } = useParams();
+  const [pet, setPet] = useState<Pet | null>(null);
+  const [employeeName, setEmployeeName] = useState("");
+  const [start, setStart] = useState("");
+  const [service, setService] = useState("");
+  const [treatmentContent, setTreatmentContent] = useState("");
 
   useEffect(() => {
-    const fetchTreatmentProfile = async () => {
-      const profileData = {
-        description: "Mô tả treatment của động vật",
-        customerID: 1,
-      };
-
-      setTreatmentProfile(profileData);
-      const customerData = {
-        fullname: "Chó A",
-        gender: "Nam",
-        age: "5",
-      };
-
-      setCustomer(customerData);
-      setIsLoading(false);
-    };
-
-    fetchTreatmentProfile();
+    setStart(new Date().toISOString().split("T")[0]);
   }, []);
 
-  const handleComplete = () => {
-    if (treatmentIn.process && treatmentIn.result && treatmentIn.note) {
-      setShowConfirmationComplete(true);
+  const onFinish = async () => {
+    if (start !== "" && service !== "" && treatmentContent !== "") {
+      const lastTreatment = treatmentData[treatmentData.length - 1];
+      const lastTreatmentId = lastTreatment ? lastTreatment.id : 0;
+      const newTreatmentId = lastTreatmentId + 1;
+      const newTreatment: Treatment = {
+        id: newTreatmentId,
+        idPet: Number(idPet),
+        employeeName: "Nguyễn Văn A",
+        start: start,
+        services: [
+          {
+            name: "Checkup",
+            price: 10,
+          },
+          {
+            name: "Vaccination",
+            price: 20,
+          },
+        ],
+        petName: "Pet 1",
+        treatmentContent: treatmentContent,
+      };
+
+      treatmentData.push(newTreatment);
+      toast.success("Tạo thành công");
+      navigate(`/employee`);
     } else {
-      Modal.error({
-        title: "Lỗi",
-        content:
-          "Vui lòng điền đầy đủ thông tin trước khi hoàn thành quá trình dịch vụ.",
-      });
+      toast.error("Chưa điền hết kìa má!");
     }
   };
 
-  const handleConfirmationCompleteConfirm = async () => {
-    try {
-      toast.success("Buổi khám thàng công, ngày mới vui vẻ");
-      navigate("/");
-    } catch (error) {
-      console.error("Error confirming treatment:", error);
-    }
+  const writereBook = () => {
+    navigate(`/employee/${idPet}/rebook`);
   };
 
-  const handleReappoint = () => {
-    if (treatmentIn.process && treatmentIn.result && treatmentIn.note) {
-      setShowConfirmationReappoint(true);
-    } else {
-      Modal.error({
-        title: "Lỗi",
-        content:
-          "Vui lòng điền đầy đủ thông tin trước khi đặt lại cuộc hẹn sau.",
-      });
-    }
+  const onFinishFailed = (errorInfo: any) => {
+    console.log("Failed:", errorInfo);
   };
 
-  const handleConfirmationReappointConfirm = async () => {
-    try {
-      window.location.href = `/rebook`;
-    } catch (error) {
-      console.error("Error confirming treatment:", error);
-    }
-    setShowConfirmationReappoint(false);
+  const onChangeEmployeeName = (newEmployeeName: string) => {
+    setEmployeeName(newEmployeeName);
   };
 
-  if (isLoading) {
-    return <div className="loading-spinner">Loading...</div>;
-  }
+  const onChangeDate = (newDate: string) => {
+    setStart(newDate);
+  };
+
+  const onChangeService = (newService: string) => {
+    setService(newService);
+  };
+
+  const onChangeTreatmentContent = (newContent: string) => {
+    setTreatmentContent(newContent);
+  };
 
   return (
     <div className="profile-page">
-      <h2>Cập nhật tiến trình dịch vụ</h2>
-      <div className="profile-details">
-        <div>
-          <label>Tên:</label>
-          <Input
-            type="text"
-            value={customer ? customer.fullname : ""}
-            readOnly
+      <h2>Thêm thời gian điều trị</h2>
+      <Form
+        name="customerForm"
+        onFinish={onFinish}
+        onFinishFailed={onFinishFailed}
+        labelCol={{ span: 6 }}
+        wrapperCol={{ span: 14 }}
+      >
+        <div className="profile-details">
+          <InputComponent
+            content="Ngày khám"
+            type="pickdate"
+            description={start}
+            onChange={onChangeDate}
+          />
+          <InputComponent
+            content="Tên dịch vụ"
+            description={service}
+            onChange={onChangeService}
           />
         </div>
-        <div>
-          <label>Giới tính:</label>
-          <Input type="text" value={customer ? customer.gender : ""} readOnly />
-        </div>
-        <div>
-          <label>Tuổi:</label>
-          <Input type="text" value={customer ? customer.age : ""} readOnly />
-        </div>
-        <div>
-          <label>Ngày:</label>
-          <Input
-            type="text"
-            value={moment.tz(moment(), "Asia/Ho_Chi_Minh").format("YYYY-MM-DD")}
-            readOnly
+        <div className="input-form">
+          <h3>Nội dung điều trị</h3>
+          <InputComponent
+            content="Nội dung điều trị"
+            description={treatmentContent}
+            onChange={onChangeTreatmentContent}
           />
         </div>
-      </div>
-      <div className="input-form">
-        <h3>Treatment</h3>
-        <div className="treatment-profile">
-          <Input type="text" value={treatmentProfile.description} readOnly />
+        <div className="action-buttons">
+          <Button type="primary" htmlType="submit">
+            Xong
+          </Button>
+          <Button type="primary" onClick={writereBook}>
+            Đặt hẹn sau
+          </Button>
         </div>
-        <div className="input-boxes">
-          <div className="input-box">
-            <label>Quá trình điều trị:</label>
-            <TextArea
-              rows={4}
-              name="process"
-              value={treatmentIn.process}
-              onChange={(e) =>
-                setTreatmentIn({ ...treatmentIn, process: e.target.value })
-              }
-            />
-          </div>
-          <div className="input-box">
-            <label>Kết quả:</label>
-            <TextArea
-              rows={4}
-              name="result"
-              value={treatmentIn.result}
-              onChange={(e) =>
-                setTreatmentIn({ ...treatmentIn, result: e.target.value })
-              }
-            />
-          </div>
-          <div className="input-box">
-            <label>Lời khuyên:</label>
-            <TextArea
-              rows={4}
-              name="note"
-              value={treatmentIn.note}
-              onChange={(e) =>
-                setTreatmentIn({ ...treatmentIn, note: e.target.value })
-              }
-            />
-          </div>
-        </div>
-      </div>
-      <div className="action-buttons">
-        <Button type="primary" onClick={handleComplete}>
-          Xong
-        </Button>
-        <Button type="primary" onClick={handleReappoint}>
-          Đặt hẹn sau
-        </Button>
-      </div>
-
-      <Modal
-        title="Xác nhận"
-        visible={showConfirmationComplete}
-        onOk={handleConfirmationCompleteConfirm}
-        onCancel={() => setShowConfirmationComplete(false)}
-        okText="Xác nhận"
-        cancelText="Đóng"
-      >
-        <p>Bạn có chắc chắn muốn hoàn thành quá trình dịch vụ?</p>
-      </Modal>
-
-      <Modal
-        title="Xác nhận"
-        visible={showConfirmationReappoint}
-        onOk={handleConfirmationReappointConfirm}
-        onCancel={() => setShowConfirmationReappoint(false)}
-        okText="Xác nhận"
-        cancelText="Đóng"
-      >
-        <p>Bạn có chắc chắn muốn đặt lại cuộc hẹn sau?</p>
-      </Modal>
+      </Form>
     </div>
   );
 }

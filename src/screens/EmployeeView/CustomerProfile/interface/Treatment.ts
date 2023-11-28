@@ -5,6 +5,7 @@ interface Treatment {
   employeeName: string;
   start: string;
   services: Service[];
-  name: string,
+  petName: string;
+  treatmentContent: string;
 }
 export default Treatment;
