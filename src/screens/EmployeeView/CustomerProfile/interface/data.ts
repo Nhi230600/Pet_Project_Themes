@@ -3,20 +3,42 @@ const treatmentData: Treatment[] = [];
 
 // Tạo danh sách thú cưng
 const pets = [
-  { id: 1, employeeName: "Nguyễn Văn A", name: "Apolo" },
-  { id: 2, employeeName: "Trần Thị B",  name: "Gretchen"  },
-  { id: 3, employeeName: "Lê Quang C",  name: "Pepper"},
-  { id: 4, employeeName: "Phạm Thị D" ,name: "Daisy"},
-  { id: 5, employeeName: "Hoàng Văn E",name: "Max" },
+  {
+    id: 1,
+    employeeName: "Nguyễn Văn A",
+    petName: "Apolo",
+    treatmentContent: "abcdef",
+  },
+  {
+    id: 2,
+    employeeName: "Trần Thị B",
+    petName: "Gretchen",
+    treatmentContent: "abcdef",
+  },
+  {
+    id: 3,
+    employeeName: "Lê Quang C",
+    petName: "Pepper",
+    treatmentContent: "abcdef",
+  },
+  {
+    id: 4,
+    employeeName: "Phạm Thị D",
+    petName: "Daisy",
+    treatmentContent: "abcdef",
+  },
+  {
+    id: 5,
+    employeeName: "Hoàng Văn E",
+    petName: "Max",
+    treatmentContent: "abcdef",
+  },
 ];
-
-// Thêm 5 đối tượng "Treatment" cho mỗi thú cưng
 let count = 1;
 pets.forEach((pet) => {
-
   for (let i = 1; i <= 5; i++) {
     treatmentData.push({
-      name: pet.name,
+      petName: pet.petName,
       id: count,
       idPet: pet.id,
       employeeName: pet.employeeName,
@@ -25,8 +47,9 @@ pets.forEach((pet) => {
         { name: "Checkup", price: 50 },
         { name: "Vaccination", price: 80 },
       ],
+      treatmentContent: pet.treatmentContent,
     });
-    count ++;
+    count++;
   }
 });
 
