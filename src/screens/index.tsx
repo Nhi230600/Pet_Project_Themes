@@ -26,9 +26,7 @@ const LazyViewAppointmentAdmin = React.lazy(
 const LazyEmployeeAppointmentListPage = React.lazy(
   () => import("./EmployeeView/appointmentList"),
 );
-const LazyCustomerTreatment = React.lazy(
-  () => import("./EmployeeView/customerTreatment"),
-);
+
 const LazyPetCheckupPage = React.lazy(() => import("./EmployeeView/reBook"));
 const LazyEmployeeeCustomerProfile = React.lazy(
   () => import("./EmployeeView/CustomerProfile"),
@@ -77,7 +75,6 @@ export {
   LazyContent as Content,
   LazyCreateTreatmentIn as CreateTreatmentIn,
   LazyCustomerPick as CustomerPick,
-  LazyCustomerTreatment as CustomerTreatment,
   LazyDashboard as Dashboard,
   LazyEditEmp as EditEmp,
   LazyEditServicePage as EditServicePage,

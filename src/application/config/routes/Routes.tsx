@@ -10,7 +10,6 @@ import {
   Content,
   CreateTreatmentIn,
   CustomerPick,
-  CustomerTreatment,
   CustomerViewAppointment,
   Dashboard,
   EditServicePage,
@@ -365,6 +364,7 @@ const Router = createBrowserRouter([
           </Suspense>
         ),
       },
+
       {
         path: ":idAppointment",
         children: [
@@ -377,26 +377,14 @@ const Router = createBrowserRouter([
             ),
           },
           {
-            path: "aaaa",
-            children: [
-              {
-                path: "",
-                element: (
-                  <Suspense fallback={<Loading />}>
-                    <CustomerTreatment />
-                  </Suspense>
-                ),
-              },
-              {
-                path: "createtreatmentin",
-                element: (
-                  <Suspense fallback={<Loading />}>
-                    <CreateTreatmentIn />
-                  </Suspense>
-                ),
-              },
-            ],
+            path: "createtreatmentin",
+            element: (
+              <Suspense fallback={<Loading />}>
+                <CreateTreatmentIn />
+              </Suspense>
+            ),
           },
+
           {
             path: "rebook",
             element: (
