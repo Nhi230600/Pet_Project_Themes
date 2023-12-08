@@ -56,7 +56,6 @@ const ProfilePage = () => {
               <Text>Age: {animalData.age} years old</Text>
             </div>
           </Card>
-
           <Card className="Treatments">
             <Title level={4}>Treatments</Title>
             <List
@@ -68,7 +67,6 @@ const ProfilePage = () => {
                 </List.Item>
               )}
             />
-
             <Pagination
               current={currentPage}
               total={animalData.treatments.length}

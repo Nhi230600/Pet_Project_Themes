@@ -28,10 +28,8 @@ const CustomerViewAppointment: React.FC = () => {
   const [loading, setLoading] = useState(false);
 
   const updateAppointments = (updatedAppointments: Appointment[]) => {
-    // Hàm này sẽ cập nhật danh sách cuộc hẹn
     setAppointments(updatedAppointments);
   };
-  // Create an array for the days of the month
   useEffect(() => {
     const fetchAppointments = async () => {
       try {
@@ -41,13 +39,13 @@ const CustomerViewAppointment: React.FC = () => {
         );
         const appointmentsWithIndochinaTime: Appointment[] = response.data.map(
           (appointment: Appointment) => {
-            const start = dayjs(appointment.start).subtract(7, "hour").format(); // Subtract 7 hours from start
-            const end = dayjs(appointment.end).subtract(7, "hour").format(); // Subtract 7 hours from end
+            const start = dayjs(appointment.start).subtract(7, "hour").format();
+            const end = dayjs(appointment.end).subtract(7, "hour").format();
             return { ...appointment, start, end };
           },
         );
 
-        setAppointments(appointmentsWithIndochinaTime); // Update the state with the fetched appointments
+        setAppointments(appointmentsWithIndochinaTime);
       } catch (error) {
         console.error("Error fetching appointments:", error);
       }
