@@ -135,7 +135,7 @@ export const initialAppointments = [
     idEmployee: 9,
     treatment: "Cắt móng thú cưng",
     customerName: "Trần Mệt Mõi",
-    time: "2023-11-29 17:00:00",
+    time: "2023-12-01 17:00:00",
     status: 2,
     customerAvatar: "https://source.unsplash.com/random/200x200",
   },
