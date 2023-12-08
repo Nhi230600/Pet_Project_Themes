@@ -7,5 +7,6 @@ interface Treatment {
   services: Service[];
   petName: string;
   treatmentContent: string;
+  name: string;
 }
 export default Treatment;
