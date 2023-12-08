@@ -38,6 +38,7 @@ let count = 1;
 pets.forEach((pet) => {
   for (let i = 1; i <= 5; i++) {
     treatmentData.push({
+      name: pet.petName,
       petName: pet.petName,
       id: count,
       idPet: pet.id,
